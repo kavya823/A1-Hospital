@@ -16,6 +16,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const animatedElements = document.querySelectorAll('.animate-up, .animate-fade, .animate-left, .animate-right');
     animatedElements.forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Mobile dropdown toggle
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdownToggle && dropdown && window.innerWidth <= 768) {
+        dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+        });
+    }
 });
 
 function scrollCarousel(carouselId, direction) {
