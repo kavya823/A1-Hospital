@@ -31,8 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropdown = document.querySelector('.dropdown');
     if (dropdownToggle && dropdown && window.innerWidth <= 768) {
         dropdownToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            dropdown.classList.toggle('active');
+            // Only toggle dropdown if they click the chevron icon
+            if (e.target.closest('svg') || e.target.closest('i')) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            }
+            // Otherwise, it allows the default navigation to departments.html
         });
     }
 });
