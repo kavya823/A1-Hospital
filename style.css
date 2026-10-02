@@ -1,10 +1,10 @@
 :root {
-    --primary-red: #d32f2f;
-    --dark-red: #b71c1c;
-    --light-red: #ffcdd2;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --bg-light: #f9fafb;
+    --primary-red: #800000;
+    --dark-red: #4d0000;
+    --light-red: #f2e3e5; /* Very light maroon for frames */
+    --text-dark: #2a1f1f;
+    --text-light: #6b5c5e;
+    --bg-light: #fbf9f9;
     --white: #ffffff;
     --transition: all 0.3s ease;
 }
@@ -574,8 +574,8 @@ p {
 
 /* Emergency Section */
 #contact.framed-section {
-    background-color: var(--primary-red);
-    color: var(--white);
+    background-color: var(--light-red);
+    color: var(--dark-red);
     text-align: center;
     padding: 5rem 5%;
     max-width: 1100px;
@@ -589,7 +589,7 @@ p {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(128,0,0,0.05) 0%, transparent 60%);
     opacity: 1;
     z-index: 1;
 }
@@ -602,14 +602,18 @@ p {
 }
 
 .emergency-content h2 {
-    color: var(--white);
+    color: var(--dark-red);
     font-size: 3.5rem;
 }
 
 .emergency-content p {
-    color: rgba(255,255,255,0.9);
+    color: var(--text-dark);
     font-size: 1.25rem;
     margin-bottom: 3rem;
+}
+
+#contact.framed-section .highlight-white {
+    color: var(--primary-red);
 }
 
 .emergency-action {
