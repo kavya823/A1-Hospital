@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.animate-up, .animate-fade, .animate-left, .animate-right');
+    const animatedElements = document.querySelectorAll('.animate-up, .animate-fade, .animate-left, .animate-right, .animate-zoom, .animate-flip, .framed-section');
     animatedElements.forEach(el => observer.observe(el));
 
     // Mobile menu toggle
