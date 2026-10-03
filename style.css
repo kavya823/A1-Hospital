@@ -110,6 +110,15 @@ p {
     box-shadow: 0 2px 5px rgba(211, 47, 47, 0.2);
 }
 
+/* Active state for nav links */
+.nav-links > li > a.active-link {
+    background: linear-gradient(135deg, var(--dark-red) 0%, #3a0000 100%);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(211, 47, 47, 0.4);
+    border-color: var(--dark-red);
+}
+
 /* Dropdown Mega Menu */
 .dropdown {
     position: relative;
@@ -256,6 +265,11 @@ p {
     box-shadow: 0 20px 50px rgba(211, 47, 47, 0.05);
     overflow: hidden;
     z-index: 1;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.framed-section:hover {
+    box-shadow: 0 25px 60px rgba(211, 47, 47, 0.15);
 }
 
 .flowing-text-container {
@@ -366,6 +380,127 @@ p {
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     object-fit: cover;
+}
+
+/* Creative Doctor Hero Card */
+.creative-doctor-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 2.5rem 2rem;
+    border: 2px solid rgba(128, 0, 0, 0.2);
+    box-shadow: 0 20px 50px rgba(128, 0, 0, 0.15), inset 0 0 0 2px rgba(255,255,255,0.8);
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
+    overflow: hidden;
+    z-index: 1;
+}
+.creative-doctor-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(from 0deg, transparent 0%, rgba(128,0,0,0.1) 30%, rgba(128,0,0,0.3) 50%, rgba(128,0,0,0.1) 70%, transparent 100%);
+    animation: rotateGradient 6s linear infinite;
+    z-index: -2;
+}
+.creative-doctor-card::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: linear-gradient(145deg, #ffffff, #fff5f5);
+    border-radius: 26px;
+    z-index: -1;
+}
+@keyframes rotateGradient {
+    100% { transform: rotate(360deg); }
+}
+
+.creative-doctor-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(128, 0, 0, 0.25), inset 0 0 0 2px rgba(255,255,255,1);
+}
+
+.creative-doctor-img-wrap {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(135deg, var(--primary-red), #ff7b7b);
+    box-shadow: 0 10px 25px rgba(128, 0, 0, 0.3);
+    animation: float 5s ease-in-out infinite;
+}
+
+.creative-doctor-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--white);
+}
+
+.creative-doctor-badge {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    background: var(--primary-red);
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+}
+
+.creative-doctor-name {
+    color: var(--primary-red);
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.creative-doctor-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.3rem;
+    background: rgba(128, 0, 0, 0.05);
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+}
+
+.creative-doctor-spec {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.creative-doctor-role {
+    background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.creative-doctor-role:hover {
+    transform: scale(1.05);
 }
 
 /* Founder Card */

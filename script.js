@@ -39,6 +39,18 @@ document.addEventListener("DOMContentLoaded", () => {
             // Otherwise, it allows the default navigation to departments.html
         });
     }
+
+    // Highlight active nav link (button should look dark like static way)
+    let currentPage = window.location.pathname.split('/').pop();
+    if (currentPage === '' || currentPage === '/') currentPage = 'index.html';
+    
+    const navItems = document.querySelectorAll('.nav-links > li > a:not(.btn-primary)');
+    navItems.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && (href === currentPage || href.startsWith(currentPage + '#'))) {
+            link.classList.add('active-link');
+        }
+    });
 });
 
 function scrollCarousel(carouselId, direction) {
