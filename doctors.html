@@ -87,7 +87,8 @@
             <h2>Meet our expert <span class="highlight">Doctors</span></h2>
             <p>World-class specialists dedicated to your well-being.</p>
         </div>
-        <div class="doctors-grid">
+        <!-- HOME DOCTORS VIEW (4 Items) -->
+        <div class="doctors-grid" id="home-doctors-view" style="display: none;">
             <div class="doctor-card red-frame animate-up">
                 <img src="dr_prameela.jpg" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" alt="Dr. G. Prameela">
                 <div class="doctor-info">
@@ -97,18 +98,14 @@
                     <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
                 </div>
             </div>
-            <div class="creative-doctor-card animate-up delay-1" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
-                <div class="creative-doctor-img-wrap">
-                    <img src="dr_rao.jpeg" alt="Dr. Mula Venkata Rao" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                    <div class="creative-doctor-badge">
-                        <i data-lucide="award"></i>
-                    </div>
+            <div class="doctor-card red-frame animate-up delay-1">
+                <img src="dr_rao.jpeg" onerror="this.src='https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" alt="Dr. Mula Venkata Rao">
+                <div class="doctor-info">
+                    <h3>Dr. MULA VENKATA RAO</h3>
+                    <p class="specialty" style="font-size: 0.9rem; margin-bottom: 0.5rem;">M.D. (Ped.) Niloufer</p>
+                    <p style="font-size: 0.9rem; font-weight: 500;">Children Specialist</p>
+                    <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
                 </div>
-                <h3 class="creative-doctor-name">Dr. MULA VENKATA RAO</h3>
-                <p class="creative-doctor-title">M.D. (Ped.) Niloufer</p>
-                <p class="creative-doctor-spec">Children Specialist</p>
-                <div class="creative-doctor-role" style="margin-bottom: 15px;">Founder, A1 Hospital</div>
-                <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
             </div>
             <div class="doctor-card red-frame animate-up delay-2">
                 <img src="dr_anil.jpg" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" alt="Dr. Hanumanthu Anil Kumar">
@@ -129,6 +126,147 @@
                 </div>
             </div>
         </div>
+
+        <!-- ALL DOCTORS VIEW (Carousel) -->
+        <div class="carousel-container animate-up" id="all-doctors-view">
+            <button class="carousel-btn left-btn" onclick="scrollCarousel('doctors-carousel', -1)">◀</button>
+            <div class="carousel-track" id="doctors-carousel">
+                <div class="doctor-carousel-card">
+                    <img src="dr_prameela.jpg" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" alt="Dr. G. Prameela">
+                    <div class="doctor-carousel-info">
+                        <div>
+                            <h3>Dr. G. PRAMEELA</h3>
+                            <div class="doc-degrees">M.S. (OBG) FART, FMAS</div>
+                            <div class="doc-specialty">Obstetrician & Gynaecologist<br>Infertility Specialist</div>
+                        </div>
+                        <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-carousel-card">
+                    <img src="dr_rao.jpeg" onerror="this.src='https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" alt="Dr. Mula Venkata Rao">
+                    <div class="doctor-carousel-info">
+                        <div>
+                            <h3>Dr. MULA VENKATA RAO</h3>
+                            <div class="doc-degrees">M.D. (Ped.) Niloufer</div>
+                            <div class="doc-specialty">Children Specialist<br>Founder, A1 Hospital</div>
+                        </div>
+                        <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-carousel-card">
+                    <img src="dr_anil.jpg" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" alt="Dr. Hanumanthu Anil Kumar">
+                    <div class="doctor-carousel-info">
+                        <div>
+                            <h3>Dr. HANUMANTHU ANIL KUMAR</h3>
+                            <div class="doc-degrees">M.D., (Gen. Med)</div>
+                            <div class="doc-specialty">General Physician<br>Internal Medicine Specialist</div>
+                        </div>
+                        <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-carousel-card">
+                    <img src="dr_kishore.jpg" onerror="this.src='https://images.unsplash.com/photo-1594824436998-d7b69f688005?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" alt="Dr. S. Kishore Babu">
+                    <div class="doctor-carousel-info">
+                        <div>
+                            <h3>Dr. S. KISHORE BABU</h3>
+                            <div class="doc-degrees">M.S., (Ortho)</div>
+                            <div class="doc-specialty">Consultant Orthopaedic Surgeon<br>Joint Replacement Specialist</div>
+                        </div>
+                        <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-carousel-card">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. K. Rajesh">
+                    <div class="doctor-carousel-info">
+                        <div>
+                            <h3>Dr. K. RAJESH</h3>
+                            <div class="doc-degrees">M.D., D.M. (Cardiology)</div>
+                            <div class="doc-specialty">Senior Interventional Cardiologist<br>Heart Specialist</div>
+                        </div>
+                        <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-carousel-card">
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. P. Ramesh">
+                    <div class="doctor-carousel-info">
+                        <div>
+                            <h3>Dr. P. RAMESH</h3>
+                            <div class="doc-degrees">M.D., D.M. (Neurology)</div>
+                            <div class="doc-specialty">Senior Consultant Neurologist<br>Brain & Spine Specialist</div>
+                        </div>
+                        <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-carousel-card">
+                    <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. V. Suresh">
+                    <div class="doctor-carousel-info">
+                        <div>
+                            <h3>Dr. V. SURESH</h3>
+                            <div class="doc-degrees">M.D. (Pulmonology), FCCP</div>
+                            <div class="doc-specialty">Consultant Pulmonologist<br>Chest & Respiratory Specialist</div>
+                        </div>
+                        <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-carousel-card">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. B. Ravi Teja">
+                    <div class="doctor-carousel-info">
+                        <div>
+                            <h3>Dr. B. RAVI TEJA</h3>
+                            <div class="doc-degrees">M.S., M.Ch (Urology)</div>
+                            <div class="doc-specialty">Consultant Urologist<br>Renal & Bladder Specialist</div>
+                        </div>
+                        <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-carousel-card">
+                    <img src="https://images.unsplash.com/photo-1594824436998-d7b69f688005?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. N. Srinivas">
+                    <div class="doctor-carousel-info">
+                        <div>
+                            <h3>Dr. N. SRINIVAS</h3>
+                            <div class="doc-degrees">M.S. (Gen. Surg), FMAS</div>
+                            <div class="doc-specialty">General & Laparoscopic Surgeon<br>Minimally Invasive Specialist</div>
+                        </div>
+                        <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-carousel-card">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. T. Sandhya">
+                    <div class="doctor-carousel-info">
+                        <div>
+                            <h3>Dr. T. SANDHYA</h3>
+                            <div class="doc-degrees">M.D. (DVL)</div>
+                            <div class="doc-specialty">Consultant Dermatologist<br>Skin & Laser Specialist</div>
+                        </div>
+                        <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-carousel-card">
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. A. Vamsi Krishna">
+                    <div class="doctor-carousel-info">
+                        <div>
+                            <h3>Dr. A. VAMSI KRISHNA</h3>
+                            <div class="doc-degrees">M.D., D.M. (Nephrology)</div>
+                            <div class="doc-specialty">Consultant Nephrologist<br>Dialysis & Kidney Specialist</div>
+                        </div>
+                        <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-carousel-card">
+                    <img src="https://images.unsplash.com/photo-1594824436998-d7b69f688005?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. M. Anitha">
+                    <div class="doctor-carousel-info">
+                        <div>
+                            <h3>Dr. M. ANITHA</h3>
+                            <div class="doc-degrees">M.D. (Anaesthesia), IDCCM</div>
+                            <div class="doc-specialty">Critical Care Specialist<br>ICU In-Charge</div>
+                        </div>
+                        <a href="#appointment" class="btn-secondary small mt-2">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn right-btn" onclick="scrollCarousel('doctors-carousel', 1)">▶</button>
+        </div>
+
         
     </section>
 <section id="contact" class="emergency framed-section section-slide-right">

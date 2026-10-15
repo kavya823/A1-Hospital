@@ -944,6 +944,64 @@ p {
 .left-btn { left: 5px; }
 .right-btn { right: 5px; }
 
+/* Doctor Carousel Card */
+.doctor-carousel-card {
+    min-width: 290px;
+    max-width: 310px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    border: 2px solid var(--light-red);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+.doctor-carousel-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--primary-red);
+    box-shadow: 0 15px 35px rgba(128,0,0,0.18);
+}
+.doctor-carousel-card img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.5s ease;
+}
+.doctor-carousel-card:hover img {
+    transform: scale(1.06);
+}
+.doctor-carousel-info {
+    padding: 1.25rem 1rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+.doctor-carousel-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.3rem;
+    color: var(--text-dark);
+    font-weight: 800;
+}
+.doctor-carousel-info .doc-degrees {
+    font-size: 0.85rem;
+    color: var(--primary-red);
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+.doctor-carousel-info .doc-specialty {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
 /* Footer */
 .footer {
     background-color: var(--text-dark);

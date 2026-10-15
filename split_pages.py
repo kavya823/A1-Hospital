@@ -54,8 +54,14 @@ def process():
     if nav_match and contact_footer_match and doctors_match:
         doc_html = nav_match.group(1) + spacer + doctors_match.group(1) + contact_footer_match.group(1)
         doc_html = set_title(doc_html, 'Doctors | A1 Hospital')
-        # Remove the "View All Doctors" button
-        doc_html = re.sub(r'<div[^>]*>\s*<a href="doctors\.html"[^>]*>View All Doctors</a>\s*</div>', '', doc_html)
+        
+        # Hide home view and show all view
+        doc_html = doc_html.replace('id="home-doctors-view"', 'id="home-doctors-view" style="display: none;"')
+        doc_html = doc_html.replace('id="all-doctors-view" style="display: none;"', 'id="all-doctors-view"')
+        
+        # Remove the "View All Doctors" button container
+        doc_html = re.sub(r'<div[^>]*id="view-all-docs-btn-container"[^>]*>.*?</div>', '', doc_html, flags=re.DOTALL)
+        
         with open('doctors.html', 'w', encoding='utf-8') as f:
             f.write(doc_html)
         print("Successfully created doctors.html")
