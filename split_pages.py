@@ -11,9 +11,9 @@ def process():
     nav_match = re.search(r'(<!DOCTYPE html>.*?(?=<header id="home"))', html, re.DOTALL)
     contact_footer_match = re.search(r'(<section id="contact".*?</html>)', html, re.DOTALL)
 
-    services_match = re.search(r'(<section id="services".*?</section>\s*)\n\s*<section id="departments"', html, re.DOTALL)
-    departments_match = re.search(r'(<section id="departments".*?</section>\s*)\n\s*<section id="lab"', html, re.DOTALL)
-    doctors_match = re.search(r'(<section id="doctors".*?</section>\s*)\n\s*<section id="contact"', html, re.DOTALL)
+    services_match = re.search(r'(<section id="services".*?</section>)\s*(?:<!--.*?-->\s*)?<section id="departments"', html, re.DOTALL)
+    departments_match = re.search(r'(<section id="departments".*?</section>)\s*(?:<!--.*?-->\s*)?<section id="lab"', html, re.DOTALL)
+    doctors_match = re.search(r'(<section id="doctors".*?</section>)\s*(?:<!--.*?-->\s*)?<section id="contact"', html, re.DOTALL)
 
     spacer = '\n    <div style="margin-top: 1.5rem;"></div>\n'
 

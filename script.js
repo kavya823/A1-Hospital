@@ -1,9 +1,12 @@
-// Intersection Observer for scroll animations
-document.addEventListener("DOMContentLoaded", () => {
+// Initialize A1 Hospital Application
+function initHospitalApp() {
+    // Enable progressive scroll animations
+    document.body.classList.add('reveal-active');
+
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.15
+        rootMargin: '60px 0px',
+        threshold: 0.05
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -14,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.animate-up, .animate-fade, .animate-left, .animate-right, .animate-zoom, .animate-flip, .framed-section');
+    const animatedElements = document.querySelectorAll('.animate-up, .animate-left, .animate-right');
     animatedElements.forEach(el => observer.observe(el));
 
     // Navbar scroll effect
@@ -35,6 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+        });
+
+        // Close mobile drawer on link tap
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768 && !link.classList.contains('dropdown-toggle')) {
+                    navLinks.classList.remove('active');
+                }
+            });
         });
     }
 
@@ -111,7 +123,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-});
+}
+
+// Ensure execution whether DOMContentLoaded has already fired or is pending
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHospitalApp);
+} else {
+    initHospitalApp();
+}
 
 function scrollCarousel(carouselId, direction) {
     const track = document.getElementById(carouselId);

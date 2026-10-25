@@ -4,17 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | A1 Hospital</title>
-    <meta name="description" content="A1 Hospital offers world-class medical services, top-tier doctors, and 24/7 emergency care.">
+    <meta name="description" content="A1 Hospital offers world-class medical and surgical services, top-tier doctors, and 24/7 emergency care in Srikakulam.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=13">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
+
+    <!-- Smera-Style Top Announcement Bar -->
+    <div class="top-announcement-bar">
+        <div class="top-bar-left">
+            <span class="topbar-item">
+                <i data-lucide="clock"></i> 24/7 Emergency &amp; Critical Inpatient Care
+            </span>
+            <span class="topbar-item">
+                <i data-lucide="map-pin"></i> Bondilipuram Main Road, Srikakulam
+            </span>
+        </div>
+        <div class="top-bar-right">
+            <span class="topbar-item">
+                <i data-lucide="star" style="fill: var(--gold-accent);"></i> <strong>4.9 / 5</strong> (1,200+ Patient Reviews)
+            </span>
+            <span class="topbar-item">
+                <i data-lucide="phone-call"></i> 24/7 Helpline: <a href="tel:08942228234" class="topbar-link">08942-228234</a>
+            </span>
+        </div>
+    </div>
+
+    <!-- Sticky Glassmorphic Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <a href="#home" style="display: flex; align-items: center;">
-                <img src="logo.png" alt="A ONE Hospital & IVF Clinic" style="height: 120px; width: auto;">
+            <a href="index.html" style="display: flex; align-items: center;">
+                <img src="logo.png" alt="A ONE Hospital &amp; IVF Clinic">
             </a>
         </div>
         <div class="menu-toggle" id="mobile-menu" style="display: none; cursor: pointer;">
@@ -24,10 +46,10 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li class="dropdown">
-                <a href="departments.html" class="dropdown-toggle">Departments <i data-lucide="chevron-down" style="width: 18px; height: 18px;"></i></a>
+                <a href="departments.html" class="dropdown-toggle">Departments <i data-lucide="chevron-down" style="width: 17px; height: 17px;"></i></a>
                 <div class="dropdown-menu">
                     <div class="dropdown-column">
-                        <h4>Medical Department</h4>
+                        <h4>Medical Specialities</h4>
                         <ul>
                             <li><a href="#appointment">General Medicine</a></li>
                             <li><a href="#appointment">Pulmonology</a></li>
@@ -46,13 +68,13 @@
                         </ul>
                     </div>
                     <div class="dropdown-column">
-                        <h4>Surgical Department</h4>
+                        <h4>Surgical Specialities</h4>
                         <ul>
                             <li><a href="#appointment">General Surgery</a></li>
-                            <li><a href="#appointment">Obstetrics & Gynecology</a></li>
-                            <li><a href="#appointment">Orthopedics</a></li>
+                            <li><a href="#appointment">Obstetrics &amp; Gynecology</a></li>
+                            <li><a href="#appointment">Orthopedics &amp; Joint Care</a></li>
                             <li><a href="#appointment">Urology</a></li>
-                            <li><a href="#appointment">ENT</a></li>
+                            <li><a href="#appointment">ENT Speciality</a></li>
                             <li><a href="#appointment">Spine Surgery</a></li>
                             <li><a href="#appointment">Surgical Gastroenterology</a></li>
                             <li><a href="#appointment">Surgical Oncology</a></li>
@@ -66,67 +88,100 @@
                 </div>
             </li>
             <li><a href="doctors.html">Doctors</a></li>
-            <li><a href="#appointment" class="btn-primary">Book an Appointment</a></li>
+            <li><a href="#appointment" class="btn-primary"><span>Book an Appointment</span> <i data-lucide="calendar" style="width:16px; height:16px;"></i></a></li>
         </ul>
     </nav>
     
-    <!-- Integrated Flowing Text (Moved to top below navbar) -->
-    <div class="flowing-text-container" style="margin-top: 136px; border-top: 2px solid var(--primary-red); border-bottom: 2px solid var(--primary-red);">
+    <!-- Flowing Healthcare Excellence Marquee Ribbon -->
+    <div class="flowing-text-container">
         <div class="flowing-text">
-            <span><i data-lucide="star" style="width:16px; margin-right:8px; color:var(--primary-red);"></i> 15+ Years of Experience in Healthcare Excellence</span>
-            <span><i data-lucide="star" style="width:16px; margin-right:8px; color:var(--primary-red);"></i> 15+ Years of Experience in Healthcare Excellence</span>
-            <span><i data-lucide="star" style="width:16px; margin-right:8px; color:var(--primary-red);"></i> 15+ Years of Experience in Healthcare Excellence</span>
-            <span><i data-lucide="star" style="width:16px; margin-right:8px; color:var(--primary-red);"></i> 15+ Years of Experience in Healthcare Excellence</span>
-            <span><i data-lucide="star" style="width:16px; margin-right:8px; color:var(--primary-red);"></i> 15+ Years of Experience in Healthcare Excellence</span>
+            <span><i data-lucide="star"></i> 15+ Years of Clinical Excellence in Srikakulam</span>
+            <span><i data-lucide="star"></i> 100+ Advanced Inpatient Beds</span>
+            <span><i data-lucide="star"></i> 24/7 Immediate Critical Response &amp; Trauma Care</span>
+            <span><i data-lucide="star"></i> Comprehensive IVF &amp; Advanced Fertility Center</span>
+            <span><i data-lucide="star"></i> Trusted by Over 50,000+ Happy Families</span>
+            <span><i data-lucide="star"></i> 15+ Years of Clinical Excellence in Srikakulam</span>
+            <span><i data-lucide="star"></i> 100+ Advanced Inpatient Beds</span>
+            <span><i data-lucide="star"></i> 24/7 Immediate Critical Response &amp; Trauma Care</span>
+            <span><i data-lucide="star"></i> Comprehensive IVF &amp; Advanced Fertility Center</span>
+            <span><i data-lucide="star"></i> Trusted by Over 50,000+ Happy Families</span>
         </div>
     </div>
 
+    <!-- Smera-Inspired Hero Section -->
     
     <div style="margin-top: 1.5rem;"></div>
-<section id="services" class="services framed-section section-slide-right">
-        <div class="section-title animate-up">
-            <h2>Our <span class="highlight">Services</span></h2>
-            <p>Exceptional medical services with advanced technology, providing comfort and care.</p>
+<section id="services" class="services framed-section animate-up">
+        <div class="section-title">
+            <div class="section-eyebrow">
+                <span class="eyebrow-dot"></span> WORLD-CLASS MEDICAL FACILITIES
+            </div>
+            <h2>Our Comprehensive <span class="serif-italic">Services</span></h2>
+            <p>Exceptional medical and surgical facilities with advanced technology, providing compassionate comfort and care.</p>
         </div>
+
         <!-- HOME SERVICES VIEW (4 Items) -->
         <div class="services-grid" id="home-services-view" style="display: none;">
-            <div class="service-card red-frame animate-up">
-                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Beds Available" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:1.5rem;">
-                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem; color:var(--primary-red);">
-                    <i data-lucide="bed-double"></i>
-                    <h3 style="margin:0; font-size:1.3rem;">100+ Beds Available</h3>
+            <div class="service-card animate-up">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="100+ Beds Available" class="service-card-img">
+                <div class="service-card-header">
+                    <div class="card-icon-badge">
+                        <i data-lucide="bed-double"></i>
+                    </div>
+                    <h3>100+ Beds Available</h3>
                 </div>
-                <p style="font-size:0.95rem;">Spacious, comfortable, and well-equipped rooms ensuring the best care for patients in a healing environment.</p>
+                <p>Spacious, comfortable, and well-equipped rooms ensuring the best care for patients in a peaceful healing environment.</p>
+                <a href="#appointment" class="card-action-link">
+                    <span>Learn More</span> <i data-lucide="arrow-right"></i>
+                </a>
             </div>
-            <div class="service-card red-frame animate-up delay-1">
-                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="24/7 Care" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:1.5rem;">
-                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem; color:var(--primary-red);">
-                    <i data-lucide="clock"></i>
-                    <h3 style="margin:0; font-size:1.3rem;">24/7 Emergency Care</h3>
+
+            <div class="service-card animate-up delay-1">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="24/7 Emergency Care" class="service-card-img">
+                <div class="service-card-header">
+                    <div class="card-icon-badge">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h3>24/7 Emergency Care</h3>
                 </div>
-                <p style="font-size:0.95rem;">Round-the-clock emergency support with a dedicated and highly responsive critical care medical team.</p>
+                <p>Round-the-clock emergency support with a dedicated and highly responsive critical care medical and trauma team.</p>
+                <a href="#appointment" class="card-action-link">
+                    <span>Learn More</span> <i data-lucide="arrow-right"></i>
+                </a>
             </div>
-            <div class="service-card red-frame animate-up delay-2">
-                <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modern Equipment" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:1.5rem;">
-                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem; color:var(--primary-red);">
-                    <i data-lucide="microscope"></i>
-                    <h3 style="margin:0; font-size:1.3rem;">Modern Equipment</h3>
+
+            <div class="service-card animate-up delay-2">
+                <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modern Equipment" class="service-card-img">
+                <div class="service-card-header">
+                    <div class="card-icon-badge">
+                        <i data-lucide="microscope"></i>
+                    </div>
+                    <h3>Modern Equipment</h3>
                 </div>
-                <p style="font-size:0.95rem;">State-of-the-art medical technology for precise diagnosis and effective, life-saving treatments.</p>
+                <p>State-of-the-art medical and diagnostic technology for precise diagnosis and effective, life-saving treatments.</p>
+                <a href="#appointment" class="card-action-link">
+                    <span>Learn More</span> <i data-lucide="arrow-right"></i>
+                </a>
             </div>
-            <div class="service-card red-frame animate-up delay-3">
-                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Qualified Doctors" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:1.5rem;">
-                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem; color:var(--primary-red);">
-                    <i data-lucide="stethoscope"></i>
-                    <h3 style="margin:0; font-size:1.3rem;">Experienced Doctors</h3>
+
+            <div class="service-card animate-up delay-3">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Experienced Doctors" class="service-card-img">
+                <div class="service-card-header">
+                    <div class="card-icon-badge">
+                        <i data-lucide="stethoscope"></i>
+                    </div>
+                    <h3>Experienced Doctors</h3>
                 </div>
-                <p style="font-size:0.95rem;">Highly qualified specialists bringing over 15+ years of trusted healthcare excellence.</p>
+                <p>Highly qualified medical specialists bringing over 15+ years of trusted healthcare excellence and patient care.</p>
+                <a href="#appointment" class="card-action-link">
+                    <span>Learn More</span> <i data-lucide="arrow-right"></i>
+                </a>
             </div>
         </div>
 
         <!-- ALL SERVICES VIEW (Carousel) -->
         <div class="carousel-container animate-up" id="all-services-view">
-            <button class="carousel-btn left-btn" onclick="scrollCarousel('services-carousel', -1)">◀</button>
+            <button class="carousel-btn left-btn" onclick="scrollCarousel('services-carousel', -1)" aria-label="Scroll Left">◀</button>
             <div class="carousel-track" id="services-carousel">
                 <div class="dept-card-photo">
                     <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Beds Available">
@@ -146,39 +201,38 @@
                 </div>
                 <div class="dept-card-photo">
                     <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pharmacy">
-                    <div class="dept-info"><h3>24/7 Pharmacy</h3></div>
+                    <div class="dept-info"><h3>24/7 In-House Pharmacy</h3></div>
                 </div>
                 <div class="dept-card-photo">
                     <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ambulance">
-                    <div class="dept-info"><h3>Ambulance Service</h3></div>
+                    <div class="dept-info"><h3>24/7 Ambulance Service</h3></div>
                 </div>
                 <div class="dept-card-photo">
                     <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Blood Bank">
-                    <div class="dept-info"><h3>Blood Bank</h3></div>
+                    <div class="dept-info"><h3>Emergency Blood Bank</h3></div>
                 </div>
                 <div class="dept-card-photo">
                     <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ICU">
                     <div class="dept-info"><h3>Intensive Care Unit (ICU)</h3></div>
                 </div>
             </div>
-            <button class="carousel-btn right-btn" onclick="scrollCarousel('services-carousel', 1)">▶</button>
+            <button class="carousel-btn right-btn" onclick="scrollCarousel('services-carousel', 1)" aria-label="Scroll Right">▶</button>
         </div>
 
         
-    </section>
-<section id="contact" class="emergency-compact-wrap framed-section animate-up">
+    </section><section id="contact" class="emergency-compact-wrap framed-section animate-up">
         <div class="emergency-compact-card">
             <div class="emergency-glow-orb"></div>
             <div class="emergency-live-badge">
                 <span class="live-pulse-dot"></span>
                 <span>24/7 Immediate Critical Response</span>
             </div>
-            <h2 class="emergency-title">24/7 <span class="highlight">Emergency Care</span></h2>
-            <p class="emergency-subtitle">Immediate response & expert critical care around the clock. Every second counts, and our emergency medical team is always ready.</p>
+            <h2 class="emergency-title">24/7 <span class="serif-italic">Emergency Care</span></h2>
+            <p class="emergency-subtitle">Immediate response &amp; expert critical trauma care around the clock. Every second counts, and our emergency medical team is always ready.</p>
             
             <div class="emergency-phone-container">
                 <div class="emergency-phone-icon">
-                    <i data-lucide="phone-call"></i>
+                    <i data-lucide="phone-call" style="width:24px; height:24px;"></i>
                 </div>
                 <div class="emergency-phone-links">
                     <a href="tel:08942228234" class="emergency-phone-num">08942-228234</a>
@@ -188,23 +242,24 @@
             </div>
 
             <div class="emergency-action-btns">
-                <a href="tel:08942228234" class="btn-emergency-call pulse-anim" style="text-decoration:none;">
-                    <i data-lucide="phone"></i> <span>Call Emergency Desk</span>
+                <a href="tel:08942228234" class="btn-emergency-call" style="text-decoration:none;">
+                    <i data-lucide="phone" style="width:18px; height:18px;"></i> <span>Call Emergency Desk</span>
                 </a>
                 <a href="#appointment" class="btn-emergency-book" style="text-decoration:none;">
-                    <i data-lucide="calendar"></i> <span>Book Priority Slot</span>
+                    <i data-lucide="calendar" style="width:18px; height:18px;"></i> <span>Book Priority Slot</span>
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- Footer (Smera Luxury Dark Palette) -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
                 <div class="footer-logo">
-                    <img src="logo.png" alt="A1 Hospital Logo" style="height: 80px; background-color: white; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+                    <img src="logo.png" alt="A1 Hospital Logo" style="height: 75px; background-color: #ffffff; padding: 8px 12px; border-radius: 10px; margin-bottom: 15px;">
                 </div>
-                <p class="footer-desc">A1 Hospital is committed to delivering world-class healthcare with state-of-the-art facilities and experienced medical professionals. Healing Hands, Caring Hearts.</p>
+                <p class="footer-desc">A1 Hospital is committed to delivering world-class healthcare with state-of-the-art medical technology and experienced specialists. Healing Hands, Caring Hearts.</p>
                 <div class="social-links">
                     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram"><i data-lucide="instagram"></i></a>
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i data-lucide="facebook"></i></a>
@@ -215,18 +270,24 @@
             <div class="footer-col">
                 <h4>Contact Us</h4>
                 <ul class="contact-info">
-                    <li><i data-lucide="map-pin"></i> Opposite Rama Temple, Bondilipuram Main Road, Srikakulam</li>
-                    <li><i data-lucide="phone"></i> Appointments: <a href="tel:08942228234" style="color: inherit; text-decoration: none;">08942-228234</a>, <a href="tel:08942227234" style="color: inherit; text-decoration: none;">08942-227234</a></li>
-                    <li><i data-lucide="phone"></i> Manager: <a href="tel:9193774444" style="color: inherit; text-decoration: none;">91937 74444</a></li>
-                    <li><i data-lucide="phone"></i> PRO: <a href="tel:9193773333" style="color: inherit; text-decoration: none;">91937 73333</a></li>
+                    <li><i data-lucide="map-pin"></i> Opposite Rama Temple, Bondilipuram Main Road, Srikakulam, AP</li>
+                    <li><i data-lucide="phone"></i> Reception: <a href="tel:08942228234" style="color: inherit; text-decoration: none;">08942-228234</a>, <a href="tel:08942227234" style="color: inherit; text-decoration: none;">08942-227234</a></li>
+                    <li><i data-lucide="phone"></i> Hospital Manager: <a href="tel:9193774444" style="color: inherit; text-decoration: none;">91937 74444</a></li>
+                    <li><i data-lucide="phone"></i> Patient PRO: <a href="tel:9193773333" style="color: inherit; text-decoration: none;">91937 73333</a></li>
                     <li><i data-lucide="mail"></i> <a href="mailto:info@a1hospital.com" style="color: inherit; text-decoration: none;">info@a1hospital.com</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 A1 Hospital. All rights reserved.</p>
+            <p>&copy; 2026 A1 Hospital &amp; IVF Clinic. All rights reserved. Designed with boutique healthcare excellence.</p>
         </div>
     </footer>
+
+    <!-- Pulsing WhatsApp Floating Action Button (FAB) -->
+    <a href="https://wa.me/919193774444?text=Hello%20A1%20Hospital,%20I%20would%20like%20to%20inquire%20about%20medical%20services%20or%20an%20appointment." target="_blank" rel="noopener noreferrer" class="fab-whatsapp" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+        <i data-lucide="message-circle"></i>
+        <span class="fab-tooltip">Chat with A1 Hospital</span>
+    </a>
 
     <!-- Interactive Appointment Booking Modal -->
     <div id="appointment-modal" class="appointment-modal-overlay">
@@ -236,7 +297,7 @@
                 <div class="modal-header">
                     <div class="modal-badge"><i data-lucide="calendar-check"></i></div>
                     <h3>Book an Appointment</h3>
-                    <p>Schedule your consultation with our experienced specialists. Fast & hassle-free.</p>
+                    <p>Schedule your consultation with our experienced specialists. Fast &amp; hassle-free.</p>
                 </div>
                 <form id="appointment-form" onsubmit="handleAppointmentSubmit(event)">
                     <div class="form-row">
@@ -264,14 +325,14 @@
                                     <option value="General Consultation">General Consultation</option>
                                     <option value="General Medicine">General Medicine</option>
                                     <option value="Pediatrics (Child Care)">Pediatrics (Child Care)</option>
-                                    <option value="Obstetrics & Gynecology">Obstetrics & Gynecology</option>
+                                    <option value="Obstetrics & Gynecology">Obstetrics &amp; Gynecology</option>
                                     <option value="Orthopedics">Orthopedics</option>
                                     <option value="General Surgery">General Surgery</option>
                                     <option value="Nephrology">Nephrology</option>
                                     <option value="Urology">Urology</option>
                                     <option value="Pediatric Surgery">Pediatric Surgery</option>
                                     <option value="Ophthalmology (Eye Care)">Ophthalmology (Eye Care)</option>
-                                    <option value="Radiation & Clinical Oncology">Radiation & Clinical Oncology</option>
+                                    <option value="Radiation & Clinical Oncology">Radiation &amp; Clinical Oncology</option>
                                     <option value="Cardiology">Cardiology</option>
                                     <option value="Pulmonology">Pulmonology</option>
                                     <option value="Critical Care">Critical Care</option>
@@ -287,7 +348,7 @@
                                 <select id="appointment-doctor" name="doctor">
                                     <option value="">Any Available Specialist</option>
                                     <option value="Dr. Mula Venkatarao (Children Specialist)">Dr. Mula Venkatarao (Children Specialist)</option>
-                                    <option value="Dr. G. Prameela (Obstetrician & Gynaecologist)">Dr. G. Prameela (Obstetrician & Gynaecologist)</option>
+                                    <option value="Dr. G. Prameela (Obstetrician & Gynaecologist)">Dr. G. Prameela (Obstetrician &amp; Gynaecologist)</option>
                                     <option value="Dr. Hanumanthu Anilkumar (General Physician)">Dr. Hanumanthu Anilkumar (General Physician)</option>
                                     <option value="Dr. Sattaru Kishore Babu (Orthopaedic Surgeon)">Dr. Sattaru Kishore Babu (Orthopaedic Surgeon)</option>
                                     <option value="Dr. Bammidi Sai Theja (Orthopaedic Surgeon)">Dr. Bammidi Sai Theja (Orthopaedic Surgeon)</option>
@@ -296,7 +357,7 @@
                                     <option value="Dr. Budumuru Ramana (Urologist)">Dr. Budumuru Ramana (Urologist)</option>
                                     <option value="Dr. Kannepalli Srinivas (Pediatric Surgeon)">Dr. Kannepalli Srinivas (Pediatric Surgeon)</option>
                                     <option value="Dr. Palepu Srikanthi (Ophthalmologist)">Dr. Palepu Srikanthi (Ophthalmologist)</option>
-                                    <option value="Dr. Navya Madabatula (Radiation & Clinical Oncologist)">Dr. Navya Madabatula (Radiation & Clinical Oncologist)</option>
+                                    <option value="Dr. Navya Madabatula (Radiation & Clinical Oncologist)">Dr. Navya Madabatula (Radiation &amp; Clinical Oncologist)</option>
                                 </select>
                             </div>
                         </div>
@@ -324,7 +385,7 @@
                     </div>
                     <div class="form-group">
                         <label for="appointment-notes">Reason for Visit / Symptoms (Optional)</label>
-                        <textarea id="appointment-notes" name="notes" rows="2" placeholder="Briefly describe symptoms or questions..."></textarea>
+                        <textarea id="appointment-notes" name="notes" rows="2" placeholder="Briefly describe symptoms or medical history..."></textarea>
                     </div>
                     <button type="submit" class="btn-primary modal-submit-btn">
                         <span>Confirm Appointment Request</span>
@@ -354,7 +415,7 @@
     </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=6"></script>
     <script>
       lucide.createIcons();
     </script>
