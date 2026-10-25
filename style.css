@@ -53,7 +53,11 @@ p {
 }
 
 .highlight {
-    color: var(--primary-red);
+    background: linear-gradient(135deg, var(--primary-red) 0%, #ff3b3b 50%, var(--dark-red) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: 800;
 }
 
 .highlight-white {
@@ -191,49 +195,72 @@ p {
 
 /* Buttons */
 .btn-primary {
-    background-color: var(--primary-red);
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
     color: var(--white);
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.6rem;
     border-radius: 50px;
-    font-weight: 600;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, background-color 0.3s ease;
-    border: 2px solid var(--primary-red);
-    display: inline-block;
+    font-weight: 700;
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     cursor: pointer;
+    box-shadow: 0 6px 18px rgba(211, 47, 47, 0.28);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 30%;
+    height: 200%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: rotate(25deg);
+    transition: none;
+}
+
+.btn-primary:hover::after {
+    left: 150%;
+    transition: left 0.75s ease-in-out;
 }
 
 .btn-primary:hover {
-    background-color: var(--dark-red);
-    border-color: var(--dark-red);
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(211, 47, 47, 0.3);
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 12px 25px rgba(211, 47, 47, 0.4);
     color: var(--white);
 }
 
 .btn-primary:active {
-    transform: scale(0.95);
+    transform: scale(0.97);
 }
 
 .btn-secondary {
     background-color: transparent;
     color: var(--text-dark);
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.6rem;
     border-radius: 50px;
-    font-weight: 600;
-    transition: var(--transition);
+    font-weight: 700;
+    transition: all 0.3s ease;
     border: 2px solid var(--text-dark);
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .btn-secondary:hover {
     background-color: var(--text-dark);
     color: var(--white);
     transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary.small {
     padding: 0.5rem 1.25rem;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 }
 
 .btn-white {
@@ -707,64 +734,207 @@ p {
     font-size: 1rem;
 }
 
-/* Emergency Section */
-#contact.framed-section {
-    background-color: var(--light-red);
-    color: var(--dark-red);
-    text-align: center;
-    padding: 5rem 5%;
-    max-width: 1100px;
-    margin: 4rem auto;
-}
-
-#contact.framed-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(128,0,0,0.05) 0%, transparent 60%);
-    opacity: 1;
-    z-index: 1;
-}
-
-.emergency-content {
+/* ===================================================
+   COMPACT & CREATIVE EMERGENCY CARE SECTION
+   =================================================== */
+#contact.emergency-compact-wrap {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    max-width: 860px;
+    margin: 2.5rem auto;
+    padding: 0 1.25rem;
     position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
+    z-index: 5;
 }
 
-.emergency-content h2 {
-    color: var(--dark-red);
-    font-size: 3.5rem;
+#contact.emergency-compact-wrap::before {
+    display: none;
 }
 
-.emergency-content p {
-    color: var(--text-dark);
-    font-size: 1.25rem;
-    margin-bottom: 3rem;
+.emergency-compact-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fff7f7 50%, #feebeb 100%);
+    border: 2px solid var(--primary-red);
+    border-radius: 24px;
+    padding: 2.25rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(211, 47, 47, 0.12), 0 2px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
-#contact.framed-section .highlight-white {
+.emergency-compact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 55px rgba(211, 47, 47, 0.2), 0 0 0 1px var(--primary-red);
+}
+
+.emergency-glow-orb {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 170px;
+    height: 170px;
+    background: radial-gradient(circle, rgba(211, 47, 47, 0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.emergency-live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff0f0;
+    border: 1px solid rgba(211, 47, 47, 0.35);
     color: var(--primary-red);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 0.4rem 1.1rem;
+    border-radius: 50px;
+    margin-bottom: 0.85rem;
+    box-shadow: 0 2px 8px rgba(211, 47, 47, 0.1);
 }
 
-.emergency-action {
+.live-pulse-dot {
+    width: 9px;
+    height: 9px;
+    background-color: var(--primary-red);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7);
+    animation: livePulse 1.8s infinite;
+}
+
+@keyframes livePulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); }
+    70% { transform: scale(1.15); box-shadow: 0 0 0 9px rgba(211, 47, 47, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+}
+
+.emergency-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark-red);
+    margin: 0 0 0.4rem 0;
+    letter-spacing: -0.5px;
+}
+
+.emergency-subtitle {
+    font-size: 0.98rem;
+    color: #475569;
+    max-width: 560px;
+    margin: 0 auto 1.35rem auto;
+    line-height: 1.55;
+}
+
+.emergency-phone-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    background: var(--white);
+    padding: 0.65rem 1.6rem;
+    border-radius: 50px;
+    border: 1.5px solid rgba(211, 47, 47, 0.3);
+    box-shadow: 0 4px 18px rgba(211, 47, 47, 0.08);
+    margin-bottom: 1.4rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.emergency-phone-container:hover {
+    border-color: var(--primary-red);
+    transform: scale(1.02);
+    box-shadow: 0 6px 22px rgba(211, 47, 47, 0.16);
+}
+
+.emergency-phone-icon {
+    color: var(--primary-red);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    width: 24px;
+    height: 24px;
+    animation: phoneShake 3s ease infinite;
+}
+
+@keyframes phoneShake {
+    0%, 100% { transform: rotate(0deg); }
+    8%, 24% { transform: rotate(-14deg); }
+    16%, 32% { transform: rotate(14deg); }
+    40% { transform: rotate(0deg); }
+}
+
+.emergency-phone-links {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.emergency-phone-num {
+    color: var(--dark-red);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.emergency-phone-num:hover {
+    color: var(--primary-red);
+}
+
+.emergency-phone-divider {
+    color: #cbd5e1;
+    font-weight: 400;
+}
+
+.emergency-action-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
-.phone-number {
-    font-size: 2.5rem;
-    font-weight: 800;
-    display: flex;
+.btn-emergency-call {
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+    color: #ffffff;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.6rem;
+    box-shadow: 0 8px 22px rgba(211, 47, 47, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-emergency-call:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(211, 47, 47, 0.45);
+    color: #ffffff;
+}
+
+.btn-emergency-book {
+    background: var(--white);
+    color: var(--dark-red);
+    border: 2px solid var(--dark-red);
+    padding: 0.75rem 1.7rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
+}
+
+.btn-emergency-book:hover {
+    background: var(--dark-red);
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 /* Red frames for small cards */
@@ -1108,22 +1278,73 @@ p {
     font-size: 0.9rem;
 }
 
-/* Responsive */
+/* ===================================================
+   RESPONSIVE DESIGN & MOBILE TYPOGRAPHY ALIGNMENT
+   =================================================== */
 @media (max-width: 992px) {
-    .framed-section { margin: 1rem 2%; padding: 4rem 3%; }
-    .hero { flex-direction: column; text-align: center; }
-    .hero.framed-section { margin-top: 100px; }
-    .flowing-text-container { margin-top: 0; }
-    .hero-buttons { justify-content: center; }
-    .founder-card { margin: 2rem auto 0; text-align: left; }
-    h1 { font-size: 3rem; }
-    .about-grid, .lab-container { flex-direction: column; display: flex; }
-    .experience-badge { right: 20px; }
-    .dropdown-menu { min-width: 100%; flex-direction: column; gap: 2rem; }
+    .framed-section { 
+        margin: 1.5rem 3%; 
+        padding: 3.5rem 4%; 
+    }
+    .hero { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 2.5rem;
+    }
+    .hero-content {
+        text-align: center;
+        max-width: 650px;
+        margin: 0 auto;
+        padding-bottom: 1rem;
+    }
+    .hero-content h1 {
+        text-align: center;
+    }
+    .hero-content p {
+        text-align: center;
+        margin: 0 auto 1.5rem auto;
+    }
+    .hero.framed-section { 
+        margin-top: 100px; 
+    }
+    .flowing-text-container { 
+        margin-top: 0; 
+    }
+    .hero-buttons { 
+        justify-content: center; 
+    }
+    .creative-doctor-card { 
+        margin: 1rem auto 0; 
+    }
+    h1 { 
+        font-size: 2.75rem; 
+    }
+    .about-grid, .lab-container { 
+        flex-direction: column; 
+        display: flex; 
+    }
+    .experience-badge { 
+        right: 20px; 
+    }
+    .dropdown-menu { 
+        min-width: 100%; 
+        flex-direction: column; 
+        gap: 2rem; 
+    }
 }
 
 @media (max-width: 768px) {
-    .menu-toggle { display: block !important; margin-right: 15px; }
+    .navbar {
+        padding: 0.4rem 4%;
+    }
+    .logo img {
+        height: 60px !important;
+        width: auto !important;
+    }
+    .menu-toggle { 
+        display: block !important; 
+        margin-right: 10px; 
+    }
     .nav-links { 
         display: none; 
         flex-direction: column; 
@@ -1132,19 +1353,232 @@ p {
         left: 0; 
         width: 100%; 
         background-color: var(--white); 
-        padding: 1rem 0; 
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1); 
+        padding: 1.25rem 0; 
+        box-shadow: 0 15px 30px rgba(0,0,0,0.12); 
+        border-top: 1px solid #f1f5f9;
+        gap: 0.5rem;
     }
-    .nav-links.active { display: flex; }
-    .nav-links > li { width: 100%; text-align: center; padding: 0.5rem 0; }
-    .nav-links > li > a:not(.btn-primary) { display: inline-block; width: 80%; }
-    .dropdown-menu { position: static; min-width: 100%; transform: none; box-shadow: none; padding: 1rem; display: none; opacity: 1; visibility: visible; border-top: none; }
-    .dropdown.active .dropdown-menu { display: flex; flex-direction: column; gap: 1rem; }
-    .dropdown:hover .dropdown-menu { transform: none; }
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    .emergency-action { flex-direction: column; }
-    .phone-number { font-size: 1.8rem; }
+    .nav-links.active { 
+        display: flex; 
+        animation: slideDownMenu 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes slideDownMenu {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .nav-links > li { 
+        width: 100%; 
+        text-align: center; 
+        padding: 0.3rem 0; 
+    }
+    .nav-links > li > a:not(.btn-primary) { 
+        display: inline-flex; 
+        width: 82%; 
+        justify-content: center;
+        padding: 0.7rem 1rem;
+        box-sizing: border-box;
+    }
+    .nav-links > li > a.btn-primary {
+        display: inline-flex;
+        width: 82%;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+        box-sizing: border-box;
+        margin: 0.5rem auto 0;
+    }
+    .dropdown-menu { 
+        position: static; 
+        min-width: 100%; 
+        transform: none; 
+        box-shadow: none; 
+        padding: 0.75rem; 
+        display: none; 
+        opacity: 1; 
+        visibility: visible; 
+        border-top: none; 
+    }
+    .dropdown.active .dropdown-menu { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 1rem; 
+    }
+    .dropdown:hover .dropdown-menu { 
+        transform: none; 
+    }
+
+    /* Fixed Header Spacing on Mobile */
+    .flowing-text-container {
+        margin-top: 76px !important;
+    }
+    .hero.framed-section {
+        margin-top: 1rem;
+        padding: 2.25rem 1.25rem 2rem;
+    }
+
+    /* Typography Alignment on Mobile */
+    h1 { 
+        font-size: 2.15rem; 
+        line-height: 1.25;
+        text-align: center;
+        word-break: break-word;
+    }
+    h2 { 
+        font-size: 1.7rem; 
+        line-height: 1.3;
+        text-align: center;
+        word-break: break-word;
+    }
+    h3 {
+        font-size: 1.22rem;
+        line-height: 1.35;
+        text-align: center;
+    }
+    .section-title {
+        text-align: center;
+        padding: 0 0.5rem;
+        margin-bottom: 2.25rem;
+    }
+    .section-title p {
+        font-size: 0.95rem;
+        text-align: center;
+        line-height: 1.55;
+    }
+
+    /* Creative Doctor Hero Card on Mobile */
+    .creative-doctor-card {
+        max-width: 290px;
+        padding: 1.75rem 1.25rem;
+    }
+    .creative-doctor-img-wrap {
+        width: 140px;
+        height: 140px;
+    }
+    .creative-doctor-name {
+        font-size: 1.2rem;
+    }
+
+    /* Compact Emergency Section on Mobile */
+    #contact.emergency-compact-wrap {
+        padding: 0 0.75rem;
+        margin: 2rem auto;
+    }
+    .emergency-compact-card {
+        padding: 1.75rem 1.15rem;
+        border-radius: 20px;
+    }
+    .emergency-title {
+        font-size: 1.55rem;
+        text-align: center;
+    }
+    .emergency-subtitle {
+        font-size: 0.92rem;
+        text-align: center;
+        line-height: 1.5;
+        margin-bottom: 1.15rem;
+    }
+    .emergency-phone-container {
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 0.65rem 1rem;
+        border-radius: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .emergency-phone-links {
+        font-size: 1.15rem;
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+    }
+    .emergency-phone-divider {
+        display: none;
+    }
+    .emergency-action-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+    .btn-emergency-call,
+    .btn-emergency-book {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.95rem;
+        padding: 0.75rem 1.25rem;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    /* Carousel on Mobile */
+    .carousel-container {
+        padding: 0 0.5rem;
+    }
+    .carousel-track {
+        gap: 1rem;
+        padding: 0.5rem 0 1.25rem 0;
+    }
+    .doctor-carousel-card {
+        min-width: 255px;
+        max-width: 275px;
+        border-radius: 16px;
+    }
+    .doctor-carousel-card img {
+        height: 250px;
+    }
+    .doctor-carousel-info h3 {
+        font-size: 1.15rem;
+        text-align: center;
+    }
+    .doc-degrees, .doc-specialty {
+        font-size: 0.85rem;
+        text-align: center;
+        line-height: 1.4;
+    }
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    .left-btn { left: 0px; }
+    .right-btn { right: 0px; }
+
+    /* Footer Mobile Alignment */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        align-items: center;
+    }
+    .footer-col {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-desc {
+        text-align: center;
+        max-width: 440px;
+    }
+    .contact-info li {
+        justify-content: center;
+        text-align: center;
+        font-size: 0.92rem;
+    }
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.95rem; }
+    h2 { font-size: 1.5rem; }
+    .btn-primary, .btn-secondary {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.92rem;
+    }
+    .flowing-text span {
+        font-size: 0.82rem;
+        padding: 0 1rem;
+    }
 }
 
 /* ===================================================
