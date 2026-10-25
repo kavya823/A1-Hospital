@@ -2,24 +2,18 @@
     <script>
         const params = new URLSearchParams(window.location.search);
         const hash = window.location.hash ? window.location.hash.replace('#', '').replace('dept-', '') : '';
-        const id = params.get('id') || hash || 'cardiology';
+        const id = params.get('id') || hash || 'pediatrics';
         const targetMap = {
-            'cardiology': 'department-cardiology.html',
-            'neurology': 'department-neurology.html',
             'pediatrics': 'department-pediatrics.html',
             'orthopedics': 'department-orthopedics.html',
+            'generalmedicine': 'department-generalmedicine.html',
             'generalsurgery': 'department-generalsurgery.html',
-            'radiology': 'department-radiology.html',
-            'obg': 'department-obg.html',
-            'pulmonology': 'department-pulmonology.html',
-            'dermatology': 'department-dermatology.html',
-            'urology': 'department-urology.html',
-            'criticalcare': 'department-criticalcare.html',
-            'oncology': 'department-oncology.html',
             'nephrology': 'department-nephrology.html',
-            'ophthalmology': 'department-ophthalmology.html'
+            'urology': 'department-urology.html',
+            'ophthalmology': 'department-ophthalmology.html',
+            'oncology': 'department-oncology.html'
         };
-        const dest = targetMap[id] || 'department-cardiology.html';
+        const dest = targetMap[id] || 'department-pediatrics.html';
         window.location.replace(dest);
     </script>
     </head><body><p style="text-align:center; padding:3rem; font-family:sans-serif;">Redirecting to department details...</p></body></html>

@@ -323,7 +323,7 @@ function handleAppointmentSubmit(event) {
     const notes = form.notes.value.trim();
 
     // Prepare WhatsApp Confirmation Link
-    const waPhone = '919193774444';
+    const waPhone = '916399144444';
     let waMessage = `*A1 Hospital Appointment Request*\n` +
                     `*Patient Name:* ${name}\n` +
                     `*Contact:* ${phone}\n` +
