@@ -15,7 +15,7 @@ def process():
     departments_match = re.search(r'(<section id="departments".*?</section>\s*)\n\s*<section id="lab"', html, re.DOTALL)
     doctors_match = re.search(r'(<section id="doctors".*?</section>\s*)\n\s*<section id="contact"', html, re.DOTALL)
 
-    spacer = '\n    <div style="margin-top: 140px;"></div>\n'
+    spacer = '\n    <div style="margin-top: 1.5rem;"></div>\n'
 
     if nav_match and contact_footer_match and services_match:
         services_html = nav_match.group(1) + spacer + services_match.group(1) + contact_footer_match.group(1)
