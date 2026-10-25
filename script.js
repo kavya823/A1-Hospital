@@ -123,6 +123,10 @@ function initHospitalApp() {
             }
         });
     }
+
+    // Initialize Home Page 3D Flip & Parallax and Explanation Navigation
+    setupHomePageInteractions();
+    setupExplanationNavigation();
 }
 
 // Ensure execution whether DOMContentLoaded has already fired or is pending
@@ -130,6 +134,100 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initHospitalApp);
 } else {
     initHospitalApp();
+}
+
+// Interactive 3D Cursor Parallax & Flip Animation (Home Page Only)
+function setupHomePageInteractions() {
+    const isHomePage = document.body.getAttribute('data-page') === 'home' || 
+                       window.location.pathname.endsWith('index.html') || 
+                       window.location.pathname === '/' || 
+                       window.location.pathname === '';
+
+    if (!isHomePage) return;
+
+    const interactiveCards = document.querySelectorAll('.service-card, .dept-card-photo, .doctor-card, .emergency-compact-card');
+
+    interactiveCards.forEach(card => {
+        // Smooth cursor parallax tilt
+        card.addEventListener('mousemove', (e) => {
+            if (card.classList.contains('is-flipping')) return;
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform = `perspective(1000px) rotateY(${(x * 14).toFixed(2)}deg) rotateX(${(-y * 14).toFixed(2)}deg) translateY(-8px) scale3d(1.025, 1.025, 1.025)`;
+        });
+
+        // Smooth slip back on mouse leave
+        card.addEventListener('mouseleave', () => {
+            if (card.classList.contains('is-flipping')) return;
+            card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0) scale3d(1, 1, 1)';
+        });
+
+        // Flip animation on click (home page only)
+        card.addEventListener('click', (e) => {
+            // Ignore if user clicked appointment booking button or tel/whatsapp links
+            if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.card-action-link')) return;
+
+            card.classList.add('is-flipping');
+            setTimeout(() => {
+                card.classList.remove('is-flipping');
+                card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0) scale3d(1, 1, 1)';
+            }, 850);
+        });
+    });
+
+    // Subtle parallax response on section frames
+    const frames = document.querySelectorAll('.framed-section');
+    frames.forEach(frame => {
+        frame.addEventListener('mousemove', (e) => {
+            const rect = frame.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            frame.style.transform = `perspective(1200px) rotateY(${(x * 2).toFixed(2)}deg) rotateX(${(-y * 2).toFixed(2)}deg)`;
+        });
+        frame.addEventListener('mouseleave', () => {
+            frame.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg)';
+        });
+    });
+}
+
+// Navigation to Explanations on Services & Departments Pages
+function setupExplanationNavigation() {
+    // Intercept clicks on cards or links that navigate to explanations
+    document.querySelectorAll('a[href^="#service-"], a[href^="#dept-"], .nav-to-explanation').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href') || link.getAttribute('data-target');
+            if (href && (href.startsWith('#service-') || href.startsWith('#dept-'))) {
+                const targetId = href.substring(1);
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    e.preventDefault();
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetEl.classList.add('highlight-card');
+                    setTimeout(() => {
+                        targetEl.classList.remove('highlight-card');
+                    }, 2600);
+                }
+            }
+        });
+    });
+
+    // Check if page loaded directly with an explanation hash
+    if (window.location.hash) {
+        const hash = window.location.hash;
+        if (hash.startsWith('#service-') || hash.startsWith('#dept-')) {
+            setTimeout(() => {
+                const targetEl = document.querySelector(hash);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetEl.classList.add('highlight-card');
+                    setTimeout(() => {
+                        targetEl.classList.remove('highlight-card');
+                    }, 2600);
+                }
+            }, 350);
+        }
+    }
 }
 
 function scrollCarousel(carouselId, direction) {

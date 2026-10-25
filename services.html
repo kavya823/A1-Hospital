@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=15">
 </head>
-<body>
+<body data-page="services">
 
     <!-- Smera-Style Top Announcement Bar -->
     <div class="top-announcement-bar">
@@ -183,43 +183,319 @@
         <div class="carousel-container animate-up" id="all-services-view">
             <button class="carousel-btn left-btn" onclick="scrollCarousel('services-carousel', -1)" aria-label="Scroll Left">◀</button>
             <div class="carousel-track" id="services-carousel">
-                <div class="dept-card-photo">
-                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Beds Available">
-                    <div class="dept-info"><h3>100+ Beds Available</h3></div>
-                </div>
-                <div class="dept-card-photo">
-                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="24/7 Care">
-                    <div class="dept-info"><h3>24/7 Emergency Care</h3></div>
-                </div>
-                <div class="dept-card-photo">
-                    <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modern Equipment">
-                    <div class="dept-info"><h3>Modern Equipment</h3></div>
-                </div>
-                <div class="dept-card-photo">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Qualified Doctors">
-                    <div class="dept-info"><h3>Experienced Doctors</h3></div>
-                </div>
-                <div class="dept-card-photo">
-                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pharmacy">
-                    <div class="dept-info"><h3>24/7 In-House Pharmacy</h3></div>
-                </div>
-                <div class="dept-card-photo">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ambulance">
-                    <div class="dept-info"><h3>24/7 Ambulance Service</h3></div>
-                </div>
-                <div class="dept-card-photo">
-                    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Blood Bank">
-                    <div class="dept-info"><h3>Emergency Blood Bank</h3></div>
-                </div>
-                <div class="dept-card-photo">
-                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ICU">
-                    <div class="dept-info"><h3>Intensive Care Unit (ICU)</h3></div>
-                </div>
+                <a href="#service-beds" class="nav-to-explanation" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="dept-card-photo">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Beds Available">
+                        <div class="dept-info"><h3>100+ Beds Available</h3></div>
+                    </div>
+                </a>
+                <a href="#service-emergency" class="nav-to-explanation" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="dept-card-photo">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="24/7 Care">
+                        <div class="dept-info"><h3>24/7 Emergency Care</h3></div>
+                    </div>
+                </a>
+                <a href="#service-equipment" class="nav-to-explanation" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="dept-card-photo">
+                        <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modern Equipment">
+                        <div class="dept-info"><h3>Modern Equipment</h3></div>
+                    </div>
+                </a>
+                <a href="#service-doctors" class="nav-to-explanation" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="dept-card-photo">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Qualified Doctors">
+                        <div class="dept-info"><h3>Experienced Doctors</h3></div>
+                    </div>
+                </a>
+                <a href="#service-pharmacy" class="nav-to-explanation" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="dept-card-photo">
+                        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pharmacy">
+                        <div class="dept-info"><h3>24/7 In-House Pharmacy</h3></div>
+                    </div>
+                </a>
+                <a href="#service-ambulance" class="nav-to-explanation" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="dept-card-photo">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ambulance">
+                        <div class="dept-info"><h3>24/7 Ambulance Service</h3></div>
+                    </div>
+                </a>
+                <a href="#service-bloodbank" class="nav-to-explanation" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="dept-card-photo">
+                        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Blood Bank">
+                        <div class="dept-info"><h3>Emergency Blood Bank</h3></div>
+                    </div>
+                </a>
+                <a href="#service-icu" class="nav-to-explanation" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="dept-card-photo">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ICU">
+                        <div class="dept-info"><h3>Intensive Care Unit (ICU)</h3></div>
+                    </div>
+                </a>
             </div>
             <button class="carousel-btn right-btn" onclick="scrollCarousel('services-carousel', 1)" aria-label="Scroll Right">▶</button>
         </div>
 
         
+    
+        <!-- DETAILED SERVICES EXPLANATIONS SECTION -->
+        <div class="explanation-section" id="services-explanations">
+            <div class="explanation-section-title">
+                <div class="section-eyebrow">
+                    <span class="eyebrow-dot"></span> IN-DEPTH FACILITY DETAILS
+                </div>
+                <h2>Explore Our Medical <span class="serif-italic">Facilities &amp; Standards</span></h2>
+                <p>Every facility at A1 Hospital is designed around patient safety, sterile protocols, and 24/7 clinical readiness.</p>
+            </div>
+
+            <div class="explanation-grid">
+                <!-- 1. 100+ Beds -->
+                <div class="explanation-card" id="service-beds">
+                    <div class="explanation-card-header">
+                        <div class="card-icon-badge">
+                            <i data-lucide="bed-double"></i>
+                        </div>
+                        <div>
+                            <h3>100+ Inpatient Beds &amp; Suites</h3>
+                            <span class="explanation-tag">Inpatient Hospitality</span>
+                        </div>
+                    </div>
+                    <p class="explanation-desc">
+                        Our inpatient wards feature over 100 multi-tier beds including luxury deluxe private suites, air-conditioned semi-private rooms, and sterile recovery wards. Every room is outfitted with centralized medical gas pipelines, motorized ergonomic beds, patient monitoring interfaces, and sanitized en-suite washrooms for optimal healing.
+                    </p>
+                    <div class="explanation-features-title">
+                        <i data-lucide="check-circle" style="width:14px; color:var(--primary-accent);"></i> Key Highlights &amp; Comforts
+                    </div>
+                    <div class="explanation-chips">
+                        <span class="explanation-chip"><i data-lucide="shield"></i> Motorized Ergonomic Beds</span>
+                        <span class="explanation-chip"><i data-lucide="wind"></i> Centralized O2 Pipeline</span>
+                        <span class="explanation-chip"><i data-lucide="activity"></i> 24/7 Vitals Monitoring</span>
+                        <span class="explanation-chip"><i data-lucide="bell"></i> Immediate Nurse Call Bell</span>
+                    </div>
+                    <div class="explanation-card-footer">
+                        <a href="#appointment" class="btn-book-dept">
+                            <span>Book Inpatient Bed</span> <i data-lucide="arrow-right"></i>
+                        </a>
+                        <a href="#services" class="back-to-top-link">Back to Top ↑</a>
+                    </div>
+                </div>
+
+                <!-- 2. 24/7 Emergency Care -->
+                <div class="explanation-card" id="service-emergency">
+                    <div class="explanation-card-header">
+                        <div class="card-icon-badge" style="background:#fee2e2; color:#b91c1c;">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <div>
+                            <h3>24/7 Critical Emergency &amp; Trauma</h3>
+                            <span class="explanation-tag" style="background:#fee2e2; color:#b91c1c;">Emergency Protocol</span>
+                        </div>
+                    </div>
+                    <p class="explanation-desc">
+                        Staffed 24 hours a day, 365 days a year by experienced emergency physicians, trauma surgeons, and anaesthetists. Our emergency bay is equipped with zero-delay triage protocols, crash carts, cardiac defibrillators, dedicated resuscitation suites, and immediate access to modular operating theatres.
+                    </p>
+                    <div class="explanation-features-title">
+                        <i data-lucide="check-circle" style="width:14px; color:var(--primary-accent);"></i> Emergency Capabilities
+                    </div>
+                    <div class="explanation-chips">
+                        <span class="explanation-chip"><i data-lucide="zap"></i> Zero-Wait Triage</span>
+                        <span class="explanation-chip"><i data-lucide="heart-pulse"></i> ACLS Resuscitation</span>
+                        <span class="explanation-chip"><i data-lucide="user-check"></i> On-Duty Trauma Surgeons</span>
+                        <span class="explanation-chip"><i data-lucide="cross"></i> Pediatric Emergency Care</span>
+                    </div>
+                    <div class="explanation-card-footer">
+                        <a href="tel:08942228234" class="btn-emergency-call" style="padding:0.6rem 1.3rem; font-size:0.88rem;">
+                            <i data-lucide="phone"></i> <span>Call 08942-228234</span>
+                        </a>
+                        <a href="#services" class="back-to-top-link">Back to Top ↑</a>
+                    </div>
+                </div>
+
+                <!-- 3. Modern Diagnostic Equipment -->
+                <div class="explanation-card" id="service-equipment">
+                    <div class="explanation-card-header">
+                        <div class="card-icon-badge">
+                            <i data-lucide="microscope"></i>
+                        </div>
+                        <div>
+                            <h3>Modern Diagnostic &amp; Surgical Tech</h3>
+                            <span class="explanation-tag">Precision Technology</span>
+                        </div>
+                    </div>
+                    <p class="explanation-desc">
+                        Accurate diagnosis is the cornerstone of effective healthcare. A1 Hospital houses advanced multi-slice digital CT scanners, 4D ultrasound with color Doppler, digital high-frequency radiography, C-arm surgical fluoroscopy, and laminar-flow modular operating theatres to minimize infection risks.
+                    </p>
+                    <div class="explanation-features-title">
+                        <i data-lucide="check-circle" style="width:14px; color:var(--primary-accent);"></i> Medical Equipment Suite
+                    </div>
+                    <div class="explanation-chips">
+                        <span class="explanation-chip"><i data-lucide="scan"></i> Multi-Slice Digital CT</span>
+                        <span class="explanation-chip"><i data-lucide="eye"></i> 4D Color Doppler Ultrasound</span>
+                        <span class="explanation-chip"><i data-lucide="layers"></i> High-Definition Laparoscopy</span>
+                        <span class="explanation-chip"><i data-lucide="shield-check"></i> Laminar Air-Flow OTs</span>
+                    </div>
+                    <div class="explanation-card-footer">
+                        <a href="#appointment" class="btn-book-dept">
+                            <span>Schedule Scan / Test</span> <i data-lucide="arrow-right"></i>
+                        </a>
+                        <a href="#services" class="back-to-top-link">Back to Top ↑</a>
+                    </div>
+                </div>
+
+                <!-- 4. Experienced Doctors -->
+                <div class="explanation-card" id="service-doctors">
+                    <div class="explanation-card-header">
+                        <div class="card-icon-badge">
+                            <i data-lucide="stethoscope"></i>
+                        </div>
+                        <div>
+                            <h3>Experienced Specialist Doctors</h3>
+                            <span class="explanation-tag">Clinical Excellence</span>
+                        </div>
+                    </div>
+                    <p class="explanation-desc">
+                        Our medical council brings together over 15+ years of distinguished clinical practice. Led by Founder Dr. Mula Venkatarao (M.D. Paed Niloufer) and Chief Obstetrician Dr. G. Prameela (M.S. OBG, FART), our clinicians collaborate across multidisciplinary boards to deliver evidence-based, compassionate care.
+                    </p>
+                    <div class="explanation-features-title">
+                        <i data-lucide="check-circle" style="width:14px; color:var(--primary-accent);"></i> Clinical Strengths
+                    </div>
+                    <div class="explanation-chips">
+                        <span class="explanation-chip"><i data-lucide="award"></i> 15+ Years Clinical Standing</span>
+                        <span class="explanation-chip"><i data-lucide="users"></i> Multidisciplinary Review</span>
+                        <span class="explanation-chip"><i data-lucide="heart"></i> Evidence-Based Medicine</span>
+                        <span class="explanation-chip"><i data-lucide="smile"></i> High Patient Satisfaction</span>
+                    </div>
+                    <div class="explanation-card-footer">
+                        <a href="doctors.html" class="btn-book-dept">
+                            <span>Meet Our Doctors</span> <i data-lucide="arrow-right"></i>
+                        </a>
+                        <a href="#services" class="back-to-top-link">Back to Top ↑</a>
+                    </div>
+                </div>
+
+                <!-- 5. 24/7 Pharmacy -->
+                <div class="explanation-card" id="service-pharmacy">
+                    <div class="explanation-card-header">
+                        <div class="card-icon-badge">
+                            <i data-lucide="pill"></i>
+                        </div>
+                        <div>
+                            <h3>24/7 In-House Certified Pharmacy</h3>
+                            <span class="explanation-tag">Pharmacy Services</span>
+                        </div>
+                    </div>
+                    <p class="explanation-desc">
+                        An integrated in-hospital pharmacy stocked with genuine, batch-certified pharmaceuticals, emergency critical-care injectables, cardiac medications, surgical supplies, and pediatric dosages. Controlled cold storage ensures the efficacy of vaccines and sensitive biopharmaceuticals.
+                    </p>
+                    <div class="explanation-features-title">
+                        <i data-lucide="check-circle" style="width:14px; color:var(--primary-accent);"></i> Pharmacy Standards
+                    </div>
+                    <div class="explanation-chips">
+                        <span class="explanation-chip"><i data-lucide="thermometer"></i> Temperature-Controlled Storage</span>
+                        <span class="explanation-chip"><i data-lucide="shield-alert"></i> Emergency Life-Saving Drugs</span>
+                        <span class="explanation-chip"><i data-lucide="clock"></i> Open 24 Hours / 365 Days</span>
+                    </div>
+                    <div class="explanation-card-footer">
+                        <a href="tel:08942228234" class="btn-book-dept">
+                            <span>Inquire with Pharmacy</span> <i data-lucide="phone"></i>
+                        </a>
+                        <a href="#services" class="back-to-top-link">Back to Top ↑</a>
+                    </div>
+                </div>
+
+                <!-- 6. Ambulance Service -->
+                <div class="explanation-card" id="service-ambulance">
+                    <div class="explanation-card-header">
+                        <div class="card-icon-badge">
+                            <i data-lucide="truck"></i>
+                        </div>
+                        <div>
+                            <h3>24/7 Mobile ICU Ambulance Fleet</h3>
+                            <span class="explanation-tag">Emergency Transport</span>
+                        </div>
+                    </div>
+                    <p class="explanation-desc">
+                        Equipped for rapid response across Srikakulam and surrounding districts. Our fleet includes Advanced Life Support (ALS) and Basic Life Support (BLS) ambulances outfitted with mobile mechanical ventilators, multi-channel monitors, defibrillators, suction units, and trained emergency technicians.
+                    </p>
+                    <div class="explanation-features-title">
+                        <i data-lucide="check-circle" style="width:14px; color:var(--primary-accent);"></i> Mobile Fleet Equipment
+                    </div>
+                    <div class="explanation-chips">
+                        <span class="explanation-chip"><i data-lucide="navigation"></i> Real-Time GPS Tracking</span>
+                        <span class="explanation-chip"><i data-lucide="wind"></i> Transport Ventilator</span>
+                        <span class="explanation-chip"><i data-lucide="activity"></i> Cardiac Defibrillator</span>
+                        <span class="explanation-chip"><i data-lucide="shield-plus"></i> Rapid Rural Dispatch</span>
+                    </div>
+                    <div class="explanation-card-footer">
+                        <a href="tel:08942228234" class="btn-emergency-call" style="padding:0.6rem 1.3rem; font-size:0.88rem;">
+                            <i data-lucide="phone"></i> <span>Request Ambulance</span>
+                        </a>
+                        <a href="#services" class="back-to-top-link">Back to Top ↑</a>
+                    </div>
+                </div>
+
+                <!-- 7. Blood Bank -->
+                <div class="explanation-card" id="service-bloodbank">
+                    <div class="explanation-card-header">
+                        <div class="card-icon-badge">
+                            <i data-lucide="droplet"></i>
+                        </div>
+                        <div>
+                            <h3>Emergency Blood Bank &amp; Components</h3>
+                            <span class="explanation-tag">Transfusion Medicine</span>
+                        </div>
+                    </div>
+                    <p class="explanation-desc">
+                        Our licensed blood bank and component separation center adheres to stringent screening protocols to provide safe whole blood, Packed Red Blood Cells (PRBC), Fresh Frozen Plasma (FFP), and Platelet Concentrates for emergency trauma and major surgical cases.
+                    </p>
+                    <div class="explanation-features-title">
+                        <i data-lucide="check-circle" style="width:14px; color:var(--primary-accent);"></i> Blood Bank Features
+                    </div>
+                    <div class="explanation-chips">
+                        <span class="explanation-chip"><i data-lucide="check-check"></i> Automated Cross-Matching</span>
+                        <span class="explanation-chip"><i data-lucide="shield"></i> 100% Pathogen Screened</span>
+                        <span class="explanation-chip"><i data-lucide="snowflake"></i> Cryo-Preserved Plasma</span>
+                    </div>
+                    <div class="explanation-card-footer">
+                        <a href="tel:08942228234" class="btn-book-dept">
+                            <span>Contact Blood Bank</span> <i data-lucide="phone"></i>
+                        </a>
+                        <a href="#services" class="back-to-top-link">Back to Top ↑</a>
+                    </div>
+                </div>
+
+                <!-- 8. Intensive Care Unit -->
+                <div class="explanation-card" id="service-icu">
+                    <div class="explanation-card-header">
+                        <div class="card-icon-badge">
+                            <i data-lucide="heart-pulse"></i>
+                        </div>
+                        <div>
+                            <h3>Intensive Care Unit (ICU &amp; NICU)</h3>
+                            <span class="explanation-tag">Critical Care</span>
+                        </div>
+                    </div>
+                    <p class="explanation-desc">
+                        Comprehensive intensive care services including Medical ICU, Surgical ICU, and a specialized Neonatal Intensive Care Unit (NICU). With 1:1 dedicated patient-to-nurse monitoring, invasive hemodynamic pressure lines, high-frequency mechanical ventilators, and syringe infusion pumps.
+                    </p>
+                    <div class="explanation-features-title">
+                        <i data-lucide="check-circle" style="width:14px; color:var(--primary-accent);"></i> ICU &amp; NICU Infrastructure
+                    </div>
+                    <div class="explanation-chips">
+                        <span class="explanation-chip"><i data-lucide="user-check"></i> 24/7 Intensivist On-Duty</span>
+                        <span class="explanation-chip"><i data-lucide="wind"></i> Advanced Mechanical Ventilators</span>
+                        <span class="explanation-chip"><i data-lucide="sun"></i> Neonatal Radiant Warmers</span>
+                        <span class="explanation-chip"><i data-lucide="lock"></i> HEPA Filter Isolation Bays</span>
+                    </div>
+                    <div class="explanation-card-footer">
+                        <a href="#appointment" class="btn-book-dept">
+                            <span>ICU Status Inquiry</span> <i data-lucide="arrow-right"></i>
+                        </a>
+                        <a href="#services" class="back-to-top-link">Back to Top ↑</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section><section id="contact" class="emergency-compact-wrap framed-section animate-up">
         <div class="emergency-compact-card">
             <div class="emergency-glow-orb"></div>
