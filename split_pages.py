@@ -925,4 +925,5 @@ def process():
         print(f"Failed to create doctors.html")
 
 if __name__ == '__main__':
-    process()
+    from generate_multipage import build_all_pages
+    build_all_pages()

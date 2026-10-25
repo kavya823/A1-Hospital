@@ -124,8 +124,9 @@ function initHospitalApp() {
         });
     }
 
-    // Initialize Home Page 3D Flip & Parallax and Explanation Navigation
+    // Initialize Home Page 3D Flip & Parallax and Detail Page Interactions
     setupHomePageInteractions();
+    setupDetailPageInteractions();
     setupExplanationNavigation();
 }
 
@@ -187,6 +188,22 @@ function setupHomePageInteractions() {
         });
         frame.addEventListener('mouseleave', () => {
             frame.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg)';
+        });
+    });
+}
+
+// Interactive 3D Cursor Parallax for Detail Pages & Showcase Cards
+function setupDetailPageInteractions() {
+    const tiltElements = document.querySelectorAll('.detail-arch-frame, .detail-cap-card, .service-showcase-card, .dept-showcase-card');
+    tiltElements.forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            el.style.transform = `perspective(1000px) rotateY(${(x * 8).toFixed(2)}deg) rotateX(${(-y * 8).toFixed(2)}deg) translateY(-6px)`;
+        });
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0)';
         });
     });
 }

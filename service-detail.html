@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Loading Service Details...</title>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const hash = window.location.hash ? window.location.hash.replace('#', '').replace('service-', '').replace('dept-', '') : '';
+        const id = params.get('id') || hash || 'beds';
+        const targetMap = {
+            'beds': 'service-beds.html',
+            'emergency': 'service-emergency.html',
+            'equipment': 'service-equipment.html',
+            'doctors': 'service-doctors.html',
+            'pharmacy': 'service-pharmacy.html',
+            'ambulance': 'service-ambulance.html',
+            'bloodbank': 'service-bloodbank.html',
+            'icu': 'service-icu.html'
+        };
+        const dest = targetMap[id] || 'service-beds.html';
+        window.location.replace(dest);
+    </script>
+    </head><body><p style="text-align:center; padding:3rem; font-family:sans-serif;">Redirecting to service details...</p></body></html>
