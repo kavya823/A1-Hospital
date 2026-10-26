@@ -20,7 +20,8 @@ DOCTORS_DATA = [
         "title": "Children Specialist (Founder)",
         "dept": "Pediatrics & Child Health",
         "desc": "Founder of A1 Hospital with over 15+ years of clinical excellence in pediatric care, child health, and newborn wellness in Srikakulam.",
-        "image": "dr_rao.jpeg"
+        "image": "dr_rao.jpeg",
+        "icon": "baby"
     },
     {
         "id": "dr-kannepalli-srinivas",
@@ -29,7 +30,8 @@ DOCTORS_DATA = [
         "title": "Pediatric Surgeon",
         "dept": "Pediatrics & Child Health",
         "desc": "Specialist in pediatric surgical interventions, neonatal surgeries, and congenital anomaly corrections in children.",
-        "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+        "image": None,
+        "icon": "baby"
     },
     {
         "id": "dr-sattaru-kishore-babu",
@@ -38,7 +40,8 @@ DOCTORS_DATA = [
         "title": "Orthopaedic Surgeon",
         "dept": "Orthopedics & Joint Surgery",
         "desc": "Senior orthopedic surgeon specializing in bone fracture management, joint replacement, and complex musculoskeletal trauma.",
-        "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+        "image": None,
+        "icon": "bone"
     },
     {
         "id": "dr-bammidi-sai-theja",
@@ -47,7 +50,8 @@ DOCTORS_DATA = [
         "title": "Orthopaedic Surgeon",
         "dept": "Orthopedics & Joint Surgery",
         "desc": "Fellow in Joint Replacement and Arthroscopic Sports Surgery, treating joint arthritis, knee, hip, and ligament injuries.",
-        "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+        "image": None,
+        "icon": "activity"
     },
     {
         "id": "dr-hanumanthu-anilkumar",
@@ -56,7 +60,8 @@ DOCTORS_DATA = [
         "title": "General Physician",
         "dept": "General Medicine",
         "desc": "Consultant physician managing adult fevers, diabetes, hypertension, respiratory infections, and general medical illnesses.",
-        "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+        "image": None,
+        "icon": "stethoscope"
     },
     {
         "id": "dr-chittipotula-balaji",
@@ -65,7 +70,8 @@ DOCTORS_DATA = [
         "title": "General Surgeon",
         "dept": "General Surgery",
         "desc": "Expert general surgeon performing hernia repairs, appendectomy, piles/fissure procedures, trauma wound care, and abdominal surgeries.",
-        "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+        "image": None,
+        "icon": "scissors"
     },
     {
         "id": "dr-korla-vidya-sagar",
@@ -74,7 +80,8 @@ DOCTORS_DATA = [
         "title": "Nephrologist",
         "dept": "Nephrology (Kidney Care)",
         "desc": "Kidney specialist managing chronic kidney disease (CKD), acute renal failure, dialysis care, and diabetic nephropathy.",
-        "image": "https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+        "image": None,
+        "icon": "filter"
     },
     {
         "id": "dr-budumuru-ramana",
@@ -83,7 +90,8 @@ DOCTORS_DATA = [
         "title": "Urologist",
         "dept": "Urology",
         "desc": "Specialist in urinary tract disorders, kidney stones, prostate conditions, and minimally invasive endourological procedures.",
-        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+        "image": None,
+        "icon": "shield-plus"
     },
     {
         "id": "dr-palepu-srikanthi",
@@ -92,7 +100,8 @@ DOCTORS_DATA = [
         "title": "Ophthalmologist",
         "dept": "Ophthalmology (Eye Care)",
         "desc": "Eye specialist providing comprehensive vision evaluations, cataract assessments, glaucoma checks, and medical eye treatments.",
-        "image": "https://images.unsplash.com/photo-1594824813591-9a74b01d0a51?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+        "image": None,
+        "icon": "eye"
     },
     {
         "id": "dr-navya-madabatula",
@@ -101,7 +110,8 @@ DOCTORS_DATA = [
         "title": "Senior Consultant Radiation & Clinical Oncologist",
         "dept": "Oncology (Cancer Care)",
         "desc": "Consultant oncologist guiding cancer evaluations, clinical oncology reviews, early cancer screenings, and radiation planning.",
-        "image": "https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+        "image": None,
+        "icon": "crosshair"
     }
 ]
 
@@ -113,7 +123,7 @@ DEPARTMENTS_DATA = {
         "title": "Pediatrics & Child Health",
         "tag": "Children & Newborn Care",
         "icon": "baby",
-        "image": "dr_rao.jpeg",
+        "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
         "meaning": "Pediatrics is the branch of medicine focused on the physical, emotional, and social health of infants, children, and young adolescents. It covers preventive vaccinations, childhood fever management, growth assessments, and specialized pediatric surgery.",
         "highlights": [
             "15+ Years Pediatric Excellence led by Founder Dr. Mula Venkatarao",
@@ -132,7 +142,7 @@ DEPARTMENTS_DATA = {
                 "name": "Dr. Kannepalli Srinivas",
                 "qual": "M.S., M.CH. PAEDIATRIC SURGERY",
                 "title": "Pediatric Surgeon",
-                "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                "image": None
             }
         ]
     },
@@ -155,13 +165,13 @@ DEPARTMENTS_DATA = {
                 "name": "Dr. Sattaru. Kishore Babu",
                 "qual": "M.S., (ORTHO)",
                 "title": "Orthopaedic Surgeon",
-                "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                "image": None
             },
             {
                 "name": "Dr. Bammidi Sai Theja",
                 "qual": "MS Ortho, FIJR, FIASM",
                 "title": "Orthopaedic Surgeon",
-                "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                "image": None
             }
         ]
     },
@@ -184,7 +194,7 @@ DEPARTMENTS_DATA = {
                 "name": "Dr. Hanumanthu Anilkumar",
                 "qual": "M.D (General Medicine)",
                 "title": "General Physician",
-                "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                "image": None
             }
         ]
     },
@@ -207,7 +217,7 @@ DEPARTMENTS_DATA = {
                 "name": "Dr. Chittipotula Balaji",
                 "qual": "M.B.B.S., MS (GENERAL SURGERY)",
                 "title": "General Surgeon",
-                "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                "image": None
             }
         ]
     },
@@ -230,7 +240,7 @@ DEPARTMENTS_DATA = {
                 "name": "Dr. Korla Vidya Sagar",
                 "qual": "M.D., DM, NEPHROLOGY",
                 "title": "Nephrologist",
-                "image": "https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                "image": None
             }
         ]
     },
@@ -253,7 +263,7 @@ DEPARTMENTS_DATA = {
                 "name": "Dr. Budumuru Ramana",
                 "qual": "M.S., MCH",
                 "title": "Urologist",
-                "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                "image": None
             }
         ]
     },
@@ -276,7 +286,7 @@ DEPARTMENTS_DATA = {
                 "name": "Dr. Palepu Srikanthi",
                 "qual": "M.S., OPHTHALMOLOGY",
                 "title": "Ophthalmologist",
-                "image": "https://images.unsplash.com/photo-1594824813591-9a74b01d0a51?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                "image": None
             }
         ]
     },
@@ -299,7 +309,7 @@ DEPARTMENTS_DATA = {
                 "name": "Dr. Navya Madabatula",
                 "qual": "M.B.B.S, M.D., M.D.",
                 "title": "Senior Consultant Radiation & Clinical Oncologist",
-                "image": "https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                "image": None
             }
         ]
     }
@@ -325,7 +335,7 @@ SERVICES_DATA = {
             "name": "Dr. Mula Venkatarao & Dr. Hanumanthu Anilkumar",
             "qual": "Founder & Consultant Physician",
             "title": "Inpatient Medical Care Supervision",
-            "image": "dr_rao.jpeg"
+            "image": None
         }
     },
     "emergency": {
@@ -346,7 +356,7 @@ SERVICES_DATA = {
             "name": "Dr. Hanumanthu Anilkumar & Emergency Medical Team",
             "qual": "M.D (General Medicine)",
             "title": "Emergency Casualty & Critical Response",
-            "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            "image": None
         }
     },
     "pharmacy": {
@@ -367,7 +377,7 @@ SERVICES_DATA = {
             "name": "A1 Hospital Pharmacy Team",
             "qual": "Registered Clinical Pharmacists",
             "title": "24/7 In-House Medicine Dispensation",
-            "image": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            "image": None
         }
     },
     "ambulance": {
@@ -388,7 +398,7 @@ SERVICES_DATA = {
             "name": "Emergency Ambulance Dispatch Team",
             "qual": "Trained Emergency Medical Technicians (EMT)",
             "title": "24/7 Emergency Transport Service",
-            "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            "image": None
         }
     },
     "icu": {
@@ -409,7 +419,7 @@ SERVICES_DATA = {
             "name": "Dr. Mula Venkatarao & Dr. Hanumanthu Anilkumar",
             "qual": "M.D (PAED) NILOUFER & M.D (General Medicine)",
             "title": "Intensive Care & Neonatal Supervision",
-            "image": "dr_rao.jpeg"
+            "image": None
         }
     }
 }

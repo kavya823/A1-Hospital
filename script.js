@@ -149,13 +149,13 @@ function setupHomePageInteractions() {
     const interactiveCards = document.querySelectorAll('.service-card, .dept-card-photo, .doctor-card, .emergency-compact-card');
 
     interactiveCards.forEach(card => {
-        // Smooth cursor parallax tilt
+        // Smooth luxury cursor parallax tilt
         card.addEventListener('mousemove', (e) => {
             if (card.classList.contains('is-flipping')) return;
             const rect = card.getBoundingClientRect();
             const x = (e.clientX - rect.left) / rect.width - 0.5;
             const y = (e.clientY - rect.top) / rect.height - 0.5;
-            card.style.transform = `perspective(1000px) rotateY(${(x * 14).toFixed(2)}deg) rotateX(${(-y * 14).toFixed(2)}deg) translateY(-8px) scale3d(1.025, 1.025, 1.025)`;
+            card.style.transform = `perspective(1000px) rotateY(${(x * 6).toFixed(2)}deg) rotateX(${(-y * 6).toFixed(2)}deg) translateY(-8px) scale3d(1.012, 1.012, 1.012)`;
         });
 
         // Smooth slip back on mouse leave
@@ -164,30 +164,15 @@ function setupHomePageInteractions() {
             card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0) scale3d(1, 1, 1)';
         });
 
-        // Flip animation on click (home page only)
+        // Luxury micro-elevation bounce on click
         card.addEventListener('click', (e) => {
-            // Ignore if user clicked appointment booking button or tel/whatsapp links
             if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.card-action-link')) return;
 
             card.classList.add('is-flipping');
             setTimeout(() => {
                 card.classList.remove('is-flipping');
                 card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0) scale3d(1, 1, 1)';
-            }, 850);
-        });
-    });
-
-    // Subtle parallax response on section frames
-    const frames = document.querySelectorAll('.framed-section');
-    frames.forEach(frame => {
-        frame.addEventListener('mousemove', (e) => {
-            const rect = frame.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width - 0.5;
-            const y = (e.clientY - rect.top) / rect.height - 0.5;
-            frame.style.transform = `perspective(1200px) rotateY(${(x * 2).toFixed(2)}deg) rotateX(${(-y * 2).toFixed(2)}deg)`;
-        });
-        frame.addEventListener('mouseleave', () => {
-            frame.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg)';
+            }, 550);
         });
     });
 }

@@ -327,8 +327,10 @@ def build_all_pages():
 
             <!-- Related Doctor Details & Photo -->
             <div class="detail-doctor-spotlight animate-up" style="margin-top:2rem;">
-                <div class="detail-doc-img-wrap">
-                    <img src="{doc_lead['image']}" alt="{doc_lead['name']}" onerror="this.src='dr_rao.jpeg'">
+                <div class="detail-doc-img-wrap" style="display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #fdf8f5 0%, #f7ece6 100%);">
+                    <div class="doctor-emblem-badge" style="width:68px; height:68px; margin:0;">
+                        <i data-lucide="{s['icon']}"></i>
+                    </div>
                 </div>
                 <div class="detail-doc-info">
                     <span class="detail-doc-badge">Associated Clinical Supervision</span>
@@ -378,11 +380,21 @@ def build_all_pages():
         # Doctors cards for this department
         doctors_html = ""
         for doc in d['doctors']:
+            if doc.get('image'):
+                doc_img_or_avatar = f'''
+                <div class="detail-doc-img-wrap">
+                    <img src="{doc['image']}" alt="{doc['name']}">
+                </div>'''
+            else:
+                doc_img_or_avatar = f'''
+                <div class="detail-doc-img-wrap" style="display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #fdf8f5 0%, #f7ece6 100%);">
+                    <div class="doctor-emblem-badge" style="width:68px; height:68px; margin:0;">
+                        <i data-lucide="{d.get('icon', 'stethoscope')}"></i>
+                    </div>
+                </div>'''
             doctors_html += f'''
             <div class="detail-doctor-spotlight animate-up" style="margin-top:1.5rem;">
-                <div class="detail-doc-img-wrap">
-                    <img src="{doc['image']}" alt="{doc['name']}" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                </div>
+                {doc_img_or_avatar}
                 <div class="detail-doc-info">
                     <span class="detail-doc-badge">Verified Specialist Doctor</span>
                     <h3>{doc['name']}</h3>
@@ -507,14 +519,29 @@ def build_all_pages():
     # -------------------------------------------------------------
     doc_cards_html = ""
     for doc in DOCTORS_DATA:
-        doc_cards_html += f'''
-        <div class="doctor-card animate-up" style="display:flex; flex-direction:column; background:var(--bg-surface); border-radius:var(--radius-lg); border:1.5px solid var(--border-warm); overflow:hidden; box-shadow:var(--shadow-sm); transition:var(--transition-bounce);">
+        if doc.get('image'):
+            img_or_avatar = f'''
             <div style="height:260px; width:100%; overflow:hidden; position:relative;">
-                <img src="{doc['image']}" alt="{doc['name']}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;" onerror="this.src='dr_rao.jpeg'">
-                <div style="position:absolute; bottom:12px; left:12px; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px); padding:0.25rem 0.75rem; border-radius:20px; font-size:0.75rem; font-weight:700; color:var(--primary-accent);">
+                <img src="{doc['image']}" alt="{doc['name']}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;">
+                <div style="position:absolute; bottom:12px; left:12px; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px); padding:0.25rem 0.75rem; border-radius:20px; font-size:0.75rem; font-weight:700; color:var(--primary-accent); border:1px solid rgba(128,0,0,0.08);">
                     {doc['dept']}
                 </div>
-            </div>
+            </div>'''
+        else:
+            icon_name = doc.get('icon', 'stethoscope')
+            clean_title = doc['title'].split('(')[0].strip()
+            img_or_avatar = f'''
+            <div class="doctor-avatar-header">
+                <div class="doctor-emblem-badge">
+                    <i data-lucide="{icon_name}"></i>
+                </div>
+                <div class="doctor-avatar-title">{clean_title}</div>
+                <div class="doctor-dept-pill">{doc['dept']}</div>
+            </div>'''
+
+        doc_cards_html += f'''
+        <div class="doctor-card animate-up" style="display:flex; flex-direction:column; background:var(--bg-surface); border-radius:var(--radius-lg); border:1.5px solid var(--border-warm); overflow:hidden; box-shadow:var(--shadow-sm); transition:var(--transition-bounce);">
+            {img_or_avatar}
             <div style="padding:1.6rem; display:flex; flex-direction:column; flex:1;">
                 <h3 style="font-size:1.3rem; margin:0 0 0.35rem 0; color:var(--text-dark);">{doc['name']}</h3>
                 <div style="font-size:0.88rem; color:var(--primary-accent); font-weight:700; margin-bottom:0.35rem;">{doc['qual']}</div>

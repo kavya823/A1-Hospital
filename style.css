@@ -2119,40 +2119,260 @@ p {
 }
 
 /* ==========================================================================
-   HOME PAGE 3D FLIP & SMOOTH CURSOR TRACKING (EXCLUSIVE TO HOME PAGE)
+   DOCTOR SPECIALIST AVATAR (WHEN NO PERSONAL PHOTO EXISTS)
+   Clean, prestigious monogram & medical emblem banner
    ========================================================================== */
-body[data-page="home"] .framed-section,
-body[data-page="home"] .service-card,
-body[data-page="home"] .dept-card-photo,
-body[data-page="home"] .doctor-card,
-body[data-page="home"] .emergency-compact-card,
-body[data-page="home"] .lab-container {
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    will-change: transform;
-    cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
+.doctor-avatar-header {
+    height: 290px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #fffdfb 0%, #f7ece5 55%, #fdf5f0 100%);
+    border-bottom: 1.5px solid var(--border-warm);
+    overflow: hidden;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
 }
 
-/* 3D Flip & Slip on Click Animation (Home Page Only) */
+.doctor-avatar-header::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(128, 0, 0, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.doctor-avatar-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197, 155, 39, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.doctor-emblem-badge {
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffffff 0%, #fbf1f1 100%);
+    border: 2px solid rgba(128, 0, 0, 0.16);
+    box-shadow: 0 10px 24px rgba(128, 0, 0, 0.07), inset 0 2px 4px rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-accent);
+    margin-bottom: 0.85rem;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.doctor-card:hover .doctor-emblem-badge,
+.doctor-carousel-card:hover .doctor-emblem-badge {
+    transform: scale(1.08) translateY(-2px);
+    border-color: var(--primary-accent);
+    box-shadow: 0 14px 28px rgba(128, 0, 0, 0.16);
+}
+
+.doctor-emblem-badge i,
+.doctor-emblem-badge svg {
+    width: 38px;
+    height: 38px;
+    stroke-width: 1.8;
+}
+
+.doctor-avatar-title {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.doctor-dept-pill {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(128, 0, 0, 0.12);
+    color: var(--primary-accent);
+    padding: 0.28rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Detail page doctor spotlight avatar */
+.detail-doc-img-wrap .doctor-emblem-badge {
+    width: 68px;
+    height: 68px;
+}
+.detail-doc-img-wrap .doctor-emblem-badge i,
+.detail-doc-img-wrap .doctor-emblem-badge svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* ==========================================================================
+   LUXURY HEALTHCARE ANIMATION SUITE (ALL FRAMES & CARDS)
+   ========================================================================== */
+
+/* 1. Light-Sheen Shimmer Reflection on Hover */
+.service-card,
+.dept-card-photo,
+.doctor-card,
+.doctor-carousel-card,
+.dept-showcase-card,
+.service-showcase-card,
+.explanation-card,
+.emergency-compact-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::after,
+.dept-card-photo::after,
+.doctor-card::after,
+.doctor-carousel-card::after,
+.dept-showcase-card::after,
+.service-showcase-card::after,
+.explanation-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -70%;
+    width: 45%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.32) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(25deg);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 5;
+}
+
+.service-card:hover::after,
+.dept-card-photo:hover::after,
+.doctor-card:hover::after,
+.doctor-carousel-card:hover::after,
+.dept-showcase-card:hover::after,
+.service-showcase-card:hover::after,
+.explanation-card:hover::after {
+    opacity: 1;
+    animation: luxuryLightSweep 0.95s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes luxuryLightSweep {
+    0% { left: -70%; }
+    100% { left: 150%; }
+}
+
+/* 2. Soft Floating Breathing Animation on Badges */
+@keyframes floatingBadgeSoft {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.floating-hero-badge,
+.detail-floating-badge {
+    animation: floatingBadgeSoft 4.8s ease-in-out infinite !important;
+}
+
+.floating-hero-badge.badge-bottom-left {
+    animation: floatingBadgeSoft 5.2s ease-in-out infinite !important;
+    animation-delay: 0.6s;
+}
+
+/* 3. Smooth Frame & Card Elevation */
+.service-card,
+.dept-card-photo,
+.doctor-card,
+.doctor-carousel-card,
+.dept-showcase-card,
+.service-showcase-card,
+.explanation-card,
+.emergency-compact-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
+}
+
+.service-card:hover,
+.dept-card-photo:hover,
+.doctor-card:hover,
+.doctor-carousel-card:hover,
+.dept-showcase-card:hover,
+.service-showcase-card:hover,
+.explanation-card:hover {
+    transform: translateY(-8px) scale(1.012) !important;
+    box-shadow: 0 20px 45px rgba(128, 0, 0, 0.13), 0 4px 14px rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(128, 0, 0, 0.28) !important;
+}
+
+/* 4. Luxury Micro-Bounce on Click */
 .is-flipping {
-    animation: flipAndSlip 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+    animation: luxuryClickBounce 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
 }
 
-@keyframes flipAndSlip {
-    0% {
-        transform: perspective(1000px) rotateY(0deg) scale(1);
-    }
-    45% {
-        transform: perspective(1000px) rotateY(180deg) scale(1.08);
-        box-shadow: 0 25px 60px rgba(128, 0, 0, 0.25);
-    }
-    80% {
-        transform: perspective(1000px) rotateY(360deg) scale(0.98);
-    }
-    100% {
-        transform: perspective(1000px) rotateY(360deg) scale(1);
-    }
+@keyframes luxuryClickBounce {
+    0% { transform: scale(1); }
+    40% { transform: scale(0.97) translateY(2px); box-shadow: 0 8px 20px rgba(128, 0, 0, 0.15); }
+    75% { transform: scale(1.025) translateY(-10px); box-shadow: 0 25px 50px rgba(128, 0, 0, 0.2); }
+    100% { transform: scale(1.012) translateY(-8px); }
+}
+
+/* 5. Glowing Frame Border Shimmer */
+.framed-section {
+    position: relative;
+    border: 1.5px solid var(--border-warm);
+    transition: box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.framed-section:hover {
+    border-color: rgba(128, 0, 0, 0.2);
+    box-shadow: 0 22px 55px rgba(128, 0, 0, 0.06), 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+/* 6. Emergency Live Pulse & Phone Shake */
+.live-pulse-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #25D366;
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    animation: livePulseGlow 2s infinite;
+}
+
+@keyframes livePulseGlow {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 /* ==========================================================================
