@@ -298,7 +298,7 @@ def build_all_pages():
 
                     <div class="detail-hero-actions">
                         <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', '{s['title']}')">
-                            <i data-lucide="calendar"></i> <span>Book Consultation</span>
+                            <i data-lucide="calendar"></i> <span>Book an Appointment</span>
                         </a>
                         <a href="{HOSPITAL_CONTACT['whatsapp_link']}" target="_blank" class="btn-whatsapp-pill" style="display:inline-flex; align-items:center; gap:6px; padding:0.65rem 1.2rem; background:#25D366; color:#fff; border-radius:30px; font-weight:700; text-decoration:none;">
                             <i data-lucide="message-circle"></i> <span>WhatsApp: {HOSPITAL_CONTACT['whatsapp_number']}</span>
@@ -338,7 +338,7 @@ def build_all_pages():
                     <div class="doc-qual">{doc_lead['qual']} · {doc_lead['title']}</div>
                     <p>Ensuring hospital medical protocols, patient safety, and immediate clinical oversight for this service facility.</p>
                     <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('{doc_lead['name'].split('&')[0].strip()}', '{s['title']}')">
-                        <i data-lucide="calendar"></i> <span>Book Consultation with Doctor</span>
+                        <i data-lucide="calendar"></i> <span>Book an Appointment with Doctor</span>
                     </a>
                 </div>
             </div>
@@ -401,7 +401,7 @@ def build_all_pages():
                     <div class="doc-qual">{doc['qual']}</div>
                     <p style="font-weight:700; color:var(--text-dark);">{doc['title']}</p>
                     <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('{doc['name']}', '{d['title']}')">
-                        <i data-lucide="calendar"></i> <span>Book Consultation with {doc['name']}</span>
+                        <i data-lucide="calendar"></i> <span>Book an Appointment with {doc['name']}</span>
                     </a>
                 </div>
             </div>'''
@@ -457,7 +457,7 @@ def build_all_pages():
 
                     <div class="detail-hero-actions">
                         <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('{d['doctors'][0]['name']}', '{d['title']}')">
-                            <i data-lucide="calendar"></i> <span>Book Consultation</span>
+                            <i data-lucide="calendar"></i> <span>Book an Appointment</span>
                         </a>
                         <a href="{HOSPITAL_CONTACT['whatsapp_link']}" target="_blank" class="btn-whatsapp-pill" style="display:inline-flex; align-items:center; gap:6px; padding:0.65rem 1.2rem; background:#25D366; color:#fff; border-radius:30px; font-weight:700; text-decoration:none;">
                             <i data-lucide="message-circle"></i> <span>WhatsApp: {HOSPITAL_CONTACT['whatsapp_number']}</span>
@@ -548,7 +548,7 @@ def build_all_pages():
                 <div style="font-size:0.82rem; font-weight:600; color:var(--text-charcoal); margin-bottom:0.85rem;">{doc['title']}</div>
                 <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.4rem; flex:1;">{doc['desc']}</p>
                 <a href="#appointment" class="btn-primary small" onclick="openAppointmentModal('{doc['name']}', '{doc['dept']}')" style="margin-top:auto; width:100%; justify-content:center;">
-                    <i data-lucide="calendar"></i> <span>Book Consultation</span>
+                    <i data-lucide="calendar"></i> <span>Book an Appointment</span>
                 </a>
             </div>
         </div>'''
