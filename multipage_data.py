@@ -11,7 +11,7 @@ HOSPITAL_CONTACT = {
     "map_embed": "https://maps.google.com/maps?q=Opposite+Rama+Temple,+Bondilipuram+Main+Road,+Srikakulam,+AP&t=&z=16&ie=UTF8&iwloc=&output=embed"
 }
 
-# The 10 Verified Doctors from user's photos
+# The Verified Doctors from user's photos & leadership
 DOCTORS_DATA = [
     {
         "id": "dr-mula-venkatarao",
@@ -22,6 +22,16 @@ DOCTORS_DATA = [
         "desc": "Founder of A1 Hospital with over 13+ years of clinical excellence in pediatric care, child health, and newborn wellness in Srikakulam (Est. 2013).",
         "image": "dr_rao.jpeg",
         "icon": "baby"
+    },
+    {
+        "id": "dr-co-founder-wife",
+        "name": "Co-Founder & Doctor",
+        "qual": "Specialist / M.B.B.S",
+        "title": "Consultant Specialist (Co-Founder)",
+        "dept": "Hospital Leadership & Clinical Care",
+        "desc": "Co-Founder of A1 Hospital, leading clinical excellence and compassionate healthcare alongside Founder Dr. Mula Venkatarao.",
+        "image": None,
+        "icon": "user-check"
     },
     {
         "id": "dr-kannepalli-srinivas",
@@ -123,7 +133,7 @@ DEPARTMENTS_DATA = {
         "title": "Pediatrics & Child Health",
         "tag": "Children & Newborn Care",
         "icon": "baby",
-        "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "Pediatrics is the branch of medicine focused on the physical, emotional, and social health of infants, children, and young adolescents. It covers preventive vaccinations, childhood fever management, growth assessments, and specialized pediatric surgery.",
         "highlights": [
             "13+ Years Pediatric Excellence (Est. 2013) led by Founder Dr. Mula Venkatarao",
@@ -152,7 +162,7 @@ DEPARTMENTS_DATA = {
         "title": "Orthopedics & Joint Surgery",
         "tag": "Bone, Joint & Spine Care",
         "icon": "bone",
-        "image": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "Orthopedics focuses on diagnosing, treating, and operating on disorders of the bones, joints, ligaments, tendons, and muscles. This includes fixing accidental fractures, treating chronic joint pain, and performing joint replacement surgeries.",
         "highlights": [
             "Advanced Joint Replacements & Arthroscopy Care",
@@ -181,7 +191,7 @@ DEPARTMENTS_DATA = {
         "title": "General Medicine",
         "tag": "Adult Physician & Internal Care",
         "icon": "stethoscope",
-        "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "General Medicine deals with the prevention, diagnosis, and non-surgical treatment of adult diseases. It covers chronic health conditions like diabetes, high blood pressure, respiratory infections, seasonal viral fevers, and multi-system medical illnesses.",
         "highlights": [
             "Comprehensive Medical Diagnosis & Treatment",
@@ -204,7 +214,7 @@ DEPARTMENTS_DATA = {
         "title": "General Surgery",
         "tag": "Operative & Surgical Treatments",
         "icon": "scissors",
-        "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "General Surgery involves surgical procedures to treat abdominal organs, hernias, gallbladder stones, appendicitis, piles, fissures, cysts, and accidental wounds. It focuses on safe operative intervention and smooth patient recovery.",
         "highlights": [
             "Hernia Repairs, Appendectomy & Gallbladder Procedures",
@@ -227,7 +237,7 @@ DEPARTMENTS_DATA = {
         "title": "Nephrology (Kidney Care)",
         "tag": "Kidney & Renal Health",
         "icon": "filter",
-        "image": "https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "Nephrology is the medical specialty that deals with kidney diseases, kidney damage prevention, fluid imbalances, and dialysis care. It focuses on keeping kidneys functioning and managing conditions caused by diabetes or high blood pressure.",
         "highlights": [
             "Specialized Kidney Disease Diagnosis & Treatment",
@@ -250,7 +260,7 @@ DEPARTMENTS_DATA = {
         "title": "Urology",
         "tag": "Urinary & Stone Treatments",
         "icon": "shield-plus",
-        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "Urology focuses on the medical and surgical management of the urinary tract (kidneys, ureters, bladder, and urethra) in men and women, as well as male reproductive health. Common treatments include kidney stone management and prostate care.",
         "highlights": [
             "Diagnosis & Treatment of Kidney & Bladder Stones",
@@ -273,7 +283,7 @@ DEPARTMENTS_DATA = {
         "title": "Ophthalmology (Eye Care)",
         "tag": "Vision & Optical Care",
         "icon": "eye",
-        "image": "https://images.unsplash.com/photo-1594824436967-4638a16fb8e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "Ophthalmology is the branch of medicine and surgery that treats disorders of the eye and vision. It includes comprehensive eyesight testing, cataract evaluation, glaucoma screening, and medical treatment for ocular infections and allergies.",
         "highlights": [
             "Eye Health Assessments & Vision Testing",
@@ -296,7 +306,7 @@ DEPARTMENTS_DATA = {
         "title": "Oncology (Cancer Care)",
         "tag": "Radiation & Clinical Oncology",
         "icon": "crosshair",
-        "image": "https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "Oncology is the medical specialty devoted to diagnosing, staging, and treating cancer. Radiation and clinical oncology focuses on targeted cancer treatment planning, early cancer detection screenings, and supportive compassionate patient guidance.",
         "highlights": [
             "Expert Clinical Oncology Consultations",
@@ -323,7 +333,7 @@ SERVICES_DATA = {
         "title": "100+ Beds Available",
         "tag": "Inpatient Accommodation",
         "icon": "bed-double",
-        "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "100+ Inpatient Beds refers to our hospital's capacity to admit and care for patients who need overnight observation, post-surgery recovery, or continuous medical treatment. It offers private, semi-private, and sterile general wards.",
         "highlights": [
             "100+ Clean, Air-Conditioned Inpatient Beds",
@@ -344,7 +354,7 @@ SERVICES_DATA = {
         "title": "24/7 Emergency Care",
         "tag": "Round-the-Clock Emergency",
         "icon": "clock",
-        "image": "https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "24/7 Emergency Care means our casualty department is open day and night, 365 days a year, ready to provide immediate medical attention for sudden accidents, acute chest pain, breathlessness, injuries, and critical medical emergencies without delay.",
         "highlights": [
             "Always Open: 24 Hours a Day, 365 Days a Year",
@@ -365,7 +375,7 @@ SERVICES_DATA = {
         "title": "24/7 In-House Pharmacy",
         "tag": "Authentic Medications",
         "icon": "pill",
-        "image": "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "An in-house pharmacy is an on-premises hospital medical store open 24 hours. Patients and families do not need to search outside for medicines; genuine, doctor-prescribed tablets, injections, and child syrups are available instantly inside the hospital.",
         "highlights": [
             "Open 24/7 Right Inside the Hospital Premises",
@@ -386,7 +396,7 @@ SERVICES_DATA = {
         "title": "24/7 Ambulance Service",
         "tag": "Emergency Patient Transfer",
         "icon": "ambulance",
-        "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "Our 24/7 Ambulance Service provides rapid emergency patient pickup and transfer directly to A1 Hospital. Equipped with oxygen support, stretcher, and emergency paramedic assistance, it ensures patients arrive safely and quickly during medical crises.",
         "highlights": [
             "24/7 Emergency Dispatch Helpline: 08942-228234",
@@ -407,7 +417,7 @@ SERVICES_DATA = {
         "title": "Intensive Care Unit (ICU & NICU)",
         "tag": "Critical Patient Monitoring",
         "icon": "activity",
-        "image": "https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "image": None,
         "meaning": "The ICU (Intensive Care Unit) and NICU (Neonatal Intensive Care Unit) are specialized hospital units for critically ill patients and newborn infants needing close, continuous monitoring. Beds have real-time vitals monitors and dedicated nurses.",
         "highlights": [
             "Continuous 24/7 Vitals & Cardiac Rhythm Monitoring",

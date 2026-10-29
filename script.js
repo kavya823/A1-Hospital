@@ -307,7 +307,42 @@ function handleAppointmentSubmit(event) {
     const time = form.time_slot.value;
     const notes = form.notes.value.trim();
 
-    // Prepare WhatsApp Confirmation Link
+    // 1. Prepare Hospital Email Draft (a1hospitalsrikakulam@gmail.com)
+    const hospitalEmail = 'a1hospitalsrikakulam@gmail.com';
+    const emailSubject = `New Appointment Booking Request - ${name} - A1 Hospital`;
+    const emailBody = 
+`==================================================
+A1 HOSPITAL SRIKAKULAM - APPOINTMENT BOOKING DETAILS
+==================================================
+Patient Name:     ${name}
+Contact Number:   ${phone}
+Department:       ${dept}
+Preferred Doctor: ${doctor}
+Preferred Date:   ${date}
+Time Slot:        ${time}
+Symptoms / Notes: ${notes ? notes : 'None specified'}
+==================================================
+Submitted through A1 Hospital Official Web Portal
+Direct Contact:   ${phone}
+Hospital Email:   ${hospitalEmail}`;
+
+    const mailtoUrl = `mailto:${hospitalEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+    // Automatically trigger user's mail application to drag details to hospital email
+    const mailLink = document.createElement('a');
+    mailLink.href = mailtoUrl;
+    mailLink.style.display = 'none';
+    document.body.appendChild(mailLink);
+    mailLink.click();
+    document.body.removeChild(mailLink);
+
+    // Update Email Confirmation Button in Success Modal
+    const emailBtn = document.getElementById('email-confirm-btn');
+    if (emailBtn) {
+        emailBtn.href = mailtoUrl;
+    }
+
+    // 2. Prepare WhatsApp Confirmation Link
     const waPhone = '916399144444';
     let waMessage = `*A1 Hospital Appointment Request*\n` +
                     `*Patient Name:* ${name}\n` +
@@ -326,12 +361,13 @@ function handleAppointmentSubmit(event) {
         waBtn.href = waUrl;
     }
 
+    // 3. Update Success Modal Summary Text
     const summaryText = document.getElementById('success-summary-text');
     if (summaryText) {
-        summaryText.innerHTML = `Thank you <strong>${name}</strong>! Your appointment request with <strong>${doctor}</strong> (${dept}) for <strong>${date}</strong> (${time}) has been noted. Our hospital desk will verify your slot promptly.`;
+        summaryText.innerHTML = `Thank you <strong>${name}</strong>! Your appointment request with <strong>${doctor}</strong> (${dept}) for <strong>${date}</strong> (${time}) has been generated for <strong>${hospitalEmail}</strong>. Our hospital desk will verify your slot promptly.`;
     }
 
-    // Toggle views
+    // 4. Toggle views
     const formView = document.getElementById('appointment-form-view');
     const successView = document.getElementById('appointment-success-view');
     if (formView) formView.style.display = 'none';

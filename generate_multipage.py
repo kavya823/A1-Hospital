@@ -96,10 +96,12 @@ def build_all_pages():
         doc_lead = s['lead_doctor']
         services_grid_items += f'''
         <a href="{s['file']}" class="service-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
-            <div class="service-showcase-img-wrap">
-                <img src="{s['image']}" alt="{s['title']}">
-                <div class="service-showcase-badge">
-                    <i data-lucide="{s['icon']}"></i>
+            <div class="service-showcase-header-box" style="height:150px; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); display:flex; align-items:center; justify-content:center; position:relative; border-bottom:1.5px solid var(--border-warm);">
+                <div style="width:68px; height:68px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
+                    <i data-lucide="{s['icon']}" style="width:34px; height:34px;"></i>
+                </div>
+                <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.92); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:3px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.08);">
+                    {s['tag']}
                 </div>
             </div>
             <div class="service-showcase-content">
@@ -117,9 +119,11 @@ def build_all_pages():
     for s_id, s in SERVICES_DATA.items():
         services_carousel_items += f'''
         <a href="{s['file']}" style="text-decoration:none; color:inherit; display:block;">
-            <div class="dept-card-photo">
-                <img src="{s['image']}" alt="{s['title']}">
-                <div class="dept-info"><h3>{s['title']}</h3></div>
+            <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
+                <div class="card-icon-badge" style="width:54px; height:54px; margin-bottom:1rem;">
+                    <i data-lucide="{s['icon']}"></i>
+                </div>
+                <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>{s['title']}</h3></div>
             </div>
         </a>'''
 
@@ -168,10 +172,12 @@ def build_all_pages():
         doc_names = ", ".join([doc['name'] for doc in d['doctors']])
         dept_grid_items += f'''
         <a href="{d['file']}" class="dept-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
-            <div class="dept-showcase-img-wrap">
-                <img src="{d['image']}" alt="{d['title']}">
-                <div class="dept-showcase-badge">
-                    <i data-lucide="{d['icon']}"></i>
+            <div class="dept-showcase-header-box" style="height:150px; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); display:flex; align-items:center; justify-content:center; position:relative; border-bottom:1.5px solid var(--border-warm);">
+                <div style="width:68px; height:68px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
+                    <i data-lucide="{d['icon']}" style="width:34px; height:34px;"></i>
+                </div>
+                <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.92); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:3px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.08);">
+                    {d['tag']}
                 </div>
             </div>
             <div class="dept-showcase-content">
@@ -189,9 +195,11 @@ def build_all_pages():
     for d_id, d in DEPARTMENTS_DATA.items():
         dept_carousel_items += f'''
         <a href="{d['file']}" style="text-decoration:none; color:inherit; display:block;">
-            <div class="dept-card-photo">
-                <img src="{d['image']}" alt="{d['title']}">
-                <div class="dept-info"><h3>{d['title']}</h3></div>
+            <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
+                <div class="card-icon-badge" style="width:54px; height:54px; margin-bottom:1rem;">
+                    <i data-lucide="{d['icon']}"></i>
+                </div>
+                <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>{d['title']}</h3></div>
             </div>
         </a>'''
 
@@ -254,9 +262,11 @@ def build_all_pages():
                 continue
             other_services_carousel += f'''
             <a href="{other_s['file']}" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo">
-                    <img src="{other_s['image']}" alt="{other_s['title']}">
-                    <div class="dept-info"><h3>{other_s['title']}</h3></div>
+                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
+                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
+                        <i data-lucide="{other_s['icon']}"></i>
+                    </div>
+                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>{other_s['title']}</h3></div>
                 </div>
             </a>'''
 
@@ -310,9 +320,14 @@ def build_all_pages():
                 </div>
 
                 <div class="detail-hero-visual">
-                    <div class="detail-arch-frame">
-                        <img src="{s['image']}" alt="{s['title']}">
-                        <div class="detail-floating-badge">
+                    <div class="detail-arch-frame" style="background:linear-gradient(145deg, #fdf5f3 0%, #f7e8e5 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2.5rem 2rem; text-align:center; position:relative;">
+                        <div style="width:105px; height:105px; border-radius:50%; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(128,0,0,0.13); margin-bottom:1.5rem;">
+                            <i data-lucide="{s['icon']}" style="width:48px; height:48px;"></i>
+                        </div>
+                        <div style="font-size:0.82rem; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--primary-accent); margin-bottom:0.4rem;">A1 Hospital Srikakulam</div>
+                        <h3 style="font-size:1.45rem; font-family:'Playfair Display', serif; color:var(--text-dark); margin:0 0 0.75rem 0;">{s['title']}</h3>
+                        <span style="display:inline-block; font-size:0.8rem; font-weight:700; background:rgba(128,0,0,0.08); color:var(--primary-accent); padding:0.3rem 0.9rem; border-radius:20px;">{s['tag']}</span>
+                        <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; margin:0 auto; width:calc(100% - 40px);">
                             <div class="card-icon-badge" style="width:40px; height:40px; font-size:1.1rem; margin:0;">
                                 <i data-lucide="{s['icon']}"></i>
                             </div>
@@ -413,9 +428,11 @@ def build_all_pages():
                 continue
             other_dept_carousel += f'''
             <a href="{other_d['file']}" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo">
-                    <img src="{other_d['image']}" alt="{other_d['title']}">
-                    <div class="dept-info"><h3>{other_d['title']}</h3></div>
+                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
+                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
+                        <i data-lucide="{other_d['icon']}"></i>
+                    </div>
+                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>{other_d['title']}</h3></div>
                 </div>
             </a>'''
 
@@ -469,9 +486,14 @@ def build_all_pages():
                 </div>
 
                 <div class="detail-hero-visual">
-                    <div class="detail-arch-frame">
-                        <img src="{d['image']}" alt="{d['title']}">
-                        <div class="detail-floating-badge">
+                    <div class="detail-arch-frame" style="background:linear-gradient(145deg, #fdf5f3 0%, #f7e8e5 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2.5rem 2rem; text-align:center; position:relative;">
+                        <div style="width:105px; height:105px; border-radius:50%; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(128,0,0,0.13); margin-bottom:1.5rem;">
+                            <i data-lucide="{d['icon']}" style="width:48px; height:48px;"></i>
+                        </div>
+                        <div style="font-size:0.82rem; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--primary-accent); margin-bottom:0.4rem;">A1 Hospital Srikakulam</div>
+                        <h3 style="font-size:1.45rem; font-family:'Playfair Display', serif; color:var(--text-dark); margin:0 0 0.75rem 0;">{d['title']}</h3>
+                        <span style="display:inline-block; font-size:0.8rem; font-weight:700; background:rgba(128,0,0,0.08); color:var(--primary-accent); padding:0.3rem 0.9rem; border-radius:20px;">{d['tag']}</span>
+                        <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; margin:0 auto; width:calc(100% - 40px);">
                             <div class="card-icon-badge" style="width:40px; height:40px; font-size:1.1rem; margin:0;">
                                 <i data-lucide="{d['icon']}"></i>
                             </div>
@@ -515,10 +537,11 @@ def build_all_pages():
         print(f"[OK] Created {d['file']}")
 
     # -------------------------------------------------------------
-    # 5. BUILD DOCTORS.HTML (10 Verified Doctors from User's Photos)
+    # 5. BUILD DOCTORS.HTML (Verified Doctors from User's Photos)
     # -------------------------------------------------------------
     doc_cards_html = ""
     for doc in DOCTORS_DATA:
+        is_co_founder = doc['id'] == 'dr-co-founder-wife'
         if doc.get('image'):
             img_or_avatar = f'''
             <div style="height:260px; width:100%; overflow:hidden; position:relative;">
@@ -526,6 +549,16 @@ def build_all_pages():
                 <div style="position:absolute; bottom:12px; left:12px; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px); padding:0.25rem 0.75rem; border-radius:20px; font-size:0.75rem; font-weight:700; color:var(--primary-accent); border:1px solid rgba(128,0,0,0.08);">
                     {doc['dept']}
                 </div>
+            </div>'''
+        elif is_co_founder:
+            img_or_avatar = f'''
+            <div class="doctor-avatar-header" style="background: linear-gradient(135deg, #fdf4f2 0%, #fae6e3 100%);">
+                <div class="doctor-emblem-badge" style="background: #ffffff; color: var(--primary-accent); box-shadow: 0 8px 24px rgba(128,0,0,0.12);">
+                    <i data-lucide="user-check"></i>
+                </div>
+                <div class="doctor-avatar-title">Co-Founder & Specialist</div>
+                <div class="doctor-dept-pill" style="background: var(--light-red); color: var(--primary-accent); font-weight: 700;">A1 Hospital Leadership</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 6px; font-weight: 600;">Photo & Details Updating</div>
             </div>'''
         else:
             icon_name = doc.get('icon', 'stethoscope')
@@ -539,8 +572,11 @@ def build_all_pages():
                 <div class="doctor-dept-pill">{doc['dept']}</div>
             </div>'''
 
+        card_custom_id = ' id="card-co-founder-wife"' if is_co_founder else ''
+        card_border_style = 'border: 2px solid rgba(128,0,0,0.22);' if is_co_founder else 'border: 1.5px solid var(--border-warm);'
+
         doc_cards_html += f'''
-        <div class="doctor-card animate-up" style="display:flex; flex-direction:column; background:var(--bg-surface); border-radius:var(--radius-lg); border:1.5px solid var(--border-warm); overflow:hidden; box-shadow:var(--shadow-sm); transition:var(--transition-bounce);">
+        <div class="doctor-card animate-up"{card_custom_id} style="display:flex; flex-direction:column; background:var(--bg-surface); border-radius:var(--radius-lg); {card_border_style} overflow:hidden; box-shadow:var(--shadow-sm); transition:var(--transition-bounce);">
             {img_or_avatar}
             <div style="padding:1.6rem; display:flex; flex-direction:column; flex:1;">
                 <h3 style="font-size:1.3rem; margin:0 0 0.35rem 0; color:var(--text-dark);">{doc['name']}</h3>
