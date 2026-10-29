@@ -3180,4 +3180,182 @@ p {
     }
 }
 
+/* ==========================================================================
+   FOUNDING LEADERSHIP DUO (CREATIVE HERO LAYOUT)
+   ========================================================================== */
+.smera-hero-duo-wrapper {
+    display: flex;
+    gap: 1.25rem;
+    align-items: stretch;
+    justify-content: center;
+    position: relative;
+    max-width: 520px;
+    width: 100%;
+    padding-bottom: 1.5rem;
+}
+
+.smera-hero-duo-card {
+    flex: 1;
+    min-width: 0;
+    background: #ffffff;
+    border: 2px solid var(--border-warm);
+    border-radius: 110px 110px var(--radius-md) var(--radius-md);
+    padding: 8px 8px 16px 8px;
+    box-shadow: 0 16px 36px rgba(128, 0, 0, 0.08), 0 0 0 4px rgba(255, 255, 255, 0.9);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.smera-hero-duo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 50px rgba(128, 0, 0, 0.16);
+    border-color: rgba(128, 0, 0, 0.28);
+}
+
+.duo-arch-frame {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    border-radius: 100px 100px 12px 12px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fdf5f2 0%, #fae6e3 100%);
+}
+
+.duo-arch-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+.smera-hero-duo-card:hover .duo-arch-frame img {
+    transform: scale(1.04);
+}
+
+.duo-role-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.duo-role-tag.founder-tag {
+    background: linear-gradient(135deg, #800000 0%, #a11414 100%);
+}
+
+.duo-role-tag.cofounder-tag {
+    background: linear-gradient(135deg, #b8860b 0%, #800000 100%);
+}
+
+.duo-doc-meta {
+    padding-top: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.duo-doc-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.25;
+}
+
+.duo-doc-qual {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+    margin-top: 4px;
+    letter-spacing: 0.3px;
+}
+
+.duo-doc-spec {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.duo-floating-crest {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    border: 1.5px solid var(--border-warm);
+    border-radius: 30px;
+    padding: 6px 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgba(128, 0, 0, 0.12);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.duo-floating-crest .crest-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--light-red);
+    color: var(--primary-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.duo-floating-crest .crest-icon svg,
+.duo-floating-crest .crest-icon i {
+    width: 14px;
+    height: 14px;
+}
+
+.duo-floating-crest .crest-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.duo-floating-crest .crest-text strong {
+    font-size: 0.78rem;
+    color: var(--text-dark);
+    line-height: 1.1;
+}
+
+.duo-floating-crest .crest-text span {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .smera-hero-duo-wrapper {
+        flex-direction: column;
+        max-width: 320px;
+        margin: 0 auto;
+        gap: 1.5rem;
+    }
+    .duo-arch-frame {
+        height: 240px;
+    }
+    .duo-floating-crest {
+        bottom: -15px;
+    }
+}
+
+
 

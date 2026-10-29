@@ -24,14 +24,14 @@ DOCTORS_DATA = [
         "icon": "baby"
     },
     {
-        "id": "dr-co-founder-wife",
-        "name": "Co-Founder & Doctor",
-        "qual": "Specialist / M.B.B.S",
-        "title": "Consultant Specialist (Co-Founder)",
-        "dept": "Hospital Leadership & Clinical Care",
-        "desc": "Co-Founder of A1 Hospital, leading clinical excellence and compassionate healthcare alongside Founder Dr. Mula Venkatarao.",
-        "image": None,
-        "icon": "user-check"
+        "id": "dr-g-prameela",
+        "name": "Dr. G. Prameela",
+        "qual": "M.S. (OBG) FART, FMAS",
+        "title": "Obstetrician & Gynaecologist (Co-Founder)",
+        "dept": "Obstetrics, Gynaecology & IVF Clinic",
+        "desc": "Co-Founder of A1 Hospital & IVF Clinic. Specialist in high-risk pregnancy, fertility care & advanced reproductive technology (FART), and minimal access laparoscopic surgery (FMAS).",
+        "image": "dr_prameela.png",
+        "icon": "heart-pulse"
     },
     {
         "id": "dr-kannepalli-srinivas",
@@ -153,6 +153,29 @@ DEPARTMENTS_DATA = {
                 "qual": "M.S., M.CH. PAEDIATRIC SURGERY",
                 "title": "Pediatric Surgeon",
                 "image": None
+            }
+        ]
+    },
+    "obstetrics": {
+        "id": "obstetrics",
+        "file": "department-obstetrics.html",
+        "title": "Obstetrics, Gynaecology & IVF Clinic",
+        "tag": "Women's Health & Fertility Care",
+        "icon": "heart-pulse",
+        "image": "dr_prameela.png",
+        "meaning": "Obstetrics & Gynaecology covers comprehensive women's health, safe pregnancy care, and childbirth. The advanced reproductive technology (FART) and minimal access surgery (FMAS) unit delivers dedicated infertility treatments, IVF guidance, and laparoscopic surgeries.",
+        "highlights": [
+            "Comprehensive Antenatal & Safe Childbirth Care",
+            "Infertility Evaluation & Advanced Reproductive Technology (FART)",
+            "Laparoscopic Gynaecological Surgery (FMAS)",
+            "High-Risk Pregnancy & Women's Health Consultations"
+        ],
+        "doctors": [
+            {
+                "name": "Dr. G. Prameela",
+                "qual": "M.S. (OBG) FART, FMAS",
+                "title": "Obstetrician & Gynaecologist (Co-Founder)",
+                "image": "dr_prameela.png"
             }
         ]
     },

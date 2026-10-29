@@ -541,24 +541,19 @@ def build_all_pages():
     # -------------------------------------------------------------
     doc_cards_html = ""
     for doc in DOCTORS_DATA:
-        is_co_founder = doc['id'] == 'dr-co-founder-wife'
+        is_founder = "Founder" in doc['title'] and "Co-Founder" not in doc['title']
+        is_co_founder = "Co-Founder" in doc['title'] or doc['id'] in ['dr-g-prameela', 'dr-co-founder-wife']
         if doc.get('image'):
+            badge_title = "FOUNDER" if is_founder else ("CO-FOUNDER" if is_co_founder else "")
+            badge_html = f'''<div style="position:absolute; top:12px; right:12px; background:linear-gradient(135deg, var(--primary-accent), var(--primary-red)); color:#fff; font-size:0.72rem; font-weight:700; padding:4px 11px; border-radius:20px; box-shadow:0 4px 12px rgba(128,0,0,0.28); text-transform:uppercase; letter-spacing:0.5px;">{badge_title}</div>''' if badge_title else ""
+            img_pos = "object-position: top center;"
             img_or_avatar = f'''
-            <div style="height:260px; width:100%; overflow:hidden; position:relative;">
-                <img src="{doc['image']}" alt="{doc['name']}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;">
+            <div style="height:270px; width:100%; overflow:hidden; position:relative; background:#fff5f2;">
+                <img src="{doc['image']}" alt="{doc['name']}" style="width:100%; height:100%; object-fit:cover; {img_pos} transition:transform 0.5s ease;">
+                {badge_html}
                 <div style="position:absolute; bottom:12px; left:12px; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px); padding:0.25rem 0.75rem; border-radius:20px; font-size:0.75rem; font-weight:700; color:var(--primary-accent); border:1px solid rgba(128,0,0,0.08);">
                     {doc['dept']}
                 </div>
-            </div>'''
-        elif is_co_founder:
-            img_or_avatar = f'''
-            <div class="doctor-avatar-header" style="background: linear-gradient(135deg, #fdf4f2 0%, #fae6e3 100%);">
-                <div class="doctor-emblem-badge" style="background: #ffffff; color: var(--primary-accent); box-shadow: 0 8px 24px rgba(128,0,0,0.12);">
-                    <i data-lucide="user-check"></i>
-                </div>
-                <div class="doctor-avatar-title">Co-Founder & Specialist</div>
-                <div class="doctor-dept-pill" style="background: var(--light-red); color: var(--primary-accent); font-weight: 700;">A1 Hospital Leadership</div>
-                <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 6px; font-weight: 600;">Photo & Details Updating</div>
             </div>'''
         else:
             icon_name = doc.get('icon', 'stethoscope')
@@ -573,7 +568,7 @@ def build_all_pages():
             </div>'''
 
         card_custom_id = ' id="card-co-founder-wife"' if is_co_founder else ''
-        card_border_style = 'border: 2px solid rgba(128,0,0,0.22);' if is_co_founder else 'border: 1.5px solid var(--border-warm);'
+        card_border_style = 'border: 2px solid rgba(128,0,0,0.22);' if (is_founder or is_co_founder) else 'border: 1.5px solid var(--border-warm);'
 
         doc_cards_html += f'''
         <div class="doctor-card animate-up"{card_custom_id} style="display:flex; flex-direction:column; background:var(--bg-surface); border-radius:var(--radius-lg); {card_border_style} overflow:hidden; box-shadow:var(--shadow-sm); transition:var(--transition-bounce);">
@@ -640,6 +635,7 @@ def build_all_pages():
         const id = params.get('id') || hash || 'pediatrics';
         const targetMap = {
             'pediatrics': 'department-pediatrics.html',
+            'obstetrics': 'department-obstetrics.html',
             'orthopedics': 'department-orthopedics.html',
             'generalmedicine': 'department-generalmedicine.html',
             'generalsurgery': 'department-generalsurgery.html',

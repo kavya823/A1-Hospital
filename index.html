@@ -105,43 +105,43 @@
                     <span>WhatsApp Help Desk</span>
                 </a>
             </div>
-
-            <!-- Smera Signature Trust Metrics Strip -->
-            <div class="hero-trust-strip">
-                <div class="trust-item">
-                    <div class="trust-stars">★★★★★</div>
-                    <div class="trust-label"><strong>4.9 / 5</strong> Rating on Google</div>
-                </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-number">50,000+</div>
-                    <div class="trust-label">Patients Healed</div>
-                </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-number">13+</div>
-                    <div class="trust-label">Years of Trust (Est. 2013)</div>
-                </div>
-            </div>
         </div>
 
-        <!-- Smera Signature Arched Doctor Hero Frame -->
+        <!-- Founding Doctors Duo Showcase (Creative Duo Format) -->
         <div class="hero-image">
-            <div class="smera-hero-arch-wrapper">
-                <div class="smera-hero-arch-frame">
-                    <img src="dr_rao.jpeg" alt="Dr. Mula Venkatarao - Founder &amp; Children Specialist">
+            <div class="smera-hero-duo-wrapper">
+                <!-- Founder: Dr. Mula Venkatarao -->
+                <div class="smera-hero-duo-card">
+                    <div class="duo-arch-frame">
+                        <img src="dr_rao.jpeg" alt="Dr. Mula Venkatarao - Founder &amp; Children Specialist">
+                        <span class="duo-role-tag founder-tag">Founder</span>
+                    </div>
+                    <div class="duo-doc-meta">
+                        <div class="duo-doc-name">Dr. MULA VENKATARAO</div>
+                        <div class="duo-doc-qual">M.D (PAED) NILOUFER</div>
+                        <div class="duo-doc-spec">Children Specialist</div>
+                    </div>
                 </div>
 
-
-
-                <!-- Floating Bottom-Left Badge -->
-                <div class="floating-hero-badge badge-bottom-left">
-                    <div class="badge-icon-box">
-                        <i data-lucide="award" style="width:22px; height:22px;"></i>
+                <!-- Co-Founder: Dr. G. Prameela -->
+                <div class="smera-hero-duo-card">
+                    <div class="duo-arch-frame">
+                        <img src="dr_prameela.png" alt="Dr. G. Prameela - Co-Founder &amp; Obstetrician, Gynaecologist" style="object-position: top center;">
+                        <span class="duo-role-tag cofounder-tag">Co-Founder</span>
                     </div>
-                    <div>
-                        <div class="badge-text-title">Dr. MULA VENKATARAO</div>
-                        <div class="badge-text-sub">M.D (PAED) · Founder</div>
+                    <div class="duo-doc-meta">
+                        <div class="duo-doc-name">Dr. G. PRAMEELA</div>
+                        <div class="duo-doc-qual">M.S. (OBG) FART, FMAS</div>
+                        <div class="duo-doc-spec">Obstetrician &amp; Gynaecologist</div>
+                    </div>
+                </div>
+
+                <!-- Floating Central Leadership Crest -->
+                <div class="duo-floating-crest">
+                    <div class="crest-icon"><i data-lucide="award"></i></div>
+                    <div class="crest-text">
+                        <strong>Founding Leadership</strong>
+                        <span>13+ Years of Trust · Est. 2013</span>
                     </div>
                 </div>
             </div>
@@ -315,8 +315,16 @@
         <!-- HOME DOCTORS VIEW (Leadership & Key Doctors) -->
         <div class="doctors-grid" id="home-doctors-view">
             <!-- Founder Doctor -->
-            <div class="doctor-card animate-up">
-                <img src="dr_rao.jpeg" alt="Dr. Mula Venkatarao">
+            <div class="doctor-card animate-up" style="border: 2px solid rgba(128,0,0,0.22); position: relative;">
+                <div style="height: 310px; width: 100%; overflow: hidden; position: relative; background: #fff5f2;">
+                    <img src="dr_rao.jpeg" alt="Dr. Mula Venkatarao" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.6s ease;">
+                    <div style="position: absolute; top: 12px; right: 12px; background: linear-gradient(135deg, var(--primary-accent), var(--primary-red)); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 11px; border-radius: 20px; box-shadow: 0 4px 12px rgba(128,0,0,0.28); text-transform: uppercase; letter-spacing: 0.5px;">
+                        Founder
+                    </div>
+                    <div style="position: absolute; bottom: 10px; left: 12px; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--primary-accent); border: 1px solid rgba(128,0,0,0.1);">
+                        Pediatrics &amp; Child Health
+                    </div>
+                </div>
                 <div class="doctor-info">
                     <h3>Dr. MULA VENKATARAO</h3>
                     <div class="doctor-tag">M.D (PAED) NILOUFER</div>
@@ -325,21 +333,22 @@
                 </div>
             </div>
 
-            <!-- Co-Founder Doctor (Founder's Wife) -->
-            <div class="doctor-card animate-up delay-1" id="card-co-founder-wife" style="border: 2px solid rgba(128,0,0,0.22);">
-                <div class="doctor-avatar-header" style="height: 310px; background: linear-gradient(135deg, #fdf4f2 0%, #fae6e3 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
-                    <div class="doctor-emblem-badge" style="width: 80px; height: 80px; border-radius: 50%; background: #ffffff; color: var(--primary-accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(128,0,0,0.12); margin-bottom: 0.8rem;">
-                        <i data-lucide="user-check" style="width: 40px; height: 40px;"></i>
+            <!-- Co-Founder Doctor: Dr. G. Prameela -->
+            <div class="doctor-card animate-up delay-1" id="card-co-founder-wife" style="border: 2px solid rgba(128,0,0,0.22); position: relative;">
+                <div style="height: 310px; width: 100%; overflow: hidden; position: relative; background: #fff5f2;">
+                    <img src="dr_prameela.png" alt="Dr. G. Prameela - Obstetrician &amp; Gynaecologist" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.6s ease;">
+                    <div style="position: absolute; top: 12px; right: 12px; background: linear-gradient(135deg, var(--primary-accent), var(--primary-red)); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 11px; border-radius: 20px; box-shadow: 0 4px 12px rgba(128,0,0,0.28); text-transform: uppercase; letter-spacing: 0.5px;">
+                        Co-Founder
                     </div>
-                    <div class="doctor-avatar-title" style="font-size: 1.05rem; font-weight: 700; color: var(--text-dark);">Doctor &amp; Co-Founder</div>
-                    <div class="doctor-dept-pill" style="margin-top: 0.4rem; background: var(--light-red); color: var(--primary-accent); font-weight: 700;">A1 Hospital Leadership</div>
-                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">Photo &amp; Details Updating</div>
+                    <div style="position: absolute; bottom: 10px; left: 12px; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--primary-accent); border: 1px solid rgba(128,0,0,0.1);">
+                        Obstetrics &amp; IVF Clinic
+                    </div>
                 </div>
                 <div class="doctor-info">
-                    <h3>CO-FOUNDER &amp; DOCTOR</h3>
-                    <div class="doctor-tag" style="background: var(--light-red); color: var(--primary-accent);">M.B.B.S / SPECIALIST</div>
-                    <p class="doctor-spec-text">Consultant Specialist<br><strong>Co-Founder, A1 Hospital</strong></p>
-                    <a href="#appointment" class="btn-secondary small" onclick="openAppointmentModal('Co-Founder Doctor', 'A1 Hospital')"><span>Book an Appointment</span> <i data-lucide="arrow-right"></i></a>
+                    <h3>Dr. G. PRAMEELA</h3>
+                    <div class="doctor-tag">M.S. (OBG) FART, FMAS</div>
+                    <p class="doctor-spec-text">Obstetrician &amp; Gynaecologist<br><strong>Co-Founder, A1 Hospital &amp; IVF Clinic</strong></p>
+                    <a href="#appointment" class="btn-secondary small" onclick="openAppointmentModal('Dr. G. Prameela', 'Obstetrics, Gynaecology &amp; IVF Clinic')"><span>Book an Appointment</span> <i data-lucide="arrow-right"></i></a>
                 </div>
             </div>
 
@@ -394,20 +403,19 @@
 
                 <!-- Co-Founder Doctor Carousel Card -->
                 <div class="doctor-carousel-card">
-                    <div class="doctor-avatar-header" style="background: linear-gradient(135deg, #fdf4f2 0%, #fae6e3 100%);">
-                        <div class="doctor-emblem-badge" style="background: #ffffff; color: var(--primary-accent); box-shadow: 0 8px 24px rgba(128,0,0,0.12);">
-                            <i data-lucide="user-check"></i>
+                    <div style="height: 240px; width: 100%; overflow: hidden; position: relative; background: #fff5f2;">
+                        <img src="dr_prameela.png" alt="Dr. G. Prameela" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+                        <div style="position: absolute; top: 10px; right: 10px; background: linear-gradient(135deg, var(--primary-accent), var(--primary-red)); color: #fff; font-size: 0.68rem; font-weight: 700; padding: 3px 9px; border-radius: 20px; text-transform: uppercase;">
+                            Co-Founder
                         </div>
-                        <div class="doctor-avatar-title">Co-Founder &amp; Specialist</div>
-                        <div class="doctor-dept-pill" style="background: var(--light-red); color: var(--primary-accent); font-weight: 700;">A1 Hospital Leadership</div>
                     </div>
                     <div class="doctor-carousel-info">
                         <div>
-                            <h3>CO-FOUNDER &amp; DOCTOR</h3>
-                            <div class="doc-degrees">M.B.B.S / SPECIALIST</div>
-                            <div class="doc-specialty">Consultant Specialist<br><strong>Co-Founder, A1 Hospital</strong></div>
+                            <h3>Dr. G. PRAMEELA</h3>
+                            <div class="doc-degrees">M.S. (OBG) FART, FMAS</div>
+                            <div class="doc-specialty">Obstetrician &amp; Gynaecologist<br><strong>Co-Founder, A1 Hospital &amp; IVF Clinic</strong></div>
                         </div>
-                        <a href="#appointment" class="btn-secondary small mt-2"><span>Book an Appointment</span> <i data-lucide="arrow-right"></i></a>
+                        <a href="#appointment" class="btn-secondary small mt-2" onclick="openAppointmentModal('Dr. G. Prameela', 'Obstetrics, Gynaecology &amp; IVF Clinic')"><span>Book an Appointment</span> <i data-lucide="arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -761,6 +769,7 @@
                                 <i data-lucide="building-2"></i>
                                 <select id="appointment-dept" name="department">
                                     <option value="General Consultation">General Consultation</option>
+                                    <option value="Obstetrics, Gynaecology & IVF Clinic">Obstetrics, Gynaecology &amp; IVF Clinic</option>
                                     <option value="Pediatrics & Child Health">Pediatrics &amp; Child Health</option>
                                     <option value="Orthopedics & Joint Surgery">Orthopedics &amp; Joint Surgery</option>
                                     <option value="General Medicine">General Medicine</option>
@@ -779,7 +788,7 @@
                                 <select id="appointment-doctor" name="doctor">
                                     <option value="">Any Available Specialist</option>
                                     <option value="Dr. Mula Venkatarao (Children Specialist - Founder)">Dr. Mula Venkatarao (Children Specialist - Founder)</option>
-                                    <option value="Co-Founder & Doctor (Consultant Specialist)">Co-Founder &amp; Doctor (Consultant Specialist)</option>
+                                    <option value="Dr. G. Prameela (Obstetrician & Gynaecologist - Co-Founder)">Dr. G. Prameela (Obstetrician &amp; Gynaecologist - Co-Founder)</option>
                                     <option value="Dr. Kannepalli Srinivas (Pediatric Surgeon)">Dr. Kannepalli Srinivas (Pediatric Surgeon)</option>
                                     <option value="Dr. Sattaru Kishore Babu (Orthopaedic Surgeon)">Dr. Sattaru Kishore Babu (Orthopaedic Surgeon)</option>
                                     <option value="Dr. Bammidi Sai Theja (Orthopaedic Surgeon)">Dr. Bammidi Sai Theja (Orthopaedic Surgeon)</option>
