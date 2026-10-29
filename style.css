@@ -3255,6 +3255,7 @@ p {
     background: linear-gradient(135deg, #800000 0%, #a11414 100%);
 }
 
+.duo-role-tag.specialist-tag,
 .duo-role-tag.cofounder-tag {
     background: linear-gradient(135deg, #b8860b 0%, #800000 100%);
 }

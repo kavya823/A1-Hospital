@@ -27,9 +27,9 @@ DOCTORS_DATA = [
         "id": "dr-g-prameela",
         "name": "Dr. G. Prameela",
         "qual": "M.S. (OBG) FART, FMAS",
-        "title": "Obstetrician & Gynaecologist (Co-Founder)",
+        "title": "Senior Obstetrician & Gynaecologist (IVF Specialist)",
         "dept": "Obstetrics, Gynaecology & IVF Clinic",
-        "desc": "Co-Founder of A1 Hospital & IVF Clinic. Specialist in high-risk pregnancy, fertility care & advanced reproductive technology (FART), and minimal access laparoscopic surgery (FMAS).",
+        "desc": "Senior Consultant Obstetrician & Gynaecologist. Specialist in high-risk pregnancy, infertility evaluation, advanced reproductive technology (FART), and minimal access laparoscopic surgery (FMAS).",
         "image": "dr_prameela.png",
         "icon": "heart-pulse"
     },
@@ -174,7 +174,7 @@ DEPARTMENTS_DATA = {
             {
                 "name": "Dr. G. Prameela",
                 "qual": "M.S. (OBG) FART, FMAS",
-                "title": "Obstetrician & Gynaecologist (Co-Founder)",
+                "title": "Senior Obstetrician & Gynaecologist (IVF Specialist)",
                 "image": "dr_prameela.png"
             }
         ]

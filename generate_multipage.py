@@ -541,11 +541,12 @@ def build_all_pages():
     # -------------------------------------------------------------
     doc_cards_html = ""
     for doc in DOCTORS_DATA:
-        is_founder = "Founder" in doc['title'] and "Co-Founder" not in doc['title']
-        is_co_founder = "Co-Founder" in doc['title'] or doc['id'] in ['dr-g-prameela', 'dr-co-founder-wife']
+        is_founder = "Founder" in doc['title']
+        is_senior_specialist = doc['id'] in ['dr-g-prameela', 'dr-co-founder-wife'] or "Senior" in doc['title']
         if doc.get('image'):
-            badge_title = "FOUNDER" if is_founder else ("CO-FOUNDER" if is_co_founder else "")
-            badge_html = f'''<div style="position:absolute; top:12px; right:12px; background:linear-gradient(135deg, var(--primary-accent), var(--primary-red)); color:#fff; font-size:0.72rem; font-weight:700; padding:4px 11px; border-radius:20px; box-shadow:0 4px 12px rgba(128,0,0,0.28); text-transform:uppercase; letter-spacing:0.5px;">{badge_title}</div>''' if badge_title else ""
+            badge_title = "FOUNDER" if is_founder else ("★ SENIOR SPECIALIST" if is_senior_specialist else "")
+            badge_bg = "linear-gradient(135deg, var(--primary-accent), var(--primary-red))" if is_founder else "linear-gradient(135deg, #b8860b 0%, #800000 100%)"
+            badge_html = f'''<div style="position:absolute; top:12px; right:12px; background:{badge_bg}; color:#fff; font-size:0.72rem; font-weight:700; padding:4px 11px; border-radius:20px; box-shadow:0 4px 12px rgba(128,0,0,0.28); text-transform:uppercase; letter-spacing:0.5px;">{badge_title}</div>''' if badge_title else ""
             img_pos = "object-position: top center;"
             img_or_avatar = f'''
             <div style="height:270px; width:100%; overflow:hidden; position:relative; background:#fff5f2;">
@@ -567,8 +568,8 @@ def build_all_pages():
                 <div class="doctor-dept-pill">{doc['dept']}</div>
             </div>'''
 
-        card_custom_id = ' id="card-co-founder-wife"' if is_co_founder else ''
-        card_border_style = 'border: 2px solid rgba(128,0,0,0.22);' if (is_founder or is_co_founder) else 'border: 1.5px solid var(--border-warm);'
+        card_custom_id = ' id="card-dr-prameela"' if is_senior_specialist else ''
+        card_border_style = 'border: 2px solid rgba(184,134,11,0.35); box-shadow: 0 8px 24px rgba(184,134,11,0.08);' if is_senior_specialist else ('border: 2px solid rgba(128,0,0,0.22);' if is_founder else 'border: 1.5px solid var(--border-warm);')
 
         doc_cards_html += f'''
         <div class="doctor-card animate-up"{card_custom_id} style="display:flex; flex-direction:column; background:var(--bg-surface); border-radius:var(--radius-lg); {card_border_style} overflow:hidden; box-shadow:var(--shadow-sm); transition:var(--transition-bounce);">
