@@ -19,7 +19,7 @@ DOCTORS_DATA = [
         "qual": "M.D (PAED) NILOUFER",
         "title": "Children Specialist (Founder)",
         "dept": "Pediatrics & Child Health",
-        "desc": "Founder of A1 Hospital with over 13+ years of clinical excellence in pediatric care, child health, and newborn wellness in Srikakulam (Est. 2013).",
+        "desc": "Founder of A1 Hospital with over 13+ years of clinical excellence in pediatric care, child health, and newborn wellness in Srikakulam.",
         "image": "dr_rao.jpeg",
         "icon": "baby"
     },
@@ -136,7 +136,7 @@ DEPARTMENTS_DATA = {
         "image": None,
         "meaning": "Pediatrics is the branch of medicine focused on the physical, emotional, and social health of infants, children, and young adolescents. It covers preventive vaccinations, childhood fever management, growth assessments, and specialized pediatric surgery.",
         "highlights": [
-            "13+ Years Pediatric Excellence (Est. 2013) led by Founder Dr. Mula Venkatarao",
+            "13+ Years Pediatric Excellence led by Founder Dr. Mula Venkatarao",
             "Specialized Pediatric Surgical Care by Dr. Kannepalli Srinivas",
             "Complete Child Immunization & Vaccination Schedules",
             "Dedicated Newborn & Neonatal Monitoring"
