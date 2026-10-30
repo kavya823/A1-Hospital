@@ -379,3 +379,38 @@ Hospital Email:   ${hospitalEmail}`;
     form.reset();
 }
 
+// Blog Filter & Interactive Modal Functions
+function filterBlog(category, pillElem) {
+    document.querySelectorAll('.blog-filter-pill').forEach(btn => btn.classList.remove('active'));
+    if (pillElem) pillElem.classList.add('active');
+    
+    const cards = document.querySelectorAll('.blog-card');
+    cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+function openArticleModal(title, category, date, readTime, encodedContent) {
+    const modal = document.getElementById('article-modal');
+    if (!modal) return;
+    
+    document.getElementById('modal-article-title').textContent = title;
+    document.getElementById('modal-article-category').textContent = category;
+    document.getElementById('modal-article-meta').textContent = `${date} · ${readTime}`;
+    document.getElementById('modal-article-body').innerHTML = decodeURIComponent(encodedContent);
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    if (window.lucide) window.lucide.createIcons();
+}
+
+function closeArticleModal() {
+    const modal = document.getElementById('article-modal');
+    if (!modal) return;
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}

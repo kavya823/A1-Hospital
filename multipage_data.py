@@ -350,7 +350,7 @@ DEPARTMENTS_DATA = {
     }
 }
 
-# The 5 Core Real Services
+# The 4 Core Real Hospital Services (No doctor mentions - purely facility-focused)
 SERVICES_DATA = {
     "beds": {
         "id": "beds",
@@ -363,15 +363,16 @@ SERVICES_DATA = {
         "highlights": [
             "100+ Clean, Air-Conditioned Inpatient Beds",
             "24/7 Central Oxygen & Bedside Nurse Bell System",
-            "Continuous Patient Monitoring & Nursing Care",
-            "Hygienic En-Suite Facilities & Attendant Couches"
+            "Continuous Patient Monitoring & Round-the-Clock Nursing",
+            "Hygienic En-Suite Facilities & Attendant Comfort Amenities"
         ],
-        "lead_doctor": {
-            "name": "Dr. Mula Venkatarao & Dr. Hanumanthu Anilkumar",
-            "qual": "Founder & Consultant Physician",
-            "title": "Inpatient Medical Care Supervision",
-            "image": None
-        }
+        "readiness": "24/7 Admitting Facility",
+        "features": [
+            "Sterile Air-Conditioned Patient Rooms",
+            "Deluxe Private Suites & General Care Units",
+            "Round-the-Clock Dedicated Nursing Staff",
+            "Immediate Inpatient Medical Attention"
+        ]
     },
     "emergency": {
         "id": "emergency",
@@ -383,37 +384,17 @@ SERVICES_DATA = {
         "meaning": "24/7 Emergency Care means our casualty department is open day and night, 365 days a year, ready to provide immediate medical attention for sudden accidents, acute chest pain, breathlessness, injuries, and critical medical emergencies without delay.",
         "highlights": [
             "Always Open: 24 Hours a Day, 365 Days a Year",
-            "Immediate Doctor Triage & Resuscitation Equipment",
+            "Immediate Triage & Resuscitation Equipment Ready",
             "Direct Support for Road Traffic Accidents & Trauma",
-            "Direct Access to Oxygen, Defibrillators & Medication"
+            "Direct Access to Oxygen, Defibrillators & Emergency Treatment"
         ],
-        "lead_doctor": {
-            "name": "Dr. Hanumanthu Anilkumar & Emergency Medical Team",
-            "qual": "M.D (General Medicine)",
-            "title": "Emergency Casualty & Critical Response",
-            "image": None
-        }
-    },
-    "pharmacy": {
-        "id": "pharmacy",
-        "file": "service-pharmacy.html",
-        "title": "24/7 In-House Pharmacy",
-        "tag": "Authentic Medications",
-        "icon": "pill",
-        "image": None,
-        "meaning": "An in-house pharmacy is an on-premises hospital medical store open 24 hours. Patients and families do not need to search outside for medicines; genuine, doctor-prescribed tablets, injections, and child syrups are available instantly inside the hospital.",
-        "highlights": [
-            "Open 24/7 Right Inside the Hospital Premises",
-            "100% Genuine, Batch-Verified Brand & Generic Medicines",
-            "Refrigerated Cold-Storage for Vaccines & Insulin",
-            "Stock of Emergency Injections & Surgical Disposables"
-        ],
-        "lead_doctor": {
-            "name": "A1 Hospital Pharmacy Team",
-            "qual": "Registered Clinical Pharmacists",
-            "title": "24/7 In-House Medicine Dispensation",
-            "image": None
-        }
+        "readiness": "Always Open 24/7",
+        "features": [
+            "Immediate Patient Triage & Assessment",
+            "Trauma Care & Resuscitation Bays",
+            "Advanced Multi-Parameter Vital Monitoring",
+            "24/7 On-Duty Critical Care Medical Staff"
+        ]
     },
     "ambulance": {
         "id": "ambulance",
@@ -429,12 +410,13 @@ SERVICES_DATA = {
             "Safe Inter-Hospital & Doorstep Patient Retrieval",
             "Direct Communication with Hospital Casualty on Arrival"
         ],
-        "lead_doctor": {
-            "name": "Emergency Ambulance Dispatch Team",
-            "qual": "Trained Emergency Medical Technicians (EMT)",
-            "title": "24/7 Emergency Transport Service",
-            "image": None
-        }
+        "readiness": "24/7 Rapid Response",
+        "features": [
+            "Continuous Oxygen & Airway Support System",
+            "Foldable Hydraulic Stretchers & Wheelchairs",
+            "Trained Paramedic & First-Aid Assistance",
+            "Fastest Route Dispatch Across Srikakulam"
+        ]
     },
     "icu": {
         "id": "icu",
@@ -446,15 +428,17 @@ SERVICES_DATA = {
         "meaning": "The ICU (Intensive Care Unit) and NICU (Neonatal Intensive Care Unit) are specialized hospital units for critically ill patients and newborn infants needing close, continuous monitoring. Beds have real-time vitals monitors and dedicated nurses.",
         "highlights": [
             "Continuous 24/7 Vitals & Cardiac Rhythm Monitoring",
-            "Dedicated Neonatal Care (NICU) under Dr. Mula Venkatarao",
+            "Dedicated Neonatal Intensive Care (NICU) with Warmers",
             "Mechanical Ventilators & High-Flow Oxygen Support",
-            "Close Nurse-to-Patient Care Ratio"
+            "Close 1:1 and 1:2 Nurse-to-Patient Critical Care Ratio"
         ],
-        "lead_doctor": {
-            "name": "Dr. Mula Venkatarao & Dr. Hanumanthu Anilkumar",
-            "qual": "M.D (PAED) NILOUFER & M.D (General Medicine)",
-            "title": "Intensive Care & Neonatal Supervision",
-            "image": None
-        }
+        "readiness": "24/7 Intensive Monitoring",
+        "features": [
+            "High-Precision Ventilators & Infusion Pumps",
+            "Neonatal Warmers & Phototherapy Units",
+            "Continuous Multi-Channel ECG & Blood Gas Tracking",
+            "Strict Infection Control & Sterile Protocols"
+        ]
     }
 }
+

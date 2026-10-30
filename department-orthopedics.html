@@ -113,6 +113,7 @@
                 </div>
             </li>
             <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="#appointment" class="btn-primary"><span>Book an Appointment</span> <i data-lucide="calendar" style="width:16px; height:16px;"></i></a></li>
         </ul>
     </nav>
@@ -189,8 +190,8 @@
                     </ul>
 
                     <div class="detail-hero-actions">
-                        <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('Dr. Sattaru. Kishore Babu', 'Orthopedics & Joint Surgery')">
-                            <i data-lucide="calendar"></i> <span>Book an Appointment</span>
+                        <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', 'Orthopedics & Joint Surgery')">
+                            <i data-lucide="calendar"></i> <span>Book Department Appointment</span>
                         </a>
                         <a href="https://wa.me/916399144444?text=Hello%20A1%20Hospital,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" class="btn-whatsapp-pill" style="display:inline-flex; align-items:center; gap:6px; padding:0.65rem 1.2rem; background:#25D366; color:#fff; border-radius:30px; font-weight:700; text-decoration:none;">
                             <i data-lucide="message-circle"></i> <span>WhatsApp: 6399144444</span>
@@ -222,47 +223,45 @@
                 </div>
             </div>
 
-            <!-- Related Doctor(s) Details & Photo -->
+            <!-- Clinical Scope & Diagnostic Care (Zero Doctor Names) -->
             <div style="margin-top:2.5rem;">
                 <div class="section-eyebrow" style="margin-bottom:0.75rem;">
-                    <span class="eyebrow-dot"></span> SPECIALIST DOCTOR DETAILS
+                    <span class="eyebrow-dot"></span> CLINICAL SCOPE &amp; PROTOCOL
                 </div>
-                <h2 style="font-size:1.8rem; color:var(--text-dark); margin-bottom:1.5rem;">Consult Our <span class="serif-italic">Department Doctors</span></h2>
+                <h2 style="font-size:1.8rem; color:var(--text-dark); margin-bottom:1.5rem;">Specialized Care &amp; <span class="serif-italic">Clinical Facilities</span></h2>
                 
-            <div class="detail-doctor-spotlight animate-up" style="margin-top:1.5rem;">
-                
-                <div class="detail-doc-img-wrap" style="display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #fdf8f5 0%, #f7ece6 100%);">
-                    <div class="doctor-emblem-badge" style="width:68px; height:68px; margin:0;">
-                        <i data-lucide="bone"></i>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+                    <div style="background:#ffffff; border:1.5px solid var(--border-warm); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
+                        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                            <div class="card-icon-badge" style="width:36px; height:36px; margin:0;"><i data-lucide="stethoscope"></i></div>
+                            <h4 style="margin:0; font-size:1.05rem; color:var(--text-dark);">Comprehensive OPD &amp; Inpatient Care</h4>
+                        </div>
+                        <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin:0;">Daily outpatient consultations, accurate diagnostic evaluations, and continuous inpatient monitoring with modern medical technology.</p>
+                    </div>
+                    
+                    <div style="background:#ffffff; border:1.5px solid var(--border-warm); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
+                        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                            <div class="card-icon-badge" style="width:36px; height:36px; margin:0;"><i data-lucide="shield-check"></i></div>
+                            <h4 style="margin:0; font-size:1.05rem; color:var(--text-dark);">Sterile Protocols &amp; Safety</h4>
+                        </div>
+                        <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin:0;">Sterilized operation suites, advanced diagnostic testing, and evidence-based clinical recovery pathways tailored to patient needs.</p>
                     </div>
                 </div>
-                <div class="detail-doc-info">
-                    <span class="detail-doc-badge">Verified Specialist Doctor</span>
-                    <h3>Dr. Sattaru. Kishore Babu</h3>
-                    <div class="doc-qual">M.S., (ORTHO)</div>
-                    <p style="font-weight:700; color:var(--text-dark);">Orthopaedic Surgeon</p>
-                    <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('Dr. Sattaru. Kishore Babu', 'Orthopedics & Joint Surgery')">
-                        <i data-lucide="calendar"></i> <span>Book an Appointment with Dr. Sattaru. Kishore Babu</span>
-                    </a>
-                </div>
-            </div>
-            <div class="detail-doctor-spotlight animate-up" style="margin-top:1.5rem;">
-                
-                <div class="detail-doc-img-wrap" style="display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #fdf8f5 0%, #f7ece6 100%);">
-                    <div class="doctor-emblem-badge" style="width:68px; height:68px; margin:0;">
-                        <i data-lucide="bone"></i>
+
+                <div style="margin-top:1.8rem; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); border:1.5px solid rgba(128,0,0,0.15); border-radius:var(--radius-md); padding:1.5rem 1.8rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
+                    <div>
+                        <strong style="display:block; font-size:1.1rem; color:var(--text-dark); margin-bottom:0.25rem;">Need Clinical Consultation for Orthopedics & Joint Surgery?</strong>
+                        <span style="font-size:0.88rem; color:var(--text-charcoal);">Book a priority OPD slot or reach our 24/7 reception desk for guidance.</span>
+                    </div>
+                    <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
+                        <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', 'Orthopedics & Joint Surgery')">
+                            <i data-lucide="calendar"></i> <span>Book Consultation</span>
+                        </a>
+                        <a href="tel:08942228234" class="btn-secondary" style="background:#fff;">
+                            <i data-lucide="phone"></i> <span>Call: 08942-228234</span>
+                        </a>
                     </div>
                 </div>
-                <div class="detail-doc-info">
-                    <span class="detail-doc-badge">Verified Specialist Doctor</span>
-                    <h3>Dr. Bammidi Sai Theja</h3>
-                    <div class="doc-qual">MS Ortho, FIJR, FIASM</div>
-                    <p style="font-weight:700; color:var(--text-dark);">Orthopaedic Surgeon</p>
-                    <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('Dr. Bammidi Sai Theja', 'Orthopedics & Joint Surgery')">
-                        <i data-lucide="calendar"></i> <span>Book an Appointment with Dr. Bammidi Sai Theja</span>
-                    </a>
-                </div>
-            </div>
             </div>
 
             <!-- Explore Other Departments Carousel -->
@@ -485,6 +484,10 @@
                     <li>
                         <i data-lucide="globe"></i>
                         <span>Website: <a href="https://www.a1hospitalsrikakulam.com" target="_blank" rel="noopener noreferrer">www.a1hospitalsrikakulam.com</a></span>
+                    </li>
+                    <li>
+                        <i data-lucide="book-open"></i>
+                        <span><a href="blog.html">Health &amp; Wellness Blog</a></span>
                     </li>
                 </ul>
             </div>

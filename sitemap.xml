@@ -21,6 +21,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://www.a1hospitalsrikakulam.com/blog.html</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://www.a1hospitalsrikakulam.com/department-pediatrics.html</loc>
     <priority>0.8</priority>
   </url>
@@ -62,10 +67,6 @@
   </url>
   <url>
     <loc>https://www.a1hospitalsrikakulam.com/service-emergency.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.a1hospitalsrikakulam.com/service-pharmacy.html</loc>
     <priority>0.8</priority>
   </url>
   <url>

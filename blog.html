@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>24/7 In-House Pharmacy | A1 Hospital</title>
+    <title>Health Insights & Blog | A1 Hospital</title>
     <meta name="description" content="A1 Hospital offers world-class medical and surgical services, top-tier doctors, and 24/7 emergency care in Srikakulam.">
-    <link rel="canonical" href="https://www.a1hospitalsrikakulam.com/service-pharmacy.html">
+    <link rel="canonical" href="https://www.a1hospitalsrikakulam.com/blog.html">
     
     <!-- Open Graph / Social Sharing Meta -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.a1hospitalsrikakulam.com/service-pharmacy.html">
+    <meta property="og:url" content="https://www.a1hospitalsrikakulam.com/blog.html">
     <meta property="og:title" content="A1 Hospital | Excellence in Healthcare & IVF Clinic">
     <meta property="og:description" content="A1 Hospital offers world-class medical and surgical services, top-tier doctors, and 24/7 emergency care in Srikakulam.">
     <meta property="og:image" content="https://www.a1hospitalsrikakulam.com/logo.png">
 
     <!-- Twitter Meta -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.a1hospitalsrikakulam.com/service-pharmacy.html">
+    <meta name="twitter:url" content="https://www.a1hospitalsrikakulam.com/blog.html">
     <meta name="twitter:title" content="A1 Hospital | Excellence in Healthcare & IVF Clinic">
     <meta name="twitter:description" content="A1 Hospital offers world-class medical and surgical services, top-tier doctors, and 24/7 emergency care in Srikakulam.">
     <meta name="twitter:image" content="https://www.a1hospitalsrikakulam.com/logo.png">
@@ -57,7 +57,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=15">
 </head>
-<body data-page="service-detail">
+<body data-page="blog">
 
     <!-- Smera-Style Top Announcement Bar -->
     <div class="top-announcement-bar">
@@ -113,6 +113,7 @@
                 </div>
             </li>
             <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="#appointment" class="btn-primary"><span>Book an Appointment</span> <i data-lucide="calendar" style="width:16px; height:16px;"></i></a></li>
         </ul>
     </nav>
@@ -135,158 +136,188 @@
 
     <!-- Smera-Inspired Hero Section -->
     
-        
+    
     <div style="margin-top: 1.5rem;"></div>
 
-        <section class="detail-page-wrapper framed-section animate-up">
-            <!-- Breadcrumbs and Back Button -->
-            <div class="detail-nav-header">
-                <a href="services.html" class="detail-back-btn">
-                    <i data-lucide="arrow-left"></i> <span>Back to All Services</span>
+    <section class="framed-section animate-up" style="margin-top:1.5rem;">
+        <div class="section-title">
+            <div class="section-eyebrow">
+                <span class="eyebrow-dot"></span> HEALTH &amp; WELLNESS AWARENESS
+            </div>
+            <h2>A1 Hospital <span class="serif-italic">Health Insights</span></h2>
+            <p>Practical medical knowledge, disease prevention tips, and verified clinical guidance from our medical center in Srikakulam.</p>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="blog-filter-bar">
+            <button class="blog-filter-pill active" onclick="filterBlog('all', this)">All Articles</button>
+            <button class="blog-filter-pill" onclick="filterBlog('pediatrics', this)">Pediatrics &amp; Child Health</button>
+            <button class="blog-filter-pill" onclick="filterBlog('obstetrics', this)">Women's Health &amp; IVF</button>
+            <button class="blog-filter-pill" onclick="filterBlog('orthopedics', this)">Orthopedics &amp; Joint Care</button>
+            <button class="blog-filter-pill" onclick="filterBlog('emergency', this)">Emergency Care</button>
+            <button class="blog-filter-pill" onclick="filterBlog('nephrology', this)">Kidney Health</button>
+            <button class="blog-filter-pill" onclick="filterBlog('generalmedicine', this)">General Medicine</button>
+        </div>
+
+        <!-- Blog Articles Grid -->
+        <div class="blog-grid">
+            
+        <div class="blog-card animate-up" data-category="pediatrics">
+            <div class="blog-card-visual">
+                <div style="width:64px; height:64px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
+                    <i data-lucide="baby" style="width:32px; height:32px;"></i>
+                </div>
+                <span class="blog-card-badge">Pediatrics & Child Health</span>
+                <span class="blog-card-time">5 min read</span>
+            </div>
+            <div class="blog-card-content">
+                <h3>Essential Child Immunization & Vaccination Milestones: A Parent's Guide</h3>
+                <p>Timely vaccinations protect infants from life-threatening infections. Learn about the essential immunization schedule from birth through age five.</p>
+                <div class="blog-card-footer">
+                    <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;"><i data-lucide="calendar" style="width:13px; vertical-align:middle;"></i> Oct 2026</span>
+                    <button class="blog-read-btn" onclick="openArticleModal('Essential Child Immunization & Vaccination Milestones: A Parent\'s Guide', 'Pediatrics & Child Health', 'Oct 2026', '5 min read', '%0A%20%20%20%20%20%20%20%20%3Ch4%3EWhy%20Childhood%20Vaccination%20is%20Critical%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EVaccination%20is%20one%20of%20the%20most%20effective%20medical%20safeguards%20developed%20to%20protect%20infants%20and%20children%20from%20serious%20preventable%20illnesses%20such%20as%20polio%2C%20hepatitis%20B%2C%20rotavirus%2C%20measles%2C%20and%20diphtheria.%20In%20the%20early%20months%20of%20life%2C%20a%20baby%E2%80%99s%20immune%20system%20is%20still%20developing%2C%20making%20prompt%20adherence%20to%20the%20pediatric%20immunization%20calendar%20vital.%3C/p%3E%0A%20%20%20%20%20%20%20%20%3Ch4%3ECore%20Immunization%20Milestones%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EAt%20Birth%3A%3C/strong%3E%20BCG%2C%20OPV-0%2C%20and%20Hepatitis%20B%20birth%20dose.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3E6%2C%2010%2C%20%26amp%3B%2014%20Weeks%3A%3C/strong%3E%20Pentavalent%20vaccine%2C%20Rotavirus%2C%20Inactivated%20Polio%20Vaccine%20%28IPV%29%2C%20and%20PCV.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3E9%20to%2012%20Months%3A%3C/strong%3E%20Measles%20%26amp%3B%20Rubella%20%28MR-1%29%2C%20Vitamin%20A%2C%20and%20JE%20%28if%20endemic%29.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3E16%20to%2024%20Months%3A%3C/strong%3E%20DPT%20booster%20and%20MR-2.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3E5%20Years%3A%3C/strong%3E%20DPT-2%20booster%20for%20sustained%20immunity%20before%20starting%20school.%3C/li%3E%0A%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%3Ch4%3EManaging%20Mild%20Post-Vaccine%20Reactions%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EIt%20is%20normal%20for%20children%20to%20experience%20slight%20fever%2C%20mild%20fussiness%2C%20or%20localized%20redness%20at%20the%20injection%20site.%20Simple%20comfort%20measures%2C%20cold%20compresses%2C%20and%20doctor-prescribed%20pediatric%20paracetamol%20drops%20will%20keep%20your%20child%20comfortable.%20Always%20consult%20our%20pediatric%20outpatient%20department%20for%20customized%20immunization%20schedules.%3C/p%3E%0A%20%20%20%20%20%20%20%20')">
+                        <span>Read Article</span> <i data-lucide="arrow-right" style="width:15px; height:15px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="blog-card animate-up" data-category="obstetrics">
+            <div class="blog-card-visual">
+                <div style="width:64px; height:64px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
+                    <i data-lucide="heart-pulse" style="width:32px; height:32px;"></i>
+                </div>
+                <span class="blog-card-badge">Women's Health & IVF</span>
+                <span class="blog-card-time">6 min read</span>
+            </div>
+            <div class="blog-card-content">
+                <h3>Understanding IVF & Modern Reproductive Solutions: A Compassionate Overview</h3>
+                <p>Fertility challenges are common and treatable. Discover modern reproductive techniques including ovulation tracking, IUI, and IVF.</p>
+                <div class="blog-card-footer">
+                    <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;"><i data-lucide="calendar" style="width:13px; vertical-align:middle;"></i> Oct 2026</span>
+                    <button class="blog-read-btn" onclick="openArticleModal('Understanding IVF & Modern Reproductive Solutions: A Compassionate Overview', 'Women's Health & IVF', 'Oct 2026', '6 min read', '%0A%20%20%20%20%20%20%20%20%3Ch4%3EThe%20Evolution%20of%20Reproductive%20Medicine%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EInfertility%20affects%20approximately%20one%20in%20six%20couples%20worldwide.%20With%20modern%20clinical%20reproductive%20medicine%2C%20couples%20have%20access%20to%20scientific%2C%20evidence-based%20diagnostic%20pathways%20that%20identify%20underlying%20factors%20early%20and%20personalize%20treatment.%3C/p%3E%0A%20%20%20%20%20%20%20%20%3Ch4%3EWhen%20Should%20Couples%20Seek%20Fertility%20Evaluation%3F%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cp%3ECouples%20under%2035%20who%20have%20been%20attempting%20conception%20for%2012%20months%20%28or%206%20months%20if%2035%20or%20older%29%20are%20advised%20to%20undergo%20a%20baseline%20reproductive%20evaluation.%20This%20includes%20hormone%20profiling%2C%20pelvic%20ultrasonography%2C%20tubal%20patency%20checks%2C%20and%20semen%20analysis.%3C/p%3E%0A%20%20%20%20%20%20%20%20%3Ch4%3ETreatment%20Steps%3A%20From%20Basic%20to%20Advanced%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EOvulation%20Induction%20%26amp%3B%20Timed%20Intercourse%3A%3C/strong%3E%20Safe%20medications%20to%20stimulate%20natural%20egg%20release.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EIntrauterine%20Insemination%20%28IUI%29%3A%3C/strong%3E%20Concentrated%2C%20washed%20sperm%20placed%20into%20the%20uterus%20around%20ovulation.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EIn-Vitro%20Fertilization%20%28IVF%29%3A%3C/strong%3E%20Controlled%20stimulation%2C%20egg%20retrieval%2C%20fertilization%20in%20a%20sterile%20embryology%20setting%2C%20and%20embryo%20transfer.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EMinimal%20Access%20Laparoscopy%20%28FMAS%29%3A%3C/strong%3E%20Correcting%20fibroids%2C%20endometriosis%2C%20and%20tubal%20blocks%20with%20minimal%20recovery%20time.%3C/li%3E%0A%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%3Cp%3ECompassionate%20emotional%20support%2C%20lifestyle%20balance%2C%20and%20qualified%20clinical%20guidance%20make%20the%20journey%20to%20parenthood%20hopeful%20and%20achievable.%3C/p%3E%0A%20%20%20%20%20%20%20%20')">
+                        <span>Read Article</span> <i data-lucide="arrow-right" style="width:15px; height:15px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="blog-card animate-up" data-category="orthopedics">
+            <div class="blog-card-visual">
+                <div style="width:64px; height:64px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
+                    <i data-lucide="bone" style="width:32px; height:32px;"></i>
+                </div>
+                <span class="blog-card-badge">Orthopedics & Joint Care</span>
+                <span class="blog-card-time">4 min read</span>
+            </div>
+            <div class="blog-card-content">
+                <h3>Preventing Knee Arthritis & Maintaining Joint Mobility After 40</h3>
+                <p>Protect your knees, spine, and joints with ergonomic daily habits, low-impact exercise, and early orthopedic evaluation.</p>
+                <div class="blog-card-footer">
+                    <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;"><i data-lucide="calendar" style="width:13px; vertical-align:middle;"></i> Oct 2026</span>
+                    <button class="blog-read-btn" onclick="openArticleModal('Preventing Knee Arthritis & Maintaining Joint Mobility After 40', 'Orthopedics & Joint Care', 'Oct 2026', '4 min read', '%0A%20%20%20%20%20%20%20%20%3Ch4%3EWhy%20Do%20Joints%20Deteriorate%20with%20Age%3F%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EArticular%20cartilage%20covers%20the%20ends%20of%20bones%20to%20provide%20smooth%2C%20frictionless%20movement.%20Over%20decades%20of%20repetitive%20impact%2C%20obesity%2C%20or%20injury%2C%20this%20cartilage%20can%20thin%2C%20causing%20stiffness%2C%20swelling%2C%20and%20localized%20pain%20known%20as%20osteoarthritis.%3C/p%3E%0A%20%20%20%20%20%20%20%20%3Ch4%3EActionable%20Steps%20for%20Lifelong%20Joint%20Health%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EWeight%20Management%3A%3C/strong%3E%20Every%20kilogram%20of%20body%20weight%20reduced%20removes%20roughly%204%20kilograms%20of%20mechanical%20pressure%20from%20your%20knee%20joints%20during%20walking.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3ELow-Impact%20Quadriceps%20Strengthening%3A%3C/strong%3E%20Swimming%2C%20stationary%20cycling%2C%20and%20straight-leg%20raises%20strengthen%20the%20thigh%20muscles%20that%20absorb%20knee%20shock.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EVitamin%20D3%20%26amp%3B%20Calcium%20Balance%3A%3C/strong%3E%20Bone%20density%20directly%20supports%20joint%20cartilage%20longevity.%20Periodic%20checks%20prevent%20accelerated%20bone%20loss.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EAvoid%20Prolonged%20Squatting%20%26amp%3B%20Cross-Legged%20Sitting%3A%3C/strong%3E%20If%20you%20experience%20early%20knee%20crepitus%20%28grinding%20sound%29%2C%20avoid%20deep%20knee%20flexion%20on%20hard%20floors.%3C/li%3E%0A%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EIf%20knee%20pain%20interrupts%20sleep%20or%20everyday%20walking%2C%20early%20orthopedic%20assessment%20and%20modern%20physiotherapy%20can%20prevent%20the%20need%20for%20advanced%20joint%20replacement.%3C/p%3E%0A%20%20%20%20%20%20%20%20')">
+                        <span>Read Article</span> <i data-lucide="arrow-right" style="width:15px; height:15px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="blog-card animate-up" data-category="emergency">
+            <div class="blog-card-visual">
+                <div style="width:64px; height:64px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
+                    <i data-lucide="clock" style="width:32px; height:32px;"></i>
+                </div>
+                <span class="blog-card-badge">Emergency & Trauma Care</span>
+                <span class="blog-card-time">5 min read</span>
+            </div>
+            <div class="blog-card-content">
+                <h3>The Golden Hour: Why Rapid Response in Emergencies Saves Lives</h3>
+                <p>In medical crises like heart attacks, stroke, or road trauma, the first 60 minutes determine patient recovery. Know what immediate steps to take.</p>
+                <div class="blog-card-footer">
+                    <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;"><i data-lucide="calendar" style="width:13px; vertical-align:middle;"></i> Oct 2026</span>
+                    <button class="blog-read-btn" onclick="openArticleModal('The Golden Hour: Why Rapid Response in Emergencies Saves Lives', 'Emergency & Trauma Care', 'Oct 2026', '5 min read', '%0A%20%20%20%20%20%20%20%20%3Ch4%3EWhat%20is%20the%20Medical%20%27Golden%20Hour%27%3F%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EThe%20Golden%20Hour%20refers%20to%20the%20critical%20window%20of%20time%20immediately%20following%20acute%20medical%20trauma%2C%20severe%20injury%2C%20or%20cardiac/stroke%20onset.%20Prompt%20medical%20intervention%20during%20this%20period%20dramatically%20increases%20survival%20rates%20and%20prevents%20permanent%20organ%20damage.%3C/p%3E%0A%20%20%20%20%20%20%20%20%3Ch4%3ERecognizing%20Immediate%20Emergencies%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3ECardiac%20Symptoms%3A%3C/strong%3E%20Heavy%20chest%20pressure%20radiating%20to%20the%20jaw%2C%20left%20shoulder%2C%20or%20back%20accompanied%20by%20cold%20sweating%20and%20shortness%20of%20breath.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EStroke%20Warning%20Signs%20%28FAST%29%3A%3C/strong%3E%20Face%20drooping%2C%20Arm%20weakness%2C%20Slurred%20speech%2C%20Time%20to%20call%20emergency.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3ESevere%20Trauma%20%26amp%3B%20Fractures%3A%3C/strong%3E%20Profuse%20bleeding%2C%20head%20injury%20with%20disorientation%2C%20or%20inability%20to%20move%20a%20limb%20following%20an%20accident.%3C/li%3E%0A%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%3Ch4%3EWhat%20to%20Do%20While%20Help%20is%20on%20the%20Way%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EKeep%20the%20patient%20calm%2C%20ensure%20their%20airway%20is%20clear%2C%20do%20not%20offer%20food%20or%20oral%20liquids%2C%20and%20call%20our%2024/7%20Emergency%20Casualty%20Reception%20at%20%3Cstrong%3E08942-228234%3C/strong%3E%20immediately%20to%20dispatch%20ambulance%20transport%20and%20alert%20the%20trauma%20team.%3C/p%3E%0A%20%20%20%20%20%20%20%20')">
+                        <span>Read Article</span> <i data-lucide="arrow-right" style="width:15px; height:15px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="blog-card animate-up" data-category="nephrology">
+            <div class="blog-card-visual">
+                <div style="width:64px; height:64px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
+                    <i data-lucide="filter" style="width:32px; height:32px;"></i>
+                </div>
+                <span class="blog-card-badge">Nephrology & Renal Health</span>
+                <span class="blog-card-time">4 min read</span>
+            </div>
+            <div class="blog-card-content">
+                <h3>Protecting Your Kidneys: Hydration, Diet, & Kidney Stone Prevention</h3>
+                <p>Kidneys filter over 180 liters of blood every single day. Simple hydration and dietary discipline prevent kidney stone formation and renal strain.</p>
+                <div class="blog-card-footer">
+                    <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;"><i data-lucide="calendar" style="width:13px; vertical-align:middle;"></i> Oct 2026</span>
+                    <button class="blog-read-btn" onclick="openArticleModal('Protecting Your Kidneys: Hydration, Diet, & Kidney Stone Prevention', 'Nephrology & Renal Health', 'Oct 2026', '4 min read', '%0A%20%20%20%20%20%20%20%20%3Ch4%3EThe%20Vital%20Functions%20of%20Human%20Kidneys%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EYour%20kidneys%20filter%20waste%20products%2C%20balance%20blood%20pressure%2C%20regulate%20red%20blood%20cell%20production%2C%20and%20maintain%20critical%20electrolytes%20%28sodium%2C%20potassium%2C%20calcium%29.%20Chronic%20dehydration%20and%20high%20salt%20intake%20put%20immense%20strain%20on%20the%20renal%20filtration%20units.%3C/p%3E%0A%20%20%20%20%20%20%20%20%3Ch4%3EPreventing%20Kidney%20Stones%20%26amp%3B%20Chronic%20Renal%20Stress%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EOptimal%20Daily%20Hydration%3A%3C/strong%3E%20Drink%202.5%20to%203%20liters%20of%20clean%20water%20daily.%20Your%20urine%20should%20remain%20pale%20clear%20rather%20than%20dark%20yellow.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EModerate%20Sodium%20Intake%3A%3C/strong%3E%20Excessive%20dietary%20salt%20elevates%20urinary%20calcium%20excretion%2C%20triggering%20oxalate%20stone%20crystallization.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EManage%20Blood%20Sugar%20%26amp%3B%20Blood%20Pressure%3A%3C/strong%3E%20Diabetes%20and%20hypertension%20remain%20the%20two%20leading%20causes%20of%20chronic%20kidney%20disease%20%28CKD%29%20worldwide.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EAvoid%20Self-Medicating%20with%20Painkillers%3A%3C/strong%3E%20Over-the-counter%20NSAIDs%20taken%20habitually%20without%20prescription%20can%20cause%20acute%20tubular%20and%20kidney%20damage.%3C/li%3E%0A%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EAnnual%20screening%20for%20serum%20creatinine%20and%20urine%20albumin%20is%20strongly%20recommended%20for%20anyone%20with%20diabetes%20or%20a%20family%20history%20of%20kidney%20disorders.%3C/p%3E%0A%20%20%20%20%20%20%20%20')">
+                        <span>Read Article</span> <i data-lucide="arrow-right" style="width:15px; height:15px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="blog-card animate-up" data-category="generalmedicine">
+            <div class="blog-card-visual">
+                <div style="width:64px; height:64px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
+                    <i data-lucide="stethoscope" style="width:32px; height:32px;"></i>
+                </div>
+                <span class="blog-card-badge">General Medicine</span>
+                <span class="blog-card-time">5 min read</span>
+            </div>
+            <div class="blog-card-content">
+                <h3>Managing Seasonal Fevers, Diabetes & Hypertension: A Physician's Guide</h3>
+                <p>Practical physician advice on managing chronic lifestyle conditions and safe protocols for dealing with acute seasonal viral fevers.</p>
+                <div class="blog-card-footer">
+                    <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;"><i data-lucide="calendar" style="width:13px; vertical-align:middle;"></i> Oct 2026</span>
+                    <button class="blog-read-btn" onclick="openArticleModal('Managing Seasonal Fevers, Diabetes & Hypertension: A Physician\'s Guide', 'General Medicine', 'Oct 2026', '5 min read', '%0A%20%20%20%20%20%20%20%20%3Ch4%3ECombating%20Seasonal%20Viral%20%26amp%3B%20Vector%20Fevers%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EDuring%20seasonal%20transitions%2C%20monsoon%20rains%2C%20and%20climate%20shifts%2C%20viral%20infections%2C%20dengue%2C%20and%20typhoid%20fevers%20spike.%20Hydration%20with%20oral%20electrolytes%2C%20complete%20bed%20rest%2C%20and%20avoiding%20self-medication%20are%20paramount.%20If%20fever%20persists%20past%2048%20hours%20or%20is%20accompanied%20by%20chills%2C%20vomiting%2C%20or%20rashes%2C%20seek%20laboratory%20blood%20counts%20immediately.%3C/p%3E%0A%20%20%20%20%20%20%20%20%3Ch4%3EManaging%20Chronic%20Conditions%20%28Diabetes%20%26amp%3B%20BP%29%3C/h4%3E%0A%20%20%20%20%20%20%20%20%3Cul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3ERegular%20Monitoring%3A%3C/strong%3E%20Log%20fasting%20and%20post-prandial%20blood%20sugar%20levels%20as%20well%20as%20weekly%20resting%20blood%20pressure%20readings.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EConsistent%20Medication%3A%3C/strong%3E%20Never%20skip%20prescribed%20antihypertensives%20or%20insulin%20doses%20without%20clinical%20supervision.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EFiber-Rich%20Dietary%20Habits%3A%3C/strong%3E%20Whole%20grains%2C%20green%20vegetables%2C%20and%20balanced%20portions%20prevent%20acute%20glycemic%20spikes.%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3EDaily%2030-Minute%20Aerobic%20Walking%3A%3C/strong%3E%20Boosts%20natural%20insulin%20sensitivity%20and%20helps%20maintain%20healthy%20vascular%20elasticity.%3C/li%3E%0A%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EOur%20General%20Medicine%20department%20provides%20comprehensive%20outpatient%20physician%20evaluations%20and%20continuous%20inpatient%20supervision%20for%20adult%20health.%3C/p%3E%0A%20%20%20%20%20%20%20%20')">
+                        <span>Read Article</span> <i data-lucide="arrow-right" style="width:15px; height:15px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Health Consultation Prompt Banner -->
+        <div style="margin-top:3.5rem; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); border:1.5px solid rgba(128,0,0,0.18); border-radius:var(--radius-lg); padding:2rem 2.5rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.5rem;">
+            <div>
+                <span style="font-size:0.75rem; font-weight:800; color:var(--primary-accent); text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:0.3rem;">CLINICAL SUPPORT DESK</span>
+                <h3 style="font-size:1.45rem; font-family:'Playfair Display', serif; color:var(--text-dark); margin:0 0 0.4rem 0;">Have a Health Question or Need Consultation?</h3>
+                <p style="margin:0; font-size:0.95rem; color:var(--text-charcoal); line-height:1.5;">Our hospital doctors and outpatient clinics are here to help you and your family.</p>
+            </div>
+            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+                <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', 'General Health Inquiry')">
+                    <i data-lucide="calendar"></i> <span>Book an Appointment</span>
                 </a>
-                <div class="detail-crumbs">
-                    <a href="index.html">Home</a>
-                    <i data-lucide="chevron-right" style="width:14px;"></i>
-                    <a href="services.html">Services</a>
-                    <i data-lucide="chevron-right" style="width:14px;"></i>
-                    <span class="active-crumb">24/7 In-House Pharmacy</span>
-                </div>
+                <a href="https://wa.me/916399144444" target="_blank" class="btn-whatsapp-pill" style="display:inline-flex; align-items:center; gap:6px; padding:0.65rem 1.25rem; background:#25D366; color:#fff; border-radius:30px; font-weight:700; text-decoration:none;">
+                    <i data-lucide="message-circle"></i> <span>WhatsApp Help Desk</span>
+                </a>
             </div>
+        </div>
+    </section>
 
-            <!-- Hero Spotlight -->
-            <div class="detail-hero-grid">
-                <div class="detail-hero-info">
-                    <div class="section-eyebrow">
-                        <span class="eyebrow-dot"></span> Authentic Medications
-                    </div>
-                    <h1 class="detail-title">24/7 In-House Pharmacy</h1>
-                    
-                    <!-- Meaning / Explanation -->
-                    <div style="background:var(--bg-cream); border-left:4px solid var(--primary-accent); padding:1.25rem 1.4rem; border-radius:0 12px 12px 0; margin-bottom:1.5rem;">
-                        <strong style="display:block; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.8px; color:var(--primary-accent); margin-bottom:0.35rem;">What This Service Means</strong>
-                        <p style="margin:0; font-size:1.05rem; line-height:1.65; color:var(--text-charcoal);">An in-house pharmacy is an on-premises hospital medical store open 24 hours. Patients and families do not need to search outside for medicines; genuine, doctor-prescribed tablets, injections, and child syrups are available instantly inside the hospital.</p>
-                    </div>
-
-                    <!-- Key Highlights List -->
-                    <ul style="list-style:none; padding:0; margin:0 0 2rem 0;">
-                        
-            <li style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem; color:var(--text-dark); font-weight:600; font-size:0.95rem;">
-                <i data-lucide="check-circle-2" style="color:var(--primary-accent); width:18px; height:18px; flex-shrink:0;"></i>
-                <span>Open 24/7 Right Inside the Hospital Premises</span>
-            </li>
-            <li style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem; color:var(--text-dark); font-weight:600; font-size:0.95rem;">
-                <i data-lucide="check-circle-2" style="color:var(--primary-accent); width:18px; height:18px; flex-shrink:0;"></i>
-                <span>100% Genuine, Batch-Verified Brand & Generic Medicines</span>
-            </li>
-            <li style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem; color:var(--text-dark); font-weight:600; font-size:0.95rem;">
-                <i data-lucide="check-circle-2" style="color:var(--primary-accent); width:18px; height:18px; flex-shrink:0;"></i>
-                <span>Refrigerated Cold-Storage for Vaccines & Insulin</span>
-            </li>
-            <li style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem; color:var(--text-dark); font-weight:600; font-size:0.95rem;">
-                <i data-lucide="check-circle-2" style="color:var(--primary-accent); width:18px; height:18px; flex-shrink:0;"></i>
-                <span>Stock of Emergency Injections & Surgical Disposables</span>
-            </li>
-                    </ul>
-
-                    <div class="detail-hero-actions">
-                        <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', '24/7 In-House Pharmacy')">
-                            <i data-lucide="calendar"></i> <span>Book an Appointment</span>
-                        </a>
-                        <a href="https://wa.me/916399144444?text=Hello%20A1%20Hospital,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" class="btn-whatsapp-pill" style="display:inline-flex; align-items:center; gap:6px; padding:0.65rem 1.2rem; background:#25D366; color:#fff; border-radius:30px; font-weight:700; text-decoration:none;">
-                            <i data-lucide="message-circle"></i> <span>WhatsApp: 6399144444</span>
-                        </a>
-                        <a href="tel:08942228234" class="btn-emergency-call" style="text-decoration:none;">
-                            <i data-lucide="phone"></i> <span>Call: 08942-228234</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="detail-hero-visual">
-                    <div class="detail-arch-frame" style="background:linear-gradient(145deg, #fdf5f3 0%, #f7e8e5 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2.5rem 2rem; text-align:center; position:relative;">
-                        <div style="width:105px; height:105px; border-radius:50%; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(128,0,0,0.13); margin-bottom:1.5rem;">
-                            <i data-lucide="pill" style="width:48px; height:48px;"></i>
-                        </div>
-                        <div style="font-size:0.82rem; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--primary-accent); margin-bottom:0.4rem;">A1 Hospital Srikakulam</div>
-                        <h3 style="font-size:1.45rem; font-family:'Playfair Display', serif; color:var(--text-dark); margin:0 0 0.75rem 0;">24/7 In-House Pharmacy</h3>
-                        <span style="display:inline-block; font-size:0.8rem; font-weight:700; background:rgba(128,0,0,0.08); color:var(--primary-accent); padding:0.3rem 0.9rem; border-radius:20px;">Authentic Medications</span>
-                        <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; margin:0 auto; width:calc(100% - 40px);">
-                            <div class="card-icon-badge" style="width:40px; height:40px; font-size:1.1rem; margin:0;">
-                                <i data-lucide="pill"></i>
-                            </div>
-                            <div>
-                                <strong>24/7 In-House Pharmacy</strong>
-                                <span>A1 Hospital Srikakulam</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Full Article Reading Modal -->
+    <div id="article-modal" class="article-modal-overlay">
+        <div class="article-modal-container">
+            <button class="article-modal-close" onclick="closeArticleModal()" aria-label="Close modal">&times;</button>
+            <div style="margin-bottom:1.25rem;">
+                <span id="modal-article-category" style="display:inline-block; font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--primary-accent); background:rgba(128,0,0,0.08); padding:3px 12px; border-radius:20px; margin-bottom:0.6rem;"></span>
+                <h2 id="modal-article-title" style="font-size:1.6rem; color:var(--text-dark); margin:0 0 0.5rem 0; line-height:1.35; font-family:'Playfair Display', serif;"></h2>
+                <span id="modal-article-meta" style="font-size:0.82rem; color:var(--text-muted); font-weight:600;"></span>
             </div>
-
-            <!-- Related Doctor Details & Photo -->
-            <div class="detail-doctor-spotlight animate-up" style="margin-top:2rem;">
-                <div class="detail-doc-img-wrap" style="display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #fdf8f5 0%, #f7ece6 100%);">
-                    <div class="doctor-emblem-badge" style="width:68px; height:68px; margin:0;">
-                        <i data-lucide="pill"></i>
-                    </div>
-                </div>
-                <div class="detail-doc-info">
-                    <span class="detail-doc-badge">Associated Clinical Supervision</span>
-                    <h3>A1 Hospital Pharmacy Team</h3>
-                    <div class="doc-qual">Registered Clinical Pharmacists · 24/7 In-House Medicine Dispensation</div>
-                    <p>Ensuring hospital medical protocols, patient safety, and immediate clinical oversight for this service facility.</p>
-                    <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('A1 Hospital Pharmacy Team', '24/7 In-House Pharmacy')">
-                        <i data-lucide="calendar"></i> <span>Book an Appointment with Doctor</span>
-                    </a>
-                </div>
+            <div id="modal-article-body" style="font-size:0.98rem; line-height:1.75; color:var(--text-charcoal); border-top:1px solid var(--border-warm); padding-top:1.25rem;">
             </div>
-
-            <!-- Explore Other Services Carousel -->
-            <div class="detail-explore-others">
-                <div class="detail-explore-header">
-                    <h3>Explore Other Hospital Services</h3>
-                    <div class="explore-nav-arrows">
-                        <button class="carousel-btn left-btn" onclick="scrollCarousel('other-services-carousel', -1)" aria-label="Previous">◀</button>
-                        <button class="carousel-btn right-btn" onclick="scrollCarousel('other-services-carousel', 1)" aria-label="Next">▶</button>
-                    </div>
-                </div>
-                <div class="carousel-track" id="other-services-carousel">
-                    
-            <a href="service-beds.html" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
-                        <i data-lucide="bed-double"></i>
-                    </div>
-                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>100+ Beds Available</h3></div>
-                </div>
-            </a>
-            <a href="service-emergency.html" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
-                        <i data-lucide="clock"></i>
-                    </div>
-                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>24/7 Emergency Care</h3></div>
-                </div>
-            </a>
-            <a href="service-ambulance.html" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
-                        <i data-lucide="ambulance"></i>
-                    </div>
-                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>24/7 Ambulance Service</h3></div>
-                </div>
-            </a>
-            <a href="service-icu.html" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
-                        <i data-lucide="activity"></i>
-                    </div>
-                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>Intensive Care Unit (ICU & NICU)</h3></div>
-                </div>
-            </a>
-                </div>
+            <div style="margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--border-warm); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+                <a href="#appointment" class="btn-primary" onclick="closeArticleModal(); openAppointmentModal('', 'Blog Consultation')">
+                    <i data-lucide="calendar"></i> <span>Book Priority Appointment</span>
+                </a>
+                <button class="btn-secondary" onclick="closeArticleModal()">
+                    <span>Close Article</span>
+                </button>
             </div>
-        </section>
-        
+        </div>
+    </div>
+    
     <!-- Realtime Location Map Section -->
     <section id="location" class="location-section framed-section animate-up" style="margin-top: 3.5rem;">
         <div class="section-title">
@@ -428,6 +459,10 @@
                     <li>
                         <i data-lucide="globe"></i>
                         <span>Website: <a href="https://www.a1hospitalsrikakulam.com" target="_blank" rel="noopener noreferrer">www.a1hospitalsrikakulam.com</a></span>
+                    </li>
+                    <li>
+                        <i data-lucide="book-open"></i>
+                        <span><a href="blog.html">Health &amp; Wellness Blog</a></span>
                     </li>
                 </ul>
             </div>

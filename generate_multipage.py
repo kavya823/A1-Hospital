@@ -1,6 +1,146 @@
 import os
 import re
+import urllib.parse
 from multipage_data import SERVICES_DATA, DEPARTMENTS_DATA, DOCTORS_DATA, HOSPITAL_CONTACT
+
+BLOG_POSTS = [
+    {
+        "id": "childhood-vaccination-guide",
+        "category": "pediatrics",
+        "category_name": "Pediatrics & Child Health",
+        "title": "Essential Child Immunization & Vaccination Milestones: A Parent's Guide",
+        "read_time": "5 min read",
+        "date": "Oct 2026",
+        "icon": "baby",
+        "excerpt": "Timely vaccinations protect infants from life-threatening infections. Learn about the essential immunization schedule from birth through age five.",
+        "full_content": """
+        <h4>Why Childhood Vaccination is Critical</h4>
+        <p>Vaccination is one of the most effective medical safeguards developed to protect infants and children from serious preventable illnesses such as polio, hepatitis B, rotavirus, measles, and diphtheria. In the early months of life, a baby’s immune system is still developing, making prompt adherence to the pediatric immunization calendar vital.</p>
+        <h4>Core Immunization Milestones</h4>
+        <ul>
+            <li><strong>At Birth:</strong> BCG, OPV-0, and Hepatitis B birth dose.</li>
+            <li><strong>6, 10, &amp; 14 Weeks:</strong> Pentavalent vaccine, Rotavirus, Inactivated Polio Vaccine (IPV), and PCV.</li>
+            <li><strong>9 to 12 Months:</strong> Measles &amp; Rubella (MR-1), Vitamin A, and JE (if endemic).</li>
+            <li><strong>16 to 24 Months:</strong> DPT booster and MR-2.</li>
+            <li><strong>5 Years:</strong> DPT-2 booster for sustained immunity before starting school.</li>
+        </ul>
+        <h4>Managing Mild Post-Vaccine Reactions</h4>
+        <p>It is normal for children to experience slight fever, mild fussiness, or localized redness at the injection site. Simple comfort measures, cold compresses, and doctor-prescribed pediatric paracetamol drops will keep your child comfortable. Always consult our pediatric outpatient department for customized immunization schedules.</p>
+        """
+    },
+    {
+        "id": "understanding-ivf-fertility",
+        "category": "obstetrics",
+        "category_name": "Women's Health & IVF",
+        "title": "Understanding IVF & Modern Reproductive Solutions: A Compassionate Overview",
+        "read_time": "6 min read",
+        "date": "Oct 2026",
+        "icon": "heart-pulse",
+        "excerpt": "Fertility challenges are common and treatable. Discover modern reproductive techniques including ovulation tracking, IUI, and IVF.",
+        "full_content": """
+        <h4>The Evolution of Reproductive Medicine</h4>
+        <p>Infertility affects approximately one in six couples worldwide. With modern clinical reproductive medicine, couples have access to scientific, evidence-based diagnostic pathways that identify underlying factors early and personalize treatment.</p>
+        <h4>When Should Couples Seek Fertility Evaluation?</h4>
+        <p>Couples under 35 who have been attempting conception for 12 months (or 6 months if 35 or older) are advised to undergo a baseline reproductive evaluation. This includes hormone profiling, pelvic ultrasonography, tubal patency checks, and semen analysis.</p>
+        <h4>Treatment Steps: From Basic to Advanced</h4>
+        <ul>
+            <li><strong>Ovulation Induction &amp; Timed Intercourse:</strong> Safe medications to stimulate natural egg release.</li>
+            <li><strong>Intrauterine Insemination (IUI):</strong> Concentrated, washed sperm placed into the uterus around ovulation.</li>
+            <li><strong>In-Vitro Fertilization (IVF):</strong> Controlled stimulation, egg retrieval, fertilization in a sterile embryology setting, and embryo transfer.</li>
+            <li><strong>Minimal Access Laparoscopy (FMAS):</strong> Correcting fibroids, endometriosis, and tubal blocks with minimal recovery time.</li>
+        </ul>
+        <p>Compassionate emotional support, lifestyle balance, and qualified clinical guidance make the journey to parenthood hopeful and achievable.</p>
+        """
+    },
+    {
+        "id": "joint-health-arthritis-mobility",
+        "category": "orthopedics",
+        "category_name": "Orthopedics & Joint Care",
+        "title": "Preventing Knee Arthritis & Maintaining Joint Mobility After 40",
+        "read_time": "4 min read",
+        "date": "Oct 2026",
+        "icon": "bone",
+        "excerpt": "Protect your knees, spine, and joints with ergonomic daily habits, low-impact exercise, and early orthopedic evaluation.",
+        "full_content": """
+        <h4>Why Do Joints Deteriorate with Age?</h4>
+        <p>Articular cartilage covers the ends of bones to provide smooth, frictionless movement. Over decades of repetitive impact, obesity, or injury, this cartilage can thin, causing stiffness, swelling, and localized pain known as osteoarthritis.</p>
+        <h4>Actionable Steps for Lifelong Joint Health</h4>
+        <ul>
+            <li><strong>Weight Management:</strong> Every kilogram of body weight reduced removes roughly 4 kilograms of mechanical pressure from your knee joints during walking.</li>
+            <li><strong>Low-Impact Quadriceps Strengthening:</strong> Swimming, stationary cycling, and straight-leg raises strengthen the thigh muscles that absorb knee shock.</li>
+            <li><strong>Vitamin D3 &amp; Calcium Balance:</strong> Bone density directly supports joint cartilage longevity. Periodic checks prevent accelerated bone loss.</li>
+            <li><strong>Avoid Prolonged Squatting &amp; Cross-Legged Sitting:</strong> If you experience early knee crepitus (grinding sound), avoid deep knee flexion on hard floors.</li>
+        </ul>
+        <p>If knee pain interrupts sleep or everyday walking, early orthopedic assessment and modern physiotherapy can prevent the need for advanced joint replacement.</p>
+        """
+    },
+    {
+        "id": "golden-hour-emergency-care",
+        "category": "emergency",
+        "category_name": "Emergency & Trauma Care",
+        "title": "The Golden Hour: Why Rapid Response in Emergencies Saves Lives",
+        "read_time": "5 min read",
+        "date": "Oct 2026",
+        "icon": "clock",
+        "excerpt": "In medical crises like heart attacks, stroke, or road trauma, the first 60 minutes determine patient recovery. Know what immediate steps to take.",
+        "full_content": """
+        <h4>What is the Medical 'Golden Hour'?</h4>
+        <p>The Golden Hour refers to the critical window of time immediately following acute medical trauma, severe injury, or cardiac/stroke onset. Prompt medical intervention during this period dramatically increases survival rates and prevents permanent organ damage.</p>
+        <h4>Recognizing Immediate Emergencies</h4>
+        <ul>
+            <li><strong>Cardiac Symptoms:</strong> Heavy chest pressure radiating to the jaw, left shoulder, or back accompanied by cold sweating and shortness of breath.</li>
+            <li><strong>Stroke Warning Signs (FAST):</strong> Face drooping, Arm weakness, Slurred speech, Time to call emergency.</li>
+            <li><strong>Severe Trauma &amp; Fractures:</strong> Profuse bleeding, head injury with disorientation, or inability to move a limb following an accident.</li>
+        </ul>
+        <h4>What to Do While Help is on the Way</h4>
+        <p>Keep the patient calm, ensure their airway is clear, do not offer food or oral liquids, and call our 24/7 Emergency Casualty Reception at <strong>08942-228234</strong> immediately to dispatch ambulance transport and alert the trauma team.</p>
+        """
+    },
+    {
+        "id": "kidney-health-hydration-habits",
+        "category": "nephrology",
+        "category_name": "Nephrology & Renal Health",
+        "title": "Protecting Your Kidneys: Hydration, Diet, & Kidney Stone Prevention",
+        "read_time": "4 min read",
+        "date": "Oct 2026",
+        "icon": "filter",
+        "excerpt": "Kidneys filter over 180 liters of blood every single day. Simple hydration and dietary discipline prevent kidney stone formation and renal strain.",
+        "full_content": """
+        <h4>The Vital Functions of Human Kidneys</h4>
+        <p>Your kidneys filter waste products, balance blood pressure, regulate red blood cell production, and maintain critical electrolytes (sodium, potassium, calcium). Chronic dehydration and high salt intake put immense strain on the renal filtration units.</p>
+        <h4>Preventing Kidney Stones &amp; Chronic Renal Stress</h4>
+        <ul>
+            <li><strong>Optimal Daily Hydration:</strong> Drink 2.5 to 3 liters of clean water daily. Your urine should remain pale clear rather than dark yellow.</li>
+            <li><strong>Moderate Sodium Intake:</strong> Excessive dietary salt elevates urinary calcium excretion, triggering oxalate stone crystallization.</li>
+            <li><strong>Manage Blood Sugar &amp; Blood Pressure:</strong> Diabetes and hypertension remain the two leading causes of chronic kidney disease (CKD) worldwide.</li>
+            <li><strong>Avoid Self-Medicating with Painkillers:</strong> Over-the-counter NSAIDs taken habitually without prescription can cause acute tubular and kidney damage.</li>
+        </ul>
+        <p>Annual screening for serum creatinine and urine albumin is strongly recommended for anyone with diabetes or a family history of kidney disorders.</p>
+        """
+    },
+    {
+        "id": "adult-medicine-fevers-lifestyle",
+        "category": "generalmedicine",
+        "category_name": "General Medicine",
+        "title": "Managing Seasonal Fevers, Diabetes & Hypertension: A Physician's Guide",
+        "read_time": "5 min read",
+        "date": "Oct 2026",
+        "icon": "stethoscope",
+        "excerpt": "Practical physician advice on managing chronic lifestyle conditions and safe protocols for dealing with acute seasonal viral fevers.",
+        "full_content": """
+        <h4>Combating Seasonal Viral &amp; Vector Fevers</h4>
+        <p>During seasonal transitions, monsoon rains, and climate shifts, viral infections, dengue, and typhoid fevers spike. Hydration with oral electrolytes, complete bed rest, and avoiding self-medication are paramount. If fever persists past 48 hours or is accompanied by chills, vomiting, or rashes, seek laboratory blood counts immediately.</p>
+        <h4>Managing Chronic Conditions (Diabetes &amp; BP)</h4>
+        <ul>
+            <li><strong>Regular Monitoring:</strong> Log fasting and post-prandial blood sugar levels as well as weekly resting blood pressure readings.</li>
+            <li><strong>Consistent Medication:</strong> Never skip prescribed antihypertensives or insulin doses without clinical supervision.</li>
+            <li><strong>Fiber-Rich Dietary Habits:</strong> Whole grains, green vegetables, and balanced portions prevent acute glycemic spikes.</li>
+            <li><strong>Daily 30-Minute Aerobic Walking:</strong> Boosts natural insulin sensitivity and helps maintain healthy vascular elasticity.</li>
+        </ul>
+        <p>Our General Medicine department provides comprehensive outpatient physician evaluations and continuous inpatient supervision for adult health.</p>
+        """
+    }
+]
 
 def build_all_pages():
     with open('index.html', 'r', encoding='utf-8') as f:
@@ -100,11 +240,11 @@ def build_all_pages():
         page_footer = page_footer.replace('<section id="contact"', map_section_html + '\n    <section id="contact"')
 
     # -------------------------------------------------------------
-    # 1. BUILD SERVICES.HTML (Only 5 Essential Core Services)
+    # 1. BUILD SERVICES.HTML (Purely Facility & Hospital Readiness - No Doctor Details)
     # -------------------------------------------------------------
     services_grid_items = ""
     for s_id, s in SERVICES_DATA.items():
-        doc_lead = s['lead_doctor']
+        readiness_badge = s.get('readiness', '24/7 Available')
         services_grid_items += f'''
         <a href="{s['file']}" class="service-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
             <div class="service-showcase-header-box" style="height:150px; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); display:flex; align-items:center; justify-content:center; position:relative; border-bottom:1.5px solid var(--border-warm);">
@@ -120,8 +260,8 @@ def build_all_pages():
                 <h3>{s['title']}</h3>
                 <p>{s['meaning']}</p>
                 <div style="margin-top:auto; padding-top:0.8rem; border-top:1px solid var(--border-warm); display:flex; align-items:center; justify-content:space-between;">
-                    <span style="font-size:0.82rem; color:var(--text-muted); font-weight:600;"><i data-lucide="user-check" style="width:13px; vertical-align:middle;"></i> {doc_lead['name'].split('&')[0].strip()}</span>
-                    <span class="service-card-cta"><span>Explore Details</span> <i data-lucide="arrow-right"></i></span>
+                    <span style="font-size:0.82rem; color:var(--primary-accent); font-weight:700;"><i data-lucide="shield-check" style="width:14px; vertical-align:middle;"></i> {readiness_badge}</span>
+                    <span class="service-card-cta"><span>Explore Facility</span> <i data-lucide="arrow-right"></i></span>
                 </div>
             </div>
         </a>'''
@@ -176,11 +316,10 @@ def build_all_pages():
     print("[OK] Created services.html")
 
     # -------------------------------------------------------------
-    # 2. BUILD DEPARTMENTS.HTML (Only 8 Real Departments from User's Photos)
+    # 2. BUILD DEPARTMENTS.HTML (Authentic Specialities - No Doctor Names)
     # -------------------------------------------------------------
     dept_grid_items = ""
     for d_id, d in DEPARTMENTS_DATA.items():
-        doc_names = ", ".join([doc['name'] for doc in d['doctors']])
         dept_grid_items += f'''
         <a href="{d['file']}" class="dept-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
             <div class="dept-showcase-header-box" style="height:150px; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); display:flex; align-items:center; justify-content:center; position:relative; border-bottom:1.5px solid var(--border-warm);">
@@ -196,8 +335,8 @@ def build_all_pages():
                 <h3>{d['title']}</h3>
                 <p>{d['meaning']}</p>
                 <div style="margin-top:auto; padding-top:0.8rem; border-top:1px solid var(--border-warm); display:flex; align-items:center; justify-content:space-between;">
-                    <span style="font-size:0.82rem; color:var(--primary-accent); font-weight:700;"><i data-lucide="stethoscope" style="width:13px; vertical-align:middle;"></i> {doc_names}</span>
-                    <span class="dept-card-cta"><span>Explore</span> <i data-lucide="arrow-right"></i></span>
+                    <span style="font-size:0.82rem; color:var(--primary-accent); font-weight:700;"><i data-lucide="activity" style="width:14px; vertical-align:middle;"></i> Clinical Care &amp; OPD</span>
+                    <span class="dept-card-cta"><span>Explore Speciality</span> <i data-lucide="arrow-right"></i></span>
                 </div>
             </div>
         </a>'''
@@ -222,7 +361,7 @@ def build_all_pages():
                 <span class="eyebrow-dot"></span> CLINICAL SPECIALITIES
             </div>
             <h2>Our Specialized <span class="serif-italic">Clinical Departments</span></h2>
-            <p>Authentic, expert medical care led by verified resident and visiting clinical specialists in Srikakulam.</p>
+            <p>Authentic, expert medical care and advanced clinical facilities serving Srikakulam.</p>
         </div>
 
         <!-- Full Interactive Departments Showcase Grid -->
@@ -252,11 +391,9 @@ def build_all_pages():
     print("[OK] Created departments.html")
 
     # -------------------------------------------------------------
-    # 3. BUILD ALL 5 DEDICATED SERVICE PAGES (Concise & Focused)
+    # 3. BUILD ALL 4 DEDICATED SERVICE PAGES (Purely Facility & Hospital Readiness - No Doctor Details)
     # -------------------------------------------------------------
     for s_id, s in SERVICES_DATA.items():
-        doc_lead = s['lead_doctor']
-        
         # Highlights pills
         highlights_html = ""
         for hl in s['highlights']:
@@ -265,6 +402,15 @@ def build_all_pages():
                 <i data-lucide="check-circle-2" style="color:var(--primary-accent); width:18px; height:18px; flex-shrink:0;"></i>
                 <span>{hl}</span>
             </li>'''
+
+        # Feature items
+        features_html = ""
+        for feat in s.get('features', []):
+            features_html += f'''
+            <div style="background:#ffffff; border:1.5px solid var(--border-warm); border-radius:var(--radius-md); padding:1.25rem 1.4rem; box-shadow:var(--shadow-sm); display:flex; align-items:center; gap:0.75rem;">
+                <div class="card-icon-badge" style="width:36px; height:36px; margin:0;"><i data-lucide="check" style="width:18px; height:18px;"></i></div>
+                <strong style="color:var(--text-dark); font-size:0.95rem;">{feat}</strong>
+            </div>'''
 
         # Other services carousel
         other_services_carousel = ""
@@ -319,7 +465,7 @@ def build_all_pages():
 
                     <div class="detail-hero-actions">
                         <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', '{s['title']}')">
-                            <i data-lucide="calendar"></i> <span>Book an Appointment</span>
+                            <i data-lucide="calendar"></i> <span>Inquire / Request Service</span>
                         </a>
                         <a href="{HOSPITAL_CONTACT['whatsapp_link']}" target="_blank" class="btn-whatsapp-pill" style="display:inline-flex; align-items:center; gap:6px; padding:0.65rem 1.2rem; background:#25D366; color:#fff; border-radius:30px; font-weight:700; text-decoration:none;">
                             <i data-lucide="message-circle"></i> <span>WhatsApp: {HOSPITAL_CONTACT['whatsapp_number']}</span>
@@ -351,22 +497,27 @@ def build_all_pages():
                 </div>
             </div>
 
-            <!-- Related Doctor Details & Photo -->
-            <div class="detail-doctor-spotlight animate-up" style="margin-top:2rem;">
+            <!-- Hospital Facility Standards & 24/7 Readiness (Purely Service & Quality) -->
+            <div class="detail-doctor-spotlight animate-up" style="margin-top:2.5rem;">
                 <div class="detail-doc-img-wrap" style="display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #fdf8f5 0%, #f7ece6 100%);">
                     <div class="doctor-emblem-badge" style="width:68px; height:68px; margin:0;">
                         <i data-lucide="{s['icon']}"></i>
                     </div>
                 </div>
                 <div class="detail-doc-info">
-                    <span class="detail-doc-badge">Associated Clinical Supervision</span>
-                    <h3>{doc_lead['name']}</h3>
-                    <div class="doc-qual">{doc_lead['qual']} · {doc_lead['title']}</div>
-                    <p>Ensuring hospital medical protocols, patient safety, and immediate clinical oversight for this service facility.</p>
-                    <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('{doc_lead['name'].split('&')[0].strip()}', '{s['title']}')">
-                        <i data-lucide="calendar"></i> <span>Book an Appointment with Doctor</span>
+                    <span class="detail-doc-badge">Hospital Facility Protocol</span>
+                    <h3>24/7 Operational Readiness &amp; Clinical Safety</h3>
+                    <div class="doc-qual">Equipped with Continuous Supervision &amp; Sterile Standards</div>
+                    <p>Maintained under strict hospital hygiene protocols, real-time vital monitoring, and continuous nursing supervision for uninterrupted patient care.</p>
+                    <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', '{s['title']}')">
+                        <i data-lucide="calendar"></i> <span>Inquire About This Service</span>
                     </a>
                 </div>
+            </div>
+
+            <!-- Key Facility Highlights -->
+            <div style="margin-top:2rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem;">
+                {features_html}
             </div>
 
             <!-- Explore Other Services Carousel -->
@@ -391,7 +542,7 @@ def build_all_pages():
         print(f"[OK] Created {s['file']}")
 
     # -------------------------------------------------------------
-    # 4. BUILD ALL 8 DEDICATED DEPARTMENT PAGES (Concise & Focused)
+    # 4. BUILD ALL 8 DEDICATED DEPARTMENT PAGES (Focus on Clinical Specialities - No Doctor Names)
     # -------------------------------------------------------------
     for d_id, d in DEPARTMENTS_DATA.items():
         # Highlights pills
@@ -402,35 +553,6 @@ def build_all_pages():
                 <i data-lucide="check-circle-2" style="color:var(--primary-accent); width:18px; height:18px; flex-shrink:0;"></i>
                 <span>{hl}</span>
             </li>'''
-
-        # Doctors cards for this department
-        doctors_html = ""
-        for doc in d['doctors']:
-            if doc.get('image'):
-                doc_img_or_avatar = f'''
-                <div class="detail-doc-img-wrap">
-                    <img src="{doc['image']}" alt="{doc['name']}">
-                </div>'''
-            else:
-                doc_img_or_avatar = f'''
-                <div class="detail-doc-img-wrap" style="display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #fdf8f5 0%, #f7ece6 100%);">
-                    <div class="doctor-emblem-badge" style="width:68px; height:68px; margin:0;">
-                        <i data-lucide="{d.get('icon', 'stethoscope')}"></i>
-                    </div>
-                </div>'''
-            doctors_html += f'''
-            <div class="detail-doctor-spotlight animate-up" style="margin-top:1.5rem;">
-                {doc_img_or_avatar}
-                <div class="detail-doc-info">
-                    <span class="detail-doc-badge">Verified Specialist Doctor</span>
-                    <h3>{doc['name']}</h3>
-                    <div class="doc-qual">{doc['qual']}</div>
-                    <p style="font-weight:700; color:var(--text-dark);">{doc['title']}</p>
-                    <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('{doc['name']}', '{d['title']}')">
-                        <i data-lucide="calendar"></i> <span>Book an Appointment with {doc['name']}</span>
-                    </a>
-                </div>
-            </div>'''
 
         # Other departments carousel
         other_dept_carousel = ""
@@ -484,8 +606,8 @@ def build_all_pages():
                     </ul>
 
                     <div class="detail-hero-actions">
-                        <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('{d['doctors'][0]['name']}', '{d['title']}')">
-                            <i data-lucide="calendar"></i> <span>Book an Appointment</span>
+                        <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', '{d['title']}')">
+                            <i data-lucide="calendar"></i> <span>Book Department Appointment</span>
                         </a>
                         <a href="{HOSPITAL_CONTACT['whatsapp_link']}" target="_blank" class="btn-whatsapp-pill" style="display:inline-flex; align-items:center; gap:6px; padding:0.65rem 1.2rem; background:#25D366; color:#fff; border-radius:30px; font-weight:700; text-decoration:none;">
                             <i data-lucide="message-circle"></i> <span>WhatsApp: {HOSPITAL_CONTACT['whatsapp_number']}</span>
@@ -517,13 +639,45 @@ def build_all_pages():
                 </div>
             </div>
 
-            <!-- Related Doctor(s) Details & Photo -->
+            <!-- Clinical Scope & Diagnostic Care (Zero Doctor Names) -->
             <div style="margin-top:2.5rem;">
                 <div class="section-eyebrow" style="margin-bottom:0.75rem;">
-                    <span class="eyebrow-dot"></span> SPECIALIST DOCTOR DETAILS
+                    <span class="eyebrow-dot"></span> CLINICAL SCOPE &amp; PROTOCOL
                 </div>
-                <h2 style="font-size:1.8rem; color:var(--text-dark); margin-bottom:1.5rem;">Consult Our <span class="serif-italic">Department Doctors</span></h2>
-                {doctors_html}
+                <h2 style="font-size:1.8rem; color:var(--text-dark); margin-bottom:1.5rem;">Specialized Care &amp; <span class="serif-italic">Clinical Facilities</span></h2>
+                
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+                    <div style="background:#ffffff; border:1.5px solid var(--border-warm); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
+                        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                            <div class="card-icon-badge" style="width:36px; height:36px; margin:0;"><i data-lucide="stethoscope"></i></div>
+                            <h4 style="margin:0; font-size:1.05rem; color:var(--text-dark);">Comprehensive OPD &amp; Inpatient Care</h4>
+                        </div>
+                        <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin:0;">Daily outpatient consultations, accurate diagnostic evaluations, and continuous inpatient monitoring with modern medical technology.</p>
+                    </div>
+                    
+                    <div style="background:#ffffff; border:1.5px solid var(--border-warm); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
+                        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+                            <div class="card-icon-badge" style="width:36px; height:36px; margin:0;"><i data-lucide="shield-check"></i></div>
+                            <h4 style="margin:0; font-size:1.05rem; color:var(--text-dark);">Sterile Protocols &amp; Safety</h4>
+                        </div>
+                        <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin:0;">Sterilized operation suites, advanced diagnostic testing, and evidence-based clinical recovery pathways tailored to patient needs.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top:1.8rem; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); border:1.5px solid rgba(128,0,0,0.15); border-radius:var(--radius-md); padding:1.5rem 1.8rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
+                    <div>
+                        <strong style="display:block; font-size:1.1rem; color:var(--text-dark); margin-bottom:0.25rem;">Need Clinical Consultation for {d['title']}?</strong>
+                        <span style="font-size:0.88rem; color:var(--text-charcoal);">Book a priority OPD slot or reach our 24/7 reception desk for guidance.</span>
+                    </div>
+                    <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
+                        <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', '{d['title']}')">
+                            <i data-lucide="calendar"></i> <span>Book Consultation</span>
+                        </a>
+                        <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" class="btn-secondary" style="background:#fff;">
+                            <i data-lucide="phone"></i> <span>Call: {HOSPITAL_CONTACT['phone_1']}</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Explore Other Departments Carousel -->
@@ -548,21 +702,17 @@ def build_all_pages():
         print(f"[OK] Created {d['file']}")
 
     # -------------------------------------------------------------
-    # 5. BUILD DOCTORS.HTML (Verified Doctors from User's Photos)
+    # 5. BUILD DOCTORS.HTML (Verified Doctors - No Overlay Tags on Top of Photos)
     # -------------------------------------------------------------
     doc_cards_html = ""
     for doc in DOCTORS_DATA:
         is_founder = "Founder" in doc['title']
         is_senior_specialist = doc['id'] in ['dr-g-prameela', 'dr-co-founder-wife'] or "Senior" in doc['title']
         if doc.get('image'):
-            badge_title = "FOUNDER" if is_founder else ("★ SENIOR SPECIALIST" if is_senior_specialist else "")
-            badge_bg = "linear-gradient(135deg, var(--primary-accent), var(--primary-red))" if is_founder else "linear-gradient(135deg, #b8860b 0%, #800000 100%)"
-            badge_html = f'''<div style="position:absolute; top:12px; right:12px; background:{badge_bg}; color:#fff; font-size:0.72rem; font-weight:700; padding:4px 11px; border-radius:20px; box-shadow:0 4px 12px rgba(128,0,0,0.28); text-transform:uppercase; letter-spacing:0.5px;">{badge_title}</div>''' if badge_title else ""
             img_pos = "object-position: top center;"
             img_or_avatar = f'''
             <div style="height:270px; width:100%; overflow:hidden; position:relative; background:#fff5f2;">
                 <img src="{doc['image']}" alt="{doc['name']}" style="width:100%; height:100%; object-fit:cover; {img_pos} transition:transform 0.5s ease;">
-                {badge_html}
                 <div style="position:absolute; bottom:12px; left:12px; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px); padding:0.25rem 0.75rem; border-radius:20px; font-size:0.75rem; font-weight:700; color:var(--primary-accent); border:1px solid rgba(128,0,0,0.08);">
                     {doc['dept']}
                 </div>
@@ -619,7 +769,108 @@ def build_all_pages():
     print("[OK] Created doctors.html")
 
     # -------------------------------------------------------------
-    # 6. ROUTER PAGES (service-detail.html & department-detail.html)
+    # 6. BUILD BLOG.HTML (Health Insights & Awareness Guides)
+    # -------------------------------------------------------------
+    blog_cards_html = ""
+    for post in BLOG_POSTS:
+        encoded_content = urllib.parse.quote(post['full_content'])
+        safe_title = post['title'].replace("'", "\\'")
+        blog_cards_html += f'''
+        <div class="blog-card animate-up" data-category="{post['category']}">
+            <div class="blog-card-visual">
+                <div style="width:64px; height:64px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
+                    <i data-lucide="{post['icon']}" style="width:32px; height:32px;"></i>
+                </div>
+                <span class="blog-card-badge">{post['category_name']}</span>
+                <span class="blog-card-time">{post['read_time']}</span>
+            </div>
+            <div class="blog-card-content">
+                <h3>{post['title']}</h3>
+                <p>{post['excerpt']}</p>
+                <div class="blog-card-footer">
+                    <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;"><i data-lucide="calendar" style="width:13px; vertical-align:middle;"></i> {post['date']}</span>
+                    <button class="blog-read-btn" onclick="openArticleModal('{safe_title}', '{post['category_name']}', '{post['date']}', '{post['read_time']}', '{encoded_content}')">
+                        <span>Read Article</span> <i data-lucide="arrow-right" style="width:15px; height:15px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>'''
+
+    blog_body = f'''
+    {spacer}
+    <section class="framed-section animate-up" style="margin-top:1.5rem;">
+        <div class="section-title">
+            <div class="section-eyebrow">
+                <span class="eyebrow-dot"></span> HEALTH &amp; WELLNESS AWARENESS
+            </div>
+            <h2>A1 Hospital <span class="serif-italic">Health Insights</span></h2>
+            <p>Practical medical knowledge, disease prevention tips, and verified clinical guidance from our medical center in Srikakulam.</p>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="blog-filter-bar">
+            <button class="blog-filter-pill active" onclick="filterBlog('all', this)">All Articles</button>
+            <button class="blog-filter-pill" onclick="filterBlog('pediatrics', this)">Pediatrics &amp; Child Health</button>
+            <button class="blog-filter-pill" onclick="filterBlog('obstetrics', this)">Women's Health &amp; IVF</button>
+            <button class="blog-filter-pill" onclick="filterBlog('orthopedics', this)">Orthopedics &amp; Joint Care</button>
+            <button class="blog-filter-pill" onclick="filterBlog('emergency', this)">Emergency Care</button>
+            <button class="blog-filter-pill" onclick="filterBlog('nephrology', this)">Kidney Health</button>
+            <button class="blog-filter-pill" onclick="filterBlog('generalmedicine', this)">General Medicine</button>
+        </div>
+
+        <!-- Blog Articles Grid -->
+        <div class="blog-grid">
+            {blog_cards_html}
+        </div>
+
+        <!-- Health Consultation Prompt Banner -->
+        <div style="margin-top:3.5rem; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); border:1.5px solid rgba(128,0,0,0.18); border-radius:var(--radius-lg); padding:2rem 2.5rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.5rem;">
+            <div>
+                <span style="font-size:0.75rem; font-weight:800; color:var(--primary-accent); text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:0.3rem;">CLINICAL SUPPORT DESK</span>
+                <h3 style="font-size:1.45rem; font-family:'Playfair Display', serif; color:var(--text-dark); margin:0 0 0.4rem 0;">Have a Health Question or Need Consultation?</h3>
+                <p style="margin:0; font-size:0.95rem; color:var(--text-charcoal); line-height:1.5;">Our hospital doctors and outpatient clinics are here to help you and your family.</p>
+            </div>
+            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+                <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', 'General Health Inquiry')">
+                    <i data-lucide="calendar"></i> <span>Book an Appointment</span>
+                </a>
+                <a href="https://wa.me/91{HOSPITAL_CONTACT['whatsapp_number']}" target="_blank" class="btn-whatsapp-pill" style="display:inline-flex; align-items:center; gap:6px; padding:0.65rem 1.25rem; background:#25D366; color:#fff; border-radius:30px; font-weight:700; text-decoration:none;">
+                    <i data-lucide="message-circle"></i> <span>WhatsApp Help Desk</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Article Reading Modal -->
+    <div id="article-modal" class="article-modal-overlay">
+        <div class="article-modal-container">
+            <button class="article-modal-close" onclick="closeArticleModal()" aria-label="Close modal">&times;</button>
+            <div style="margin-bottom:1.25rem;">
+                <span id="modal-article-category" style="display:inline-block; font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--primary-accent); background:rgba(128,0,0,0.08); padding:3px 12px; border-radius:20px; margin-bottom:0.6rem;"></span>
+                <h2 id="modal-article-title" style="font-size:1.6rem; color:var(--text-dark); margin:0 0 0.5rem 0; line-height:1.35; font-family:'Playfair Display', serif;"></h2>
+                <span id="modal-article-meta" style="font-size:0.82rem; color:var(--text-muted); font-weight:600;"></span>
+            </div>
+            <div id="modal-article-body" style="font-size:0.98rem; line-height:1.75; color:var(--text-charcoal); border-top:1px solid var(--border-warm); padding-top:1.25rem;">
+            </div>
+            <div style="margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--border-warm); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+                <a href="#appointment" class="btn-primary" onclick="closeArticleModal(); openAppointmentModal('', 'Blog Consultation')">
+                    <i data-lucide="calendar"></i> <span>Book Priority Appointment</span>
+                </a>
+                <button class="btn-secondary" onclick="closeArticleModal()">
+                    <span>Close Article</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    '''
+
+    blog_html = set_meta(common_nav + blog_body + page_footer, "Health Insights & Blog | A1 Hospital", "blog", "blog.html")
+    with open('blog.html', 'w', encoding='utf-8') as f:
+        f.write(blog_html)
+    print("[OK] Created blog.html")
+
+    # -------------------------------------------------------------
+    # 7. ROUTER PAGES (service-detail.html & department-detail.html)
     # -------------------------------------------------------------
     router_script = '''
     <script>
@@ -629,7 +880,6 @@ def build_all_pages():
         const targetMap = {
             'beds': 'service-beds.html',
             'emergency': 'service-emergency.html',
-            'pharmacy': 'service-pharmacy.html',
             'ambulance': 'service-ambulance.html',
             'icu': 'service-icu.html'
         };
