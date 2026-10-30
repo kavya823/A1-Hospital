@@ -21,7 +21,8 @@ DOCTORS_DATA = [
         "qual": "M.D (PAED) NILOUFER",
         "title": "Children Specialist (Founder)",
         "dept": "Pediatrics & Child Health",
-        "desc": "Founder of A1 Hospital with over 13+ years of clinical excellence in pediatric care, child health, and newborn wellness in Srikakulam.",
+        "exp": "13+ Years Pediatric Excellence",
+        "desc": "Hospital Founder with 13+ years of clinical excellence in newborn care, childhood illnesses, and pediatric wellness.",
         "image": "dr_rao.jpeg",
         "icon": "baby"
     },
@@ -31,7 +32,8 @@ DOCTORS_DATA = [
         "qual": "M.S. (OBG) FART, FMAS",
         "title": "Senior Obstetrician & Gynaecologist (IVF Specialist)",
         "dept": "Obstetrics, Gynaecology & IVF Clinic",
-        "desc": "Senior Consultant Obstetrician & Gynaecologist. Specialist in high-risk pregnancy, infertility evaluation, advanced reproductive technology (FART), and minimal access laparoscopic surgery (FMAS).",
+        "exp": "13+ Years Women's Care & IVF",
+        "desc": "Senior Specialist in high-risk pregnancy, infertility evaluation, advanced reproductive technology (IVF/FART), and laparoscopy.",
         "image": "dr_prameela.png",
         "icon": "heart-pulse"
     },
@@ -41,7 +43,8 @@ DOCTORS_DATA = [
         "qual": "M.S., M.CH. PAEDIATRIC SURGERY",
         "title": "Pediatric Surgeon",
         "dept": "Pediatrics & Child Health",
-        "desc": "Specialist in pediatric surgical interventions, neonatal surgeries, and congenital anomaly corrections in children.",
+        "exp": "Pediatric Surgical Specialist",
+        "desc": "Specialist in pediatric surgical care, neonatal interventions, and congenital anomaly corrections.",
         "image": None,
         "icon": "baby"
     },
@@ -51,7 +54,8 @@ DOCTORS_DATA = [
         "qual": "M.S., (ORTHO)",
         "title": "Orthopaedic Surgeon",
         "dept": "Orthopedics & Joint Surgery",
-        "desc": "Senior orthopedic surgeon specializing in bone fracture management, joint replacement, and complex musculoskeletal trauma.",
+        "exp": "Senior Orthopedic Surgeon",
+        "desc": "Senior orthopedic surgeon specializing in fracture fixation, joint care, and musculoskeletal trauma.",
         "image": None,
         "icon": "bone"
     },
@@ -61,7 +65,8 @@ DOCTORS_DATA = [
         "qual": "MS Ortho, FIJR, FIASM",
         "title": "Orthopaedic Surgeon",
         "dept": "Orthopedics & Joint Surgery",
-        "desc": "Fellow in Joint Replacement and Arthroscopic Sports Surgery, treating joint arthritis, knee, hip, and ligament injuries.",
+        "exp": "Joint Replacement Fellow",
+        "desc": "Fellow in Joint Replacement and Arthroscopic Sports Surgery, managing arthritis, knee, and ligament repairs.",
         "image": None,
         "icon": "activity"
     },
@@ -71,7 +76,8 @@ DOCTORS_DATA = [
         "qual": "M.D (General Medicine)",
         "title": "General Physician",
         "dept": "General Medicine",
-        "desc": "Consultant physician managing adult fevers, diabetes, hypertension, respiratory infections, and general medical illnesses.",
+        "exp": "Consultant Physician",
+        "desc": "Consultant physician managing adult fevers, diabetes, hypertension, and multi-system medical illnesses.",
         "image": None,
         "icon": "stethoscope"
     },
@@ -81,7 +87,8 @@ DOCTORS_DATA = [
         "qual": "M.B.B.S., MS (GENERAL SURGERY)",
         "title": "General Surgeon",
         "dept": "General Surgery",
-        "desc": "Expert general surgeon performing hernia repairs, appendectomy, piles/fissure procedures, trauma wound care, and abdominal surgeries.",
+        "exp": "General & Laparoscopic Surgeon",
+        "desc": "Expert surgeon performing hernia repairs, appendectomy, piles/fissure procedures, and emergency abdominal care.",
         "image": None,
         "icon": "scissors"
     },
@@ -91,7 +98,8 @@ DOCTORS_DATA = [
         "qual": "M.D., DM, NEPHROLOGY",
         "title": "Nephrologist",
         "dept": "Nephrology (Kidney Care)",
-        "desc": "Kidney specialist managing chronic kidney disease (CKD), acute renal failure, dialysis care, and diabetic nephropathy.",
+        "exp": "Nephrology Specialist",
+        "desc": "Kidney specialist managing chronic kidney disease, dialysis care, and diabetic nephropathy.",
         "image": None,
         "icon": "filter"
     },
@@ -101,7 +109,8 @@ DOCTORS_DATA = [
         "qual": "M.S., MCH",
         "title": "Urologist",
         "dept": "Urology",
-        "desc": "Specialist in urinary tract disorders, kidney stones, prostate conditions, and minimally invasive endourological procedures.",
+        "exp": "Consultant Urologist",
+        "desc": "Specialist in urinary tract conditions, kidney stones, and minimally invasive endourology.",
         "image": None,
         "icon": "shield-plus"
     },
@@ -111,7 +120,8 @@ DOCTORS_DATA = [
         "qual": "M.S., OPHTHALMOLOGY",
         "title": "Ophthalmologist",
         "dept": "Ophthalmology (Eye Care)",
-        "desc": "Eye specialist providing comprehensive vision evaluations, cataract assessments, glaucoma checks, and medical eye treatments.",
+        "exp": "Eye Specialist",
+        "desc": "Eye specialist providing vision evaluations, cataract assessments, glaucoma checks, and eye care.",
         "image": None,
         "icon": "eye"
     },
@@ -121,13 +131,14 @@ DOCTORS_DATA = [
         "qual": "M.B.B.S, M.D., M.D.",
         "title": "Senior Consultant Radiation & Clinical Oncologist",
         "dept": "Oncology (Cancer Care)",
-        "desc": "Consultant oncologist guiding cancer evaluations, clinical oncology reviews, early cancer screenings, and radiation planning.",
+        "exp": "Clinical Oncologist",
+        "desc": "Consultant oncologist guiding cancer evaluations, early screenings, and radiation therapy planning.",
         "image": None,
         "icon": "crosshair"
     }
 ]
 
-# The 8 Real Clinical Departments Matching the Doctors
+# The Real Clinical Departments Matching the Doctors (Crisp 1-2 sentence descriptions & high quality imagery)
 DEPARTMENTS_DATA = {
     "pediatrics": {
         "id": "pediatrics",
@@ -135,10 +146,10 @@ DEPARTMENTS_DATA = {
         "title": "Pediatrics & Child Health",
         "tag": "Children & Newborn Care",
         "icon": "baby",
-        "image": None,
-        "meaning": "Pediatrics is the branch of medicine focused on the physical, emotional, and social health of infants, children, and young adolescents. It covers preventive vaccinations, childhood fever management, growth assessments, and specialized pediatric surgery.",
+        "image": "dept_pediatrics.jpg",
+        "meaning": "Dedicated healthcare for infants, children, and adolescents, providing routine immunizations, fever management, and specialized pediatric surgery.",
         "highlights": [
-            "13+ Years of Dedicated Pediatric & Neonatal Clinical Excellence",
+            "13+ Years of Dedicated Pediatric Clinical Excellence",
             "Specialized Pediatric Surgical Care & Emergency Interventions",
             "Complete Child Immunization & Vaccination Schedules",
             "Dedicated Newborn & Neonatal Monitoring"
@@ -164,8 +175,8 @@ DEPARTMENTS_DATA = {
         "title": "Obstetrics, Gynaecology & IVF Clinic",
         "tag": "Women's Health & Fertility Care",
         "icon": "heart-pulse",
-        "image": "dr_prameela.png",
-        "meaning": "Obstetrics & Gynaecology covers comprehensive women's health, safe pregnancy care, and childbirth. The advanced reproductive technology (FART) and minimal access surgery (FMAS) unit delivers dedicated infertility treatments, IVF guidance, and laparoscopic surgeries.",
+        "image": "dept_obstetrics.jpg",
+        "meaning": "Comprehensive women's healthcare offering compassionate antenatal care, normal delivery, infertility evaluation, IVF guidance, and laparoscopic procedures.",
         "highlights": [
             "Comprehensive Antenatal & Safe Childbirth Care",
             "Infertility Evaluation & Advanced Reproductive Technology (FART)",
@@ -187,8 +198,8 @@ DEPARTMENTS_DATA = {
         "title": "Orthopedics & Joint Surgery",
         "tag": "Bone, Joint & Spine Care",
         "icon": "bone",
-        "image": None,
-        "meaning": "Orthopedics focuses on diagnosing, treating, and operating on disorders of the bones, joints, ligaments, tendons, and muscles. This includes fixing accidental fractures, treating chronic joint pain, and performing joint replacement surgeries.",
+        "image": "dept_orthopedics.jpg",
+        "meaning": "Advanced diagnosis and surgical treatment for accidental bone fractures, joint arthritis, knee replacements, and sports injuries.",
         "highlights": [
             "Advanced Joint Replacements & Arthroscopy Care",
             "24/7 Fracture Fixation & Accident Trauma Care",
@@ -216,8 +227,8 @@ DEPARTMENTS_DATA = {
         "title": "General Medicine",
         "tag": "Adult Physician & Internal Care",
         "icon": "stethoscope",
-        "image": None,
-        "meaning": "General Medicine deals with the prevention, diagnosis, and non-surgical treatment of adult diseases. It covers chronic health conditions like diabetes, high blood pressure, respiratory infections, seasonal viral fevers, and multi-system medical illnesses.",
+        "image": "dept_generalmedicine.jpg",
+        "meaning": "Comprehensive diagnosis and medical management for diabetes, hypertension, seasonal fevers, respiratory infections, and adult wellness.",
         "highlights": [
             "Comprehensive Medical Diagnosis & Treatment",
             "Management of Diabetes, Hypertension & Fevers",
@@ -239,8 +250,8 @@ DEPARTMENTS_DATA = {
         "title": "General Surgery",
         "tag": "Operative & Surgical Treatments",
         "icon": "scissors",
-        "image": None,
-        "meaning": "General Surgery involves surgical procedures to treat abdominal organs, hernias, gallbladder stones, appendicitis, piles, fissures, cysts, and accidental wounds. It focuses on safe operative intervention and smooth patient recovery.",
+        "image": "dept_generalsurgery.jpg",
+        "meaning": "Precision operative procedures for hernia repairs, appendectomy, gallbladder stones, piles/fissures, and emergency surgical care.",
         "highlights": [
             "Hernia Repairs, Appendectomy & Gallbladder Procedures",
             "Treatments for Piles, Anal Fissures & Fistulas",
@@ -262,8 +273,8 @@ DEPARTMENTS_DATA = {
         "title": "Nephrology (Kidney Care)",
         "tag": "Kidney & Renal Health",
         "icon": "filter",
-        "image": None,
-        "meaning": "Nephrology is the medical specialty that deals with kidney diseases, kidney damage prevention, fluid imbalances, and dialysis care. It focuses on keeping kidneys functioning and managing conditions caused by diabetes or high blood pressure.",
+        "image": "dept_nephrology.jpg",
+        "meaning": "Specialized renal medicine focusing on chronic kidney disease management, dialysis support, hypertension control, and diabetic kidney health.",
         "highlights": [
             "Specialized Kidney Disease Diagnosis & Treatment",
             "Diabetic Kidney Disease Management",
@@ -285,8 +296,8 @@ DEPARTMENTS_DATA = {
         "title": "Urology",
         "tag": "Urinary & Stone Treatments",
         "icon": "shield-plus",
-        "image": None,
-        "meaning": "Urology focuses on the medical and surgical management of the urinary tract (kidneys, ureters, bladder, and urethra) in men and women, as well as male reproductive health. Common treatments include kidney stone management and prostate care.",
+        "image": "dept_urology.jpg",
+        "meaning": "Advanced medical and surgical treatment for kidney stones, urinary tract disorders, prostate conditions, and minimally invasive endourology.",
         "highlights": [
             "Diagnosis & Treatment of Kidney & Bladder Stones",
             "Care for Prostate Enlargement & Urinary Flow Issues",
@@ -308,8 +319,8 @@ DEPARTMENTS_DATA = {
         "title": "Ophthalmology (Eye Care)",
         "tag": "Vision & Optical Care",
         "icon": "eye",
-        "image": None,
-        "meaning": "Ophthalmology is the branch of medicine and surgery that treats disorders of the eye and vision. It includes comprehensive eyesight testing, cataract evaluation, glaucoma screening, and medical treatment for ocular infections and allergies.",
+        "image": "dept_ophthalmology.jpg",
+        "meaning": "Comprehensive eyesight evaluations, cataract assessments, glaucoma screenings, and targeted medical treatment for ocular conditions.",
         "highlights": [
             "Eye Health Assessments & Vision Testing",
             "Cataract Evaluation & Treatment Planning",
@@ -331,8 +342,8 @@ DEPARTMENTS_DATA = {
         "title": "Oncology (Cancer Care)",
         "tag": "Radiation & Clinical Oncology",
         "icon": "crosshair",
-        "image": None,
-        "meaning": "Oncology is the medical specialty devoted to diagnosing, staging, and treating cancer. Radiation and clinical oncology focuses on targeted cancer treatment planning, early cancer detection screenings, and supportive compassionate patient guidance.",
+        "image": "dept_oncology.jpg",
+        "meaning": "Compassionate cancer evaluations providing early cancer detection screenings, clinical oncology reviews, and radiation planning.",
         "highlights": [
             "Expert Clinical Oncology Consultations",
             "Early Cancer Screening & Diagnosis Guidance",
@@ -350,7 +361,7 @@ DEPARTMENTS_DATA = {
     }
 }
 
-# The 4 Core Real Hospital Services (No doctor mentions - purely facility-focused)
+# The 5 Core Real Hospital Services (Facility-focused, now includes Pharmacy Services)
 SERVICES_DATA = {
     "beds": {
         "id": "beds",
@@ -439,6 +450,27 @@ SERVICES_DATA = {
             "Continuous Multi-Channel ECG & Blood Gas Tracking",
             "Strict Infection Control & Sterile Protocols"
         ]
+    },
+    "pharmacy": {
+        "id": "pharmacy",
+        "file": "service-pharmacy.html",
+        "title": "Pharmacy Services",
+        "tag": "In-House Medical Store",
+        "icon": "pill",
+        "image": "pharmacy_service.jpg",
+        "meaning": "Access essential medications and prescribed treatments conveniently through our hospital pharmacy, supporting safe and continuous patient care.",
+        "highlights": [
+            "24/7 In-House Hospital Pharmacy Dispensary",
+            "100% Genuine Prescription Medications & Disposables",
+            "Cold-Chain Stored Vaccines & Critical Injectables",
+            "Direct Support for Inpatient & Outpatient Needs"
+        ],
+        "readiness": "24/7 In-House Availability",
+        "features": [
+            "Direct Doctor Prescription Integration",
+            "Emergency Resuscitation & Critical Care Drugs",
+            "Certified Pharmacists on Duty Around the Clock",
+            "Accredited Temperature-Controlled Medicine Storage"
+        ]
     }
 }
-

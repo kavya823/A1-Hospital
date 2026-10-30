@@ -218,15 +218,35 @@ def build_all_pages():
                 <div class="map-detail-item" style="display: flex; gap: 0.8rem; align-items: flex-start;">
                     <i data-lucide="phone-call" style="color: var(--primary-accent); width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px;"></i>
                     <div>
-                        <strong style="color: var(--text-dark); display: block; font-size: 0.95rem;">24/7 Casualty Reception</strong>
-                        <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" style="color: var(--text-dark); text-decoration: none; font-size: 0.88rem; font-weight: 700;">{HOSPITAL_CONTACT['phone_1']}</a>
+                        <strong style="color: var(--text-dark); display: block; font-size: 0.95rem;">24/7 Hospital Reception</strong>
+                        <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" style="color: var(--text-dark); text-decoration: none; font-size: 0.88rem; font-weight: 700;">{HOSPITAL_CONTACT['phone_1']}</a>, <a href="tel:{HOSPITAL_CONTACT['phone_2'].replace('-', '')}" style="color: var(--text-dark); text-decoration: none; font-size: 0.88rem; font-weight: 700;">{HOSPITAL_CONTACT['phone_2']}</a>
                     </div>
                 </div>
-                <div class="map-detail-item" style="display: flex; gap: 0.8rem; align-items: flex-start;">
-                    <i data-lucide="globe" style="color: var(--primary-accent); width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px;"></i>
-                    <div>
-                        <strong style="color: var(--text-dark); display: block; font-size: 0.95rem;">Official Website</strong>
-                        <a href="{HOSPITAL_CONTACT['website']}" target="_blank" rel="noopener noreferrer" style="color: var(--primary-accent); text-decoration: none; font-size: 0.88rem; font-weight: 600;">{HOSPITAL_CONTACT['domain']}</a>
+            </div>
+
+            <!-- Modern Hospital Reception & Patient Registration Desk Showcase -->
+            <div class="reception-facility-card animate-up">
+                <div class="reception-img-frame">
+                    <img src="reception_desk.jpg" alt="A1 Hospital Reception and Patient Registration Desk">
+                    <div class="reception-badge-pill">
+                        <i data-lucide="clock"></i> 24/7 Patient Assistance
+                    </div>
+                </div>
+                <div class="reception-facility-info">
+                    <div class="section-eyebrow">
+                        <span class="eyebrow-dot"></span> PATIENT ADMISSIONS &amp; ENQUIRIES
+                    </div>
+                    <h3>Hospital Reception &amp; Registration Desk</h3>
+                    <p>Our modern reception and patient care desk is staffed 24 hours a day to welcome you, facilitate rapid outpatient registrations, assist with doctor appointments, and provide immediate inpatient admissions guidance.</p>
+                    <div class="reception-quick-contact">
+                        <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" class="reception-phone-pill">
+                            <i data-lucide="phone-call"></i>
+                            <span>Desk Line 1: {HOSPITAL_CONTACT['phone_1']}</span>
+                        </a>
+                        <a href="tel:{HOSPITAL_CONTACT['phone_2'].replace('-', '')}" class="reception-phone-pill">
+                            <i data-lucide="phone"></i>
+                            <span>Desk Line 2: {HOSPITAL_CONTACT['phone_2']}</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -320,23 +340,25 @@ def build_all_pages():
     # -------------------------------------------------------------
     dept_grid_items = ""
     for d_id, d in DEPARTMENTS_DATA.items():
+        img_src = d.get('image') or 'dept_pediatrics.jpg'
         dept_grid_items += f'''
-        <a href="{d['file']}" class="dept-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
-            <div class="dept-showcase-header-box" style="height:150px; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); display:flex; align-items:center; justify-content:center; position:relative; border-bottom:1.5px solid var(--border-warm);">
-                <div style="width:68px; height:68px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
-                    <i data-lucide="{d['icon']}" style="width:34px; height:34px;"></i>
+        <a href="{d['file']}" class="dept-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; overflow:hidden; border-radius:var(--radius-lg); background:var(--bg-surface); border:1.5px solid var(--border-warm); box-shadow:var(--shadow-sm); transition:var(--transition-bounce);">
+            <div class="dept-showcase-header-box" style="height:190px; position:relative; overflow:hidden; background:#fff5f2;">
+                <img src="{img_src}" alt="{d['title']}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;">
+                <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.45) 100%);"></div>
+                <div style="position:absolute; top:12px; left:12px; width:40px; height:40px; border-radius:12px; background:rgba(255,255,255,0.92); backdrop-filter:blur(6px); color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+                    <i data-lucide="{d['icon']}" style="width:20px; height:20px;"></i>
                 </div>
-                <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.92); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:3px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.08);">
+                <div style="position:absolute; bottom:12px; right:12px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:4px 12px; border-radius:14px; box-shadow:0 4px 10px rgba(0,0,0,0.12);">
                     {d['tag']}
                 </div>
             </div>
-            <div class="dept-showcase-content">
-                <span class="service-pill-tag">{d['tag']}</span>
-                <h3>{d['title']}</h3>
-                <p>{d['meaning']}</p>
+            <div class="dept-showcase-content" style="padding:1.4rem; display:flex; flex-direction:column; flex:1;">
+                <h3 style="font-size:1.22rem; margin:0 0 0.5rem 0; color:var(--text-dark);">{d['title']}</h3>
+                <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.55; margin:0 0 1rem 0; flex:1;">{d['meaning']}</p>
                 <div style="margin-top:auto; padding-top:0.8rem; border-top:1px solid var(--border-warm); display:flex; align-items:center; justify-content:space-between;">
-                    <span style="font-size:0.82rem; color:var(--primary-accent); font-weight:700;"><i data-lucide="activity" style="width:14px; vertical-align:middle;"></i> Clinical Care &amp; OPD</span>
-                    <span class="dept-card-cta"><span>Explore Speciality</span> <i data-lucide="arrow-right"></i></span>
+                    <span style="font-size:0.82rem; color:var(--primary-accent); font-weight:700;"><i data-lucide="shield-check" style="width:14px; vertical-align:middle;"></i> In-Hospital Care</span>
+                    <span class="dept-card-cta" style="color:var(--primary-accent); font-weight:700; font-size:0.85rem; display:flex; align-items:center; gap:4px;"><span>Explore Speciality</span> <i data-lucide="arrow-right" style="width:15px; height:15px;"></i></span>
                 </div>
             </div>
         </a>'''
@@ -427,6 +449,45 @@ def build_all_pages():
                 </div>
             </a>'''
 
+        if s.get('image'):
+            service_visual_html = f'''
+                <div class="detail-hero-visual">
+                    <div class="detail-arch-frame" style="height:380px; border-radius:var(--radius-lg); overflow:hidden; position:relative; box-shadow:0 14px 36px rgba(128,0,0,0.12); border:2px solid var(--border-warm); background:#fff5f2;">
+                        <img src="{s['image']}" alt="{s['title']}" style="width:100%; height:100%; object-fit:cover; display:block;">
+                        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.5) 100%);"></div>
+                        <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); padding:0.75rem 1.2rem; border-radius:14px; display:flex; align-items:center; gap:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+                            <div class="card-icon-badge" style="width:38px; height:38px; font-size:1rem; margin:0; flex-shrink:0;">
+                                <i data-lucide="{s['icon']}"></i>
+                            </div>
+                            <div>
+                                <strong style="display:block; font-size:0.95rem; color:var(--text-dark);">{s['title']}</strong>
+                                <span style="font-size:0.78rem; color:var(--text-muted);">A1 Hospital Srikakulam</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>'''
+        else:
+            service_visual_html = f'''
+                <div class="detail-hero-visual">
+                    <div class="detail-arch-frame" style="background:linear-gradient(145deg, #fdf5f3 0%, #f7e8e5 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2.5rem 2rem; text-align:center; position:relative;">
+                        <div style="width:105px; height:105px; border-radius:50%; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(128,0,0,0.13); margin-bottom:1.5rem;">
+                            <i data-lucide="{s['icon']}" style="width:48px; height:48px;"></i>
+                        </div>
+                        <div style="font-size:0.82rem; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--primary-accent); margin-bottom:0.4rem;">A1 Hospital Srikakulam</div>
+                        <h3 style="font-size:1.45rem; font-family:'Playfair Display', serif; color:var(--text-dark); margin:0 0 0.75rem 0;">{s['title']}</h3>
+                        <span style="display:inline-block; font-size:0.8rem; font-weight:700; background:rgba(128,0,0,0.08); color:var(--primary-accent); padding:0.3rem 0.9rem; border-radius:20px;">{s['tag']}</span>
+                        <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; margin:0 auto; width:calc(100% - 40px);">
+                            <div class="card-icon-badge" style="width:40px; height:40px; font-size:1.1rem; margin:0;">
+                                <i data-lucide="{s['icon']}"></i>
+                            </div>
+                            <div>
+                                <strong>{s['title']}</strong>
+                                <span>A1 Hospital Srikakulam</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>'''
+
         service_page_content = f'''
         {spacer}
         <section class="detail-page-wrapper framed-section animate-up">
@@ -476,25 +537,7 @@ def build_all_pages():
                     </div>
                 </div>
 
-                <div class="detail-hero-visual">
-                    <div class="detail-arch-frame" style="background:linear-gradient(145deg, #fdf5f3 0%, #f7e8e5 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2.5rem 2rem; text-align:center; position:relative;">
-                        <div style="width:105px; height:105px; border-radius:50%; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(128,0,0,0.13); margin-bottom:1.5rem;">
-                            <i data-lucide="{s['icon']}" style="width:48px; height:48px;"></i>
-                        </div>
-                        <div style="font-size:0.82rem; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--primary-accent); margin-bottom:0.4rem;">A1 Hospital Srikakulam</div>
-                        <h3 style="font-size:1.45rem; font-family:'Playfair Display', serif; color:var(--text-dark); margin:0 0 0.75rem 0;">{s['title']}</h3>
-                        <span style="display:inline-block; font-size:0.8rem; font-weight:700; background:rgba(128,0,0,0.08); color:var(--primary-accent); padding:0.3rem 0.9rem; border-radius:20px;">{s['tag']}</span>
-                        <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; margin:0 auto; width:calc(100% - 40px);">
-                            <div class="card-icon-badge" style="width:40px; height:40px; font-size:1.1rem; margin:0;">
-                                <i data-lucide="{s['icon']}"></i>
-                            </div>
-                            <div>
-                                <strong>{s['title']}</strong>
-                                <span>A1 Hospital Srikakulam</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {service_visual_html}
             </div>
 
             <!-- Hospital Facility Standards & 24/7 Readiness (Purely Service & Quality) -->
@@ -616,20 +659,16 @@ def build_all_pages():
                 </div>
 
                 <div class="detail-hero-visual">
-                    <div class="detail-arch-frame" style="background:linear-gradient(145deg, #fdf5f3 0%, #f7e8e5 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2.5rem 2rem; text-align:center; position:relative;">
-                        <div style="width:105px; height:105px; border-radius:50%; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(128,0,0,0.13); margin-bottom:1.5rem;">
-                            <i data-lucide="{d['icon']}" style="width:48px; height:48px;"></i>
-                        </div>
-                        <div style="font-size:0.82rem; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--primary-accent); margin-bottom:0.4rem;">A1 Hospital Srikakulam</div>
-                        <h3 style="font-size:1.45rem; font-family:'Playfair Display', serif; color:var(--text-dark); margin:0 0 0.75rem 0;">{d['title']}</h3>
-                        <span style="display:inline-block; font-size:0.8rem; font-weight:700; background:rgba(128,0,0,0.08); color:var(--primary-accent); padding:0.3rem 0.9rem; border-radius:20px;">{d['tag']}</span>
-                        <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; margin:0 auto; width:calc(100% - 40px);">
-                            <div class="card-icon-badge" style="width:40px; height:40px; font-size:1.1rem; margin:0;">
+                    <div class="detail-arch-frame" style="height:380px; border-radius:var(--radius-lg); overflow:hidden; position:relative; box-shadow:0 14px 36px rgba(128,0,0,0.12); border:2px solid var(--border-warm); background:#fff5f2;">
+                        <img src="{d.get('image', 'dept_pediatrics.jpg')}" alt="{d['title']}" style="width:100%; height:100%; object-fit:cover; display:block;">
+                        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.5) 100%);"></div>
+                        <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); padding:0.75rem 1.2rem; border-radius:14px; display:flex; align-items:center; gap:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+                            <div class="card-icon-badge" style="width:38px; height:38px; font-size:1rem; margin:0; flex-shrink:0;">
                                 <i data-lucide="{d['icon']}"></i>
                             </div>
                             <div>
-                                <strong>{d['title']}</strong>
-                                <span>A1 Hospital Srikakulam</span>
+                                <strong style="display:block; font-size:0.95rem; color:var(--text-dark);">{d['title']}</strong>
+                                <span style="font-size:0.78rem; color:var(--text-muted);">A1 Hospital Srikakulam</span>
                             </div>
                         </div>
                     </div>
@@ -729,17 +768,17 @@ def build_all_pages():
         card_custom_id = ' id="card-dr-prameela"' if is_senior_specialist else ''
         card_border_style = 'border: 2px solid rgba(184,134,11,0.35); box-shadow: 0 8px 24px rgba(184,134,11,0.08);' if is_senior_specialist else ('border: 2px solid rgba(128,0,0,0.22);' if is_founder else 'border: 1.5px solid var(--border-warm);')
 
+        exp_badge_html = f'<div class="doc-exp-chip"><i data-lucide="award" style="width:14px; height:14px;"></i> {doc.get("exp", "Clinical Specialist")}</div>'
+
         doc_cards_html += f'''
         <div class="doctor-card animate-up"{card_custom_id} style="display:flex; flex-direction:column; background:var(--bg-surface); border-radius:var(--radius-lg); {card_border_style} overflow:hidden; box-shadow:var(--shadow-sm); transition:var(--transition-bounce);">
             {img_or_avatar}
-            <div style="padding:1.6rem; display:flex; flex-direction:column; flex:1;">
-                <h3 style="font-size:1.3rem; margin:0 0 0.35rem 0; color:var(--text-dark);">{doc['name']}</h3>
-                <div style="font-size:0.88rem; color:var(--primary-accent); font-weight:700; margin-bottom:0.35rem;">{doc['qual']}</div>
-                <div style="font-size:0.82rem; font-weight:600; color:var(--text-charcoal); margin-bottom:0.85rem;">{doc['title']}</div>
-                <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.4rem; flex:1;">{doc['desc']}</p>
-                <div style="margin-top:auto; padding-top:0.75rem; border-top:1px solid var(--border-warm); display:flex; align-items:center; gap:6px; color:var(--primary-accent); font-weight:700; font-size:0.82rem;">
-                    <i data-lucide="award" style="width:15px; height:15px;"></i> <span>Specialist Clinician • A1 Hospital</span>
-                </div>
+            <div style="padding:1.4rem; display:flex; flex-direction:column; flex:1;">
+                <h3 style="font-size:1.25rem; margin:0 0 0.3rem 0; color:var(--text-dark);">{doc['name']}</h3>
+                <div style="font-size:0.86rem; color:var(--primary-accent); font-weight:700; margin-bottom:0.25rem;">{doc['qual']}</div>
+                <div style="font-size:0.82rem; font-weight:600; color:var(--text-charcoal); margin-bottom:0.4rem;">{doc['title']}</div>
+                {exp_badge_html}
+                <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.55; margin:0.6rem 0 0 0; flex:1;">{doc['desc']}</p>
             </div>
         </div>'''
 
