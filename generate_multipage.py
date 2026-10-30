@@ -20,9 +20,13 @@ def build_all_pages():
         return
     common_footer = contact_footer_match.group(1)
 
-    def set_meta(html_str, title, page_name):
+    def set_meta(html_str, title, page_name, page_file=""):
         res = re.sub(r'<title>.*?</title>', f'<title>{title}</title>', html_str)
         res = re.sub(r'<body[^>]*>', f'<body data-page="{page_name}">', res)
+        if page_file:
+            res = re.sub(r'<link rel="canonical" href="[^"]*"', f'<link rel="canonical" href="https://www.a1hospitalsrikakulam.com/{page_file}"', res)
+            res = re.sub(r'<meta property="og:url" content="[^"]*"', f'<meta property="og:url" content="https://www.a1hospitalsrikakulam.com/{page_file}"', res)
+            res = re.sub(r'<meta name="twitter:url" content="[^"]*"', f'<meta name="twitter:url" content="https://www.a1hospitalsrikakulam.com/{page_file}"', res)
         return res
 
     spacer = '\n    <div style="margin-top: 1.5rem;"></div>\n'
@@ -76,6 +80,13 @@ def build_all_pages():
                     <div>
                         <strong style="color: var(--text-dark); display: block; font-size: 0.95rem;">24/7 Casualty Reception</strong>
                         <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" style="color: var(--text-dark); text-decoration: none; font-size: 0.88rem; font-weight: 700;">{HOSPITAL_CONTACT['phone_1']}</a>
+                    </div>
+                </div>
+                <div class="map-detail-item" style="display: flex; gap: 0.8rem; align-items: flex-start;">
+                    <i data-lucide="globe" style="color: var(--primary-accent); width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px;"></i>
+                    <div>
+                        <strong style="color: var(--text-dark); display: block; font-size: 0.95rem;">Official Website</strong>
+                        <a href="{HOSPITAL_CONTACT['website']}" target="_blank" rel="noopener noreferrer" style="color: var(--primary-accent); text-decoration: none; font-size: 0.88rem; font-weight: 600;">{HOSPITAL_CONTACT['domain']}</a>
                     </div>
                 </div>
             </div>
@@ -159,7 +170,7 @@ def build_all_pages():
     </section>
     '''
 
-    services_html = set_meta(common_nav + services_body + page_footer, "Services | A1 Hospital", "services")
+    services_html = set_meta(common_nav + services_body + page_footer, "Services | A1 Hospital", "services", "services.html")
     with open('services.html', 'w', encoding='utf-8') as f:
         f.write(services_html)
     print("[OK] Created services.html")
@@ -235,7 +246,7 @@ def build_all_pages():
     </section>
     '''
 
-    departments_html = set_meta(common_nav + departments_body + page_footer, "Departments | A1 Hospital", "departments")
+    departments_html = set_meta(common_nav + departments_body + page_footer, "Departments | A1 Hospital", "departments", "departments.html")
     with open('departments.html', 'w', encoding='utf-8') as f:
         f.write(departments_html)
     print("[OK] Created departments.html")
@@ -374,7 +385,7 @@ def build_all_pages():
         </section>
         '''
 
-        full_service_page = set_meta(common_nav + service_page_content + page_footer, f"{s['title']} | A1 Hospital", "service-detail")
+        full_service_page = set_meta(common_nav + service_page_content + page_footer, f"{s['title']} | A1 Hospital", "service-detail", s['file'])
         with open(s['file'], 'w', encoding='utf-8') as f:
             f.write(full_service_page)
         print(f"[OK] Created {s['file']}")
@@ -531,7 +542,7 @@ def build_all_pages():
         </section>
         '''
 
-        full_dept_page = set_meta(common_nav + dept_page_content + page_footer, f"{d['title']} | A1 Hospital", "department-detail")
+        full_dept_page = set_meta(common_nav + dept_page_content + page_footer, f"{d['title']} | A1 Hospital", "department-detail", d['file'])
         with open(d['file'], 'w', encoding='utf-8') as f:
             f.write(full_dept_page)
         print(f"[OK] Created {d['file']}")
@@ -602,7 +613,7 @@ def build_all_pages():
     </section>
     '''
 
-    doctors_html = set_meta(common_nav + doctors_body + page_footer, "Doctors | A1 Hospital", "doctors")
+    doctors_html = set_meta(common_nav + doctors_body + page_footer, "Doctors | A1 Hospital", "doctors", "doctors.html")
     with open('doctors.html', 'w', encoding='utf-8') as f:
         f.write(doctors_html)
     print("[OK] Created doctors.html")

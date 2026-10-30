@@ -2,6 +2,8 @@
 # Matches EXACTLY the real doctor nameplates and photos provided by the user.
 
 HOSPITAL_CONTACT = {
+    "website": "https://www.a1hospitalsrikakulam.com",
+    "domain": "www.a1hospitalsrikakulam.com",
     "phone_1": "08942-228234",
     "phone_2": "08942-227234",
     "whatsapp_number": "6399144444",

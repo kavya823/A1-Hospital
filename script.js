@@ -322,7 +322,7 @@ Preferred Date:   ${date}
 Time Slot:        ${time}
 Symptoms / Notes: ${notes ? notes : 'None specified'}
 ==================================================
-Submitted through A1 Hospital Official Web Portal
+Submitted through A1 Hospital Official Web Portal (www.a1hospitalsrikakulam.com)
 Direct Contact:   ${phone}
 Hospital Email:   ${hospitalEmail}`;
 
