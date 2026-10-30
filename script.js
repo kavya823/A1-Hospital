@@ -88,22 +88,14 @@ function initHospitalApp() {
     document.querySelectorAll('a[href="#appointment"]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            let docName = '';
             let deptName = '';
-
-            // Detect if clicked from doctor card
-            const docCard = link.closest('.doctor-card') || link.closest('.doctor-carousel-card');
-            if (docCard) {
-                const nameEl = docCard.querySelector('h3');
-                if (nameEl) docName = nameEl.textContent.trim();
-            }
 
             // Detect if clicked from department dropdown item
             if (link.closest('.dropdown-column')) {
                 deptName = link.textContent.trim();
             }
 
-            openAppointmentModal(docName, deptName);
+            openAppointmentModal('', deptName);
         });
     });
 
@@ -240,7 +232,7 @@ function scrollCarousel(carouselId, direction) {
 }
 
 /* Appointment Modal Functions */
-function openAppointmentModal(doctorName = '', departmentName = '') {
+function openAppointmentModal(param1 = '', param2 = '') {
     const modal = document.getElementById('appointment-modal');
     if (!modal) return;
 
@@ -250,24 +242,8 @@ function openAppointmentModal(doctorName = '', departmentName = '') {
     if (formView) formView.style.display = 'block';
     if (successView) successView.style.display = 'none';
 
-    // Auto-select doctor if matched
-    const docSelect = document.getElementById('appointment-doctor');
-    if (docSelect && doctorName) {
-        let matched = false;
-        for (let i = 0; i < docSelect.options.length; i++) {
-            if (docSelect.options[i].value.toLowerCase().includes(doctorName.toLowerCase()) ||
-                doctorName.toLowerCase().includes(docSelect.options[i].text.toLowerCase())) {
-                docSelect.selectedIndex = i;
-                matched = true;
-                break;
-            }
-        }
-        if (!matched && doctorName) {
-            // Add custom option or select first
-            const newOption = new Option(doctorName, doctorName, true, true);
-            docSelect.add(newOption);
-        }
-    }
+    // Auto-select department if provided
+    const departmentName = param2 || param1;
 
     // Auto-select department if matched
     const deptSelect = document.getElementById('appointment-dept');

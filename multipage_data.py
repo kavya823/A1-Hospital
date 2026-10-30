@@ -138,8 +138,8 @@ DEPARTMENTS_DATA = {
         "image": None,
         "meaning": "Pediatrics is the branch of medicine focused on the physical, emotional, and social health of infants, children, and young adolescents. It covers preventive vaccinations, childhood fever management, growth assessments, and specialized pediatric surgery.",
         "highlights": [
-            "13+ Years Pediatric Excellence led by Founder Dr. Mula Venkatarao",
-            "Specialized Pediatric Surgical Care by Dr. Kannepalli Srinivas",
+            "13+ Years of Dedicated Pediatric & Neonatal Clinical Excellence",
+            "Specialized Pediatric Surgical Care & Emergency Interventions",
             "Complete Child Immunization & Vaccination Schedules",
             "Dedicated Newborn & Neonatal Monitoring"
         ],

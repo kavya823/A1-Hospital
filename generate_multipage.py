@@ -606,13 +606,10 @@ def build_all_pages():
                     </ul>
 
                     <div class="detail-hero-actions">
-                        <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', '{d['title']}')">
-                            <i data-lucide="calendar"></i> <span>Book Department Appointment</span>
+                        <a href="{HOSPITAL_CONTACT['whatsapp_link']}" target="_blank" class="btn-whatsapp-pill" style="display:inline-flex; align-items:center; gap:6px; padding:0.75rem 1.4rem; background:#25D366; color:#fff; border-radius:30px; font-weight:700; text-decoration:none;">
+                            <i data-lucide="message-circle"></i> <span>WhatsApp Help Desk</span>
                         </a>
-                        <a href="{HOSPITAL_CONTACT['whatsapp_link']}" target="_blank" class="btn-whatsapp-pill" style="display:inline-flex; align-items:center; gap:6px; padding:0.65rem 1.2rem; background:#25D366; color:#fff; border-radius:30px; font-weight:700; text-decoration:none;">
-                            <i data-lucide="message-circle"></i> <span>WhatsApp: {HOSPITAL_CONTACT['whatsapp_number']}</span>
-                        </a>
-                        <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" class="btn-emergency-call" style="text-decoration:none;">
+                        <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" class="btn-primary" style="text-decoration:none;">
                             <i data-lucide="phone"></i> <span>Call: {HOSPITAL_CONTACT['phone_1']}</span>
                         </a>
                     </div>
@@ -666,15 +663,15 @@ def build_all_pages():
 
                 <div style="margin-top:1.8rem; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); border:1.5px solid rgba(128,0,0,0.15); border-radius:var(--radius-md); padding:1.5rem 1.8rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
                     <div>
-                        <strong style="display:block; font-size:1.1rem; color:var(--text-dark); margin-bottom:0.25rem;">Need Clinical Consultation for {d['title']}?</strong>
-                        <span style="font-size:0.88rem; color:var(--text-charcoal);">Book a priority OPD slot or reach our 24/7 reception desk for guidance.</span>
+                        <strong style="display:block; font-size:1.1rem; color:var(--text-dark); margin-bottom:0.25rem;">Need Clinical Guidance for {d['title']}?</strong>
+                        <span style="font-size:0.88rem; color:var(--text-charcoal);">Contact our 24/7 reception desk or chat via WhatsApp for guidance and scheduling.</span>
                     </div>
                     <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
-                        <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', '{d['title']}')">
-                            <i data-lucide="calendar"></i> <span>Book Consultation</span>
+                        <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" class="btn-primary" style="text-decoration:none;">
+                            <i data-lucide="phone"></i> <span>Call Helpline: {HOSPITAL_CONTACT['phone_1']}</span>
                         </a>
-                        <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" class="btn-secondary" style="background:#fff;">
-                            <i data-lucide="phone"></i> <span>Call: {HOSPITAL_CONTACT['phone_1']}</span>
+                        <a href="{HOSPITAL_CONTACT['whatsapp_link']}" target="_blank" class="btn-secondary" style="background:#fff; text-decoration:none;">
+                            <i data-lucide="message-circle" style="color:#25D366;"></i> <span>WhatsApp Desk</span>
                         </a>
                     </div>
                 </div>
@@ -740,9 +737,9 @@ def build_all_pages():
                 <div style="font-size:0.88rem; color:var(--primary-accent); font-weight:700; margin-bottom:0.35rem;">{doc['qual']}</div>
                 <div style="font-size:0.82rem; font-weight:600; color:var(--text-charcoal); margin-bottom:0.85rem;">{doc['title']}</div>
                 <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.4rem; flex:1;">{doc['desc']}</p>
-                <a href="#appointment" class="btn-primary small" onclick="openAppointmentModal('{doc['name']}', '{doc['dept']}')" style="margin-top:auto; width:100%; justify-content:center;">
-                    <i data-lucide="calendar"></i> <span>Book an Appointment</span>
-                </a>
+                <div style="margin-top:auto; padding-top:0.75rem; border-top:1px solid var(--border-warm); display:flex; align-items:center; gap:6px; color:var(--primary-accent); font-weight:700; font-size:0.82rem;">
+                    <i data-lucide="award" style="width:15px; height:15px;"></i> <span>Specialist Clinician • A1 Hospital</span>
+                </div>
             </div>
         </div>'''
 
