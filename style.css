@@ -628,6 +628,8 @@ p {
     flex: 0.9;
     position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
@@ -3362,13 +3364,13 @@ p {
    MISSION & VISION COMPACT FRAMED SHOWCASE (BELOW HERO DOCTOR DUO)
    ========================================================================== */
 .hero-mission-vision-frame {
-    margin-top: 1.4rem;
-    max-width: 520px;
+    margin-top: 2.2rem;
+    max-width: 440px;
     width: 100%;
     background: #ffffff;
     border: 1.5px solid var(--border-warm);
     border-radius: var(--radius-md);
-    padding: 1.1rem 1.25rem;
+    padding: 0.95rem 1.15rem;
     box-shadow: 0 10px 28px rgba(128, 0, 0, 0.06);
     display: grid;
     grid-template-columns: 1fr 1fr;
