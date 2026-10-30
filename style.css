@@ -628,8 +628,6 @@ p {
     flex: 0.9;
     position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
@@ -3361,95 +3359,148 @@ p {
 }
 
 /* ==========================================================================
-   MISSION & VISION COMPACT FRAMED SHOWCASE (BELOW HERO DOCTOR DUO)
+   DEDICATED MISSION & VISION FRAMED SECTION (BETWEEN HERO & SERVICES)
    ========================================================================== */
-.hero-mission-vision-frame {
-    margin-top: 2.2rem;
-    max-width: 440px;
-    width: 100%;
-    background: #ffffff;
+.mission-vision-section {
+    margin: 2.2rem 4%;
+    padding: 3rem 4%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(253, 248, 246, 0.95) 100%);
     border: 1.5px solid var(--border-warm);
-    border-radius: var(--radius-md);
-    padding: 0.95rem 1.15rem;
-    box-shadow: 0 10px 28px rgba(128, 0, 0, 0.06);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 16px 45px rgba(128, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.mv-frame-container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.mv-frame-header {
+    text-align: center;
+    margin-bottom: 2.25rem;
+}
+
+.mv-frame-header h2 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0.2rem 0 0 0;
+}
+
+.mv-frame-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.1rem;
-    position: relative;
-    transition: var(--transition-bounce);
-    box-sizing: border-box;
+    gap: 1.75rem;
 }
 
-.hero-mission-vision-frame:hover {
-    box-shadow: 0 14px 36px rgba(128, 0, 0, 0.1);
-    border-color: rgba(128, 0, 0, 0.28);
-}
-
-.mv-item {
+.mv-frame-card {
+    background: #ffffff;
+    border: 1.5px solid var(--border-warm);
+    border-radius: var(--radius-lg);
+    padding: 2rem 2.25rem;
+    box-shadow: 0 8px 24px rgba(128, 0, 0, 0.04);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    position: relative;
 }
 
-.mv-item:first-child {
-    padding-right: 0.8rem;
-    border-right: 1px solid var(--border-warm);
+.mv-frame-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px rgba(128, 0, 0, 0.1);
+    border-color: rgba(128, 0, 0, 0.22);
 }
 
-.mv-header {
+.mv-frame-card.mission-card {
+    border-top: 4px solid var(--primary-accent);
+}
+
+.mv-frame-card.vision-card {
+    border-top: 4px solid var(--gold-accent);
+}
+
+.mv-frame-card .mv-card-header {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1.1rem;
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--border-warm);
 }
 
-.mv-icon-badge {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
+.mv-icon-pill {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-.mv-icon-badge.mission-badge {
-    background: rgba(128, 0, 0, 0.1);
+.mv-icon-pill.mission-icon {
+    background: linear-gradient(135deg, rgba(128, 0, 0, 0.12) 0%, rgba(161, 20, 20, 0.08) 100%);
     color: var(--primary-accent);
 }
 
-.mv-icon-badge.vision-badge {
-    background: rgba(184, 134, 11, 0.12);
+.mv-icon-pill.vision-icon {
+    background: linear-gradient(135deg, rgba(197, 155, 39, 0.15) 0%, rgba(184, 134, 11, 0.08) 100%);
     color: #b8860b;
 }
 
-.mv-header h4 {
-    margin: 0;
-    font-size: 0.88rem;
-    font-weight: 700;
-    letter-spacing: 0.4px;
+.mv-icon-pill i, .mv-icon-pill svg {
+    width: 22px;
+    height: 22px;
+}
+
+.mv-title-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.mv-category-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--text-dark);
+    color: var(--primary-accent);
+    margin-bottom: 2px;
 }
 
-.mv-text {
+.mv-frame-card.vision-card .mv-category-tag {
+    color: #b8860b;
+}
+
+.mv-title-block h3 {
     margin: 0;
-    font-size: 0.78rem;
-    line-height: 1.45;
-    color: var(--text-charcoal);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    font-weight: 700;
 }
 
-@media (max-width: 600px) {
-    .hero-mission-vision-frame {
-        grid-template-columns: 1fr;
-        max-width: 320px;
-        margin: 1.2rem auto 0 auto;
-        gap: 0.9rem;
+.mv-card-body {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-charcoal);
+    font-weight: 450;
+}
+
+@media (max-width: 900px) {
+    .mission-vision-section {
+        padding: 2.5rem 1.5rem;
+        margin: 1.5rem 3%;
     }
-    .mv-item:first-child {
-        padding-right: 0;
-        padding-bottom: 0.75rem;
-        border-right: none;
-        border-bottom: 1px solid var(--border-warm);
+    .mv-frame-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    .mv-frame-card {
+        padding: 1.5rem;
     }
 }
 
