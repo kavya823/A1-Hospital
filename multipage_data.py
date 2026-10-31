@@ -18,29 +18,29 @@ DOCTORS_DATA = [
     {
         "id": "dr-mula-venkatarao",
         "name": "Dr. Mula Venkatarao",
-        "qual": "M.D (PAED) NILOUFER",
-        "title": "Children Specialist (Founder)",
+        "qual": "M.D. (Paed), Niloufer",
+        "title": "Children Specialist (Founder & Managing Partner)",
         "dept": "Pediatrics & Child Health",
         "exp": "13+ Years Pediatric Excellence",
-        "desc": "Hospital Founder with 13+ years of clinical excellence in newborn care, childhood illnesses, and pediatric wellness.",
+        "desc": "Hospital Founder & Managing Partner with 13+ years of clinical excellence in newborn care, childhood illnesses, and pediatric wellness.",
         "image": "dr_rao.jpeg",
         "icon": "baby"
     },
     {
         "id": "dr-g-prameela",
         "name": "Dr. G. Prameela",
-        "qual": "M.S. (OBG) FART, FMAS",
-        "title": "Senior Obstetrician & Gynaecologist (IVF Specialist)",
+        "qual": "M.S. (OBG), FART, FMAS",
+        "title": "Senior Obstetrician & Gynaecologist (Co-Founder & Managing Partner)",
         "dept": "Obstetrics, Gynaecology & IVF Clinic",
         "exp": "13+ Years Women's Care & IVF",
-        "desc": "Senior Specialist in high-risk pregnancy, infertility evaluation, advanced reproductive technology (IVF/FART), and laparoscopy.",
+        "desc": "Co-Founder & Managing Partner specializing in high-risk pregnancy, infertility evaluation, advanced reproductive technology (IVF/FART), and laparoscopy.",
         "image": "dr_prameela.png",
         "icon": "heart-pulse"
     },
     {
         "id": "dr-kannepalli-srinivas",
         "name": "Dr. Kannepalli Srinivas",
-        "qual": "M.S., M.CH. PAEDIATRIC SURGERY",
+        "qual": "M.S., M.Ch. (Paediatric Surgery)",
         "title": "Pediatric Surgeon",
         "dept": "Pediatrics & Child Health",
         "exp": "Pediatric Surgical Specialist",
@@ -50,8 +50,8 @@ DOCTORS_DATA = [
     },
     {
         "id": "dr-sattaru-kishore-babu",
-        "name": "Dr. Sattaru. Kishore Babu",
-        "qual": "M.S., (ORTHO)",
+        "name": "Dr. Sattaru Kishore Babu",
+        "qual": "M.S. (Ortho)",
         "title": "Orthopaedic Surgeon",
         "dept": "Orthopedics & Joint Surgery",
         "exp": "Senior Orthopedic Surgeon",
@@ -62,7 +62,7 @@ DOCTORS_DATA = [
     {
         "id": "dr-bammidi-sai-theja",
         "name": "Dr. Bammidi Sai Theja",
-        "qual": "MS Ortho, FIJR, FIASM",
+        "qual": "M.S. (Ortho), FIJR, FIASM",
         "title": "Orthopaedic Surgeon",
         "dept": "Orthopedics & Joint Surgery",
         "exp": "Joint Replacement Fellow",
@@ -73,7 +73,7 @@ DOCTORS_DATA = [
     {
         "id": "dr-hanumanthu-anilkumar",
         "name": "Dr. Hanumanthu Anilkumar",
-        "qual": "M.D (General Medicine)",
+        "qual": "M.D. (General Medicine)",
         "title": "General Physician",
         "dept": "General Medicine",
         "exp": "Consultant Physician",
@@ -84,7 +84,7 @@ DOCTORS_DATA = [
     {
         "id": "dr-chittipotula-balaji",
         "name": "Dr. Chittipotula Balaji",
-        "qual": "M.B.B.S., MS (GENERAL SURGERY)",
+        "qual": "M.B.B.S., M.S. (General Surgery)",
         "title": "General Surgeon",
         "dept": "General Surgery",
         "exp": "General & Laparoscopic Surgeon",
@@ -95,7 +95,7 @@ DOCTORS_DATA = [
     {
         "id": "dr-korla-vidya-sagar",
         "name": "Dr. Korla Vidya Sagar",
-        "qual": "M.D., DM, NEPHROLOGY",
+        "qual": "M.D., D.M. (Nephrology)",
         "title": "Nephrologist",
         "dept": "Nephrology (Kidney Care)",
         "exp": "Nephrology Specialist",
@@ -106,7 +106,7 @@ DOCTORS_DATA = [
     {
         "id": "dr-budumuru-ramana",
         "name": "Dr. Budumuru Ramana",
-        "qual": "M.S., MCH",
+        "qual": "M.S., M.Ch. (Urology)",
         "title": "Urologist",
         "dept": "Urology",
         "exp": "Consultant Urologist",
@@ -117,7 +117,7 @@ DOCTORS_DATA = [
     {
         "id": "dr-palepu-srikanthi",
         "name": "Dr. Palepu Srikanthi",
-        "qual": "M.S., OPHTHALMOLOGY",
+        "qual": "M.S. (Ophthalmology)",
         "title": "Ophthalmologist",
         "dept": "Ophthalmology (Eye Care)",
         "exp": "Eye Specialist",
@@ -128,7 +128,7 @@ DOCTORS_DATA = [
     {
         "id": "dr-navya-madabatula",
         "name": "Dr. Navya Madabatula",
-        "qual": "M.B.B.S, M.D., M.D.",
+        "qual": "M.B.B.S., M.D. (Radiation Oncology)",
         "title": "Senior Consultant Radiation & Clinical Oncologist",
         "dept": "Oncology (Cancer Care)",
         "exp": "Clinical Oncologist",
@@ -157,13 +157,13 @@ DEPARTMENTS_DATA = {
         "doctors": [
             {
                 "name": "Dr. Mula Venkatarao",
-                "qual": "M.D (PAED) NILOUFER",
-                "title": "Children Specialist (Founder)",
+                "qual": "M.D. (Paed), Niloufer",
+                "title": "Children Specialist (Founder & Managing Partner)",
                 "image": "dr_rao.jpeg"
             },
             {
                 "name": "Dr. Kannepalli Srinivas",
-                "qual": "M.S., M.CH. PAEDIATRIC SURGERY",
+                "qual": "M.S., M.Ch. (Paediatric Surgery)",
                 "title": "Pediatric Surgeon",
                 "image": None
             }
@@ -186,8 +186,8 @@ DEPARTMENTS_DATA = {
         "doctors": [
             {
                 "name": "Dr. G. Prameela",
-                "qual": "M.S. (OBG) FART, FMAS",
-                "title": "Senior Obstetrician & Gynaecologist (IVF Specialist)",
+                "qual": "M.S. (OBG), FART, FMAS",
+                "title": "Senior Obstetrician & Gynaecologist (Co-Founder & Managing Partner)",
                 "image": "dr_prameela.png"
             }
         ]
@@ -208,14 +208,14 @@ DEPARTMENTS_DATA = {
         ],
         "doctors": [
             {
-                "name": "Dr. Sattaru. Kishore Babu",
-                "qual": "M.S., (ORTHO)",
+                "name": "Dr. Sattaru Kishore Babu",
+                "qual": "M.S. (Ortho)",
                 "title": "Orthopaedic Surgeon",
                 "image": None
             },
             {
                 "name": "Dr. Bammidi Sai Theja",
-                "qual": "MS Ortho, FIJR, FIASM",
+                "qual": "M.S. (Ortho), FIJR, FIASM",
                 "title": "Orthopaedic Surgeon",
                 "image": None
             }
@@ -238,7 +238,7 @@ DEPARTMENTS_DATA = {
         "doctors": [
             {
                 "name": "Dr. Hanumanthu Anilkumar",
-                "qual": "M.D (General Medicine)",
+                "qual": "M.D. (General Medicine)",
                 "title": "General Physician",
                 "image": None
             }
@@ -261,7 +261,7 @@ DEPARTMENTS_DATA = {
         "doctors": [
             {
                 "name": "Dr. Chittipotula Balaji",
-                "qual": "M.B.B.S., MS (GENERAL SURGERY)",
+                "qual": "M.B.B.S., M.S. (General Surgery)",
                 "title": "General Surgeon",
                 "image": None
             }
@@ -284,7 +284,7 @@ DEPARTMENTS_DATA = {
         "doctors": [
             {
                 "name": "Dr. Korla Vidya Sagar",
-                "qual": "M.D., DM, NEPHROLOGY",
+                "qual": "M.D., D.M. (Nephrology)",
                 "title": "Nephrologist",
                 "image": None
             }
@@ -307,7 +307,7 @@ DEPARTMENTS_DATA = {
         "doctors": [
             {
                 "name": "Dr. Budumuru Ramana",
-                "qual": "M.S., MCH",
+                "qual": "M.S., M.Ch. (Urology)",
                 "title": "Urologist",
                 "image": None
             }
@@ -330,7 +330,7 @@ DEPARTMENTS_DATA = {
         "doctors": [
             {
                 "name": "Dr. Palepu Srikanthi",
-                "qual": "M.S., OPHTHALMOLOGY",
+                "qual": "M.S. (Ophthalmology)",
                 "title": "Ophthalmologist",
                 "image": None
             }
@@ -353,7 +353,7 @@ DEPARTMENTS_DATA = {
         "doctors": [
             {
                 "name": "Dr. Navya Madabatula",
-                "qual": "M.B.B.S, M.D., M.D.",
+                "qual": "M.B.B.S., M.D. (Radiation Oncology)",
                 "title": "Senior Consultant Radiation & Clinical Oncologist",
                 "image": None
             }

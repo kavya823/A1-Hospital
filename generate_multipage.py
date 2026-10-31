@@ -218,35 +218,8 @@ def build_all_pages():
                 <div class="map-detail-item" style="display: flex; gap: 0.8rem; align-items: flex-start;">
                     <i data-lucide="phone-call" style="color: var(--primary-accent); width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px;"></i>
                     <div>
-                        <strong style="color: var(--text-dark); display: block; font-size: 0.95rem;">24/7 Hospital Reception</strong>
+                        <strong style="color: var(--text-dark); display: block; font-size: 0.95rem;">24/7 Hospital Helpline</strong>
                         <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" style="color: var(--text-dark); text-decoration: none; font-size: 0.88rem; font-weight: 700;">{HOSPITAL_CONTACT['phone_1']}</a>, <a href="tel:{HOSPITAL_CONTACT['phone_2'].replace('-', '')}" style="color: var(--text-dark); text-decoration: none; font-size: 0.88rem; font-weight: 700;">{HOSPITAL_CONTACT['phone_2']}</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modern Hospital Reception & Patient Registration Desk Showcase -->
-            <div class="reception-facility-card animate-up">
-                <div class="reception-img-frame">
-                    <img src="reception_desk.jpg" alt="A1 Hospital Reception and Patient Registration Desk">
-                    <div class="reception-badge-pill">
-                        <i data-lucide="clock"></i> 24/7 Patient Assistance
-                    </div>
-                </div>
-                <div class="reception-facility-info">
-                    <div class="section-eyebrow">
-                        <span class="eyebrow-dot"></span> PATIENT ADMISSIONS &amp; ENQUIRIES
-                    </div>
-                    <h3>Hospital Reception &amp; Registration Desk</h3>
-                    <p>Our modern reception and patient care desk is staffed 24 hours a day to welcome you, facilitate rapid outpatient registrations, assist with doctor appointments, and provide immediate inpatient admissions guidance.</p>
-                    <div class="reception-quick-contact">
-                        <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" class="reception-phone-pill">
-                            <i data-lucide="phone-call"></i>
-                            <span>Desk Line 1: {HOSPITAL_CONTACT['phone_1']}</span>
-                        </a>
-                        <a href="tel:{HOSPITAL_CONTACT['phone_2'].replace('-', '')}" class="reception-phone-pill">
-                            <i data-lucide="phone"></i>
-                            <span>Desk Line 2: {HOSPITAL_CONTACT['phone_2']}</span>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -745,13 +718,9 @@ def build_all_pages():
         is_founder = "Founder" in doc['title']
         is_senior_specialist = doc['id'] in ['dr-g-prameela', 'dr-co-founder-wife'] or "Senior" in doc['title']
         if doc.get('image'):
-            img_pos = "object-position: top center;"
             img_or_avatar = f'''
-            <div style="height:270px; width:100%; overflow:hidden; position:relative; background:#fff5f2;">
-                <img src="{doc['image']}" alt="{doc['name']}" style="width:100%; height:100%; object-fit:cover; {img_pos} transition:transform 0.5s ease;">
-                <div style="position:absolute; bottom:12px; left:12px; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px); padding:0.25rem 0.75rem; border-radius:20px; font-size:0.75rem; font-weight:700; color:var(--primary-accent); border:1px solid rgba(128,0,0,0.08);">
-                    {doc['dept']}
-                </div>
+            <div class="doctor-photo-frame">
+                <img src="{doc['image']}" alt="{doc['name']}">
             </div>'''
         else:
             icon_name = doc.get('icon', 'stethoscope')
@@ -768,12 +737,14 @@ def build_all_pages():
         card_custom_id = ' id="card-dr-prameela"' if is_senior_specialist else ''
         card_border_style = 'border: 2px solid rgba(184,134,11,0.35); box-shadow: 0 8px 24px rgba(184,134,11,0.08);' if is_senior_specialist else ('border: 2px solid rgba(128,0,0,0.22);' if is_founder else 'border: 1.5px solid var(--border-warm);')
 
+        dept_pill_below = f'<div class="doctor-dept-pill" style="margin-bottom:0.45rem; width:fit-content;">{doc["dept"]}</div>' if doc.get('image') else ''
         exp_badge_html = f'<div class="doc-exp-chip"><i data-lucide="award" style="width:14px; height:14px;"></i> {doc.get("exp", "Clinical Specialist")}</div>'
 
         doc_cards_html += f'''
         <div class="doctor-card animate-up"{card_custom_id} style="display:flex; flex-direction:column; background:var(--bg-surface); border-radius:var(--radius-lg); {card_border_style} overflow:hidden; box-shadow:var(--shadow-sm); transition:var(--transition-bounce);">
             {img_or_avatar}
             <div style="padding:1.4rem; display:flex; flex-direction:column; flex:1;">
+                {dept_pill_below}
                 <h3 style="font-size:1.25rem; margin:0 0 0.3rem 0; color:var(--text-dark);">{doc['name']}</h3>
                 <div style="font-size:0.86rem; color:var(--primary-accent); font-weight:700; margin-bottom:0.25rem;">{doc['qual']}</div>
                 <div style="font-size:0.82rem; font-weight:600; color:var(--text-charcoal); margin-bottom:0.4rem;">{doc['title']}</div>
@@ -917,7 +888,8 @@ def build_all_pages():
             'beds': 'service-beds.html',
             'emergency': 'service-emergency.html',
             'ambulance': 'service-ambulance.html',
-            'icu': 'service-icu.html'
+            'icu': 'service-icu.html',
+            'pharmacy': 'service-pharmacy.html'
         };
         const dest = targetMap[id] || 'service-beds.html';
         window.location.replace(dest);

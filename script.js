@@ -278,7 +278,7 @@ function handleAppointmentSubmit(event) {
     const name = form.patient_name.value.trim();
     const phone = form.patient_phone.value.trim();
     const dept = form.department.value;
-    const doctor = form.doctor.value || 'Any Available Specialist';
+    const doctor = (form.doctor && form.doctor.value) ? form.doctor.value : 'Hospital Specialist';
     const date = form.preferred_date.value;
     const time = form.time_slot.value;
     const notes = form.notes.value.trim();
