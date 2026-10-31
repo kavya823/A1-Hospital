@@ -3718,16 +3718,26 @@ p {
 .hero-doc-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.72rem;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.02rem;
     font-weight: 800;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
     color: var(--primary-accent);
-    background: rgba(128, 0, 0, 0.07);
-    padding: 3px 12px;
-    border-radius: 20px;
-    margin-bottom: 0.4rem;
+    background: rgba(128, 0, 0, 0.08);
+    border: 1.5px solid rgba(128, 0, 0, 0.22);
+    padding: 0.6rem 1.65rem;
+    border-radius: 30px;
+    margin-bottom: 0;
+    box-shadow: 0 4px 14px rgba(128, 0, 0, 0.06);
+}
+
+.hero-doc-eyebrow svg,
+.hero-doc-eyebrow i {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
 }
 
 .hero-doc-title {
@@ -4190,6 +4200,12 @@ p {
     .reception-phone-pill {
         width: 100%;
         justify-content: center;
+    }
+
+    .hero-doc-eyebrow {
+        font-size: 0.85rem;
+        padding: 0.5rem 1.15rem;
+        gap: 7px;
     }
 
     .hero-doc-title {
