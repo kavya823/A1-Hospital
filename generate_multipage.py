@@ -238,8 +238,20 @@ def build_all_pages():
     services_grid_items = ""
     for s_id, s in SERVICES_DATA.items():
         readiness_badge = s.get('readiness', '24/7 Available')
-        services_grid_items += f'''
-        <a href="{s['file']}" class="service-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+        if s_id == 'pharmacy':
+            header_visual = f'''
+            <div class="pharmacy-showcase-frame">
+                <img src="pharmacy.jpg" alt="A1 Hospital 24/7 In-House Pharmacy Counter" class="pharmacy-showcase-img" loading="lazy">
+                <div class="service-photo-overlay"></div>
+                <div class="service-showcase-badge" style="position:absolute; top:12px; left:12px; margin:0; z-index:2;">
+                    <i data-lucide="pill" style="width:22px; height:22px;"></i>
+                </div>
+                <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:4px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.1); box-shadow:0 4px 12px rgba(0,0,0,0.12); z-index:2;">
+                    {s['tag']}
+                </div>
+            </div>'''
+        else:
+            header_visual = f'''
             <div class="service-showcase-header-box" style="height:150px; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); display:flex; align-items:center; justify-content:center; position:relative; border-bottom:1.5px solid var(--border-warm);">
                 <div style="width:68px; height:68px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
                     <i data-lucide="{s['icon']}" style="width:34px; height:34px;"></i>
@@ -247,7 +259,11 @@ def build_all_pages():
                 <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.92); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:3px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.08);">
                     {s['tag']}
                 </div>
-            </div>
+            </div>'''
+
+        services_grid_items += f'''
+        <a href="{s['file']}" class="service-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+            {header_visual}
             <div class="service-showcase-content">
                 <span class="service-pill-tag">{s['tag']}</span>
                 <h3>{s['title']}</h3>
@@ -261,7 +277,22 @@ def build_all_pages():
 
     services_carousel_items = ""
     for s_id, s in SERVICES_DATA.items():
-        services_carousel_items += f'''
+        if s_id == 'pharmacy':
+            services_carousel_items += f'''
+        <a href="{s['file']}" style="text-decoration:none; color:inherit; display:block;">
+            <div class="dept-card-photo pharmacy-carousel-card" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:180px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                <div class="pharmacy-carousel-photo-frame">
+                    <img src="pharmacy.jpg" alt="Pharmacy Services" loading="lazy">
+                    <div class="service-photo-overlay"></div>
+                </div>
+                <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                    <i data-lucide="pill" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                    <h3 style="font-size:0.92rem; margin:0; font-weight:700;">Pharmacy Services</h3>
+                </div>
+            </div>
+        </a>'''
+        else:
+            services_carousel_items += f'''
         <a href="{s['file']}" style="text-decoration:none; color:inherit; display:block;">
             <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
                 <div class="card-icon-badge" style="width:54px; height:54px; margin-bottom:1rem;">
@@ -412,7 +443,22 @@ def build_all_pages():
         for other_id, other_s in SERVICES_DATA.items():
             if other_id == s_id:
                 continue
-            other_services_carousel += f'''
+            if other_id == 'pharmacy':
+                other_services_carousel += f'''
+            <a href="{other_s['file']}" style="text-decoration:none; color:inherit; display:block;">
+                <div class="dept-card-photo pharmacy-carousel-card" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:180px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                    <div class="pharmacy-carousel-photo-frame">
+                        <img src="pharmacy.jpg" alt="Pharmacy Services" loading="lazy">
+                        <div class="service-photo-overlay"></div>
+                    </div>
+                    <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                        <i data-lucide="pill" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                        <h3 style="font-size:0.92rem; margin:0; font-weight:700;">Pharmacy Services</h3>
+                    </div>
+                </div>
+            </a>'''
+            else:
+                other_services_carousel += f'''
             <a href="{other_s['file']}" style="text-decoration:none; color:inherit; display:block;">
                 <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
                     <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
@@ -426,9 +472,9 @@ def build_all_pages():
             service_visual_html = f'''
                 <div class="detail-hero-visual">
                     <div class="detail-arch-frame" style="height:380px; border-radius:var(--radius-lg); overflow:hidden; position:relative; box-shadow:0 14px 36px rgba(128,0,0,0.12); border:2px solid var(--border-warm); background:#fff5f2;">
-                        <img src="{s['image']}" alt="{s['title']}" style="width:100%; height:100%; object-fit:cover; display:block;">
-                        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.5) 100%);"></div>
-                        <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); padding:0.75rem 1.2rem; border-radius:14px; display:flex; align-items:center; gap:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+                        <img src="{s['image']}" alt="{s['title']}" style="width:100%; height:100%; object-fit:cover; object-position:center 32%; display:block;">
+                        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.48) 100%);"></div>
+                        <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); padding:0.75rem 1.2rem; border-radius:14px; display:flex; align-items:center; gap:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
                             <div class="card-icon-badge" style="width:38px; height:38px; font-size:1rem; margin:0; flex-shrink:0;">
                                 <i data-lucide="{s['icon']}"></i>
                             </div>

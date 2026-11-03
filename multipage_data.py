@@ -457,7 +457,7 @@ SERVICES_DATA = {
         "title": "Pharmacy Services",
         "tag": "In-House Medical Store",
         "icon": "pill",
-        "image": "pharmacy_service.jpg",
+        "image": "pharmacy.jpg",
         "meaning": "Access essential medications and prescribed treatments conveniently through our hospital pharmacy, supporting safe and continuous patient care.",
         "highlights": [
             "24/7 In-House Hospital Pharmacy Dispensary",

@@ -4785,3 +4785,133 @@ p {
         margin-bottom: 1.15rem;
     }
 }
+
+/* ==========================================================================
+   AUTHENTIC PHARMACY FRAMES (HOME PAGE, SERVICES PAGE & DETAIL HERO)
+   ========================================================================== */
+.service-card-photo-frame {
+    width: 100%;
+    height: 160px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1.25rem;
+    border: 1.5px solid rgba(128, 0, 0, 0.12);
+    background: #fdf5f3;
+    box-shadow: 0 4px 16px rgba(128, 0, 0, 0.06);
+}
+
+.service-card-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 32%;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover .service-card-photo {
+    transform: scale(1.06);
+}
+
+.service-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.44) 100%);
+    pointer-events: none;
+}
+
+.service-photo-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+    padding: 3px 10px;
+    border-radius: 99px;
+    border: 1px solid rgba(128, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 2;
+}
+
+.pharmacy-showcase-frame {
+    height: 185px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1.5px solid var(--border-warm);
+    background: #fdf5f3;
+}
+
+.pharmacy-showcase-frame img,
+.pharmacy-showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 32%;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-showcase-card:hover .pharmacy-showcase-frame img,
+.service-showcase-card:hover .pharmacy-showcase-img {
+    transform: scale(1.06);
+}
+
+.pharmacy-carousel-photo-frame {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    background: #fdf5f3;
+}
+
+.pharmacy-carousel-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 32%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.dept-card-photo:hover .pharmacy-carousel-photo-frame img {
+    transform: scale(1.08);
+}
+
+/* Ensure service cards stay uniformly structured and vertically aligned */
+.service-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card .card-action-link {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+/* Mobile Visibility Optimizations */
+@media (max-width: 600px) {
+    .service-card-photo-frame {
+        height: 180px;
+    }
+
+    .pharmacy-showcase-frame {
+        height: 195px;
+    }
+
+    .detail-arch-frame {
+        height: 250px !important;
+    }
+
+    .detail-arch-frame img {
+        object-position: center 32% !important;
+    }
+}
