@@ -369,7 +369,7 @@ SERVICES_DATA = {
         "title": "100+ Beds Available",
         "tag": "Inpatient Accommodation",
         "icon": "bed-double",
-        "image": None,
+        "image": "service_beds.jpg",
         "meaning": "100+ Inpatient Beds refers to our hospital's capacity to admit and care for patients who need overnight observation, post-surgery recovery, or continuous medical treatment. It offers private, semi-private, and sterile general wards.",
         "highlights": [
             "100+ Clean, Air-Conditioned Inpatient Beds",
@@ -391,7 +391,7 @@ SERVICES_DATA = {
         "title": "24/7 Emergency Care",
         "tag": "Round-the-Clock Emergency",
         "icon": "clock",
-        "image": None,
+        "image": "service_emergency.jpg",
         "meaning": "24/7 Emergency Care means our casualty department is open day and night, 365 days a year, ready to provide immediate medical attention for sudden accidents, acute chest pain, breathlessness, injuries, and critical medical emergencies without delay.",
         "highlights": [
             "Always Open: 24 Hours a Day, 365 Days a Year",
@@ -413,7 +413,7 @@ SERVICES_DATA = {
         "title": "24/7 Ambulance Service",
         "tag": "Emergency Patient Transfer",
         "icon": "ambulance",
-        "image": None,
+        "image": "service_ambulance.jpg",
         "meaning": "Our 24/7 Ambulance Service provides rapid emergency patient pickup and transfer directly to A1 Hospital. Equipped with oxygen support, stretcher, and emergency paramedic assistance, it ensures patients arrive safely and quickly during medical crises.",
         "highlights": [
             "24/7 Emergency Dispatch Helpline: 08942-228234",
@@ -435,7 +435,7 @@ SERVICES_DATA = {
         "title": "Intensive Care Unit (ICU & NICU)",
         "tag": "Critical Patient Monitoring",
         "icon": "activity",
-        "image": None,
+        "image": "service_icu.jpg",
         "meaning": "The ICU (Intensive Care Unit) and NICU (Neonatal Intensive Care Unit) are specialized hospital units for critically ill patients and newborn infants needing close, continuous monitoring. Beds have real-time vitals monitors and dedicated nurses.",
         "highlights": [
             "Continuous 24/7 Vitals & Cardiac Rhythm Monitoring",

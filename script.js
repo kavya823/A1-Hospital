@@ -15,11 +15,11 @@ function initPageTransition() {
         overlay.setAttribute('aria-hidden', 'true');
     };
 
-    // Stays visible for ~2.2s as requested ("visible in 2 or 3 seconds"), then fades out smoothly (total ~2.7s)
-    const displayTimer = setTimeout(hideTransition, 2200);
+    // Stays visible for ~1.2s as requested ("visible in 1 to 1.5 seconds"), then dissolves smoothly
+    const displayTimer = setTimeout(hideTransition, 1200);
 
     // Safety fallback
-    setTimeout(hideTransition, 3500);
+    setTimeout(hideTransition, 2200);
 
     // Intercept internal page switching clicks for smooth transition
     document.addEventListener('click', (e) => {
@@ -75,7 +75,7 @@ function initPageTransition() {
         // Short handoff delay so user sees transition before browser navigation
         setTimeout(() => {
             window.location.href = link.href;
-        }, 320);
+        }, 200);
     });
 
     // Handle browser back / forward cache gracefully

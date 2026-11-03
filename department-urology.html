@@ -55,7 +55,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=23">
+    <link rel="stylesheet" href="style.css?v=24">
 </head>
 <body data-page="department-detail">
 
@@ -330,67 +330,99 @@
                 <div class="carousel-track" id="other-dept-carousel">
                     
             <a href="department-pediatrics.html" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
-                        <i data-lucide="baby"></i>
+                <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                    <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                        <img src="dept_pediatrics.jpg" alt="Pediatrics & Child Health" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                        <div class="service-photo-overlay"></div>
                     </div>
-                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>Pediatrics & Child Health</h3></div>
+                    <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                        <i data-lucide="baby" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                        <h3 style="font-size:0.92rem; margin:0; font-weight:700;">Pediatrics & Child Health</h3>
+                    </div>
                 </div>
             </a>
             <a href="department-obstetrics.html" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
-                        <i data-lucide="heart-pulse"></i>
+                <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                    <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                        <img src="dept_obstetrics.jpg" alt="Obstetrics, Gynaecology & IVF Clinic" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                        <div class="service-photo-overlay"></div>
                     </div>
-                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>Obstetrics, Gynaecology & IVF Clinic</h3></div>
+                    <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                        <i data-lucide="heart-pulse" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                        <h3 style="font-size:0.92rem; margin:0; font-weight:700;">Obstetrics, Gynaecology & IVF Clinic</h3>
+                    </div>
                 </div>
             </a>
             <a href="department-orthopedics.html" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
-                        <i data-lucide="bone"></i>
+                <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                    <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                        <img src="dept_orthopedics.jpg" alt="Orthopedics & Joint Surgery" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                        <div class="service-photo-overlay"></div>
                     </div>
-                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>Orthopedics & Joint Surgery</h3></div>
+                    <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                        <i data-lucide="bone" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                        <h3 style="font-size:0.92rem; margin:0; font-weight:700;">Orthopedics & Joint Surgery</h3>
+                    </div>
                 </div>
             </a>
             <a href="department-generalmedicine.html" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
-                        <i data-lucide="stethoscope"></i>
+                <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                    <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                        <img src="dept_generalmedicine.jpg" alt="General Medicine" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                        <div class="service-photo-overlay"></div>
                     </div>
-                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>General Medicine</h3></div>
+                    <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                        <i data-lucide="stethoscope" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                        <h3 style="font-size:0.92rem; margin:0; font-weight:700;">General Medicine</h3>
+                    </div>
                 </div>
             </a>
             <a href="department-generalsurgery.html" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
-                        <i data-lucide="scissors"></i>
+                <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                    <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                        <img src="dept_generalsurgery.jpg" alt="General Surgery" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                        <div class="service-photo-overlay"></div>
                     </div>
-                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>General Surgery</h3></div>
+                    <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                        <i data-lucide="scissors" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                        <h3 style="font-size:0.92rem; margin:0; font-weight:700;">General Surgery</h3>
+                    </div>
                 </div>
             </a>
             <a href="department-nephrology.html" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
-                        <i data-lucide="filter"></i>
+                <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                    <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                        <img src="dept_nephrology.jpg" alt="Nephrology (Kidney Care)" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                        <div class="service-photo-overlay"></div>
                     </div>
-                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>Nephrology (Kidney Care)</h3></div>
+                    <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                        <i data-lucide="filter" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                        <h3 style="font-size:0.92rem; margin:0; font-weight:700;">Nephrology (Kidney Care)</h3>
+                    </div>
                 </div>
             </a>
             <a href="department-ophthalmology.html" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
-                        <i data-lucide="eye"></i>
+                <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                    <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                        <img src="dept_ophthalmology.jpg" alt="Ophthalmology (Eye Care)" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                        <div class="service-photo-overlay"></div>
                     </div>
-                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>Ophthalmology (Eye Care)</h3></div>
+                    <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                        <i data-lucide="eye" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                        <h3 style="font-size:0.92rem; margin:0; font-weight:700;">Ophthalmology (Eye Care)</h3>
+                    </div>
                 </div>
             </a>
             <a href="department-oncology.html" style="text-decoration:none; color:inherit; display:block;">
-                <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                    <div class="card-icon-badge" style="width:52px; height:52px; margin-bottom:0.85rem;">
-                        <i data-lucide="crosshair"></i>
+                <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                    <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                        <img src="dept_oncology.jpg" alt="Oncology (Cancer Care)" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                        <div class="service-photo-overlay"></div>
                     </div>
-                    <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>Oncology (Cancer Care)</h3></div>
+                    <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                        <i data-lucide="crosshair" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                        <h3 style="font-size:0.92rem; margin:0; font-weight:700;">Oncology (Cancer Care)</h3>
+                    </div>
                 </div>
             </a>
                 </div>
@@ -648,7 +680,7 @@
     </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="script.js?v=8"></script>
+    <script src="script.js?v=9"></script>
     <script>
       lucide.createIcons();
     </script>

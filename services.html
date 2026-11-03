@@ -55,7 +55,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=23">
+    <link rel="stylesheet" href="style.css?v=24">
 </head>
 <body data-page="services">
 
@@ -214,14 +214,16 @@
             
         <a href="service-beds.html" class="service-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
             
-            <div class="service-showcase-header-box" style="height:150px; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); display:flex; align-items:center; justify-content:center; position:relative; border-bottom:1.5px solid var(--border-warm);">
-                <div style="width:68px; height:68px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
-                    <i data-lucide="bed-double" style="width:34px; height:34px;"></i>
-                </div>
-                <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.92); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:3px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.08);">
-                    Inpatient Accommodation
-                </div>
+        <div class="service-showcase-photo-frame" style="height:190px; width:100%; position:relative; overflow:hidden; border-bottom:1.5px solid var(--border-warm); background:#fdf5f3;">
+            <img src="service_beds.jpg" alt="100+ Beds Available" class="service-showcase-img" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.6s ease;" loading="lazy">
+            <div class="service-photo-overlay"></div>
+            <div class="service-showcase-badge" style="position:absolute; top:12px; left:12px; margin:0; z-index:2;">
+                <i data-lucide="bed-double" style="width:22px; height:22px;"></i>
             </div>
+            <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:4px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.1); box-shadow:0 4px 12px rgba(0,0,0,0.12); z-index:2;">
+                Inpatient Accommodation
+            </div>
+        </div>
             <div class="service-showcase-content">
                 <span class="service-pill-tag">Inpatient Accommodation</span>
                 <h3>100+ Beds Available</h3>
@@ -234,14 +236,16 @@
         </a>
         <a href="service-emergency.html" class="service-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
             
-            <div class="service-showcase-header-box" style="height:150px; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); display:flex; align-items:center; justify-content:center; position:relative; border-bottom:1.5px solid var(--border-warm);">
-                <div style="width:68px; height:68px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
-                    <i data-lucide="clock" style="width:34px; height:34px;"></i>
-                </div>
-                <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.92); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:3px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.08);">
-                    Round-the-Clock Emergency
-                </div>
+        <div class="service-showcase-photo-frame" style="height:190px; width:100%; position:relative; overflow:hidden; border-bottom:1.5px solid var(--border-warm); background:#fdf5f3;">
+            <img src="service_emergency.jpg" alt="24/7 Emergency Care" class="service-showcase-img" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.6s ease;" loading="lazy">
+            <div class="service-photo-overlay"></div>
+            <div class="service-showcase-badge" style="position:absolute; top:12px; left:12px; margin:0; z-index:2;">
+                <i data-lucide="clock" style="width:22px; height:22px;"></i>
             </div>
+            <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:4px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.1); box-shadow:0 4px 12px rgba(0,0,0,0.12); z-index:2;">
+                Round-the-Clock Emergency
+            </div>
+        </div>
             <div class="service-showcase-content">
                 <span class="service-pill-tag">Round-the-Clock Emergency</span>
                 <h3>24/7 Emergency Care</h3>
@@ -254,14 +258,16 @@
         </a>
         <a href="service-ambulance.html" class="service-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
             
-            <div class="service-showcase-header-box" style="height:150px; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); display:flex; align-items:center; justify-content:center; position:relative; border-bottom:1.5px solid var(--border-warm);">
-                <div style="width:68px; height:68px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
-                    <i data-lucide="ambulance" style="width:34px; height:34px;"></i>
-                </div>
-                <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.92); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:3px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.08);">
-                    Emergency Patient Transfer
-                </div>
+        <div class="service-showcase-photo-frame" style="height:190px; width:100%; position:relative; overflow:hidden; border-bottom:1.5px solid var(--border-warm); background:#fdf5f3;">
+            <img src="service_ambulance.jpg" alt="24/7 Ambulance Service" class="service-showcase-img" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.6s ease;" loading="lazy">
+            <div class="service-photo-overlay"></div>
+            <div class="service-showcase-badge" style="position:absolute; top:12px; left:12px; margin:0; z-index:2;">
+                <i data-lucide="ambulance" style="width:22px; height:22px;"></i>
             </div>
+            <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:4px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.1); box-shadow:0 4px 12px rgba(0,0,0,0.12); z-index:2;">
+                Emergency Patient Transfer
+            </div>
+        </div>
             <div class="service-showcase-content">
                 <span class="service-pill-tag">Emergency Patient Transfer</span>
                 <h3>24/7 Ambulance Service</h3>
@@ -274,14 +280,16 @@
         </a>
         <a href="service-icu.html" class="service-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
             
-            <div class="service-showcase-header-box" style="height:150px; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); display:flex; align-items:center; justify-content:center; position:relative; border-bottom:1.5px solid var(--border-warm);">
-                <div style="width:68px; height:68px; border-radius:18px; background:#ffffff; color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(128,0,0,0.12);">
-                    <i data-lucide="activity" style="width:34px; height:34px;"></i>
-                </div>
-                <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.92); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:3px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.08);">
-                    Critical Patient Monitoring
-                </div>
+        <div class="service-showcase-photo-frame" style="height:190px; width:100%; position:relative; overflow:hidden; border-bottom:1.5px solid var(--border-warm); background:#fdf5f3;">
+            <img src="service_icu.jpg" alt="Intensive Care Unit (ICU & NICU)" class="service-showcase-img" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.6s ease;" loading="lazy">
+            <div class="service-photo-overlay"></div>
+            <div class="service-showcase-badge" style="position:absolute; top:12px; left:12px; margin:0; z-index:2;">
+                <i data-lucide="activity" style="width:22px; height:22px;"></i>
             </div>
+            <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:4px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.1); box-shadow:0 4px 12px rgba(0,0,0,0.12); z-index:2;">
+                Critical Patient Monitoring
+            </div>
+        </div>
             <div class="service-showcase-content">
                 <span class="service-pill-tag">Critical Patient Monitoring</span>
                 <h3>Intensive Care Unit (ICU & NICU)</h3>
@@ -294,16 +302,16 @@
         </a>
         <a href="service-pharmacy.html" class="service-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
             
-            <div class="pharmacy-showcase-frame">
-                <img src="pharmacy.jpg" alt="A1 Hospital 24/7 In-House Pharmacy Counter" class="pharmacy-showcase-img" loading="lazy">
-                <div class="service-photo-overlay"></div>
-                <div class="service-showcase-badge" style="position:absolute; top:12px; left:12px; margin:0; z-index:2;">
-                    <i data-lucide="pill" style="width:22px; height:22px;"></i>
-                </div>
-                <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:4px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.1); box-shadow:0 4px 12px rgba(0,0,0,0.12); z-index:2;">
-                    In-House Medical Store
-                </div>
+        <div class="service-showcase-photo-frame" style="height:190px; width:100%; position:relative; overflow:hidden; border-bottom:1.5px solid var(--border-warm); background:#fdf5f3;">
+            <img src="pharmacy.jpg" alt="Pharmacy Services" class="service-showcase-img" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.6s ease;" loading="lazy">
+            <div class="service-photo-overlay"></div>
+            <div class="service-showcase-badge" style="position:absolute; top:12px; left:12px; margin:0; z-index:2;">
+                <i data-lucide="pill" style="width:22px; height:22px;"></i>
             </div>
+            <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:4px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.1); box-shadow:0 4px 12px rgba(0,0,0,0.12); z-index:2;">
+                In-House Medical Store
+            </div>
+        </div>
             <div class="service-showcase-content">
                 <span class="service-pill-tag">In-House Medical Store</span>
                 <h3>Pharmacy Services</h3>
@@ -326,41 +334,57 @@
                 <div class="carousel-track" id="services-page-carousel">
                     
         <a href="service-beds.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                <div class="card-icon-badge" style="width:54px; height:54px; margin-bottom:1rem;">
-                    <i data-lucide="bed-double"></i>
+            <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                    <img src="service_beds.jpg" alt="100+ Beds Available" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                    <div class="service-photo-overlay"></div>
                 </div>
-                <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>100+ Beds Available</h3></div>
+                <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                    <i data-lucide="bed-double" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                    <h3 style="font-size:0.92rem; margin:0; font-weight:700;">100+ Beds Available</h3>
+                </div>
             </div>
         </a>
         <a href="service-emergency.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                <div class="card-icon-badge" style="width:54px; height:54px; margin-bottom:1rem;">
-                    <i data-lucide="clock"></i>
+            <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                    <img src="service_emergency.jpg" alt="24/7 Emergency Care" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                    <div class="service-photo-overlay"></div>
                 </div>
-                <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>24/7 Emergency Care</h3></div>
+                <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                    <i data-lucide="clock" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                    <h3 style="font-size:0.92rem; margin:0; font-weight:700;">24/7 Emergency Care</h3>
+                </div>
             </div>
         </a>
         <a href="service-ambulance.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                <div class="card-icon-badge" style="width:54px; height:54px; margin-bottom:1rem;">
-                    <i data-lucide="ambulance"></i>
+            <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                    <img src="service_ambulance.jpg" alt="24/7 Ambulance Service" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                    <div class="service-photo-overlay"></div>
                 </div>
-                <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>24/7 Ambulance Service</h3></div>
+                <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                    <i data-lucide="ambulance" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                    <h3 style="font-size:0.92rem; margin:0; font-weight:700;">24/7 Ambulance Service</h3>
+                </div>
             </div>
         </a>
         <a href="service-icu.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="dept-card-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.8rem 1.4rem; background:var(--bg-surface); min-width:240px; height:180px; text-align:center;">
-                <div class="card-icon-badge" style="width:54px; height:54px; margin-bottom:1rem;">
-                    <i data-lucide="activity"></i>
+            <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                    <img src="service_icu.jpg" alt="Intensive Care Unit (ICU & NICU)" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                    <div class="service-photo-overlay"></div>
                 </div>
-                <div class="dept-info" style="border:none; padding:0; background:transparent;"><h3>Intensive Care Unit (ICU & NICU)</h3></div>
+                <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
+                    <i data-lucide="activity" style="width:16px; height:16px; color:var(--primary-accent);"></i>
+                    <h3 style="font-size:0.92rem; margin:0; font-weight:700;">Intensive Care Unit (ICU & NICU)</h3>
+                </div>
             </div>
         </a>
         <a href="service-pharmacy.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="dept-card-photo pharmacy-carousel-card" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:180px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
-                <div class="pharmacy-carousel-photo-frame">
-                    <img src="pharmacy.jpg" alt="Pharmacy Services" loading="lazy">
+            <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
+                <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
+                    <img src="pharmacy.jpg" alt="Pharmacy Services" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
                     <div class="service-photo-overlay"></div>
                 </div>
                 <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
@@ -626,7 +650,7 @@
     </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="script.js?v=8"></script>
+    <script src="script.js?v=9"></script>
     <script>
       lucide.createIcons();
     </script>

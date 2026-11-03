@@ -4415,13 +4415,19 @@ p {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    will-change: opacity, visibility;
 }
 
 .hospital-transition-overlay.transition-fade-out {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+}
+
+.hospital-transition-overlay.transition-fade-out .transition-content-card {
+    transform: scale(0.97);
+    transition: transform 0.35s ease;
 }
 
 .hospital-transition-overlay.transition-active {
@@ -4566,13 +4572,13 @@ p {
 .logo-pulse-ring.ring-1 {
     width: 90px;
     height: 90px;
-    animation: ringExpand 2.2s ease-out infinite;
+    animation: ringExpand 1.25s ease-out infinite;
 }
 
 .logo-pulse-ring.ring-2 {
     width: 90px;
     height: 90px;
-    animation: ringExpand 2.2s ease-out 1.1s infinite;
+    animation: ringExpand 1.25s ease-out 0.62s infinite;
 }
 
 @keyframes ringExpand {
@@ -4651,7 +4657,7 @@ p {
     stroke-dasharray: 600;
     stroke-dashoffset: 600;
     filter: url(#ecgGlow);
-    animation: ecgSweep 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: ecgSweep 1.25s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes ecgSweep {
@@ -4738,7 +4744,7 @@ p {
     width: 0%;
     background: linear-gradient(90deg, #800000, #d32f2f, #c49a45);
     border-radius: 99px;
-    animation: transitionProgressLoad 2.2s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+    animation: transitionProgressLoad 1.25s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
 }
 
 @keyframes transitionProgressLoad {
@@ -4791,7 +4797,7 @@ p {
    ========================================================================== */
 .service-card-photo-frame {
     width: 100%;
-    height: 160px;
+    height: 165px;
     border-radius: var(--radius-md);
     overflow: hidden;
     position: relative;
@@ -4805,7 +4811,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 32%;
+    object-position: center;
     display: block;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -4841,8 +4847,9 @@ p {
     z-index: 2;
 }
 
+.service-showcase-photo-frame,
 .pharmacy-showcase-frame {
-    height: 185px;
+    height: 190px;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -4850,18 +4857,21 @@ p {
     background: #fdf5f3;
 }
 
+.service-showcase-photo-frame img,
+.service-showcase-img,
 .pharmacy-showcase-frame img,
 .pharmacy-showcase-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 32%;
+    object-position: center;
     display: block;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.service-showcase-card:hover .pharmacy-showcase-frame img,
-.service-showcase-card:hover .pharmacy-showcase-img {
+.service-showcase-card:hover .service-showcase-photo-frame img,
+.service-showcase-card:hover .service-showcase-img,
+.service-showcase-card:hover .pharmacy-showcase-frame img {
     transform: scale(1.06);
 }
 
