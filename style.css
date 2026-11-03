@@ -4415,7 +4415,7 @@ p {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
-    transition: opacity 0.35s ease, visibility 0.35s ease;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
     will-change: opacity, visibility;
 }
 
@@ -4427,7 +4427,7 @@ p {
 
 .hospital-transition-overlay.transition-fade-out .transition-content-card {
     transform: scale(0.97);
-    transition: transform 0.35s ease;
+    transition: transform 0.25s ease;
 }
 
 .hospital-transition-overlay.transition-active {
@@ -4531,7 +4531,7 @@ p {
     border: 1.5px solid rgba(128, 0, 0, 0.14);
     border-radius: 26px;
     box-shadow: 0 25px 60px rgba(128, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.04);
-    animation: transitionCardIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: transitionCardIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes transitionCardIn {
@@ -4572,13 +4572,13 @@ p {
 .logo-pulse-ring.ring-1 {
     width: 90px;
     height: 90px;
-    animation: ringExpand 1.25s ease-out infinite;
+    animation: ringExpand 0.5s ease-out infinite;
 }
 
 .logo-pulse-ring.ring-2 {
     width: 90px;
     height: 90px;
-    animation: ringExpand 1.25s ease-out 0.62s infinite;
+    animation: ringExpand 0.5s ease-out 0.25s infinite;
 }
 
 @keyframes ringExpand {
@@ -4657,7 +4657,7 @@ p {
     stroke-dasharray: 600;
     stroke-dashoffset: 600;
     filter: url(#ecgGlow);
-    animation: ecgSweep 1.25s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: ecgSweep 0.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes ecgSweep {
@@ -4701,7 +4701,7 @@ p {
     border-radius: 50%;
     background: #10b981;
     box-shadow: 0 0 8px #10b981;
-    animation: blinkLive 1s ease-in-out infinite alternate;
+    animation: blinkLive 0.5s ease-in-out infinite alternate;
 }
 
 .status-heart-icon {
@@ -4714,7 +4714,7 @@ p {
     width: 14px;
     height: 14px;
     fill: #d32f2f;
-    animation: heartbeat 1.3s ease-in-out infinite;
+    animation: heartbeat 0.5s ease-in-out infinite;
 }
 
 @keyframes heartbeat {
@@ -4744,7 +4744,7 @@ p {
     width: 0%;
     background: linear-gradient(90deg, #800000, #d32f2f, #c49a45);
     border-radius: 99px;
-    animation: transitionProgressLoad 1.25s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+    animation: transitionProgressLoad 0.5s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
 }
 
 @keyframes transitionProgressLoad {

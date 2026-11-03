@@ -1,4 +1,4 @@
-// Medical ECG Page-to-Page Transition Animation (2 to 3 seconds)
+// Medical ECG Page-to-Page Transition Animation (0.5s Swift Dissolve)
 function initPageTransition() {
     if (window.__hospitalTransitionInitialized) return;
     window.__hospitalTransitionInitialized = true;
@@ -15,11 +15,11 @@ function initPageTransition() {
         overlay.setAttribute('aria-hidden', 'true');
     };
 
-    // Stays visible for ~1.2s as requested ("visible in 1 to 1.5 seconds"), then dissolves smoothly
-    const displayTimer = setTimeout(hideTransition, 1200);
+    // Stays visible for ~250ms, then smoothly dissolves over 250ms (total ~0.5s)
+    const displayTimer = setTimeout(hideTransition, 250);
 
     // Safety fallback
-    setTimeout(hideTransition, 2200);
+    setTimeout(hideTransition, 600);
 
     // Intercept internal page switching clicks for smooth transition
     document.addEventListener('click', (e) => {
@@ -72,10 +72,10 @@ function initPageTransition() {
         overlay.classList.add('transition-active');
         overlay.setAttribute('aria-hidden', 'false');
 
-        // Short handoff delay so user sees transition before browser navigation
+        // Swift handoff delay so user sees transition before browser navigation
         setTimeout(() => {
             window.location.href = link.href;
-        }, 200);
+        }, 75);
     });
 
     // Handle browser back / forward cache gracefully
