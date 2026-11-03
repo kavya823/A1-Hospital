@@ -21,8 +21,8 @@ DOCTORS_DATA = [
         "qual": "M.D. (Paed), Niloufer",
         "title": "Children Specialist (Founder & Managing Partner)",
         "dept": "Pediatrics & Child Health",
-        "exp": "13+ Years Pediatric Excellence",
-        "desc": "Hospital Founder & Managing Partner with 13+ years of clinical excellence in newborn care, childhood illnesses, and pediatric wellness.",
+        "exp": "15+ Years of Experience",
+        "desc": "Hospital Founder & Managing Partner with 15+ years of clinical excellence in newborn care, childhood illnesses, and pediatric wellness.",
         "image": "dr_rao.jpeg",
         "icon": "baby"
     },
@@ -32,8 +32,8 @@ DOCTORS_DATA = [
         "qual": "M.S. (OBG), FART, FMAS",
         "title": "Senior Obstetrician & Gynaecologist (Co-Founder & Managing Partner)",
         "dept": "Obstetrics, Gynaecology & IVF Clinic",
-        "exp": "13+ Years Women's Care & IVF",
-        "desc": "Co-Founder & Managing Partner specializing in high-risk pregnancy, infertility evaluation, advanced reproductive technology (IVF/FART), and laparoscopy.",
+        "exp": "13+ Years of Experience",
+        "desc": "Co-Founder & Managing Partner with 13+ years of clinical excellence specializing in high-risk pregnancy, infertility evaluation, advanced reproductive technology (IVF/FART), and laparoscopy.",
         "image": "dr_prameela.png",
         "icon": "heart-pulse"
     },
