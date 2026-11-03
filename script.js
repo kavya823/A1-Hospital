@@ -1,5 +1,98 @@
+// Medical ECG Page-to-Page Transition Animation (2 to 3 seconds)
+function initPageTransition() {
+    if (window.__hospitalTransitionInitialized) return;
+    window.__hospitalTransitionInitialized = true;
+
+    const overlay = document.getElementById('hospital-page-transition');
+    if (!overlay) return;
+
+    let hasFaded = false;
+    const hideTransition = () => {
+        if (hasFaded) return;
+        hasFaded = true;
+        overlay.classList.add('transition-fade-out');
+        overlay.classList.remove('transition-active');
+        overlay.setAttribute('aria-hidden', 'true');
+    };
+
+    // Stays visible for ~2.2s as requested ("visible in 2 or 3 seconds"), then fades out smoothly (total ~2.7s)
+    const displayTimer = setTimeout(hideTransition, 2200);
+
+    // Safety fallback
+    setTimeout(hideTransition, 3500);
+
+    // Intercept internal page switching clicks for smooth transition
+    document.addEventListener('click', (e) => {
+        // If user held modifier keys (new tab/window) or not primary click, skip
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
+            return;
+        }
+
+        const link = e.target.closest('a');
+        if (!link) return;
+
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        // Skip anchor jumps, phone calls, email links, js actions, blank targets, downloads
+        if (
+            href.startsWith('#') ||
+            href.startsWith('tel:') ||
+            href.startsWith('mailto:') ||
+            href.startsWith('javascript:') ||
+            link.getAttribute('target') === '_blank' ||
+            link.hasAttribute('download')
+        ) {
+            return;
+        }
+
+        // Determine destination URL
+        let targetUrl;
+        try {
+            targetUrl = new URL(link.href, window.location.href);
+        } catch (err) {
+            return;
+        }
+
+        // Only transition for same-origin internal pages
+        if (targetUrl.origin !== window.location.origin) {
+            return;
+        }
+
+        // If clicking on same page with an anchor hash (e.g. index.html#appointment)
+        if (targetUrl.pathname === window.location.pathname && targetUrl.search === window.location.search) {
+            if (targetUrl.hash) return;
+        }
+
+        e.preventDefault();
+        clearTimeout(displayTimer);
+
+        // Re-display transition overlay for page switch
+        overlay.classList.remove('transition-fade-out');
+        overlay.classList.add('transition-active');
+        overlay.setAttribute('aria-hidden', 'false');
+
+        // Short handoff delay so user sees transition before browser navigation
+        setTimeout(() => {
+            window.location.href = link.href;
+        }, 320);
+    });
+
+    // Handle browser back / forward cache gracefully
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            hideTransition();
+        }
+    });
+}
+
+// Immediate invocation for instantaneous transition timing
+initPageTransition();
+
 // Initialize A1 Hospital Application
 function initHospitalApp() {
+    initPageTransition();
+
     // Enable progressive scroll animations
     document.body.classList.add('reveal-active');
 
