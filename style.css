@@ -4171,116 +4171,375 @@ p {
 }
 
 /* ==========================================================================
-   ACHIEVEMENTS & ACCREDITATION FRAME
+   ACHIEVEMENTS & PINNACLE-STYLE STATISTICS COUNTER STRIP
+   Reference: pinnaclehospitals.com (Vibrant numbers, vertical dividers, smooth count-up)
    ========================================================================== */
 .achievements-section {
     padding: 3.5rem 4%;
 }
 
-.achievements-grid {
-    display: grid;
-    grid-template-columns: 1.6fr repeat(4, 1fr);
-    gap: 1.25rem;
+/* Pinnacle-Inspired Clean Statistics Strip with Vertical Dividers */
+.pinnacle-counter-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border: 1.5px solid rgba(128, 0, 0, 0.12);
+    border-radius: 26px;
+    padding: 2.8rem 2.2rem;
+    box-shadow: 0 16px 42px rgba(128, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.03);
     max-width: 1180px;
-    margin: 0 auto;
+    margin: 0 auto 2.2rem auto;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
-.achieve-card {
-    background: linear-gradient(145deg, #ffffff 0%, #fdf6f3 100%);
-    border: 2px solid rgba(128, 0, 0, 0.16);
-    border-radius: 22px;
-    padding: 1.6rem 1.2rem;
-    text-align: center;
+.pinnacle-counter-strip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #7b1fa2 0%, #0288d1 33%, #1565c0 66%, #d97706 100%);
+}
+
+.pinnacle-counter-strip:hover {
+    box-shadow: 0 24px 55px rgba(128, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.pinnacle-stat-col {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 12px 30px rgba(128, 0, 0, 0.06);
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    text-align: center;
+    padding: 0.5rem 1.2rem;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
 }
 
-.achieve-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 42px rgba(128, 0, 0, 0.12);
-    border-color: rgba(128, 0, 0, 0.32);
+.pinnacle-stat-col:hover {
+    transform: translateY(-5px);
 }
 
-.achieve-icon {
-    width: 54px;
-    height: 54px;
-    border-radius: 16px;
-    background: rgba(128, 0, 0, 0.08);
-    color: var(--primary-accent);
+.pinnacle-stat-value {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.45rem;
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Reference Exact Color Variants from Pinnacle Hospitals */
+.stat-purple .pinnacle-stat-value {
+    color: #7b1fa2; /* Vibrant Purple */
+}
+.stat-purple:hover .pinnacle-stat-value {
+    text-shadow: 0 4px 18px rgba(123, 31, 162, 0.28);
+}
+
+.stat-blue .pinnacle-stat-value {
+    color: #0288d1; /* Medical Cyan / Blue */
+}
+.stat-blue:hover .pinnacle-stat-value {
+    text-shadow: 0 4px 18px rgba(2, 136, 209, 0.28);
+}
+
+.stat-navy .pinnacle-stat-value {
+    color: #1565c0; /* Deep Royal Navy */
+}
+.stat-navy:hover .pinnacle-stat-value {
+    text-shadow: 0 4px 18px rgba(21, 101, 192, 0.28);
+}
+
+.stat-gold .pinnacle-stat-value {
+    color: #d97706; /* Radiant Golden Amber */
+}
+.stat-gold:hover .pinnacle-stat-value {
+    text-shadow: 0 4px 18px rgba(217, 119, 6, 0.28);
+}
+
+.pinnacle-stat-label {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text-dark, #2b2b2b);
+    line-height: 1.3;
+}
+
+.pinnacle-stat-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted, #718096);
+    margin-top: 0.25rem;
+    font-weight: 500;
+}
+
+/* Sleek Vertical Dividers Matching Reference Screenshot */
+.pinnacle-stat-divider {
+    width: 1.5px;
+    height: 70px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.03) 100%);
+    flex-shrink: 0;
+}
+
+/* Celebration Pop when Counter Completes */
+.counter-completed {
+    animation: counterFinishPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes counterFinishPop {
+    0% { transform: scale(0.96); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* NABH Accreditation Spotlight Quality Banner */
+.nabh-spotlight-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #800000 0%, #5e0202 50%, #3d0000 100%);
+    border: 2px solid rgba(184, 134, 11, 0.5);
+    border-radius: 22px;
+    padding: 1.7rem 2.4rem;
+    box-shadow: 0 14px 38px rgba(128, 0, 0, 0.22);
+    max-width: 1180px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    gap: 1.5rem;
+}
+
+.nabh-spotlight-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.14) 50%, rgba(255,255,255,0) 100%);
+    transform: rotate(25deg);
+    animation: nabhShimmer 5s infinite;
+}
+
+@keyframes nabhShimmer {
+    0% { left: -60%; }
+    30%, 100% { left: 160%; }
+}
+
+.nabh-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.nabh-seal-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(245, 197, 66, 0.65);
+    color: #f5c542;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.9rem;
+    flex-shrink: 0;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
 }
 
-.achieve-icon i, .achieve-icon svg {
-    width: 26px;
-    height: 26px;
+.nabh-seal-icon svg, .nabh-seal-icon i {
+    width: 32px;
+    height: 32px;
 }
 
-.achieve-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.1rem;
-    font-weight: 700;
-    color: var(--primary-accent);
-    line-height: 1.1;
-}
-
-.achieve-label {
-    font-size: 0.82rem;
+.nabh-banner-eyebrow {
+    font-size: 0.72rem;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--text-dark);
-    margin-top: 0.35rem;
+    color: #f5c542;
+    margin-bottom: 0.25rem;
 }
 
-.achieve-card p {
-    font-size: 0.86rem;
-    color: var(--text-muted);
+.nabh-banner-title {
+    font-size: 1.45rem;
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    margin: 0 0 0.35rem 0;
+}
+
+.nabh-banner-desc {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0;
     line-height: 1.55;
-    margin: 0.7rem 0 0 0;
+    max-width: 680px;
 }
 
-.achieve-card.achieve-nabh {
-    background: linear-gradient(135deg, #800000 0%, #a11414 100%);
-    border-color: rgba(184, 134, 11, 0.6);
-    box-shadow: 0 16px 40px rgba(128, 0, 0, 0.25);
-}
-
-.achieve-nabh .achieve-icon {
-    background: rgba(255, 255, 255, 0.15);
+.nabh-gold-crest {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245, 197, 66, 0.15);
+    border: 1.5px solid #f5c542;
     color: #f5c542;
+    padding: 0.65rem 1.35rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.86rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
 }
 
-.achieve-nabh .achieve-value {
-    color: #f5c542;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
+/* ==========================================================================
+   PINNACLE-STYLE GLOBAL ANIMATIONS & EFFECTS SUITE
+   ========================================================================== */
+
+/* 1. Pulsating Emergency Radar Rings */
+.emergency-beacon-pulse {
+    position: relative;
+}
+.emergency-beacon-pulse::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: inherit;
+    border: 2px solid rgba(192, 41, 43, 0.75);
+    animation: radarWave 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+    pointer-events: none;
+}
+@keyframes radarWave {
+    0% { transform: scale(0.95); opacity: 0.9; }
+    70% { transform: scale(1.35); opacity: 0; }
+    100% { transform: scale(1.4); opacity: 0; }
 }
 
-.achieve-nabh .achieve-label { color: #ffffff; }
-.achieve-nabh p { color: rgba(255, 255, 255, 0.85); }
+/* 2. Rhythmic Eyebrow Dot Breathing Glow */
+.eyebrow-dot {
+    animation: eyebrowBreathe 2.4s infinite ease-in-out !important;
+}
+@keyframes eyebrowBreathe {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(128, 0, 0, 0.45);
+    }
+    50% {
+        transform: scale(1.25);
+        box-shadow: 0 0 0 5px rgba(128, 0, 0, 0.12);
+    }
+}
 
-@media (max-width: 1024px) {
-    .achievements-grid {
+/* 3. Luxury Card Image Hover Zoom */
+.service-card .service-photo-container img,
+.service-card-photo,
+.dept-card-photo img,
+.doctor-photo-frame img,
+.hospital-building-card img,
+.duo-arch-frame img {
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+.service-card:hover .service-photo-container img,
+.service-card:hover .service-card-photo,
+.dept-card-photo:hover img,
+.doctor-card:hover .doctor-photo-frame img,
+.hospital-building-card:hover img,
+.smera-hero-duo-card:hover .duo-arch-frame img {
+    transform: scale(1.055);
+}
+
+/* 4. Doctor Cards Elevated Hover Experience */
+.doctor-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.doctor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(128, 0, 0, 0.12) !important;
+    border-color: rgba(128, 0, 0, 0.4) !important;
+}
+.doctor-card:hover .doctor-emblem-badge {
+    transform: scale(1.1) rotate(4deg);
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 5. Smooth Staggered Scroll Transitions */
+.reveal-active .animate-up {
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.reveal-active .animate-up.delay-1 { transition-delay: 0.12s !important; }
+.reveal-active .animate-up.delay-2 { transition-delay: 0.24s !important; }
+.reveal-active .animate-up.delay-3 { transition-delay: 0.36s !important; }
+.reveal-active .animate-up.delay-4 { transition-delay: 0.48s !important; }
+
+/* 6. Carousel Buttons Press & Hover Dynamics */
+.carousel-btn {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+.carousel-btn:hover {
+    transform: scale(1.12);
+    box-shadow: 0 8px 22px rgba(128, 0, 0, 0.25);
+}
+.carousel-btn:active {
+    transform: scale(0.92);
+}
+
+/* Responsive Breakpoints for Pinnacle Strip & NABH */
+@media (max-width: 992px) {
+    .pinnacle-counter-strip {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem 1rem;
+        padding: 2.2rem 1.5rem;
     }
-    .achieve-card.achieve-nabh {
-        grid-column: 1 / -1;
+    .pinnacle-stat-divider {
+        display: none;
+    }
+    .pinnacle-stat-col {
+        padding: 0.8rem 0.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .pinnacle-stat-col:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+    .pinnacle-stat-value {
+        font-size: 2.3rem;
+    }
+    .nabh-spotlight-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+    }
+    .nabh-banner-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
     }
 }
 
-@media (max-width: 480px) {
-    .achievements-section { padding: 2.5rem 4%; }
-    .achievements-grid { gap: 0.85rem; }
-    .achieve-card { padding: 1.2rem 0.8rem; }
-    .achieve-value { font-size: 1.6rem; }
-    .achieve-label { font-size: 0.7rem; }
+@media (max-width: 576px) {
+    .pinnacle-counter-strip {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        padding: 1.8rem 1.2rem;
+    }
+    .pinnacle-stat-col {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        padding-bottom: 1.2rem;
+    }
+    .pinnacle-stat-col:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .pinnacle-stat-value {
+        font-size: 2.2rem;
+    }
 }
 
 /* ==========================================================================

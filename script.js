@@ -92,6 +92,7 @@ initPageTransition();
 // Initialize A1 Hospital Application
 function initHospitalApp() {
     initPageTransition();
+    initCounterAnimation();
 
     // Enable progressive scroll animations
     document.body.classList.add('reveal-active');
@@ -482,4 +483,65 @@ function closeArticleModal() {
     if (!modal) return;
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
+}
+
+/* ==========================================================================
+   PINNACLE-INSPIRED DYNAMIC NUMBER COUNTER ANIMATION ENGINE
+   Reference: pinnaclehospitals.com (Smooth easing, comma formatting, suffix support)
+   ========================================================================== */
+function initCounterAnimation() {
+    const counterElements = document.querySelectorAll('[data-counter]');
+    if (!counterElements.length) return;
+
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                animateSingleCounter(el);
+                observer.unobserve(el); // Fire once per session for crisp UX
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -30px 0px'
+    });
+
+    counterElements.forEach(el => counterObserver.observe(el));
+}
+
+function animateSingleCounter(el) {
+    const targetValue = parseInt(el.getAttribute('data-counter'), 10);
+    if (isNaN(targetValue)) return;
+
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = parseInt(el.getAttribute('data-duration'), 10) || (targetValue > 1000 ? 1900 : 1300);
+
+    let startTime = null;
+
+    // Smooth cubic ease-out curve (decelerates into final number)
+    function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+    }
+
+    function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeOutCubic(progress);
+
+        const currentVal = Math.floor(easedProgress * targetValue);
+        el.textContent = `${prefix}${currentVal.toLocaleString('en-US')}${suffix}`;
+
+        if (progress < 1) {
+            requestAnimationFrame(step);
+        } else {
+            el.textContent = `${prefix}${targetValue.toLocaleString('en-US')}${suffix}`;
+            el.classList.add('counter-completed');
+        }
+    }
+
+    // Set initial zero display and trigger animation frame
+    el.textContent = `${prefix}0${suffix}`;
+    requestAnimationFrame(step);
 }
