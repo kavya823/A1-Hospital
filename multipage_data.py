@@ -27,8 +27,8 @@ DOCTORS_DATA = [
         "icon": "baby"
     },
     {
-        "id": "dr-g-prameela",
-        "name": "Dr. G. Prameela",
+        "id": "dr-guruvelli-pramela",
+        "name": "Dr. Guruvelli Pramela",
         "qual": "M.S. (OBG), FART, FMAS",
         "title": "Senior Obstetrician & Gynaecologist (Co-Founder & Managing Partner)",
         "dept": "Obstetrics, Gynaecology & IVF Clinic",
@@ -45,6 +45,17 @@ DOCTORS_DATA = [
         "dept": "Pediatrics & Child Health",
         "exp": "Pediatric Surgical Specialist",
         "desc": "Specialist in pediatric surgical care, neonatal interventions, and congenital anomaly corrections.",
+        "image": None,
+        "icon": "baby"
+    },
+    {
+        "id": "dr-naveen-goddu",
+        "name": "Dr. Naveen Goddu",
+        "qual": "M.D. (Pediatrics)",
+        "title": "Pediatrician",
+        "dept": "Pediatrics & Child Health",
+        "exp": "Pediatric Specialist",
+        "desc": "Consultant pediatrician providing comprehensive newborn and child healthcare, fever management, immunizations, and adolescent wellness.",
         "image": None,
         "icon": "baby"
     },
@@ -128,10 +139,10 @@ DOCTORS_DATA = [
     {
         "id": "dr-navya-madabatula",
         "name": "Dr. Navya Madabatula",
-        "qual": "M.B.B.S., M.D. (Radiation Oncology)",
-        "title": "Senior Consultant Radiation & Clinical Oncologist",
+        "qual": "M.B.B.S., M.D., M.D.",
+        "title": "Senior Consultant Radiation Oncologist & Clinical Oncologist",
         "dept": "Oncology (Cancer Care)",
-        "exp": "Clinical Oncologist",
+        "exp": "Clinical & Radiation Oncologist",
         "desc": "Consultant oncologist guiding cancer evaluations, early screenings, and radiation therapy planning.",
         "image": None,
         "icon": "crosshair"
@@ -166,6 +177,12 @@ DEPARTMENTS_DATA = {
                 "qual": "M.S., M.Ch. (Paediatric Surgery)",
                 "title": "Pediatric Surgeon",
                 "image": None
+            },
+            {
+                "name": "Dr. Naveen Goddu",
+                "qual": "M.D. (Pediatrics)",
+                "title": "Pediatrician",
+                "image": None
             }
         ]
     },
@@ -185,7 +202,7 @@ DEPARTMENTS_DATA = {
         ],
         "doctors": [
             {
-                "name": "Dr. G. Prameela",
+                "name": "Dr. Guruvelli Pramela",
                 "qual": "M.S. (OBG), FART, FMAS",
                 "title": "Senior Obstetrician & Gynaecologist (Co-Founder & Managing Partner)",
                 "image": "dr_prameela.png"
@@ -353,8 +370,8 @@ DEPARTMENTS_DATA = {
         "doctors": [
             {
                 "name": "Dr. Navya Madabatula",
-                "qual": "M.B.B.S., M.D. (Radiation Oncology)",
-                "title": "Senior Consultant Radiation & Clinical Oncologist",
+                "qual": "M.B.B.S., M.D., M.D.",
+                "title": "Senior Consultant Radiation Oncologist & Clinical Oncologist",
                 "image": None
             }
         ]

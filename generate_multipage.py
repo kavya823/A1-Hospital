@@ -742,7 +742,7 @@ def build_all_pages():
     doc_cards_html = ""
     for doc in DOCTORS_DATA:
         is_founder = "Founder" in doc['title']
-        is_senior_specialist = doc['id'] in ['dr-g-prameela', 'dr-co-founder-wife'] or "Senior" in doc['title']
+        is_senior_specialist = doc['id'] in ['dr-guruvelli-pramela', 'dr-g-prameela', 'dr-co-founder-wife'] or "Senior" in doc['title']
         if doc.get('image'):
             img_or_avatar = f'''
             <div class="doctor-photo-frame">
