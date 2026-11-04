@@ -225,14 +225,41 @@
                 <div class="smera-hero-duo-wrapper">
                     <!-- Founder: Dr. Mula Venkatarao -->
                     <div class="smera-hero-duo-card">
-                        <div class="duo-arch-frame">
-                            <img src="dr_rao.jpeg" alt="Dr. Mula Venkatarao - 15+ Years of Experience">
+                        <div class="duo-arch-frame photo-flip-frame pop-frame" tabindex="0" role="button" aria-label="Flip card for Dr. Mula Venkatarao">
+                            <div class="photo-flip-inner">
+                                <div class="photo-flip-front">
+                                    <img src="dr_rao.jpeg" alt="Dr. Mula Venkatarao - 15+ Years of Experience">
+                                    <div class="photo-flip-cue">
+                                        <i data-lucide="rotate-3d"></i> <span>Hover or Tap to Flip</span>
+                                    </div>
+                                </div>
+                                <div class="photo-flip-back">
+                                    <div class="flip-back-inner">
+                                        <div>
+                                            <div class="flip-crest-badge">
+                                                <i data-lucide="baby"></i>
+                                            </div>
+                                            <h4 class="flip-doctor-name">Dr. MULA VENKATARAO</h4>
+                                            <div class="flip-doctor-dept">Pediatrics &amp; Child Health</div>
+                                            <div class="flip-doctor-qual">M.D. (Paed), Niloufer</div>
+                                            <div class="flip-line-divider"></div>
+                                            <div class="flip-feature-pill">
+                                                <i data-lucide="award"></i> 15+ Yrs Clinical Mastery
+                                            </div>
+                                            <p class="flip-desc-snippet">Children Specialist · Founder &amp; Managing Partner with 15+ years of clinical excellence.</p>
+                                        </div>
+                                        <a href="#appointment" class="btn-flip-book" onclick="event.stopPropagation(); openAppointmentModal('Dr. Mula Venkatarao', 'Pediatrics & Child Health')">
+                                            <i data-lucide="calendar"></i> <span>Book Priority Slot</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="duo-doc-meta">
                             <div class="duo-doc-name">Dr. MULA VENKATARAO</div>
                             <div class="duo-doc-qual">M.D. (Paed), Niloufer</div>
                             <div class="duo-doc-spec">Children Specialist</div>
-                            <div class="duo-doc-experience-tag">
+                            <div class="duo-doc-experience-tag minimal-interactive">
                                 <i data-lucide="shield-check"></i> <span data-counter="15" data-suffix="+">15+</span> Years of Experience
                             </div>
                         </div>
@@ -240,14 +267,41 @@
 
                     <!-- Co-Founder & Managing Partner: Dr. Guruvelli Pramela -->
                     <div class="smera-hero-duo-card" style="border-color: rgba(184, 134, 11, 0.35);">
-                        <div class="duo-arch-frame">
-                            <img src="dr_prameela.png" alt="Dr. Guruvelli Pramela - 13+ Years of Experience">
+                        <div class="duo-arch-frame photo-flip-frame pop-frame" tabindex="0" role="button" aria-label="Flip card for Dr. Guruvelli Pramela">
+                            <div class="photo-flip-inner">
+                                <div class="photo-flip-front">
+                                    <img src="dr_prameela.png" alt="Dr. Guruvelli Pramela - 13+ Years of Experience">
+                                    <div class="photo-flip-cue gold-cue">
+                                        <i data-lucide="rotate-3d"></i> <span>Hover or Tap to Flip</span>
+                                    </div>
+                                </div>
+                                <div class="photo-flip-back gold-back">
+                                    <div class="flip-back-inner">
+                                        <div>
+                                            <div class="flip-crest-badge gold-crest">
+                                                <i data-lucide="heart-pulse"></i>
+                                            </div>
+                                            <h4 class="flip-doctor-name">Dr. GURUVELLI PRAMELA</h4>
+                                            <div class="flip-doctor-dept">Obstetrics, Gynaecology &amp; IVF</div>
+                                            <div class="flip-doctor-qual">M.S. (OBG), FART, FMAS</div>
+                                            <div class="flip-line-divider"></div>
+                                            <div class="flip-feature-pill gold-pill">
+                                                <i data-lucide="award"></i> 13+ Yrs Clinical Mastery
+                                            </div>
+                                            <p class="flip-desc-snippet">Senior Obstetrician · Co-Founder &amp; Managing Partner specializing in high-risk pregnancy and IVF.</p>
+                                        </div>
+                                        <a href="#appointment" class="btn-flip-book" onclick="event.stopPropagation(); openAppointmentModal('Dr. Guruvelli Pramela', 'Obstetrics, Gynaecology & IVF Clinic')">
+                                            <i data-lucide="calendar"></i> <span>Book Priority Slot</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="duo-doc-meta">
                             <div class="duo-doc-name">Dr. GURUVELLI PRAMELA</div>
                             <div class="duo-doc-qual">M.S. (OBG), FART, FMAS</div>
                             <div class="duo-doc-spec">Senior Obstetrician &amp; Gynaecologist</div>
-                            <div class="duo-doc-experience-tag gold-exp-tag">
+                            <div class="duo-doc-experience-tag gold-exp-tag minimal-interactive">
                                 <i data-lucide="shield-check"></i> <span data-counter="13" data-suffix="+">13+</span> Years of Experience
                             </div>
                         </div>
@@ -651,26 +705,80 @@
         <div class="doctors-grid" id="home-doctors-view">
             <!-- Founder Doctor -->
             <div class="doctor-card animate-up" style="border: 2px solid rgba(128,0,0,0.22); position: relative;">
-                <div class="doctor-photo-frame">
-                    <img src="dr_rao.jpeg" alt="Dr. Mula Venkatarao">
+                <div class="doctor-photo-frame photo-flip-frame pop-frame" tabindex="0" role="button" aria-label="Flip card for Dr. Mula Venkatarao">
+                    <div class="photo-flip-inner">
+                        <div class="photo-flip-front">
+                            <img src="dr_rao.jpeg" alt="Dr. Mula Venkatarao">
+                            <div class="photo-flip-cue">
+                                <i data-lucide="rotate-3d"></i> <span>Hover or Tap to Flip</span>
+                            </div>
+                        </div>
+                        <div class="photo-flip-back">
+                            <div class="flip-back-inner">
+                                <div>
+                                    <div class="flip-crest-badge">
+                                        <i data-lucide="baby"></i>
+                                    </div>
+                                    <h4 class="flip-doctor-name">Dr. MULA VENKATARAO</h4>
+                                    <div class="flip-doctor-dept">Pediatrics &amp; Child Health</div>
+                                    <div class="flip-doctor-qual">M.D. (Paed), Niloufer</div>
+                                    <div class="flip-line-divider"></div>
+                                    <div class="flip-feature-pill">
+                                        <i data-lucide="award"></i> 15+ Yrs Clinical Mastery
+                                    </div>
+                                    <p class="flip-desc-snippet">Children Specialist · Founder &amp; Managing Partner with 15+ years of dedicated newborn and child healthcare.</p>
+                                </div>
+                                <a href="#appointment" class="btn-flip-book" onclick="event.stopPropagation(); openAppointmentModal('Dr. Mula Venkatarao', 'Pediatrics & Child Health')">
+                                    <i data-lucide="calendar"></i> <span>Book Priority Slot</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="doctor-info">
-                    <div class="doctor-dept-pill" style="margin-bottom: 0.5rem;">Pediatrics &amp; Child Health</div>
+                    <div class="doctor-dept-pill minimal-interactive" style="margin-bottom: 0.5rem;">Pediatrics &amp; Child Health</div>
                     <h3>Dr. MULA VENKATARAO</h3>
-                    <div class="doctor-tag">M.D. (Paed), Niloufer</div>
+                    <div class="doctor-tag minimal-interactive">M.D. (Paed), Niloufer</div>
                     <p class="doctor-spec-text">Children Specialist<br><strong>Founder &amp; Managing Partner</strong></p>
                 </div>
             </div>
 
             <!-- Senior Specialist: Dr. Guruvelli Pramela -->
             <div class="doctor-card animate-up delay-1" id="card-dr-prameela" style="border: 2px solid rgba(184, 134, 11, 0.35); position: relative; box-shadow: 0 10px 30px rgba(184, 134, 11, 0.08);">
-                <div class="doctor-photo-frame">
-                    <img src="dr_prameela.png" alt="Dr. Guruvelli Pramela - Senior Obstetrician &amp; Gynaecologist">
+                <div class="doctor-photo-frame photo-flip-frame pop-frame" tabindex="0" role="button" aria-label="Flip card for Dr. Guruvelli Pramela">
+                    <div class="photo-flip-inner">
+                        <div class="photo-flip-front">
+                            <img src="dr_prameela.png" alt="Dr. Guruvelli Pramela - Senior Obstetrician &amp; Gynaecologist">
+                            <div class="photo-flip-cue gold-cue">
+                                <i data-lucide="rotate-3d"></i> <span>Hover or Tap to Flip</span>
+                            </div>
+                        </div>
+                        <div class="photo-flip-back gold-back">
+                            <div class="flip-back-inner">
+                                <div>
+                                    <div class="flip-crest-badge gold-crest">
+                                        <i data-lucide="heart-pulse"></i>
+                                    </div>
+                                    <h4 class="flip-doctor-name">Dr. GURUVELLI PRAMELA</h4>
+                                    <div class="flip-doctor-dept">Obstetrics, Gynaecology &amp; IVF</div>
+                                    <div class="flip-doctor-qual">M.S. (OBG), FART, FMAS</div>
+                                    <div class="flip-line-divider"></div>
+                                    <div class="flip-feature-pill gold-pill">
+                                        <i data-lucide="award"></i> 13+ Yrs Clinical Mastery
+                                    </div>
+                                    <p class="flip-desc-snippet">Senior Obstetrician · Co-Founder &amp; Managing Partner specializing in high-risk pregnancy and IVF.</p>
+                                </div>
+                                <a href="#appointment" class="btn-flip-book" onclick="event.stopPropagation(); openAppointmentModal('Dr. Guruvelli Pramela', 'Obstetrics, Gynaecology & IVF Clinic')">
+                                    <i data-lucide="calendar"></i> <span>Book Priority Slot</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="doctor-info">
-                    <div class="doctor-dept-pill" style="margin-bottom: 0.5rem;">Obstetrics, Gynaecology &amp; IVF</div>
+                    <div class="doctor-dept-pill minimal-interactive" style="margin-bottom: 0.5rem;">Obstetrics, Gynaecology &amp; IVF</div>
                     <h3>Dr. GURUVELLI PRAMELA</h3>
-                    <div class="doctor-tag" style="background: rgba(184, 134, 11, 0.12); color: #800000; border-color: rgba(184, 134, 11, 0.3);">M.S. (OBG), FART, FMAS</div>
+                    <div class="doctor-tag minimal-interactive" style="background: rgba(184, 134, 11, 0.12); color: #800000; border-color: rgba(184, 134, 11, 0.3);">M.S. (OBG), FART, FMAS</div>
                     <p class="doctor-spec-text">Senior Obstetrician &amp; Gynaecologist<br><strong>Co-Founder &amp; Managing Partner</strong></p>
                 </div>
             </div>

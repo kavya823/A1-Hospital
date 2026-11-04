@@ -1546,19 +1546,31 @@ p {
    SCROLL REVEAL ANIMATIONS (PROGRESSIVE ENHANCEMENT)
    ========================================================================== */
 .hero, .framed-section {
-    opacity: 1 !important;
-    transform: none !important;
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.animate-up, .animate-left, .animate-right {
+.reveal-active .framed-section:not(.show):not(.in-view) {
+    opacity: 0;
+    transform: translateY(26px);
+}
+
+.reveal-active .framed-section.show,
+.reveal-active .framed-section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-up, .animate-left, .animate-right, .animate-pop, .stagger-item {
     opacity: 1;
     transform: none;
-    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
-.reveal-active .animate-up:not(.show) {
+.reveal-active .animate-up:not(.show),
+.reveal-active .stagger-item:not(.show) {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(28px) scale(0.98);
 }
 .reveal-active .animate-left:not(.show) {
     opacity: 0;
@@ -1568,17 +1580,28 @@ p {
     opacity: 0;
     transform: translateX(35px);
 }
+.reveal-active .animate-pop:not(.show) {
+    opacity: 0;
+    transform: scale(0.86) translateY(18px);
+}
 
 .reveal-active .animate-up.show,
 .reveal-active .animate-left.show,
-.reveal-active .animate-right.show {
+.reveal-active .animate-right.show,
+.reveal-active .stagger-item.show {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate(0, 0) scale(1);
 }
 
-.delay-1 { transition-delay: 0.15s; }
-.delay-2 { transition-delay: 0.3s; }
-.delay-3 { transition-delay: 0.45s; }
+.reveal-active .animate-pop.show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+.delay-3 { transition-delay: 0.36s; }
+.delay-4 { transition-delay: 0.48s; }
 
 /* Pulse Animation */
 .pulse-anim {
@@ -5183,4 +5206,479 @@ p {
     .detail-arch-frame img {
         object-position: center 32% !important;
     }
+}
+
+/* ==========================================================================
+   SUCCESSION ENTRANCE, POP ANIMATIONS, MINIMAL-CONTENT DYNAMICS & 3D PHOTO FLIPS
+   ========================================================================== */
+
+/* 1. UNIVERSAL SUCCESSION STAGGER ENGINE */
+.stagger-container {
+    perspective: 1200px;
+}
+
+.reveal-active .stagger-item.show,
+.reveal-active .show .stagger-item,
+.reveal-active .in-view .stagger-item,
+.reveal-active .in-view .service-card,
+.reveal-active .in-view .dept-card-photo,
+.reveal-active .in-view .doctor-card,
+.reveal-active .in-view .blog-card,
+.reveal-active .in-view .dept-showcase-card,
+.reveal-active .in-view .service-showcase-card,
+.reveal-active .in-view .detail-cap-card,
+.reveal-active .in-view .pinnacle-stat-col,
+.reveal-active .in-view .emergency-compact-card {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important;
+    transition-delay: calc(var(--stagger-i, 0) * 0.1s) !important;
+}
+
+/* 2. POP ANIMATION FOR SMALL FRAMES & BADGES (SERVICES & DEPARTMENTS) */
+.pop-frame,
+.service-card-photo-frame,
+.pharmacy-carousel-photo-frame,
+.service-showcase-photo-frame,
+.dept-showcase-header-box,
+.doctor-photo-frame,
+.detail-arch-frame {
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pop-frame:hover,
+.service-card:hover .service-card-photo-frame,
+.dept-card-photo:hover .pharmacy-carousel-photo-frame,
+.service-showcase-card:hover .service-showcase-photo-frame,
+.dept-showcase-card:hover .dept-showcase-header-box {
+    transform: scale(1.055) translateY(-5px);
+    box-shadow: 0 16px 36px rgba(128, 0, 0, 0.16), 0 0 0 3px rgba(128, 0, 0, 0.1);
+    border-color: rgba(128, 0, 0, 0.38) !important;
+    z-index: 10;
+}
+
+.pop-frame:active,
+.service-card-photo-frame:active {
+    transform: scale(0.96) translateY(0);
+    transition: transform 0.12s ease !important;
+}
+
+/* Pop for small badges, tags & icons */
+.service-photo-badge,
+.card-icon-badge,
+.doctor-emblem-badge,
+.service-showcase-badge,
+.detail-floating-badge,
+.dept-badge {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background-color 0.3s ease !important;
+}
+
+.service-photo-badge:hover,
+.card-icon-badge:hover,
+.doctor-emblem-badge:hover,
+.service-showcase-badge:hover,
+.dept-badge:hover {
+    transform: scale(1.14) translateY(-3px) !important;
+    box-shadow: 0 8px 22px rgba(128, 0, 0, 0.22) !important;
+}
+
+/* Spring entrance keyframe for small frames */
+@keyframes framePopIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.82) translateY(18px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-4px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.reveal-active .pop-on-scroll.show {
+    animation: framePopIn 0.75s cubic-bezier(0.34, 1.4, 0.64, 1) forwards;
+}
+
+/* 3. CURSOR MICRO-INTERACTIONS FOR MINIMAL / LESS-CONTENT ELEMENTS */
+.minimal-interactive,
+.doctor-dept-pill,
+.doctor-tag,
+.doc-exp-chip,
+.pinnacle-stat-col,
+.hospital-intro-para-card,
+.reception-phone-pill,
+.detail-cap-card,
+.detail-feature-item,
+.emergency-compact-card,
+.blog-filter-pill,
+.duo-doc-experience-tag,
+.dept-info {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.35s ease, 
+                border-color 0.35s ease, 
+                background-color 0.35s ease !important;
+}
+
+.minimal-interactive:hover,
+.doctor-dept-pill:hover,
+.doctor-tag:hover,
+.doc-exp-chip:hover,
+.pinnacle-stat-col:hover,
+.hospital-intro-para-card:hover,
+.reception-phone-pill:hover,
+.detail-cap-card:hover,
+.detail-feature-item:hover,
+.emergency-compact-card:hover,
+.duo-doc-experience-tag:hover,
+.dept-info:hover {
+    transform: translateY(-4px) scale(1.022) !important;
+    border-color: rgba(128, 0, 0, 0.38) !important;
+    box-shadow: 0 12px 28px rgba(128, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Interactive Cursor Spotlight Glow for Minimal Content */
+.minimal-interactive::before,
+.pinnacle-stat-col::before,
+.hospital-intro-para-card::before,
+.detail-cap-card::before,
+.emergency-compact-card::before,
+.doctor-dept-pill::before,
+.doc-exp-chip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle 120px at var(--cursor-x, 50%) var(--cursor-y, 50%), rgba(128, 0, 0, 0.09) 0%, transparent 75%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.minimal-interactive:hover::before,
+.pinnacle-stat-col:hover::before,
+.hospital-intro-para-card:hover::before,
+.detail-cap-card:hover::before,
+.emergency-compact-card:hover::before,
+.doctor-dept-pill:hover::before,
+.doc-exp-chip:hover::before {
+    opacity: 1;
+}
+
+/* Icon rotation micro-bounce on cursor hover */
+.minimal-interactive:hover i[data-lucide],
+.minimal-interactive:hover svg,
+.doctor-dept-pill:hover i,
+.doc-exp-chip:hover i,
+.detail-feature-item:hover i,
+.reception-phone-pill:hover i,
+.duo-doc-experience-tag:hover i {
+    transform: scale(1.18) rotate(7deg);
+    color: var(--primary-accent);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 4. 3D PHOTO FLIPPING ANIMATION SYSTEM (TRUE 3D PERSPECTIVE FLIP) */
+.photo-flip-frame {
+    perspective: 1200px;
+    -webkit-perspective: 1200px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    min-height: 275px;
+}
+
+.photo-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 275px;
+    transition: transform 0.75s cubic-bezier(0.34, 1.25, 0.64, 1);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    border-radius: 14px;
+}
+
+/* Trigger 3D Flip on card hover or when toggled active/flipped */
+.photo-flip-frame:hover .photo-flip-inner,
+.photo-flip-frame.is-flipped .photo-flip-inner,
+.doctor-card:hover .photo-flip-inner,
+.smera-hero-duo-card:hover .photo-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.photo-flip-front,
+.photo-flip-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.photo-flip-front {
+    transform: rotateY(0deg);
+    z-index: 2;
+    background: #fffcf9;
+}
+
+.photo-flip-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 14px;
+    border: 1.5px solid var(--border-warm);
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+/* Floating Flip Cue Pill on Front of Photo */
+.photo-flip-cue {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(128, 0, 0, 0.22);
+    padding: 4px 12px;
+    border-radius: 99px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+    z-index: 5;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.photo-flip-cue.gold-cue {
+    border-color: rgba(184, 134, 11, 0.4);
+    color: #800000;
+}
+
+.photo-flip-cue i {
+    width: 13px;
+    height: 13px;
+    animation: rotateHint 3s infinite linear;
+}
+
+@keyframes rotateHint {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Flip Card Back Design (Luxury Medical Credentials) */
+.photo-flip-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(145deg, #1f0101 0%, #3d0202 55%, #630505 100%);
+    color: #ffffff;
+    padding: 1.25rem 1.15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid rgba(255, 215, 0, 0.4);
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.5), 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.photo-flip-back.gold-back {
+    border-color: rgba(255, 215, 0, 0.65);
+    background: linear-gradient(145deg, #2b0808 0%, #4a0c0c 60%, #731515 100%);
+}
+
+.flip-back-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.flip-crest-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffd700;
+    margin-bottom: 0.45rem;
+}
+
+.flip-crest-badge.gold-crest {
+    color: #ffdd57;
+    background: rgba(255, 215, 0, 0.18);
+}
+
+.flip-doctor-name {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 2px 0;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+}
+
+.flip-doctor-dept {
+    font-size: 0.74rem;
+    color: #ffccd0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
+
+.flip-doctor-qual {
+    font-size: 0.76rem;
+    color: #ffd700;
+    font-weight: 700;
+    margin-bottom: 0.45rem;
+}
+
+.flip-line-divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.6) 0%, rgba(255, 255, 255, 0.1) 100%);
+    margin: 0.35rem 0 0.5rem 0;
+}
+
+.flip-feature-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 3px 9px;
+    border-radius: 99px;
+    width: fit-content;
+    margin-bottom: 0.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.flip-feature-pill.gold-pill {
+    background: rgba(255, 215, 0, 0.18);
+    border-color: rgba(255, 215, 0, 0.35);
+    color: #fff8e7;
+}
+
+.flip-desc-snippet {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.4;
+    margin: 0 0 0.6rem 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.btn-flip-book {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 0.55rem 0.8rem;
+    background: linear-gradient(135deg, #ffffff 0%, #faece9 100%);
+    color: #800000;
+    border-radius: 99px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, background 0.25s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-flip-book:hover {
+    transform: scale(1.04);
+    background: #ffd700;
+    color: #3b0000;
+}
+
+/* 5. 3D PERSPECTIVE PHOTO TILT FOR GENERAL PHOTOS (SERVICES, DEPARTMENTS, BUILDING) */
+.dept-card-photo,
+.service-card-photo-frame,
+.service-showcase-photo-frame,
+.dept-showcase-header-box,
+.hospital-building-card,
+.reception-img-frame,
+.detail-arch-frame {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
+}
+
+.dept-card-photo:hover,
+.service-card-photo-frame:hover,
+.service-showcase-photo-frame:hover,
+.dept-showcase-header-box:hover,
+.hospital-building-card:hover,
+.reception-img-frame:hover,
+.detail-arch-frame:hover {
+    box-shadow: 0 20px 45px rgba(128, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Glossy lens reflection wave on photo hover */
+.service-card-photo-frame::after,
+.service-showcase-photo-frame::after,
+.dept-showcase-header-box::after,
+.dept-card-photo::after,
+.hospital-building-card::after,
+.reception-img-frame::after,
+.detail-arch-frame::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.22) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(28deg);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.service-card-photo-frame:hover::after,
+.service-showcase-photo-frame:hover::after,
+.dept-showcase-header-box:hover::after,
+.dept-card-photo:hover::after,
+.hospital-building-card:hover::after,
+.reception-img-frame:hover::after,
+.detail-arch-frame:hover::after {
+    opacity: 1;
+    animation: photoSheenWave 0.95s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes photoSheenWave {
+    0% { left: -75%; opacity: 0; }
+    25% { opacity: 1; }
+    100% { left: 135%; opacity: 0; }
 }

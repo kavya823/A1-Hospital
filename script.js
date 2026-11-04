@@ -94,25 +94,16 @@ function initHospitalApp() {
     initPageTransition();
     initCounterAnimation();
 
-    // Enable progressive scroll animations
-    document.body.classList.add('reveal-active');
+    // Universal Succession Entrance, Pop & 3D Interactive Engines
+    initSuccessionScrollAnimations();
+    initMinimalContentCursorEffects();
+    initSmallFramePopAnimations();
+    initPhotoFlippingAnd3D();
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '60px 0px',
-        threshold: 0.05
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
-        });
-    }, observerOptions);
-
-    const animatedElements = document.querySelectorAll('.animate-up, .animate-left, .animate-right');
-    animatedElements.forEach(el => observer.observe(el));
+    // Render Lucide icons if loaded
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+    }
 
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
@@ -210,9 +201,7 @@ function initHospitalApp() {
         });
     }
 
-    // Initialize Home Page 3D Flip & Parallax and Detail Page Interactions
-    setupHomePageInteractions();
-    setupDetailPageInteractions();
+    // Navigation to explanation anchors
     setupExplanationNavigation();
 }
 
@@ -223,58 +212,182 @@ if (document.readyState === 'loading') {
     initHospitalApp();
 }
 
-// Interactive 3D Cursor Parallax & Flip Animation (Home Page Only)
-function setupHomePageInteractions() {
-    const isHomePage = document.body.getAttribute('data-page') === 'home' || 
-                       window.location.pathname.endsWith('index.html') || 
-                       window.location.pathname === '/' || 
-                       window.location.pathname === '';
+// ==========================================================================
+// 1. UNIVERSAL SUCCESSION SCROLL REVEAL (SLOW, VISIBLE STAGGERED ENTRANCE)
+// ==========================================================================
+function initSuccessionScrollAnimations() {
+    document.body.classList.add('reveal-active');
 
-    if (!isHomePage) return;
+    // Automatically discover grids and card groups across ALL pages to apply staggered succession
+    const staggerContainers = document.querySelectorAll(
+        '.services-grid, .dept-grid-home, .doctors-grid, .blog-grid, ' +
+        '.pinnacle-counter-strip, .detail-cap-grid, .detail-hero-content, ' +
+        '.hero-content, .smera-hero-duo-wrapper, .hospital-intro-grid, ' +
+        '.reception-facility-card, .detail-explore-others .carousel-track, ' +
+        '.service-showcase-grid, .dept-showcase-grid'
+    );
 
-    const interactiveCards = document.querySelectorAll('.service-card, .dept-card-photo, .doctor-card, .emergency-compact-card');
-
-    interactiveCards.forEach(card => {
-        // Smooth luxury cursor parallax tilt
-        card.addEventListener('mousemove', (e) => {
-            if (card.classList.contains('is-flipping')) return;
-            const rect = card.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width - 0.5;
-            const y = (e.clientY - rect.top) / rect.height - 0.5;
-            card.style.transform = `perspective(1000px) rotateY(${(x * 6).toFixed(2)}deg) rotateX(${(-y * 6).toFixed(2)}deg) translateY(-8px) scale3d(1.012, 1.012, 1.012)`;
+    staggerContainers.forEach(container => {
+        container.classList.add('stagger-container');
+        const children = Array.from(container.children).filter(child => {
+            return !child.classList.contains('carousel-btn') && child.tagName !== 'SCRIPT';
         });
 
-        // Smooth slip back on mouse leave
-        card.addEventListener('mouseleave', () => {
-            if (card.classList.contains('is-flipping')) return;
-            card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0) scale3d(1, 1, 1)';
+        children.forEach((child, index) => {
+            child.classList.add('stagger-item');
+            child.style.setProperty('--stagger-i', index);
+            if (!child.style.transitionDelay && !child.className.includes('delay-')) {
+                child.style.transitionDelay = `${(index * 0.11).toFixed(2)}s`;
+            }
+        });
+    });
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.08
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                entry.target.classList.add('in-view');
+
+                // Trigger child cards smoothly
+                const innerCards = entry.target.querySelectorAll('.stagger-item, .service-card, .doctor-card, .dept-card-photo, .blog-card, .pinnacle-stat-col, .dept-showcase-card, .service-showcase-card, .detail-cap-card');
+                innerCards.forEach(item => {
+                    item.classList.add('show');
+                    item.classList.add('in-view');
+                });
+            }
+        });
+    }, observerOptions);
+
+    const animatables = document.querySelectorAll(
+        '.framed-section, .hero, .animate-up, .animate-left, .animate-right, ' +
+        '.animate-pop, .stagger-container, .stagger-item, .doctor-card, ' +
+        '.service-card, .dept-card-photo, .blog-card, .dept-showcase-card, ' +
+        '.service-showcase-card, .pinnacle-counter-strip, .hospital-intro-section, ' +
+        '.reception-desk-section, .detail-cap-card'
+    );
+
+    animatables.forEach(el => sectionObserver.observe(el));
+
+    // Immediate soft reveal for above-the-fold content upon page view
+    setTimeout(() => {
+        animatables.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.classList.add('show');
+                el.classList.add('in-view');
+                el.querySelectorAll('.stagger-item').forEach(si => {
+                    si.classList.add('show');
+                    si.classList.add('in-view');
+                });
+            }
+        });
+    }, 120);
+}
+
+// ==========================================================================
+// 2. CURSOR MICRO-INTERACTIONS FOR MINIMAL / LESS-CONTENT ELEMENTS
+// ==========================================================================
+function initMinimalContentCursorEffects() {
+    const minimalElements = document.querySelectorAll(
+        '.doctor-dept-pill, .doctor-tag, .doc-exp-chip, .pinnacle-stat-col, ' +
+        '.hospital-intro-para-card, .reception-phone-pill, .detail-cap-card, ' +
+        '.detail-feature-item, .emergency-compact-card, .blog-filter-pill, ' +
+        '.duo-doc-experience-tag, .dept-info, .service-photo-badge, ' +
+        '.card-icon-badge, .doctor-emblem-badge, .dept-badge, .service-showcase-badge'
+    );
+
+    minimalElements.forEach(el => {
+        el.classList.add('minimal-interactive');
+
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = (((e.clientX - rect.left) / rect.width) * 100).toFixed(1);
+            const y = (((e.clientY - rect.top) / rect.height) * 100).toFixed(1);
+            el.style.setProperty('--cursor-x', `${x}%`);
+            el.style.setProperty('--cursor-y', `${y}%`);
         });
 
-        // Luxury micro-elevation bounce on click
-        card.addEventListener('click', (e) => {
-            if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.card-action-link')) return;
-
-            card.classList.add('is-flipping');
-            setTimeout(() => {
-                card.classList.remove('is-flipping');
-                card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0) scale3d(1, 1, 1)';
-            }, 550);
+        el.addEventListener('mouseleave', () => {
+            el.style.removeProperty('--cursor-x');
+            el.style.removeProperty('--cursor-y');
         });
     });
 }
 
-// Interactive 3D Cursor Parallax for Detail Pages & Showcase Cards
-function setupDetailPageInteractions() {
-    const tiltElements = document.querySelectorAll('.detail-arch-frame, .detail-cap-card, .service-showcase-card, .dept-showcase-card');
-    tiltElements.forEach(el => {
-        el.addEventListener('mousemove', (e) => {
-            const rect = el.getBoundingClientRect();
+// ==========================================================================
+// 3. POP ANIMATION FOR SMALL FRAMES & BADGES (SERVICES & DEPARTMENTS)
+// ==========================================================================
+function initSmallFramePopAnimations() {
+    const smallFrames = document.querySelectorAll(
+        '.service-card-photo-frame, .pharmacy-carousel-photo-frame, ' +
+        '.service-showcase-photo-frame, .dept-showcase-header-box, ' +
+        '.service-photo-badge, .card-icon-badge, .doctor-emblem-badge, ' +
+        '.dept-badge, .detail-floating-badge, .dept-card-photo, .duo-arch-frame'
+    );
+
+    smallFrames.forEach(frame => {
+        frame.classList.add('pop-frame');
+
+        // Tactile micro-press feedback
+        frame.addEventListener('mousedown', () => {
+            frame.style.transform = 'scale(0.96) translateY(0)';
+        });
+        frame.addEventListener('mouseup', () => {
+            frame.style.removeProperty('transform');
+        });
+    });
+}
+
+// ==========================================================================
+// 4. 3D PHOTO FLIPPING & PERSPECTIVE PARALLAX SYSTEM (ALL PAGES)
+// ==========================================================================
+function initPhotoFlippingAnd3D() {
+    // A. 3D Photo Flip Cards (Doctors, Founders & Leaders)
+    const flipCards = document.querySelectorAll('.photo-flip-frame, .duo-arch-frame.photo-flip-frame');
+
+    flipCards.forEach(card => {
+        card.setAttribute('tabindex', '0');
+
+        card.addEventListener('click', (e) => {
+            // Don't toggle flip if user clicked direct booking button on the back
+            if (e.target.closest('.btn-flip-book') || e.target.closest('a')) return;
+            card.classList.toggle('is-flipped');
+        });
+
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                card.classList.toggle('is-flipped');
+            }
+        });
+    });
+
+    // B. Interactive 3D Cursor Parallax & Depth on All Cards & Photos (All Pages)
+    const tiltCards = document.querySelectorAll(
+        '.service-card, .dept-card-photo, .doctor-card, .emergency-compact-card, ' +
+        '.dept-showcase-card, .service-showcase-card, .detail-arch-frame, ' +
+        '.hospital-building-card, .reception-img-frame'
+    );
+
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            // If the card has a 3D flip photo that is currently flipped, avoid tilt conflict
+            if (card.querySelector('.photo-flip-frame.is-flipped')) return;
+
+            const rect = card.getBoundingClientRect();
             const x = (e.clientX - rect.left) / rect.width - 0.5;
             const y = (e.clientY - rect.top) / rect.height - 0.5;
-            el.style.transform = `perspective(1000px) rotateY(${(x * 8).toFixed(2)}deg) rotateX(${(-y * 8).toFixed(2)}deg) translateY(-6px)`;
+            card.style.transform = `perspective(1000px) rotateY(${(x * 7).toFixed(2)}deg) rotateX(${(-y * 7).toFixed(2)}deg) translateY(-8px) scale3d(1.015, 1.015, 1.015)`;
         });
-        el.addEventListener('mouseleave', () => {
-            el.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0)';
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0) scale3d(1, 1, 1)';
         });
     });
 }
