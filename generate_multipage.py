@@ -240,13 +240,13 @@ def build_all_pages():
         readiness_badge = s.get('readiness', '24/7 Available')
         img_src = s.get('image', 'service_beds.jpg')
         header_visual = f'''
-        <div class="service-showcase-photo-frame pop-frame" style="height:190px; width:100%; position:relative; overflow:hidden; border-bottom:1.5px solid var(--border-warm); background:#fdf5f3;">
+        <div class="service-showcase-photo-frame" style="height:190px; width:100%; position:relative; overflow:hidden; border-bottom:1.5px solid var(--border-warm); background:#fdf5f3;">
             <img src="{img_src}" alt="{s['title']}" class="service-showcase-img" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.6s ease;" loading="lazy">
             <div class="service-photo-overlay"></div>
-            <div class="service-showcase-badge pop-frame" style="position:absolute; top:12px; left:12px; margin:0; z-index:2;">
+            <div class="service-showcase-badge" style="position:absolute; top:12px; left:12px; margin:0; z-index:2;">
                 <i data-lucide="{s['icon']}" style="width:22px; height:22px;"></i>
             </div>
-            <div class="minimal-interactive" style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:4px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.1); box-shadow:0 4px 12px rgba(0,0,0,0.12); z-index:2;">
+            <div style="position:absolute; bottom:10px; right:12px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:4px 12px; border-radius:12px; border:1px solid rgba(128,0,0,0.1); box-shadow:0 4px 12px rgba(0,0,0,0.12); z-index:2;">
                 {s['tag']}
             </div>
         </div>'''
@@ -327,13 +327,13 @@ def build_all_pages():
         img_src = d.get('image') or 'dept_pediatrics.jpg'
         dept_grid_items += f'''
         <a href="{d['file']}" class="dept-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; overflow:hidden; border-radius:var(--radius-lg); background:var(--bg-surface); border:1.5px solid var(--border-warm); box-shadow:var(--shadow-sm); transition:var(--transition-bounce);">
-            <div class="dept-showcase-header-box pop-frame" style="height:190px; position:relative; overflow:hidden; background:#fff5f2;">
+            <div class="dept-showcase-header-box" style="height:190px; position:relative; overflow:hidden; background:#fff5f2;">
                 <img src="{img_src}" alt="{d['title']}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;">
                 <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.45) 100%);"></div>
-                <div class="pop-frame" style="position:absolute; top:12px; left:12px; width:40px; height:40px; border-radius:12px; background:rgba(255,255,255,0.92); backdrop-filter:blur(6px); color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+                <div style="position:absolute; top:12px; left:12px; width:40px; height:40px; border-radius:12px; background:rgba(255,255,255,0.92); backdrop-filter:blur(6px); color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
                     <i data-lucide="{d['icon']}" style="width:20px; height:20px;"></i>
                 </div>
-                <div class="minimal-interactive" style="position:absolute; bottom:12px; right:12px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:4px 12px; border-radius:14px; box-shadow:0 4px 10px rgba(0,0,0,0.12);">
+                <div style="position:absolute; bottom:12px; right:12px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); font-size:0.75rem; font-weight:700; color:var(--primary-accent); padding:4px 12px; border-radius:14px; box-shadow:0 4px 10px rgba(0,0,0,0.12);">
                     {d['tag']}
                 </div>
             </div>
@@ -446,10 +446,10 @@ def build_all_pages():
         if s.get('image'):
             service_visual_html = f'''
                 <div class="detail-hero-visual">
-                    <div class="detail-arch-frame pop-frame" style="height:380px; border-radius:var(--radius-lg); overflow:hidden; position:relative; box-shadow:0 14px 36px rgba(128,0,0,0.12); border:2px solid var(--border-warm); background:#fff5f2;">
+                    <div class="detail-arch-frame" style="height:380px; border-radius:var(--radius-lg); overflow:hidden; position:relative; box-shadow:0 14px 36px rgba(128,0,0,0.12); border:2px solid var(--border-warm); background:#fff5f2;">
                         <img src="{s['image']}" alt="{s['title']}" style="width:100%; height:100%; object-fit:cover; object-position:center 32%; display:block;">
                         <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.48) 100%);"></div>
-                        <div class="detail-floating-badge pop-frame minimal-interactive" style="position:absolute; bottom:20px; left:20px; right:20px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); padding:0.75rem 1.2rem; border-radius:14px; display:flex; align-items:center; gap:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+                        <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); padding:0.75rem 1.2rem; border-radius:14px; display:flex; align-items:center; gap:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
                             <div class="card-icon-badge" style="width:38px; height:38px; font-size:1rem; margin:0; flex-shrink:0;">
                                 <i data-lucide="{s['icon']}"></i>
                             </div>
@@ -658,10 +658,10 @@ def build_all_pages():
                 </div>
 
                 <div class="detail-hero-visual">
-                    <div class="detail-arch-frame pop-frame" style="height:380px; border-radius:var(--radius-lg); overflow:hidden; position:relative; box-shadow:0 14px 36px rgba(128,0,0,0.12); border:2px solid var(--border-warm); background:#fff5f2;">
+                    <div class="detail-arch-frame" style="height:380px; border-radius:var(--radius-lg); overflow:hidden; position:relative; box-shadow:0 14px 36px rgba(128,0,0,0.12); border:2px solid var(--border-warm); background:#fff5f2;">
                         <img src="{d.get('image', 'dept_pediatrics.jpg')}" alt="{d['title']}" style="width:100%; height:100%; object-fit:cover; display:block;">
                         <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.5) 100%);"></div>
-                        <div class="detail-floating-badge pop-frame minimal-interactive" style="position:absolute; bottom:20px; left:20px; right:20px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); padding:0.75rem 1.2rem; border-radius:14px; display:flex; align-items:center; gap:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+                        <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); padding:0.75rem 1.2rem; border-radius:14px; display:flex; align-items:center; gap:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
                             <div class="card-icon-badge" style="width:38px; height:38px; font-size:1rem; margin:0; flex-shrink:0;">
                                 <i data-lucide="{d['icon']}"></i>
                             </div>
@@ -744,47 +744,15 @@ def build_all_pages():
         is_founder = "Founder" in doc['title']
         is_senior_specialist = doc['id'] in ['dr-guruvelli-pramela', 'dr-g-prameela', 'dr-co-founder-wife'] or "Senior" in doc['title']
         if doc.get('image'):
-            cue_class = ' gold-cue' if is_senior_specialist else ''
-            back_class = ' gold-back' if is_senior_specialist else ''
-            crest_class = ' gold-crest' if is_senior_specialist else ''
-            pill_class = ' gold-pill' if is_senior_specialist else ''
-            icon_name = doc.get('icon', 'award')
             img_or_avatar = f'''
-            <div class="doctor-photo-frame photo-flip-frame pop-frame" tabindex="0" role="button" aria-label="Flip card to view {doc['name']} credentials">
-                <div class="photo-flip-inner">
-                    <div class="photo-flip-front">
-                        <img src="{doc['image']}" alt="{doc['name']}">
-                        <div class="photo-flip-cue{cue_class}">
-                            <i data-lucide="rotate-3d"></i> <span>Hover or Tap to Flip</span>
-                        </div>
-                    </div>
-                    <div class="photo-flip-back{back_class}">
-                        <div class="flip-back-inner">
-                            <div>
-                                <div class="flip-crest-badge{crest_class}">
-                                    <i data-lucide="{icon_name}"></i>
-                                </div>
-                                <h4 class="flip-doctor-name">{doc['name']}</h4>
-                                <div class="flip-doctor-dept">{doc['dept']}</div>
-                                <div class="flip-doctor-qual">{doc['qual']}</div>
-                                <div class="flip-line-divider"></div>
-                                <div class="flip-feature-pill{pill_class}">
-                                    <i data-lucide="award"></i> {doc.get('exp', 'Senior Specialist')}
-                                </div>
-                                <p class="flip-desc-snippet">{doc['desc']}</p>
-                            </div>
-                            <a href="#appointment" class="btn-flip-book" onclick="event.stopPropagation(); openAppointmentModal('{doc['name']}', '{doc['dept']}')">
-                                <i data-lucide="calendar"></i> <span>Book Priority Appointment</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="doctor-photo-frame">
+                <img src="{doc['image']}" alt="{doc['name']}">
             </div>'''
         else:
             icon_name = doc.get('icon', 'stethoscope')
             clean_title = doc['title'].split('(')[0].strip()
             img_or_avatar = f'''
-            <div class="doctor-avatar-header pop-frame minimal-interactive" tabindex="0">
+            <div class="doctor-avatar-header">
                 <div class="doctor-emblem-badge">
                     <i data-lucide="{icon_name}"></i>
                 </div>
