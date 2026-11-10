@@ -423,6 +423,32 @@ def build_all_pages():
                 <strong style="color:var(--text-dark); font-size:0.95rem;">{feat}</strong>
             </div>'''
 
+        # Real Facility Photo Showcase Grid
+        gallery_items = ""
+        for g in s.get('gallery', []):
+            gallery_items += f'''
+            <div class="facility-photo-card">
+                <div class="facility-photo-frame">
+                    <img src="{g['image']}" alt="{g['title']}" class="facility-photo-img" loading="lazy">
+                    <div class="facility-photo-overlay"></div>
+                    <span class="facility-photo-badge"><i data-lucide="shield-check"></i> {g['tag']}</span>
+                </div>
+                <div class="facility-card-body">
+                    <h4 class="facility-card-title">{g['title']}</h4>
+                    <p class="facility-card-desc">{g['desc']}</p>
+                </div>
+            </div>'''
+
+        gallery_section_html = f'''
+        <div class="facility-showcase-section animate-up">
+            <div class="section-eyebrow"><span class="eyebrow-dot"></span> REAL HOSPITAL INFRASTRUCTURE</div>
+            <h2 style="font-family:'Playfair Display', serif; font-size:1.85rem; color:var(--text-dark); margin:0.4rem 0 0.5rem 0;">Hospital Facility <span class="serif-italic">Showcase</span></h2>
+            <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.4rem;">Authentic photography of our medical suites, equipment, and inpatient infrastructure at Srikakulam.</p>
+            <div class="facility-showcase-grid">
+                {gallery_items}
+            </div>
+        </div>''' if gallery_items else ""
+
         # Other services carousel
         other_services_carousel = ""
         for other_id, other_s in SERVICES_DATA.items():
@@ -507,14 +533,14 @@ def build_all_pages():
                     </div>
                     <h1 class="detail-title">{s['title']}</h1>
                     
-                    <!-- Meaning / Explanation -->
-                    <div style="background:var(--bg-cream); border-left:4px solid var(--primary-accent); padding:1.25rem 1.4rem; border-radius:0 12px 12px 0; margin-bottom:1.5rem;">
-                        <strong style="display:block; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.8px; color:var(--primary-accent); margin-bottom:0.35rem;">What This Service Means</strong>
-                        <p style="margin:0; font-size:1.05rem; line-height:1.65; color:var(--text-charcoal);">{s['meaning']}</p>
+                    <!-- Meaning / Explanation Frame -->
+                    <div class="detail-summary-card">
+                        <strong style="display:block; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.8px; color:var(--primary-accent); margin-bottom:0.35rem;">Service Overview</strong>
+                        <p>{s['meaning']}</p>
                     </div>
 
                     <!-- Key Highlights List -->
-                    <ul style="list-style:none; padding:0; margin:0 0 2rem 0;">
+                    <ul style="list-style:none; padding:0; margin:0 0 1.8rem 0;">
                         {highlights_html}
                     </ul>
 
@@ -523,7 +549,7 @@ def build_all_pages():
                             <i data-lucide="calendar"></i> <span>Inquire / Request Service</span>
                         </a>
                         <a href="{HOSPITAL_CONTACT['whatsapp_link']}" target="_blank" class="btn-whatsapp-pill" style="display:inline-flex; align-items:center; gap:6px; padding:0.65rem 1.2rem; background:#25D366; color:#fff; border-radius:30px; font-weight:700; text-decoration:none;">
-                            <i data-lucide="message-circle"></i> <span>WhatsApp: {HOSPITAL_CONTACT['whatsapp_number']}</span>
+                            <i data-lucide="message-circle"></i> <span>WhatsApp Help Desk</span>
                         </a>
                         <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" class="btn-emergency-call" style="text-decoration:none;">
                             <i data-lucide="phone"></i> <span>Call: {HOSPITAL_CONTACT['phone_1']}</span>
@@ -534,26 +560,10 @@ def build_all_pages():
                 {service_visual_html}
             </div>
 
-            <!-- Hospital Facility Standards & 24/7 Readiness (Purely Service & Quality) -->
-            <div class="detail-doctor-spotlight animate-up" style="margin-top:2.5rem;">
-                <div class="detail-doc-img-wrap" style="display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #fdf8f5 0%, #f7ece6 100%);">
-                    <div class="doctor-emblem-badge" style="width:68px; height:68px; margin:0;">
-                        <i data-lucide="{s['icon']}"></i>
-                    </div>
-                </div>
-                <div class="detail-doc-info">
-                    <span class="detail-doc-badge">Hospital Facility Protocol</span>
-                    <h3>24/7 Operational Readiness &amp; Clinical Safety</h3>
-                    <div class="doc-qual">Equipped with Continuous Supervision &amp; Sterile Standards</div>
-                    <p>Maintained under strict hospital hygiene protocols, real-time vital monitoring, and continuous nursing supervision for uninterrupted patient care.</p>
-                    <a href="#appointment" class="btn-primary" onclick="openAppointmentModal('', '{s['title']}')">
-                        <i data-lucide="calendar"></i> <span>Inquire About This Service</span>
-                    </a>
-                </div>
-            </div>
+            {gallery_section_html}
 
-            <!-- Key Facility Highlights -->
-            <div style="margin-top:2rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem;">
+            <!-- Key Facility Standards -->
+            <div style="margin-top:2.5rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1rem;">
                 {features_html}
             </div>
 
@@ -611,6 +621,32 @@ def build_all_pages():
                 </div>
             </a>'''
 
+        # Real Department Photo Showcase Grid
+        dept_gallery_items = ""
+        for g in d.get('gallery', []):
+            dept_gallery_items += f'''
+            <div class="facility-photo-card">
+                <div class="facility-photo-frame">
+                    <img src="{g['image']}" alt="{g['title']}" class="facility-photo-img" loading="lazy">
+                    <div class="facility-photo-overlay"></div>
+                    <span class="facility-photo-badge"><i data-lucide="shield-check"></i> {g['tag']}</span>
+                </div>
+                <div class="facility-card-body">
+                    <h4 class="facility-card-title">{g['title']}</h4>
+                    <p class="facility-card-desc">{g['desc']}</p>
+                </div>
+            </div>'''
+
+        dept_gallery_section_html = f'''
+        <div class="facility-showcase-section animate-up">
+            <div class="section-eyebrow"><span class="eyebrow-dot"></span> ON-SITE CLINICAL INFRASTRUCTURE</div>
+            <h2 style="font-family:'Playfair Display', serif; font-size:1.85rem; color:var(--text-dark); margin:0.4rem 0 0.5rem 0;">Specialized Department <span class="serif-italic">Facilities</span></h2>
+            <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.4rem;">High-precision clinical suites, diagnostic rooms, and surgical operation facilities supporting {d['title']}.</p>
+            <div class="facility-showcase-grid">
+                {dept_gallery_items}
+            </div>
+        </div>''' if dept_gallery_items else ""
+
         dept_page_content = f'''
         {spacer}
         <section class="detail-page-wrapper framed-section animate-up">
@@ -636,14 +672,14 @@ def build_all_pages():
                     </div>
                     <h1 class="detail-title">{d['title']}</h1>
                     
-                    <!-- Meaning / Explanation -->
-                    <div style="background:var(--bg-cream); border-left:4px solid var(--primary-accent); padding:1.25rem 1.4rem; border-radius:0 12px 12px 0; margin-bottom:1.5rem;">
-                        <strong style="display:block; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.8px; color:var(--primary-accent); margin-bottom:0.35rem;">What This Department Means</strong>
-                        <p style="margin:0; font-size:1.05rem; line-height:1.65; color:var(--text-charcoal);">{d['meaning']}</p>
+                    <!-- Meaning / Explanation Frame -->
+                    <div class="detail-summary-card">
+                        <strong style="display:block; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.8px; color:var(--primary-accent); margin-bottom:0.35rem;">Department Overview</strong>
+                        <p>{d['meaning']}</p>
                     </div>
 
                     <!-- Key Highlights List -->
-                    <ul style="list-style:none; padding:0; margin:0 0 2rem 0;">
+                    <ul style="list-style:none; padding:0; margin:0 0 1.8rem 0;">
                         {highlights_html}
                     </ul>
 
@@ -674,44 +710,21 @@ def build_all_pages():
                 </div>
             </div>
 
-            <!-- Clinical Scope & Diagnostic Care (Zero Doctor Names) -->
-            <div style="margin-top:2.5rem;">
-                <div class="section-eyebrow" style="margin-bottom:0.75rem;">
-                    <span class="eyebrow-dot"></span> CLINICAL SCOPE &amp; PROTOCOL
-                </div>
-                <h2 style="font-size:1.8rem; color:var(--text-dark); margin-bottom:1.5rem;">Specialized Care &amp; <span class="serif-italic">Clinical Facilities</span></h2>
-                
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
-                    <div style="background:#ffffff; border:1.5px solid var(--border-warm); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
-                        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-                            <div class="card-icon-badge" style="width:36px; height:36px; margin:0;"><i data-lucide="stethoscope"></i></div>
-                            <h4 style="margin:0; font-size:1.05rem; color:var(--text-dark);">Comprehensive OPD &amp; Inpatient Care</h4>
-                        </div>
-                        <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin:0;">Daily outpatient consultations, accurate diagnostic evaluations, and continuous inpatient monitoring with modern medical technology.</p>
-                    </div>
-                    
-                    <div style="background:#ffffff; border:1.5px solid var(--border-warm); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm);">
-                        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
-                            <div class="card-icon-badge" style="width:36px; height:36px; margin:0;"><i data-lucide="shield-check"></i></div>
-                            <h4 style="margin:0; font-size:1.05rem; color:var(--text-dark);">Sterile Protocols &amp; Safety</h4>
-                        </div>
-                        <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; margin:0;">Sterilized operation suites, advanced diagnostic testing, and evidence-based clinical recovery pathways tailored to patient needs.</p>
-                    </div>
-                </div>
+            {dept_gallery_section_html}
 
-                <div style="margin-top:1.8rem; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); border:1.5px solid rgba(128,0,0,0.15); border-radius:var(--radius-md); padding:1.5rem 1.8rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
-                    <div>
-                        <strong style="display:block; font-size:1.1rem; color:var(--text-dark); margin-bottom:0.25rem;">Need Clinical Guidance for {d['title']}?</strong>
-                        <span style="font-size:0.88rem; color:var(--text-charcoal);">Contact our 24/7 reception desk or chat via WhatsApp for guidance and scheduling.</span>
-                    </div>
-                    <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
-                        <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" class="btn-primary" style="text-decoration:none;">
-                            <i data-lucide="phone"></i> <span>Call Helpline: {HOSPITAL_CONTACT['phone_1']}</span>
-                        </a>
-                        <a href="{HOSPITAL_CONTACT['whatsapp_link']}" target="_blank" class="btn-secondary" style="background:#fff; text-decoration:none;">
-                            <i data-lucide="message-circle" style="color:#25D366;"></i> <span>WhatsApp Desk</span>
-                        </a>
-                    </div>
+            <!-- Quick Clinical Assistance Frame -->
+            <div style="margin-top:2.5rem; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); border:1.5px solid rgba(128,0,0,0.15); border-radius:var(--radius-md); padding:1.5rem 1.8rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
+                <div>
+                    <strong style="display:block; font-size:1.1rem; color:var(--text-dark); margin-bottom:0.25rem;">Need Clinical Consultation for {d['title']}?</strong>
+                    <span style="font-size:0.88rem; color:var(--text-charcoal);">Our 24/7 reception desk is available for immediate OPD booking, emergency admission, and physician inquiry.</span>
+                </div>
+                <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
+                    <a href="tel:{HOSPITAL_CONTACT['phone_1'].replace('-', '')}" class="btn-primary" style="text-decoration:none;">
+                        <i data-lucide="phone"></i> <span>Call Helpline: {HOSPITAL_CONTACT['phone_1']}</span>
+                    </a>
+                    <a href="{HOSPITAL_CONTACT['whatsapp_link']}" target="_blank" class="btn-secondary" style="background:#fff; text-decoration:none;">
+                        <i data-lucide="message-circle" style="color:#25D366;"></i> <span>WhatsApp Desk</span>
+                    </a>
                 </div>
             </div>
 
