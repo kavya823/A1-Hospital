@@ -237,8 +237,8 @@ def build_all_pages():
     # -------------------------------------------------------------
     services_grid_items = ""
     for s_id, s in SERVICES_DATA.items():
-        readiness_badge = s.get('readiness', '24/7 Available')
         img_src = s.get('image', 'service_beds.jpg')
+        desc_text = s.get('short_desc') or s.get('meaning')
         header_visual = f'''
         <div class="service-showcase-photo-frame" style="height:190px; width:100%; position:relative; overflow:hidden; border-bottom:1.5px solid var(--border-warm); background:#fdf5f3;">
             <img src="{img_src}" alt="{s['title']}" class="service-showcase-img" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.6s ease;" loading="lazy">
@@ -254,13 +254,11 @@ def build_all_pages():
         services_grid_items += f'''
         <a href="{s['file']}" class="service-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
             {header_visual}
-            <div class="service-showcase-content">
-                <span class="service-pill-tag">{s['tag']}</span>
-                <h3>{s['title']}</h3>
-                <p>{s['meaning']}</p>
-                <div style="margin-top:auto; padding-top:0.8rem; border-top:1px solid var(--border-warm); display:flex; align-items:center; justify-content:space-between;">
-                    <span style="font-size:0.82rem; color:var(--primary-accent); font-weight:700;"><i data-lucide="shield-check" style="width:14px; vertical-align:middle;"></i> {readiness_badge}</span>
-                    <span class="service-card-cta"><span>Explore Facility</span> <i data-lucide="arrow-right"></i></span>
+            <div class="service-showcase-content" style="padding:1.35rem 1.35rem 1.2rem;">
+                <h3 style="font-size:1.22rem; margin:0 0 0.45rem 0; color:var(--text-dark);">{s['title']}</h3>
+                <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.55; margin:0 0 1rem 0; flex:1;">{desc_text}</p>
+                <div style="margin-top:auto; padding-top:0.8rem; border-top:1px solid var(--border-warm); display:flex; align-items:center; justify-content:flex-end;">
+                    <span class="service-card-cta" style="color:var(--primary-accent); font-weight:700; font-size:0.85rem; display:flex; align-items:center; gap:5px;"><span>Explore Facility</span> <i data-lucide="arrow-right" style="width:15px; height:15px;"></i></span>
                 </div>
             </div>
         </a>'''

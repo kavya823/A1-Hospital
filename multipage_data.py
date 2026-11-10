@@ -475,7 +475,8 @@ SERVICES_DATA = {
         "tag": "Inpatient Accommodation",
         "icon": "bed-double",
         "image": "hospital_single_room.jpg",
-        "meaning": "Over 100 sterile, air-conditioned inpatient beds offering deluxe private suites and semi-private wards equipped with central oxygen and 24/7 dedicated nursing.",
+        "short_desc": "Deluxe private rooms and twin-sharing wards with dedicated nursing.",
+        "meaning": "Deluxe private rooms and twin-sharing wards equipped with central oxygen and round-the-clock nursing supervision.",
         "highlights": [
             "Deluxe AC Single Rooms with Electric Motorized Beds",
             "Clean, Spacious Twin Sharing Wards with Privacy Curtains",
@@ -502,7 +503,7 @@ SERVICES_DATA = {
                 "desc": "Round-the-clock nursing desk for immediate patient attention, monitoring, and medication delivery."
             }
         ],
-        "readiness": "24/7 Admitting Facility",
+        "readiness": "Inpatient Facility",
         "features": [
             "Sterile Air-Conditioned Patient Rooms",
             "Deluxe Private Suites & General Care Units",
@@ -517,9 +518,10 @@ SERVICES_DATA = {
         "tag": "Round-the-Clock Emergency",
         "icon": "clock",
         "image": "hospital_casualty.jpg",
-        "meaning": "Fully equipped 24/7 Casualty & Trauma ward with multi-bed emergency bays, resuscitation stations, and on-duty doctors ready for immediate crisis response.",
+        "short_desc": "Rapid trauma resuscitation, casualty bays, and immediate emergency care.",
+        "meaning": "Fully equipped emergency casualty and trauma bays staffed by critical care doctors for rapid crisis response.",
         "highlights": [
-            "Always Open: 24 Hours a Day, 365 Days a Year",
+            "Immediate Emergency Triage & Rapid Resuscitation Bays",
             "Multi-Bed Casualty Ward with Central Oxygen & Multipara Monitors",
             "Rapid Trauma Resuscitation, Defibrillators & Emergency Crash Carts",
             "Direct Ambulance Ramp Access for Instant Wheelchair & Stretcher Triage"
@@ -538,7 +540,7 @@ SERVICES_DATA = {
                 "desc": "Equipped with transport oxygen, emergency stretcher, and paramedic first-aid kit."
             }
         ],
-        "readiness": "Always Open 24/7",
+        "readiness": "Emergency Services",
         "features": [
             "Immediate Patient Triage & Assessment",
             "Trauma Care & Resuscitation Bays",
@@ -553,7 +555,8 @@ SERVICES_DATA = {
         "tag": "Critical Patient Monitoring",
         "icon": "activity",
         "image": "hospital_nicu.jpg",
-        "meaning": "Specialized intensive care facilities including advanced adult monitoring bays and a dedicated Level-III Neonatal Intensive Care Unit (NICU).",
+        "short_desc": "Level-3 NICU infant warmers and advanced adult intensive monitoring.",
+        "meaning": "Advanced adult intensive care bays and Level-III Neonatal Intensive Care Unit (NICU) with continuous vital monitoring.",
         "highlights": [
             "Dedicated Level-III Neonatal Intensive Care Unit (NICU)",
             "Advanced Infant Radiant Warmers & Phototherapy Units",
@@ -574,7 +577,7 @@ SERVICES_DATA = {
                 "desc": "High-precision digital radiant warmers with integrated phototherapy for neonatal jaundice and temperature control."
             }
         ],
-        "readiness": "24/7 Intensive Monitoring",
+        "readiness": "Critical Care",
         "features": [
             "High-Precision Ventilators & Infusion Pumps",
             "Neonatal Warmers & Phototherapy Units",
@@ -589,7 +592,8 @@ SERVICES_DATA = {
         "tag": "Emergency Patient Transfer",
         "icon": "ambulance",
         "image": "service_ambulance.jpg",
-        "meaning": "Rapid emergency ambulance fleet providing doorstep patient retrieval and inter-hospital transfers across Srikakulam district.",
+        "short_desc": "Rapid doorstep patient retrieval and safe hospital transfer.",
+        "meaning": "Emergency ambulance fleet equipped with transport oxygen and paramedics for rapid patient transfer.",
         "highlights": [
             "24/7 Emergency Dispatch Helpline: 08942-228234",
             "Equipped with Oxygen Cylinders & Hydraulic Stretchers",
@@ -610,7 +614,7 @@ SERVICES_DATA = {
                 "desc": "Direct ramp transfer from ambulance into the hospital's trauma resuscitation bay."
             }
         ],
-        "readiness": "24/7 Rapid Response",
+        "readiness": "Ambulance Dispatch",
         "features": [
             "Continuous Oxygen & Airway Support System",
             "Foldable Hydraulic Stretchers & Wheelchairs",
@@ -625,7 +629,8 @@ SERVICES_DATA = {
         "tag": "In-House Medical Store",
         "icon": "pill",
         "image": "pharmacy.jpg",
-        "meaning": "In-house 24/7 dispensary providing 100% genuine prescribed pharmaceuticals, critical emergency injectables, and surgical consumables.",
+        "short_desc": "100% genuine prescription medications, injectables, and consumables.",
+        "meaning": "In-house hospital dispensary providing genuine medications, critical injectables, and surgical consumables.",
         "highlights": [
             "24/7 In-House Hospital Pharmacy Dispensary",
             "100% Genuine Prescription Medications & Disposables",
@@ -640,7 +645,7 @@ SERVICES_DATA = {
                 "desc": "Full stock of authentic medications, antibiotics, cardiac drugs, and pediatric formulations."
             }
         ],
-        "readiness": "24/7 In-House Availability",
+        "readiness": "In-House Pharmacy",
         "features": [
             "Direct Doctor Prescription Integration",
             "Emergency Resuscitation & Critical Care Drugs",
