@@ -158,15 +158,23 @@ function initHospitalApp() {
         });
     }
 
-    // Highlight active nav link (button should look dark like static way)
+    // Highlight active nav link
     let currentPage = window.location.pathname.split('/').pop();
     if (currentPage === '' || currentPage === '/') currentPage = 'index.html';
     
     const navItems = document.querySelectorAll('.nav-links > li > a:not(.btn-primary)');
     navItems.forEach(link => {
         const href = link.getAttribute('href');
-        if (href && (href === currentPage || href.startsWith(currentPage + '#'))) {
-            link.classList.add('active-link');
+        if (href) {
+            const hrefPage = href.split('#')[0];
+            const hrefHash = href.includes('#') ? href.split('#')[1] : '';
+            
+            // Only highlight exact page matches, or active hash if explicitly navigated
+            if (href === currentPage) {
+                link.classList.add('active-link');
+            } else if (hrefHash && window.location.hash === '#' + hrefHash) {
+                link.classList.add('active-link');
+            }
         }
     });
 
