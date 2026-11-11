@@ -208,7 +208,7 @@ DEPARTMENTS_DATA = {
         "tag": "Gynecology OT",
         "icon": "heart-pulse",
         "image": "hospital_gynecology_ot.jpg",
-        "short_desc": "Gynecology OT, Labour Room, IVF Theatre & Area, and comprehensive women's healthcare.",
+        "short_desc": "Gynecology OT, Labour Room, IVF Theatre & Area, and Gynecologist Consultation Chamber.",
         "meaning": "Comprehensive women's healthcare providing safe deliveries, high-risk pregnancy management, advanced IVF embryology, and minimally invasive laparoscopy.",
         "highlights": [
             "Dedicated Gynecology OT for Laparoscopic Surgery",
@@ -280,10 +280,10 @@ DEPARTMENTS_DATA = {
                 "desc": "Laminar airflow operation theatre equipped with real-time fluoroscopic C-Arm imaging."
             },
             {
-                "image": "hospital_single_room.jpg",
-                "title": "Single Room",
-                "tag": "Single Room",
-                "desc": "Ergonomic inpatient private room designed for rapid post-operative orthopedic recovery."
+                "image": "dept_orthopedics.jpg",
+                "title": "Orthopedic & Joint Care Suite",
+                "tag": "Joint Care",
+                "desc": "Specialized clinic for arthritis evaluation, fracture trauma management, and post-op care."
             }
         ],
         "doctors": [
@@ -320,14 +320,8 @@ DEPARTMENTS_DATA = {
             {
                 "image": "dept_generalmedicine.jpg",
                 "title": "Physician Consultation Suite",
-                "tag": "Consultation",
+                "tag": "Physician Care",
                 "desc": "Comprehensive clinical evaluations and personalized care for adult fevers, diabetes, and hypertension."
-            },
-            {
-                "image": "hospital_single_room.jpg",
-                "title": "Single Room Inpatient Care",
-                "tag": "Inpatient",
-                "desc": "Deluxe private room with continuous physician supervision and bedside nursing."
             }
         ],
         "doctors": [
@@ -381,29 +375,23 @@ DEPARTMENTS_DATA = {
         "id": "nephrology",
         "file": "department-nephrology.html",
         "title": "Nephrology (Kidney Care)",
-        "tag": "Nursing Station",
+        "tag": "Kidney Care",
         "icon": "filter",
-        "image": "hospital_nursing_station.jpg",
-        "short_desc": "Specialized kidney health, chronic renal disease care, and 24/7 Nursing Station monitoring.",
+        "image": "dept_nephrology.jpg",
+        "short_desc": "Specialized kidney health, chronic renal disease care, dialysis guidance, and fluid management.",
         "meaning": "Specialized renal healthcare providing diagnosis and medical management for chronic kidney disease, diabetic nephropathy, and fluid electrolyte balance.",
         "highlights": [
             "Chronic Kidney Disease Management & Follow-up",
             "Diabetic Kidney Disease Prevention & Care",
             "Dialysis Guidance & Fluid Balance Optimization",
-            "24/7 Floor Nursing Station Clinical Supervision"
+            "Continuous Physician & Clinical Supervision"
         ],
         "gallery": [
             {
-                "image": "hospital_nursing_station.jpg",
-                "title": "Nursing Station",
-                "tag": "Nursing Station",
-                "desc": "Continuous floor nursing monitoring for renal fluid balance, vitals, and medication administration."
-            },
-            {
-                "image": "hospital_sharing_room.jpg",
-                "title": "Sharing Room",
-                "tag": "Sharing Room",
-                "desc": "Spacious inpatient room with antibacterial privacy curtains and bedside lockers."
+                "image": "dept_nephrology.jpg",
+                "title": "Nephrology & Renal Care Suite",
+                "tag": "Kidney Care",
+                "desc": "Specialized clinical consultations for kidney function, electrolyte monitoring, and dialysis guidance."
             }
         ],
         "doctors": [
@@ -419,10 +407,10 @@ DEPARTMENTS_DATA = {
         "id": "urology",
         "file": "department-urology.html",
         "title": "Urology & Stone Care",
-        "tag": "Septic OT",
+        "tag": "Urology Care",
         "icon": "shield-plus",
-        "image": "hospital_septic_ot.jpg",
-        "short_desc": "Septic OT and Modular Theatre for laser stone fragmentation and endourology.",
+        "image": "dept_urology.jpg",
+        "short_desc": "Laser kidney stone fragmentation, prostate wellness, and advanced endourology care.",
         "meaning": "Advanced medical and surgical solutions for kidney stones, prostate enlargement, and urinary tract disorders using minimally invasive endoscopy.",
         "highlights": [
             "Endoscopic Kidney & Bladder Stone Fragmentation",
@@ -432,16 +420,16 @@ DEPARTMENTS_DATA = {
         ],
         "gallery": [
             {
-                "image": "hospital_septic_ot.jpg",
-                "title": "Septic OT",
-                "tag": "Septic OT",
-                "desc": "Sterile procedure suite equipped for endoscopic stone fragmentation, cystoscopy, and stenting."
+                "image": "dept_urology.jpg",
+                "title": "Urology & Stone Care Suite",
+                "tag": "Urology Care",
+                "desc": "Specialized evaluation and treatment for kidney stones, prostate issues, and urinary conditions."
             },
             {
-                "image": "hospital_modular_ot.jpg",
-                "title": "Modular Theatre",
-                "tag": "Modular Theatre",
-                "desc": "Ultra-clean laminar flow operating theatre for complex reconstructive urology."
+                "image": "hospital_septic_ot.jpg",
+                "title": "Septic OT / Endourology Suite",
+                "tag": "Endourology",
+                "desc": "Sterile procedure suite equipped for endoscopic stone fragmentation, cystoscopy, and stenting."
             }
         ],
         "doctors": [
@@ -457,10 +445,10 @@ DEPARTMENTS_DATA = {
         "id": "ophthalmology",
         "file": "department-ophthalmology.html",
         "title": "Ophthalmology (Eye Care)",
-        "tag": "Gynecologist Chamber",
+        "tag": "Eye Care",
         "icon": "eye",
-        "image": "hospital_gynec_chamber.jpg",
-        "short_desc": "Specialist consultation chamber evaluations for eyesight, cataract, and glaucoma care.",
+        "image": "dept_ophthalmology.jpg",
+        "short_desc": "Refraction testing, cataract assessments, glaucoma checks, and comprehensive eye health.",
         "meaning": "Comprehensive vision testing, cataract assessments, glaucoma checks, and targeted medical therapies for clear, healthy vision.",
         "highlights": [
             "Refraction & Complete Eyesight Evaluations",
@@ -470,10 +458,10 @@ DEPARTMENTS_DATA = {
         ],
         "gallery": [
             {
-                "image": "hospital_gynec_chamber.jpg",
-                "title": "Gynecologist Chamber / Specialist Suite",
-                "tag": "Consultation Chamber",
-                "desc": "Quiet, private consultation suite equipped for thorough clinical eye examinations and vision checks."
+                "image": "dept_ophthalmology.jpg",
+                "title": "Ophthalmology & Eye Care Suite",
+                "tag": "Eye Care",
+                "desc": "Dedicated consultation suite equipped for thorough clinical eye examinations and vision checks."
             }
         ],
         "doctors": [
@@ -489,29 +477,23 @@ DEPARTMENTS_DATA = {
         "id": "oncology",
         "file": "department-oncology.html",
         "title": "Oncology (Cancer Care)",
-        "tag": "Single Room",
+        "tag": "Cancer Care",
         "icon": "crosshair",
-        "image": "hospital_single_room.jpg",
-        "short_desc": "Early cancer screenings, radiation therapy planning, and calm Single Room recovery.",
+        "image": "dept_oncology.jpg",
+        "short_desc": "Early cancer screenings, clinical reviews, and evidence-based radiation therapy planning.",
         "meaning": "Compassionate cancer evaluations providing early detection screenings, clinical oncology consultations, and radiation therapy planning.",
         "highlights": [
             "Clinical Oncology Reviews & Early Cancer Screening",
             "Evidence-Based Radiation Oncology Consultations",
             "Personalized Multi-Disciplinary Tumor Care Plans",
-            "Compassionate Single Room Inpatient Recovery"
+            "Compassionate Inpatient Recovery & Guidance"
         ],
         "gallery": [
             {
-                "image": "hospital_single_room.jpg",
-                "title": "Single Room",
-                "tag": "Single Room",
-                "desc": "Air-conditioned private room providing a tranquil, sterile setting for supportive oncology care."
-            },
-            {
-                "image": "hospital_nursing_station.jpg",
-                "title": "Nursing Station",
-                "tag": "Nursing Station",
-                "desc": "24/7 nursing station delivering compassionate bedside medication and patient monitoring."
+                "image": "dept_oncology.jpg",
+                "title": "Clinical Oncology Suite",
+                "tag": "Cancer Care",
+                "desc": "Quiet, compassionate consultation suite for cancer evaluations, tumor boards, and treatment planning."
             }
         ],
         "doctors": [
