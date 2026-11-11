@@ -149,35 +149,35 @@ DOCTORS_DATA = [
     }
 ]
 
-# The Real Clinical Departments Matching the Doctors (Crisp concise summaries & verified facility photography)
+# The Real Clinical Departments Matching the Doctors (Exact Photo Names & Verified Facility Photography)
 DEPARTMENTS_DATA = {
     "pediatrics": {
         "id": "pediatrics",
         "file": "department-pediatrics.html",
         "title": "Pediatrics & Child Health",
-        "tag": "Children & Newborn Care",
+        "tag": "NICU",
         "icon": "baby",
-        "image": "hospital_neonatal_warmers.jpg",
-        "short_desc": "Specialized infant warmers, Level-III NICU, child surgeries, and routine vaccinations.",
+        "image": "hospital_nicu.jpg",
+        "short_desc": "Sterile Level-III NICU, digital radiant warmers, child surgeries, and routine vaccinations.",
         "meaning": "Specialized infant, child, and adolescent healthcare offering 24/7 Level-III NICU care, routine vaccinations, and emergency pediatric surgery.",
         "highlights": [
+            "Sterile Level-III Neonatal ICU (NICU)",
             "Digital Radiant Warmers & Phototherapy Units",
-            "Level-III Sterile Neonatal ICU (NICU)",
             "Complete Child Immunization Schedules",
             "Specialized Pediatric Surgical Care"
         ],
         "gallery": [
             {
-                "image": "hospital_neonatal_warmers.jpg",
-                "title": "Infant Radiant Warmers & Incubators",
-                "tag": "Neonatal Care",
-                "desc": "Advanced temperature-regulated radiant warmers with vital monitors and phototherapy."
+                "image": "hospital_nicu.jpg",
+                "title": "NICU",
+                "tag": "NICU",
+                "desc": "Sterile high-dependency unit equipped for premature and critically ill newborns."
             },
             {
-                "image": "hospital_nicu.jpg",
-                "title": "Level-III Neonatal ICU (NICU)",
-                "tag": "Critical Care",
-                "desc": "Sterile high-dependency unit equipped for premature and critically ill newborns."
+                "image": "hospital_neonatal_warmers.jpg",
+                "title": "Neonatal Radiant Warmers",
+                "tag": "Warmers",
+                "desc": "Advanced temperature-regulated radiant warmers with vital monitors and phototherapy."
             }
         ],
         "doctors": [
@@ -205,47 +205,47 @@ DEPARTMENTS_DATA = {
         "id": "obstetrics",
         "file": "department-obstetrics.html",
         "title": "Obstetrics, Gynaecology & IVF Clinic",
-        "tag": "Women's Health & Fertility",
+        "tag": "Gynecology OT",
         "icon": "heart-pulse",
         "image": "hospital_gynecology_ot.jpg",
-        "short_desc": "Painless deliveries, laparoscopy theatre, advanced IVF embryology lab, and maternity care.",
+        "short_desc": "Gynecology OT, Labour Room, IVF Theatre & Area, and comprehensive women's healthcare.",
         "meaning": "Comprehensive women's healthcare providing safe deliveries, high-risk pregnancy management, advanced IVF embryology, and minimally invasive laparoscopy.",
         "highlights": [
-            "Modern Labour & Painless Delivery Suite",
-            "Dedicated Gynaecology & Laparoscopy OT",
-            "Advanced IVF & Embryology Cleanroom Lab",
-            "High-Risk Pregnancy & Antenatal Support"
+            "Dedicated Gynecology OT for Laparoscopic Surgery",
+            "Modern Labour Room for Painless Deliveries",
+            "Dedicated IVF Theatre for Embryo Transfers",
+            "Sterile IVF Area & Cleanroom Embryology Lab"
         ],
         "gallery": [
             {
                 "image": "hospital_gynecology_ot.jpg",
-                "title": "Gynecology & Laparoscopy OT",
-                "tag": "Advanced Surgery",
+                "title": "Gynecology OT",
+                "tag": "Gynecology OT",
                 "desc": "Equipped with high-definition laparoscopy towers, anesthesia stations, and LED surgical lighting."
             },
             {
                 "image": "hospital_labour_room.jpg",
-                "title": "Modern Labour & Delivery Suite",
-                "tag": "Maternity",
+                "title": "Labour Room",
+                "tag": "Labour Room",
                 "desc": "Comfortable birthing bed with continuous fetal Doppler monitors and newborn resuscitation station."
             },
             {
-                "image": "hospital_ivf_lab.jpg",
-                "title": "Advanced IVF & Embryology Lab",
-                "tag": "Fertility Care",
-                "desc": "Sterile cleanroom with micromanipulator ICSI workstation, CO2 incubators, and stereo microscopes."
-            },
-            {
                 "image": "hospital_ivf_theatre.jpg",
-                "title": "IVF Procedure Suite",
-                "tag": "Reproductive Suite",
+                "title": "IVF Theatre",
+                "tag": "IVF Theatre",
                 "desc": "Dedicated sterile procedure theatre for egg retrieval, embryo transfers, and fertility interventions."
             },
             {
+                "image": "hospital_ivf_lab.jpg",
+                "title": "IVF Area",
+                "tag": "IVF Area",
+                "desc": "Sterile cleanroom with micromanipulator ICSI workstation, CO2 incubators, and stereo microscopes."
+            },
+            {
                 "image": "hospital_gynec_chamber.jpg",
-                "title": "Executive Consultation Chamber",
-                "tag": "OPD Suite",
-                "desc": "Private consultation suite for senior gynaecologist Dr. Guruvelli Pramela."
+                "title": "Gynecologist Chamber",
+                "tag": "Gynecologist Chamber",
+                "desc": "Executive consultation chamber for senior gynaecologist Dr. Guruvelli Pramela."
             }
         ],
         "doctors": [
@@ -261,10 +261,10 @@ DEPARTMENTS_DATA = {
         "id": "orthopedics",
         "file": "department-orthopedics.html",
         "title": "Orthopedics & Joint Surgery",
-        "tag": "Bone, Joint & Spine Care",
+        "tag": "Orthopedic OT",
         "icon": "bone",
         "image": "hospital_ortho_ot.jpg",
-        "short_desc": "C-Arm guided fracture surgeries, joint replacements, and sports injury rehabilitation.",
+        "short_desc": "Dedicated Orthopedic OT with Allengers C-Arm for fracture fixation and joint surgery.",
         "meaning": "Expert orthopedic surgical care for complex fractures, joint replacements, arthroscopic sports injuries, and spine rehabilitation.",
         "highlights": [
             "Orthopedic OT with Allengers High-Resolution C-Arm",
@@ -275,15 +275,15 @@ DEPARTMENTS_DATA = {
         "gallery": [
             {
                 "image": "hospital_ortho_ot.jpg",
-                "title": "Dedicated Orthopedic OT with C-Arm",
-                "tag": "Surgical OT",
+                "title": "Orthopedic OT",
+                "tag": "Orthopedic OT",
                 "desc": "Laminar airflow operation theatre equipped with real-time fluoroscopic C-Arm imaging."
             },
             {
                 "image": "hospital_single_room.jpg",
-                "title": "Comfortable Post-Op Recovery",
-                "tag": "Inpatient Wards",
-                "desc": "Ergonomic inpatient rooms designed for rapid post-operative orthopedic recovery and mobility."
+                "title": "Single Room",
+                "tag": "Single Room",
+                "desc": "Ergonomic inpatient private room designed for rapid post-operative orthopedic recovery."
             }
         ],
         "doctors": [
@@ -305,28 +305,28 @@ DEPARTMENTS_DATA = {
         "id": "generalmedicine",
         "file": "department-generalmedicine.html",
         "title": "General Medicine",
-        "tag": "Adult Physician & Internal Care",
+        "tag": "Waiting Area",
         "icon": "stethoscope",
         "image": "hospital_waiting_area.jpg",
-        "short_desc": "Adult physician evaluations for diabetes, hypertension, acute fevers, and inpatient supervision.",
+        "short_desc": "Adult physician evaluations for fevers, BP, diabetes, and inpatient care in Single Rooms.",
         "meaning": "Comprehensive diagnosis and continuous inpatient medical care for diabetes, hypertension, acute fevers, and multi-system illnesses.",
         "highlights": [
             "Comprehensive Outpatient & Inpatient Evaluations",
-            "Diabetes, Blood Pressure & Lifestyle Disease Control",
+            "Spacious Air-Conditioned Waiting Area & OPD Desks",
             "24/7 Acute Seasonal Fever & Infection Supervision",
-            "Preventive Health Checkups & Systemic Wellness"
+            "Deluxe Single Room Inpatient Medical Supervision"
         ],
         "gallery": [
             {
                 "image": "hospital_waiting_area.jpg",
-                "title": "Spacious Patient Reception & Waiting Lounge",
-                "tag": "Hospital Amenity",
+                "title": "Waiting Area",
+                "tag": "Waiting Area",
                 "desc": "Air-conditioned, comfortable waiting hall with digital queue systems and amenities."
             },
             {
                 "image": "hospital_single_room.jpg",
-                "title": "Deluxe Inpatient Medical Care",
-                "tag": "Inpatient Ward",
+                "title": "Single Room",
+                "tag": "Single Room",
                 "desc": "Private rooms with continuous physician supervision and bedside nursing."
             }
         ],
@@ -343,28 +343,28 @@ DEPARTMENTS_DATA = {
         "id": "generalsurgery",
         "file": "department-generalsurgery.html",
         "title": "General & Laparoscopic Surgery",
-        "tag": "Operative & Surgical Treatments",
+        "tag": "Modular Theatre",
         "icon": "scissors",
         "image": "hospital_modular_ot.jpg",
-        "short_desc": "Modular laminar flow OT for laparoscopic hernia, appendix, gallbladder, and trauma surgeries.",
+        "short_desc": "Modular Theatre and Septic OT for laparoscopic hernia, appendix, and acute surgeries.",
         "meaning": "Advanced laparoscopic and open surgical interventions for hernia, gallbladder stones, appendectomy, piles, and acute surgical emergencies.",
         "highlights": [
-            "Ultra-Modern Modular OT with Laminar Air Flow",
-            "Dedicated Septic & Minor Procedure Theatre",
+            "Ultra-Modern Modular Theatre with Laminar Air Flow",
+            "Dedicated Septic OT for Clean & Contaminated Cases",
             "Advanced Laparoscopic (Keyhole) Abdominal Surgery",
             "Rapid Post-Surgical Healing Protocols & Clean Wards"
         ],
         "gallery": [
             {
                 "image": "hospital_modular_ot.jpg",
-                "title": "Modular Operation Theatre",
-                "tag": "Major OT",
+                "title": "Modular Theatre",
+                "tag": "Modular Theatre",
                 "desc": "Laminar airflow sterile environment with ceiling pendants and high-intensity LED surgical lights."
             },
             {
                 "image": "hospital_septic_ot.jpg",
-                "title": "Dedicated Septic & Minor OT",
-                "tag": "Procedure Suite",
+                "title": "Septic OT",
+                "tag": "Septic OT",
                 "desc": "Independent operation theatre dedicated to minor procedures, abscess management, and emergency cleanups."
             }
         ],
@@ -381,29 +381,29 @@ DEPARTMENTS_DATA = {
         "id": "nephrology",
         "file": "department-nephrology.html",
         "title": "Nephrology (Kidney Care)",
-        "tag": "Kidney & Renal Health",
+        "tag": "Nursing Station",
         "icon": "filter",
         "image": "hospital_nursing_station.jpg",
-        "short_desc": "Specialized kidney health, chronic renal disease care, diabetic nephropathy, and fluid balance.",
+        "short_desc": "Specialized kidney health, chronic renal disease care, and 24/7 Nursing Station monitoring.",
         "meaning": "Specialized renal healthcare providing diagnosis and medical management for chronic kidney disease, diabetic nephropathy, and fluid electrolyte balance.",
         "highlights": [
             "Chronic Kidney Disease Management & Follow-up",
             "Diabetic Kidney Disease Prevention & Care",
             "Dialysis Guidance & Fluid Balance Optimization",
-            "24/7 Monitored Inpatient Renal Protocol"
+            "24/7 Floor Nursing Station Clinical Supervision"
         ],
         "gallery": [
             {
                 "image": "hospital_nursing_station.jpg",
-                "title": "24/7 Renal Care Floor Station",
+                "title": "Nursing Station",
                 "tag": "Nursing Station",
                 "desc": "Continuous floor nursing monitoring for renal fluid balance, vitals, and medication administration."
             },
             {
-                "image": "hospital_single_room.jpg",
-                "title": "Monitored Inpatient Room",
-                "tag": "Inpatient Care",
-                "desc": "Quiet, comfortable private inpatient room with continuous clinical monitoring."
+                "image": "hospital_sharing_room.jpg",
+                "title": "Sharing Room",
+                "tag": "Sharing Room",
+                "desc": "Spacious inpatient room with antibacterial privacy curtains and bedside lockers."
             }
         ],
         "doctors": [
@@ -419,28 +419,28 @@ DEPARTMENTS_DATA = {
         "id": "urology",
         "file": "department-urology.html",
         "title": "Urology & Stone Care",
-        "tag": "Urinary & Stone Treatments",
+        "tag": "Septic OT",
         "icon": "shield-plus",
         "image": "hospital_septic_ot.jpg",
-        "short_desc": "Minimally invasive laser stone fragmentation, prostate care, and day-care endourology.",
+        "short_desc": "Septic OT and Modular Theatre for laser stone fragmentation and endourology.",
         "meaning": "Advanced medical and surgical solutions for kidney stones, prostate enlargement, and urinary tract disorders using minimally invasive endoscopy.",
         "highlights": [
             "Endoscopic Kidney & Bladder Stone Fragmentation",
             "Prostate Enlargement (BPH) Diagnostic & Medical Care",
             "Recurrent Urinary Tract Infection (UTI) Treatment",
-            "Dedicated Procedure Theatre for Endourology"
+            "Dedicated Septic OT for Endourology Procedures"
         ],
         "gallery": [
             {
                 "image": "hospital_septic_ot.jpg",
-                "title": "Endourology & Minor Procedure Theatre",
-                "tag": "Procedure OT",
+                "title": "Septic OT",
+                "tag": "Septic OT",
                 "desc": "Sterile procedure suite equipped for endoscopic stone fragmentation, cystoscopy, and stenting."
             },
             {
                 "image": "hospital_modular_ot.jpg",
-                "title": "Advanced Surgical Modular OT",
-                "tag": "Major OT",
+                "title": "Modular Theatre",
+                "tag": "Modular Theatre",
                 "desc": "Ultra-clean laminar flow operating theatre for complex reconstructive urology."
             }
         ],
@@ -457,10 +457,10 @@ DEPARTMENTS_DATA = {
         "id": "ophthalmology",
         "file": "department-ophthalmology.html",
         "title": "Ophthalmology (Eye Care)",
-        "tag": "Vision & Optical Care",
+        "tag": "Gynecologist Chamber",
         "icon": "eye",
         "image": "hospital_gynec_chamber.jpg",
-        "short_desc": "Complete vision testing, cataract assessments, glaucoma checks, and eye health therapies.",
+        "short_desc": "Specialist consultation chamber evaluations for eyesight, cataract, and glaucoma care.",
         "meaning": "Comprehensive vision testing, cataract assessments, glaucoma checks, and targeted medical therapies for clear, healthy vision.",
         "highlights": [
             "Refraction & Complete Eyesight Evaluations",
@@ -471,8 +471,8 @@ DEPARTMENTS_DATA = {
         "gallery": [
             {
                 "image": "hospital_gynec_chamber.jpg",
-                "title": "Specialist Consultation Chamber",
-                "tag": "Clinical Suite",
+                "title": "Gynecologist Chamber / Specialist Suite",
+                "tag": "Consultation Chamber",
                 "desc": "Quiet, private consultation suite equipped for thorough clinical eye examinations and vision checks."
             }
         ],
@@ -489,28 +489,28 @@ DEPARTMENTS_DATA = {
         "id": "oncology",
         "file": "department-oncology.html",
         "title": "Oncology (Cancer Care)",
-        "tag": "Radiation & Clinical Oncology",
+        "tag": "Single Room",
         "icon": "crosshair",
         "image": "hospital_single_room.jpg",
-        "short_desc": "Early cancer screenings, evidence-based radiation planning, and compassionate support.",
+        "short_desc": "Early cancer screenings, radiation therapy planning, and calm Single Room recovery.",
         "meaning": "Compassionate cancer evaluations providing early detection screenings, clinical oncology consultations, and radiation therapy planning.",
         "highlights": [
             "Clinical Oncology Reviews & Early Cancer Screening",
             "Evidence-Based Radiation Oncology Consultations",
             "Personalized Multi-Disciplinary Tumor Care Plans",
-            "Compassionate Palliative & Supportive Inpatient Care"
+            "Compassionate Single Room Inpatient Recovery"
         ],
         "gallery": [
             {
                 "image": "hospital_single_room.jpg",
-                "title": "Comfort Inpatient Recovery Suite",
-                "tag": "Private Suite",
+                "title": "Single Room",
+                "tag": "Single Room",
                 "desc": "Air-conditioned private room providing a tranquil, sterile setting for supportive oncology care."
             },
             {
                 "image": "hospital_nursing_station.jpg",
-                "title": "Dedicated Floor Nursing Supervision",
-                "tag": "Nursing Desk",
+                "title": "Nursing Station",
+                "tag": "Nursing Station",
                 "desc": "24/7 nursing station delivering compassionate bedside medication and patient monitoring."
             }
         ],
@@ -525,99 +525,99 @@ DEPARTMENTS_DATA = {
     }
 }
 
-# The 5 Core Real Hospital Services (Updated with Verified Hospital Photography)
+# The Core Real Hospital Services (Exact Photo Names & Verified Hospital Photography)
 SERVICES_DATA = {
     "beds": {
         "id": "beds",
         "file": "service-beds.html",
-        "title": "100+ Inpatient Beds",
-        "tag": "Inpatient Accommodation",
+        "title": "Single & Sharing Rooms",
+        "tag": "Single & Sharing Rooms",
         "icon": "bed-double",
         "image": "hospital_single_room.jpg",
-        "short_desc": "Deluxe private suites and twin-sharing wards with dedicated nursing.",
-        "meaning": "Deluxe private rooms and twin-sharing wards equipped with central oxygen and round-the-clock nursing supervision.",
+        "short_desc": "Deluxe Single Rooms and spacious Sharing Rooms with 24/7 Nursing Station supervision.",
+        "meaning": "Deluxe private Single Rooms and comfortable Sharing Rooms equipped with central oxygen and round-the-clock Nursing Station supervision.",
         "highlights": [
-            "Deluxe AC Single Rooms with Electric Motorized Beds",
-            "Clean, Spacious Twin Sharing Wards with Privacy Curtains",
-            "24/7 Dedicated Floor Nursing Station with Rapid Call Bells",
+            "Deluxe AC Single Rooms with Motorized Electric Beds",
+            "Spacious Sharing Rooms with Antibacterial Privacy Curtains",
+            "24/7 Floor Nursing Station with Emergency Call Systems",
             "Central Medical Gas, Oxygen Lines & Emergency Power Backup"
         ],
         "gallery": [
             {
                 "image": "hospital_single_room.jpg",
-                "title": "Deluxe AC Single Room",
-                "tag": "Private Room",
+                "title": "Single Room",
+                "tag": "Single Room",
                 "desc": "Air-conditioned private room with motorized bed, en-suite washroom, handwash sink, and attendant setup."
             },
             {
                 "image": "hospital_sharing_room.jpg",
-                "title": "Twin Sharing Inpatient Room",
-                "tag": "Semi-Private",
+                "title": "Sharing Room",
+                "tag": "Sharing Room",
                 "desc": "Spacious room with antibacterial privacy curtains, bedside lockers, and attendant seating."
             },
             {
                 "image": "hospital_nursing_station.jpg",
-                "title": "24/7 Floor Nursing Station",
-                "tag": "Nursing Care",
+                "title": "Nursing Station",
+                "tag": "Nursing Station",
                 "desc": "Round-the-clock nursing desk for immediate patient attention, monitoring, and medication delivery."
             }
         ],
         "readiness": "Inpatient Facility",
         "features": [
-            "Sterile Air-Conditioned Patient Rooms",
-            "Deluxe Private Suites & General Care Units",
-            "Round-the-Clock Dedicated Nursing Staff",
+            "Single Rooms with Motorized Beds",
+            "Clean Sharing Rooms with Privacy Curtains",
+            "24/7 Dedicated Nursing Station",
             "Immediate Inpatient Medical Attention"
         ]
     },
     "emergency": {
         "id": "emergency",
         "file": "service-emergency.html",
-        "title": "24/7 Casualty & Emergency",
-        "tag": "Round-the-Clock Emergency",
+        "title": "Casualty (24/7)",
+        "tag": "Casualty",
         "icon": "clock",
         "image": "hospital_casualty.jpg",
-        "short_desc": "Rapid trauma resuscitation, casualty bays, and immediate emergency care.",
-        "meaning": "Fully equipped emergency casualty and trauma bays staffed by critical care doctors for rapid crisis response.",
+        "short_desc": "24/7 Casualty with emergency trauma resuscitation bays, monitors, and critical care doctors.",
+        "meaning": "Fully equipped 24/7 Casualty and trauma resuscitation bays staffed by critical care doctors for rapid crisis response.",
         "highlights": [
-            "Immediate Emergency Triage & Rapid Resuscitation Bays",
-            "Multi-Bed Casualty Ward with Central Oxygen & Multipara Monitors",
-            "Rapid Trauma Resuscitation, Defibrillators & Emergency Crash Carts",
-            "Direct Ambulance Ramp Access for Instant Wheelchair & Stretcher Triage"
+            "Immediate Emergency Triage & Casualty Resuscitation Bays",
+            "Multi-Bed Casualty with Central Oxygen & Multipara Monitors",
+            "Rapid Trauma Resuscitation, Defibrillators & Crash Carts",
+            "Direct Ambulance Ramp Access for Stretcher Triage"
         ],
         "gallery": [
             {
                 "image": "hospital_casualty.jpg",
-                "title": "24/7 Casualty & Trauma Ward",
-                "tag": "Emergency Bays",
+                "title": "Casualty",
+                "tag": "Casualty",
                 "desc": "Spacious casualty with multi-parameter cardiac monitors, oxygen ports, and emergency treatment beds."
             },
             {
                 "image": "service_ambulance.jpg",
-                "title": "Emergency Ambulance Service",
-                "tag": "Rapid Retrieval",
+                "title": "24/7 Ambulance",
+                "tag": "Ambulance",
                 "desc": "Equipped with transport oxygen, emergency stretcher, and paramedic first-aid kit."
             }
         ],
         "readiness": "Emergency Services",
         "features": [
-            "Immediate Patient Triage & Assessment",
+            "Immediate Patient Triage in Casualty",
             "Trauma Care & Resuscitation Bays",
-            "Advanced Multi-Parameter Vital Monitoring",
-            "24/7 On-Duty Critical Care Medical Staff"
+            "Advanced Multipara Vital Monitoring",
+            "24/7 Critical Care Medical Staff"
         ]
     },
     "icu": {
         "id": "icu",
         "file": "service-icu.html",
-        "title": "Intensive Care (ICU & NICU)",
-        "tag": "Critical Patient Monitoring",
+        "title": "NICU (Neonatal ICU)",
+        "tag": "NICU",
         "icon": "activity",
         "image": "hospital_nicu.jpg",
-        "short_desc": "Level-3 NICU infant warmers and advanced adult intensive monitoring.",
-        "meaning": "Advanced adult intensive care bays and Level-III Neonatal Intensive Care Unit (NICU) with continuous vital monitoring.",
+        "short_desc": "Sterile Level-III NICU with digital radiant warmers, incubators, and intensive monitoring.",
+        "meaning": "Sterile Level-III Neonatal Intensive Care Unit (NICU) with digital radiant warmers, mechanical ventilators, and continuous vital monitoring.",
         "highlights": [
-            "Dedicated Level-III Neonatal Intensive Care Unit (NICU)",
+            "Dedicated Sterile Level-III Neonatal ICU (NICU)",
             "Advanced Infant Radiant Warmers & Phototherapy Units",
             "Mechanical Ventilators, Infusion Pumps & Central Oxygen",
             "1:1 and 1:2 Critical Care Nurse-to-Patient Supervision"
@@ -625,22 +625,22 @@ SERVICES_DATA = {
         "gallery": [
             {
                 "image": "hospital_nicu.jpg",
-                "title": "Neonatal Intensive Care Unit (NICU)",
-                "tag": "NICU Suite",
+                "title": "NICU",
+                "tag": "NICU",
                 "desc": "Sterile neonatal unit with observation corridors, infusion pumps, and critical monitoring."
             },
             {
                 "image": "hospital_neonatal_warmers.jpg",
-                "title": "Infant Radiant Warmers & Incubators",
+                "title": "Neonatal Radiant Warmers",
                 "tag": "Warmers",
-                "desc": "High-precision digital radiant warmers with integrated phototherapy for neonatal jaundice and temperature control."
+                "desc": "High-precision digital radiant warmers with integrated phototherapy for neonatal care."
             }
         ],
         "readiness": "Critical Care",
         "features": [
-            "High-Precision Ventilators & Infusion Pumps",
-            "Neonatal Warmers & Phototherapy Units",
-            "Continuous Multi-Channel ECG & Blood Gas Tracking",
+            "Level-III Sterile NICU Environment",
+            "Neonatal Radiant Warmers & Incubators",
+            "Continuous Multi-Channel Vital Tracking",
             "Strict Infection Control & Sterile Protocols"
         ]
     },
@@ -648,29 +648,29 @@ SERVICES_DATA = {
         "id": "ambulance",
         "file": "service-ambulance.html",
         "title": "24/7 Ambulance Service",
-        "tag": "Emergency Patient Transfer",
+        "tag": "Ambulance",
         "icon": "ambulance",
         "image": "service_ambulance.jpg",
-        "short_desc": "Rapid doorstep patient retrieval and safe hospital transfer.",
-        "meaning": "Emergency ambulance fleet equipped with transport oxygen and paramedics for rapid patient transfer.",
+        "short_desc": "24/7 emergency ambulance with transport oxygen, stretcher, and direct Casualty handover.",
+        "meaning": "Emergency ambulance fleet equipped with transport oxygen and paramedics for rapid patient transfer and direct Casualty handover.",
         "highlights": [
             "24/7 Emergency Dispatch Helpline: 08942-228234",
             "Equipped with Oxygen Cylinders & Hydraulic Stretchers",
             "Trained Paramedic & First-Aid Assistance En Route",
-            "Direct Communication with Hospital Casualty on Arrival"
+            "Direct Ramp Handover to Casualty Trauma Bay"
         ],
         "gallery": [
             {
                 "image": "service_ambulance.jpg",
-                "title": "24/7 Rapid Ambulance",
-                "tag": "Fleet",
+                "title": "24/7 Ambulance",
+                "tag": "Ambulance",
                 "desc": "Fully equipped emergency vehicle ready for immediate roadside, doorstep, or inter-hospital transfer."
             },
             {
                 "image": "hospital_casualty.jpg",
-                "title": "Direct Casualty Triage Handover",
+                "title": "Casualty Triage Handover",
                 "tag": "Casualty",
-                "desc": "Direct ramp transfer from ambulance into the hospital's trauma resuscitation bay."
+                "desc": "Direct ramp transfer from ambulance into the hospital's trauma casualty bay."
             }
         ],
         "readiness": "Ambulance Dispatch",
@@ -684,23 +684,23 @@ SERVICES_DATA = {
     "pharmacy": {
         "id": "pharmacy",
         "file": "service-pharmacy.html",
-        "title": "24/7 Pharmacy Services",
-        "tag": "In-House Medical Store",
+        "title": "Pharmacy (24/7)",
+        "tag": "Pharmacy",
         "icon": "pill",
         "image": "pharmacy.jpg",
-        "short_desc": "100% genuine prescription medications, injectables, and consumables.",
-        "meaning": "In-house hospital dispensary providing genuine medications, critical injectables, and surgical consumables.",
+        "short_desc": "24/7 in-house Pharmacy with 100% genuine prescription medications, injectables, and surgicals.",
+        "meaning": "In-house hospital Pharmacy providing genuine medications, critical injectables, vaccines, and surgical consumables.",
         "highlights": [
             "24/7 In-House Hospital Pharmacy Dispensary",
             "100% Genuine Prescription Medications & Disposables",
             "Cold-Chain Stored Vaccines & Critical Injectables",
-            "Direct Integration with Inpatient & Emergency Desks"
+            "Direct Integration with Inpatient & Casualty Desks"
         ],
         "gallery": [
             {
                 "image": "pharmacy.jpg",
-                "title": "24/7 In-House Hospital Pharmacy",
-                "tag": "Dispensary",
+                "title": "Pharmacy",
+                "tag": "Pharmacy",
                 "desc": "Full stock of authentic medications, antibiotics, cardiac drugs, and pediatric formulations."
             }
         ],
@@ -713,4 +713,3 @@ SERVICES_DATA = {
         ]
     }
 }
-
