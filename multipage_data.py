@@ -305,29 +305,29 @@ DEPARTMENTS_DATA = {
         "id": "generalmedicine",
         "file": "department-generalmedicine.html",
         "title": "General Medicine",
-        "tag": "Waiting Area",
+        "tag": "Physician Care",
         "icon": "stethoscope",
-        "image": "hospital_waiting_area.jpg",
-        "short_desc": "Adult physician evaluations for fevers, BP, diabetes, and inpatient care in Single Rooms.",
+        "image": "dept_generalmedicine.jpg",
+        "short_desc": "Adult physician evaluations for fevers, BP, diabetes, infection management, and internal care.",
         "meaning": "Comprehensive diagnosis and continuous inpatient medical care for diabetes, hypertension, acute fevers, and multi-system illnesses.",
         "highlights": [
-            "Comprehensive Outpatient & Inpatient Evaluations",
-            "Spacious Air-Conditioned Waiting Area & OPD Desks",
+            "Comprehensive Outpatient Physician Consultations",
+            "Diabetes, Blood Pressure & Chronic Illness Control",
             "24/7 Acute Seasonal Fever & Infection Supervision",
-            "Deluxe Single Room Inpatient Medical Supervision"
+            "Continuous Inpatient Medical Care & Supervision"
         ],
         "gallery": [
             {
-                "image": "hospital_waiting_area.jpg",
-                "title": "Waiting Area",
-                "tag": "Waiting Area",
-                "desc": "Air-conditioned, comfortable waiting hall with digital queue systems and amenities."
+                "image": "dept_generalmedicine.jpg",
+                "title": "Physician Consultation Suite",
+                "tag": "Consultation",
+                "desc": "Comprehensive clinical evaluations and personalized care for adult fevers, diabetes, and hypertension."
             },
             {
                 "image": "hospital_single_room.jpg",
-                "title": "Single Room",
-                "tag": "Single Room",
-                "desc": "Private rooms with continuous physician supervision and bedside nursing."
+                "title": "Single Room Inpatient Care",
+                "tag": "Inpatient",
+                "desc": "Deluxe private room with continuous physician supervision and bedside nursing."
             }
         ],
         "doctors": [
@@ -527,6 +527,43 @@ DEPARTMENTS_DATA = {
 
 # The Core Real Hospital Services (Exact Photo Names & Verified Hospital Photography)
 SERVICES_DATA = {
+    "waitinghall": {
+        "id": "waitinghall",
+        "file": "service-waiting-hall.html",
+        "title": "Waiting Hall",
+        "tag": "Waiting Hall",
+        "icon": "users",
+        "image": "hospital_waiting_area.jpg",
+        "short_desc": "Spacious, air-conditioned patient and visitor waiting hall with comfortable seating.",
+        "meaning": "Spacious, fully air-conditioned patient and visitor waiting hall equipped with comfortable seating, digital status screens, and patient assistance desks.",
+        "highlights": [
+            "Spacious Air-Conditioned Patient Waiting Hall",
+            "Ergonomic Seating for Patients & Attendants",
+            "Digital Information & Queue Assistance Desks",
+            "Immediate Access to Consultation Chambers & Pharmacy"
+        ],
+        "gallery": [
+            {
+                "image": "hospital_waiting_area.jpg",
+                "title": "Waiting Hall",
+                "tag": "Waiting Hall",
+                "desc": "Spacious air-conditioned waiting hall with comfortable seating and assistance desks."
+            },
+            {
+                "image": "reception_desk.jpg",
+                "title": "Reception & Helpdesk",
+                "tag": "Reception",
+                "desc": "24/7 hospital reception desk for patient registrations and guidance."
+            }
+        ],
+        "readiness": "Hospital Facility",
+        "features": [
+            "Fully Air-Conditioned Waiting Hall",
+            "Comfortable Patient Seating",
+            "Digital Queue Displays",
+            "24/7 Patient Help Desk"
+        ]
+    },
     "beds": {
         "id": "beds",
         "file": "service-beds.html",
@@ -679,10 +716,10 @@ SERVICES_DATA = {
                 "desc": "Fully equipped emergency vehicle ready for immediate roadside, doorstep, or inter-hospital transfer."
             },
             {
-                "image": "hospital_casualty.jpg",
-                "title": "Casualty Triage Handover",
-                "tag": "Casualty",
-                "desc": "Direct ramp transfer from ambulance into the hospital's trauma casualty bay."
+                "image": "reception_desk.jpg",
+                "title": "Emergency Reception & Triage",
+                "tag": "Emergency Triage",
+                "desc": "Immediate patient intake and emergency triage desk upon ambulance arrival."
             }
         ],
         "readiness": "Ambulance Dispatch",
