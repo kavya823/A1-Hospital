@@ -530,30 +530,36 @@ SERVICES_DATA = {
     "beds": {
         "id": "beds",
         "file": "service-beds.html",
-        "title": "Single & Sharing Rooms",
-        "tag": "Single & Sharing Rooms",
+        "title": "100+ Beds (Sharing & Single Rooms)",
+        "tag": "100+ Beds Facility",
         "icon": "bed-double",
-        "image": "hospital_single_room.jpg",
-        "short_desc": "Deluxe Single Rooms and spacious Sharing Rooms with 24/7 Nursing Station supervision.",
-        "meaning": "Deluxe private Single Rooms and comfortable Sharing Rooms equipped with central oxygen and round-the-clock Nursing Station supervision.",
+        "image": "hospital_casualty.jpg",
+        "short_desc": "100+ Beds facility featuring spacious Sharing Rooms and deluxe Single Rooms with 24/7 nursing.",
+        "meaning": "Over 100+ inpatient beds across spacious sharing wards and private single rooms equipped with central oxygen and round-the-clock nursing supervision.",
         "highlights": [
-            "Deluxe AC Single Rooms with Motorized Electric Beds",
-            "Spacious Sharing Rooms with Antibacterial Privacy Curtains",
-            "24/7 Floor Nursing Station with Emergency Call Systems",
-            "Central Medical Gas, Oxygen Lines & Emergency Power Backup"
+            "100+ Inpatient Bed Capacity Across Spacious Wards",
+            "Multi-Bed Sharing Rooms with Privacy Curtains",
+            "Deluxe AC Single Rooms with Motorized Beds",
+            "24/7 Floor Nursing Station with Emergency Call Systems"
         ],
         "gallery": [
             {
-                "image": "hospital_single_room.jpg",
-                "title": "Single Room",
-                "tag": "Single Room",
-                "desc": "Air-conditioned private room with motorized bed, en-suite washroom, handwash sink, and attendant setup."
+                "image": "hospital_casualty.jpg",
+                "title": "100+ Beds Sharing Ward",
+                "tag": "100+ Beds Facility",
+                "desc": "Spacious multi-bed inpatient sharing ward with antibacterial curtains and bedside oxygen ports."
             },
             {
                 "image": "hospital_sharing_room.jpg",
                 "title": "Sharing Room",
                 "tag": "Sharing Room",
                 "desc": "Spacious room with antibacterial privacy curtains, bedside lockers, and attendant seating."
+            },
+            {
+                "image": "hospital_single_room.jpg",
+                "title": "Single Room",
+                "tag": "Single Room",
+                "desc": "Air-conditioned private room with motorized bed, en-suite washroom, and attendant setup."
             },
             {
                 "image": "hospital_nursing_station.jpg",
@@ -564,47 +570,53 @@ SERVICES_DATA = {
         ],
         "readiness": "Inpatient Facility",
         "features": [
-            "Single Rooms with Motorized Beds",
-            "Clean Sharing Rooms with Privacy Curtains",
-            "24/7 Dedicated Nursing Station",
-            "Immediate Inpatient Medical Attention"
+            "100+ Inpatient Beds Facility",
+            "Spacious Sharing Rooms with Curtains",
+            "Deluxe AC Single Rooms",
+            "24/7 Dedicated Nursing Station"
         ]
     },
     "emergency": {
         "id": "emergency",
         "file": "service-emergency.html",
-        "title": "Casualty (24/7)",
-        "tag": "Casualty",
+        "title": "24/7 Emergency & Casualty",
+        "tag": "24/7 Emergency",
         "icon": "clock",
-        "image": "hospital_casualty.jpg",
-        "short_desc": "24/7 Casualty with emergency trauma resuscitation bays, monitors, and critical care doctors.",
-        "meaning": "Fully equipped 24/7 Casualty and trauma resuscitation bays staffed by critical care doctors for rapid crisis response.",
+        "image": "reception_desk.jpg",
+        "short_desc": "24/7 Emergency and Casualty triage desk with rapid response doctors and critical care.",
+        "meaning": "24/7 emergency response, immediate patient triage, and critical casualty admissions supported by on-duty medical officers.",
         "highlights": [
-            "Immediate Emergency Triage & Casualty Resuscitation Bays",
-            "Multi-Bed Casualty with Central Oxygen & Multipara Monitors",
-            "Rapid Trauma Resuscitation, Defibrillators & Crash Carts",
-            "Direct Ambulance Ramp Access for Stretcher Triage"
+            "24/7 Emergency Casualty Triage & Reception Desk",
+            "Immediate On-Duty Emergency Medical Officers",
+            "Direct Ambulance Ramp & Stretcher Access",
+            "Rapid Multi-Parameter Vital Stabilization"
         ],
         "gallery": [
             {
-                "image": "hospital_casualty.jpg",
-                "title": "Casualty",
-                "tag": "Casualty",
-                "desc": "Spacious casualty with multi-parameter cardiac monitors, oxygen ports, and emergency treatment beds."
+                "image": "reception_desk.jpg",
+                "title": "24/7 Emergency Triage Desk",
+                "tag": "Emergency Desk",
+                "desc": "Round-the-clock emergency admission and immediate casualty triage desk."
             },
             {
                 "image": "service_ambulance.jpg",
-                "title": "24/7 Ambulance",
+                "title": "24/7 Emergency Ambulance",
                 "tag": "Ambulance",
                 "desc": "Equipped with transport oxygen, emergency stretcher, and paramedic first-aid kit."
+            },
+            {
+                "image": "hospital_building.jpg",
+                "title": "Emergency Access & Building",
+                "tag": "Hospital Access",
+                "desc": "Direct ramp entrance for immediate emergency retrieval and patient drop-off."
             }
         ],
         "readiness": "Emergency Services",
         "features": [
-            "Immediate Patient Triage in Casualty",
-            "Trauma Care & Resuscitation Bays",
-            "Advanced Multipara Vital Monitoring",
-            "24/7 Critical Care Medical Staff"
+            "24/7 Emergency Triage Desk",
+            "Immediate Patient Assessment",
+            "Direct Ambulance Ramp Access",
+            "On-Duty Critical Care Medical Staff"
         ]
     },
     "icu": {
