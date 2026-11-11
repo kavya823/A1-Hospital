@@ -5396,6 +5396,41 @@ p {
     margin-top: 2px;
 }
 
+/* Condensed Premium Insurance Highlights Pills */
+.insurance-highlights-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 1.25rem;
+}
+
+.ins-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    background: #fbf8f5;
+    padding: 0.35rem 0.8rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-warm);
+    letter-spacing: 0.015em;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.insurance-frame-card:hover .ins-pill {
+    background: #ffffff;
+    border-color: rgba(128, 0, 0, 0.2);
+}
+
+.ins-pill i {
+    width: 13px;
+    height: 13px;
+    color: var(--primary-accent);
+}
+
 .insurance-card-footer {
     margin-top: auto;
     padding-top: 1rem;

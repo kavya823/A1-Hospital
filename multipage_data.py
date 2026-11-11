@@ -158,12 +158,13 @@ DEPARTMENTS_DATA = {
         "tag": "Children & Newborn Care",
         "icon": "baby",
         "image": "hospital_neonatal_warmers.jpg",
+        "short_desc": "Specialized infant warmers, Level-III NICU, child surgeries, and routine vaccinations.",
         "meaning": "Specialized infant, child, and adolescent healthcare offering 24/7 Level-III NICU care, routine vaccinations, and emergency pediatric surgery.",
         "highlights": [
-            "Advanced Infant Radiant Warmers & Phototherapy Units",
-            "Level-III Sterile Neonatal Intensive Care Unit (NICU)",
-            "Complete Child Immunization & Vaccination Schedules",
-            "Specialized Pediatric Surgical Care & Emergency Interventions"
+            "Digital Radiant Warmers & Phototherapy Units",
+            "Level-III Sterile Neonatal ICU (NICU)",
+            "Complete Child Immunization Schedules",
+            "Specialized Pediatric Surgical Care"
         ],
         "gallery": [
             {
@@ -204,15 +205,16 @@ DEPARTMENTS_DATA = {
         "id": "obstetrics",
         "file": "department-obstetrics.html",
         "title": "Obstetrics, Gynaecology & IVF Clinic",
-        "tag": "Women's Health & Fertility Care",
+        "tag": "Women's Health & Fertility",
         "icon": "heart-pulse",
         "image": "hospital_gynecology_ot.jpg",
+        "short_desc": "Painless deliveries, laparoscopy theatre, advanced IVF embryology lab, and maternity care.",
         "meaning": "Comprehensive women's healthcare providing safe deliveries, high-risk pregnancy management, advanced IVF embryology, and minimally invasive laparoscopy.",
         "highlights": [
-            "Modern Labour & Delivery Suite for Painless Deliveries",
-            "Dedicated Gynaecology & Laparoscopic Surgery Theatre",
-            "Advanced IVF & Embryology Laboratory with ICSI Workstation",
-            "Specialized IVF Ovum Pickup (OPU) & Embryo Transfer Suite"
+            "Modern Labour & Painless Delivery Suite",
+            "Dedicated Gynaecology & Laparoscopy OT",
+            "Advanced IVF & Embryology Cleanroom Lab",
+            "High-Risk Pregnancy & Antenatal Support"
         ],
         "gallery": [
             {
@@ -262,12 +264,13 @@ DEPARTMENTS_DATA = {
         "tag": "Bone, Joint & Spine Care",
         "icon": "bone",
         "image": "hospital_ortho_ot.jpg",
+        "short_desc": "C-Arm guided fracture surgeries, joint replacements, and sports injury rehabilitation.",
         "meaning": "Expert orthopedic surgical care for complex fractures, joint replacements, arthroscopic sports injuries, and spine rehabilitation.",
         "highlights": [
             "Orthopedic OT with Allengers High-Resolution C-Arm",
-            "24/7 Fracture Fixation & Complex Accident Trauma Surgery",
+            "24/7 Fracture Fixation & Accident Trauma Surgery",
             "Precision Total Knee & Hip Replacement Procedures",
-            "Minimally Invasive Arthroscopic Ligament Reconstruction"
+            "Minimally Invasive Arthroscopic Ligament Repair"
         ],
         "gallery": [
             {
@@ -305,11 +308,12 @@ DEPARTMENTS_DATA = {
         "tag": "Adult Physician & Internal Care",
         "icon": "stethoscope",
         "image": "hospital_waiting_area.jpg",
+        "short_desc": "Adult physician evaluations for diabetes, hypertension, acute fevers, and inpatient supervision.",
         "meaning": "Comprehensive diagnosis and continuous inpatient medical care for diabetes, hypertension, acute fevers, and multi-system illnesses.",
         "highlights": [
-            "Comprehensive Outpatient & Inpatient Medical Evaluations",
-            "Diabetes, Blood Pressure & Lifestyle Disease Management",
-            "24/7 Medical Emergency Supervision & Acute Fever Care",
+            "Comprehensive Outpatient & Inpatient Evaluations",
+            "Diabetes, Blood Pressure & Lifestyle Disease Control",
+            "24/7 Acute Seasonal Fever & Infection Supervision",
             "Preventive Health Checkups & Systemic Wellness"
         ],
         "gallery": [
@@ -342,12 +346,13 @@ DEPARTMENTS_DATA = {
         "tag": "Operative & Surgical Treatments",
         "icon": "scissors",
         "image": "hospital_modular_ot.jpg",
+        "short_desc": "Modular laminar flow OT for laparoscopic hernia, appendix, gallbladder, and trauma surgeries.",
         "meaning": "Advanced laparoscopic and open surgical interventions for hernia, gallbladder stones, appendectomy, piles, and acute surgical emergencies.",
         "highlights": [
-            "Ultra-Modern Modular Operation Theatre with Laminar Air Flow",
+            "Ultra-Modern Modular OT with Laminar Air Flow",
             "Dedicated Septic & Minor Procedure Theatre",
-            "Advanced Laparoscopic (Keyhole) Abdominal Surgeries",
-            "Rapid Post-Surgical Healing Protocols & Clean Recovery Wards"
+            "Advanced Laparoscopic (Keyhole) Abdominal Surgery",
+            "Rapid Post-Surgical Healing Protocols & Clean Wards"
         ],
         "gallery": [
             {
@@ -378,13 +383,28 @@ DEPARTMENTS_DATA = {
         "title": "Nephrology (Kidney Care)",
         "tag": "Kidney & Renal Health",
         "icon": "filter",
-        "image": "dept_nephrology.jpg",
+        "image": "hospital_nursing_station.jpg",
+        "short_desc": "Specialized kidney health, chronic renal disease care, diabetic nephropathy, and fluid balance.",
         "meaning": "Specialized renal healthcare providing diagnosis and medical management for chronic kidney disease, diabetic nephropathy, and fluid electrolyte balance.",
         "highlights": [
             "Chronic Kidney Disease Management & Follow-up",
             "Diabetic Kidney Disease Prevention & Care",
             "Dialysis Guidance & Fluid Balance Optimization",
-            "Hypertension & Proteinuria Clinical Protocol"
+            "24/7 Monitored Inpatient Renal Protocol"
+        ],
+        "gallery": [
+            {
+                "image": "hospital_nursing_station.jpg",
+                "title": "24/7 Renal Care Floor Station",
+                "tag": "Nursing Station",
+                "desc": "Continuous floor nursing monitoring for renal fluid balance, vitals, and medication administration."
+            },
+            {
+                "image": "hospital_single_room.jpg",
+                "title": "Monitored Inpatient Room",
+                "tag": "Inpatient Care",
+                "desc": "Quiet, comfortable private inpatient room with continuous clinical monitoring."
+            }
         ],
         "doctors": [
             {
@@ -401,13 +421,28 @@ DEPARTMENTS_DATA = {
         "title": "Urology & Stone Care",
         "tag": "Urinary & Stone Treatments",
         "icon": "shield-plus",
-        "image": "dept_urology.jpg",
+        "image": "hospital_septic_ot.jpg",
+        "short_desc": "Minimally invasive laser stone fragmentation, prostate care, and day-care endourology.",
         "meaning": "Advanced medical and surgical solutions for kidney stones, prostate enlargement, and urinary tract disorders using minimally invasive endoscopy.",
         "highlights": [
             "Endoscopic Kidney & Bladder Stone Fragmentation",
             "Prostate Enlargement (BPH) Diagnostic & Medical Care",
             "Recurrent Urinary Tract Infection (UTI) Treatment",
-            "Minimally Invasive Endourological Interventions"
+            "Dedicated Procedure Theatre for Endourology"
+        ],
+        "gallery": [
+            {
+                "image": "hospital_septic_ot.jpg",
+                "title": "Endourology & Minor Procedure Theatre",
+                "tag": "Procedure OT",
+                "desc": "Sterile procedure suite equipped for endoscopic stone fragmentation, cystoscopy, and stenting."
+            },
+            {
+                "image": "hospital_modular_ot.jpg",
+                "title": "Advanced Surgical Modular OT",
+                "tag": "Major OT",
+                "desc": "Ultra-clean laminar flow operating theatre for complex reconstructive urology."
+            }
         ],
         "doctors": [
             {
@@ -424,13 +459,22 @@ DEPARTMENTS_DATA = {
         "title": "Ophthalmology (Eye Care)",
         "tag": "Vision & Optical Care",
         "icon": "eye",
-        "image": "dept_ophthalmology.jpg",
+        "image": "hospital_gynec_chamber.jpg",
+        "short_desc": "Complete vision testing, cataract assessments, glaucoma checks, and eye health therapies.",
         "meaning": "Comprehensive vision testing, cataract assessments, glaucoma checks, and targeted medical therapies for clear, healthy vision.",
         "highlights": [
             "Refraction & Complete Eyesight Evaluations",
             "Cataract Diagnosis & Surgical Planning",
             "Glaucoma Pressure Screening & Dry Eye Therapy",
             "Infection, Allergy & Corneal Health Management"
+        ],
+        "gallery": [
+            {
+                "image": "hospital_gynec_chamber.jpg",
+                "title": "Specialist Consultation Chamber",
+                "tag": "Clinical Suite",
+                "desc": "Quiet, private consultation suite equipped for thorough clinical eye examinations and vision checks."
+            }
         ],
         "doctors": [
             {
@@ -447,13 +491,28 @@ DEPARTMENTS_DATA = {
         "title": "Oncology (Cancer Care)",
         "tag": "Radiation & Clinical Oncology",
         "icon": "crosshair",
-        "image": "dept_oncology.jpg",
+        "image": "hospital_single_room.jpg",
+        "short_desc": "Early cancer screenings, evidence-based radiation planning, and compassionate support.",
         "meaning": "Compassionate cancer evaluations providing early detection screenings, clinical oncology consultations, and radiation therapy planning.",
         "highlights": [
             "Clinical Oncology Reviews & Early Cancer Screening",
             "Evidence-Based Radiation Oncology Consultations",
             "Personalized Multi-Disciplinary Tumor Care Plans",
-            "Compassionate Palliative & Supportive Guidance"
+            "Compassionate Palliative & Supportive Inpatient Care"
+        ],
+        "gallery": [
+            {
+                "image": "hospital_single_room.jpg",
+                "title": "Comfort Inpatient Recovery Suite",
+                "tag": "Private Suite",
+                "desc": "Air-conditioned private room providing a tranquil, sterile setting for supportive oncology care."
+            },
+            {
+                "image": "hospital_nursing_station.jpg",
+                "title": "Dedicated Floor Nursing Supervision",
+                "tag": "Nursing Desk",
+                "desc": "24/7 nursing station delivering compassionate bedside medication and patient monitoring."
+            }
         ],
         "doctors": [
             {
@@ -475,7 +534,7 @@ SERVICES_DATA = {
         "tag": "Inpatient Accommodation",
         "icon": "bed-double",
         "image": "hospital_single_room.jpg",
-        "short_desc": "Deluxe private rooms and twin-sharing wards with dedicated nursing.",
+        "short_desc": "Deluxe private suites and twin-sharing wards with dedicated nursing.",
         "meaning": "Deluxe private rooms and twin-sharing wards equipped with central oxygen and round-the-clock nursing supervision.",
         "highlights": [
             "Deluxe AC Single Rooms with Electric Motorized Beds",
@@ -654,3 +713,4 @@ SERVICES_DATA = {
         ]
     }
 }
+

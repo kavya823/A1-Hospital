@@ -15,7 +15,7 @@ BLOG_POSTS = [
         "excerpt": "Timely vaccinations protect infants from life-threatening infections. Learn about the essential immunization schedule from birth through age five.",
         "full_content": """
         <h4>Why Childhood Vaccination is Critical</h4>
-        <p>Vaccination is one of the most effective medical safeguards developed to protect infants and children from serious preventable illnesses such as polio, hepatitis B, rotavirus, measles, and diphtheria. In the early months of life, a baby’s immune system is still developing, making prompt adherence to the pediatric immunization calendar vital.</p>
+        <p>Vaccination is one of the most effective medical safeguards developed to protect infants and children from serious preventable illnesses such as polio, hepatitis B, rotavirus, measles, and diphtheria. In the early months of life, a baby's immune system is still developing, making prompt adherence to the pediatric immunization calendar vital.</p>
         <h4>Core Immunization Milestones</h4>
         <ul>
             <li><strong>At Birth:</strong> BCG, OPV-0, and Hepatitis B birth dose.</li>
@@ -302,11 +302,11 @@ def build_all_pages():
             </div>
             <h3 style="text-align:center; font-size:1.45rem; margin-bottom: 1.75rem; color:var(--text-dark);">Browse All Services</h3>
             <div class="carousel-container animate-up">
-                <button class="carousel-btn left-btn" onclick="scrollCarousel('services-page-carousel', -1)" aria-label="Scroll Left">◀</button>
+                <button class="carousel-btn left-btn" onclick="scrollCarousel('services-page-carousel', -1)" aria-label="Scroll Left"><i data-lucide="chevron-left" style="width:20px; height:20px;"></i></button>
                 <div class="carousel-track" id="services-page-carousel">
                     {services_carousel_items}
                 </div>
-                <button class="carousel-btn right-btn" onclick="scrollCarousel('services-page-carousel', 1)" aria-label="Scroll Right">▶</button>
+                <button class="carousel-btn right-btn" onclick="scrollCarousel('services-page-carousel', 1)" aria-label="Scroll Right"><i data-lucide="chevron-right" style="width:20px; height:20px;"></i></button>
             </div>
         </div>
     </section>
@@ -322,7 +322,8 @@ def build_all_pages():
     # -------------------------------------------------------------
     dept_grid_items = ""
     for d_id, d in DEPARTMENTS_DATA.items():
-        img_src = d.get('image') or 'dept_pediatrics.jpg'
+        img_src = d.get('image') or 'hospital_neonatal_warmers.jpg'
+        short_desc = d.get('short_desc') or d.get('meaning')
         dept_grid_items += f'''
         <a href="{d['file']}" class="dept-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; overflow:hidden; border-radius:var(--radius-lg); background:var(--bg-surface); border:1.5px solid var(--border-warm); box-shadow:var(--shadow-sm); transition:var(--transition-bounce);">
             <div class="dept-showcase-header-box" style="height:190px; position:relative; overflow:hidden; background:#fff5f2;">
@@ -337,7 +338,7 @@ def build_all_pages():
             </div>
             <div class="dept-showcase-content" style="padding:1.4rem; display:flex; flex-direction:column; flex:1;">
                 <h3 style="font-size:1.22rem; margin:0 0 0.5rem 0; color:var(--text-dark);">{d['title']}</h3>
-                <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.55; margin:0 0 1rem 0; flex:1;">{d['meaning']}</p>
+                <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.55; margin:0 0 1rem 0; flex:1;">{short_desc}</p>
                 <div style="margin-top:auto; padding-top:0.8rem; border-top:1px solid var(--border-warm); display:flex; align-items:center; justify-content:space-between;">
                     <span style="font-size:0.82rem; color:var(--primary-accent); font-weight:700;"><i data-lucide="shield-check" style="width:14px; vertical-align:middle;"></i> In-Hospital Care</span>
                     <span class="dept-card-cta" style="color:var(--primary-accent); font-weight:700; font-size:0.85rem; display:flex; align-items:center; gap:4px;"><span>Explore Speciality</span> <i data-lucide="arrow-right" style="width:15px; height:15px;"></i></span>
@@ -384,11 +385,11 @@ def build_all_pages():
             </div>
             <h3 style="text-align:center; font-size:1.45rem; margin-bottom: 1.75rem; color:var(--text-dark);">Browse All Departments</h3>
             <div class="carousel-container animate-up">
-                <button class="carousel-btn left-btn" onclick="scrollCarousel('departments-page-carousel', -1)" aria-label="Scroll Left">◀</button>
+                <button class="carousel-btn left-btn" onclick="scrollCarousel('departments-page-carousel', -1)" aria-label="Scroll Left"><i data-lucide="chevron-left" style="width:20px; height:20px;"></i></button>
                 <div class="carousel-track" id="departments-page-carousel">
                     {dept_carousel_items}
                 </div>
-                <button class="carousel-btn right-btn" onclick="scrollCarousel('departments-page-carousel', 1)" aria-label="Scroll Right">▶</button>
+                <button class="carousel-btn right-btn" onclick="scrollCarousel('departments-page-carousel', 1)" aria-label="Scroll Right"><i data-lucide="chevron-right" style="width:20px; height:20px;"></i></button>
             </div>
         </div>
     </section>
@@ -570,8 +571,8 @@ def build_all_pages():
                 <div class="detail-explore-header">
                     <h3>Explore Other Hospital Services</h3>
                     <div class="explore-nav-arrows">
-                        <button class="carousel-btn left-btn" onclick="scrollCarousel('other-services-carousel', -1)" aria-label="Previous">◀</button>
-                        <button class="carousel-btn right-btn" onclick="scrollCarousel('other-services-carousel', 1)" aria-label="Next">▶</button>
+                        <button class="carousel-btn left-btn" onclick="scrollCarousel('other-services-carousel', -1)" aria-label="Previous"><i data-lucide="chevron-left" style="width:20px; height:20px;"></i></button>
+                        <button class="carousel-btn right-btn" onclick="scrollCarousel('other-services-carousel', 1)" aria-label="Next"><i data-lucide="chevron-right" style="width:20px; height:20px;"></i></button>
                     </div>
                 </div>
                 <div class="carousel-track" id="other-services-carousel">
@@ -731,8 +732,8 @@ def build_all_pages():
                 <div class="detail-explore-header">
                     <h3>Explore Other Clinical Departments</h3>
                     <div class="explore-nav-arrows">
-                        <button class="carousel-btn left-btn" onclick="scrollCarousel('other-dept-carousel', -1)" aria-label="Previous">◀</button>
-                        <button class="carousel-btn right-btn" onclick="scrollCarousel('other-dept-carousel', 1)" aria-label="Next">▶</button>
+                        <button class="carousel-btn left-btn" onclick="scrollCarousel('other-dept-carousel', -1)" aria-label="Previous"><i data-lucide="chevron-left" style="width:20px; height:20px;"></i></button>
+                        <button class="carousel-btn right-btn" onclick="scrollCarousel('other-dept-carousel', 1)" aria-label="Next"><i data-lucide="chevron-right" style="width:20px; height:20px;"></i></button>
                     </div>
                 </div>
                 <div class="carousel-track" id="other-dept-carousel">

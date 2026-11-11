@@ -64,7 +64,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=30">
+    <link rel="stylesheet" href="style.css?v=29">
 </head>
 <body data-page="department-detail">
 
@@ -259,7 +259,7 @@
             </li>
             <li style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem; color:var(--text-dark); font-weight:600; font-size:0.95rem;">
                 <i data-lucide="check-circle-2" style="color:var(--primary-accent); width:18px; height:18px; flex-shrink:0;"></i>
-                <span>Compassionate Palliative & Supportive Guidance</span>
+                <span>Compassionate Palliative & Supportive Inpatient Care</span>
             </li>
                     </ul>
 
@@ -275,7 +275,7 @@
 
                 <div class="detail-hero-visual">
                     <div class="detail-arch-frame" style="height:380px; border-radius:var(--radius-lg); overflow:hidden; position:relative; box-shadow:0 14px 36px rgba(128,0,0,0.12); border:2px solid var(--border-warm); background:#fff5f2;">
-                        <img src="dept_oncology.jpg" alt="Oncology (Cancer Care)" style="width:100%; height:100%; object-fit:cover; display:block;">
+                        <img src="hospital_single_room.jpg" alt="Oncology (Cancer Care)" style="width:100%; height:100%; object-fit:cover; display:block;">
                         <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.5) 100%);"></div>
                         <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); padding:0.75rem 1.2rem; border-radius:14px; display:flex; align-items:center; gap:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
                             <div class="card-icon-badge" style="width:38px; height:38px; font-size:1rem; margin:0; flex-shrink:0;">
@@ -291,6 +291,36 @@
             </div>
 
             
+        <div class="facility-showcase-section animate-up">
+            <div class="section-eyebrow"><span class="eyebrow-dot"></span> ON-SITE CLINICAL INFRASTRUCTURE</div>
+            <h2 style="font-family:'Playfair Display', serif; font-size:1.85rem; color:var(--text-dark); margin:0.4rem 0 0.5rem 0;">Specialized Department <span class="serif-italic">Facilities</span></h2>
+            <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.4rem;">High-precision clinical suites, diagnostic rooms, and surgical operation facilities supporting Oncology (Cancer Care).</p>
+            <div class="facility-showcase-grid">
+                
+            <div class="facility-photo-card">
+                <div class="facility-photo-frame">
+                    <img src="hospital_single_room.jpg" alt="Comfort Inpatient Recovery Suite" class="facility-photo-img" loading="lazy">
+                    <div class="facility-photo-overlay"></div>
+                    <span class="facility-photo-badge"><i data-lucide="shield-check"></i> Private Suite</span>
+                </div>
+                <div class="facility-card-body">
+                    <h4 class="facility-card-title">Comfort Inpatient Recovery Suite</h4>
+                    <p class="facility-card-desc">Air-conditioned private room providing a tranquil, sterile setting for supportive oncology care.</p>
+                </div>
+            </div>
+            <div class="facility-photo-card">
+                <div class="facility-photo-frame">
+                    <img src="hospital_nursing_station.jpg" alt="Dedicated Floor Nursing Supervision" class="facility-photo-img" loading="lazy">
+                    <div class="facility-photo-overlay"></div>
+                    <span class="facility-photo-badge"><i data-lucide="shield-check"></i> Nursing Desk</span>
+                </div>
+                <div class="facility-card-body">
+                    <h4 class="facility-card-title">Dedicated Floor Nursing Supervision</h4>
+                    <p class="facility-card-desc">24/7 nursing station delivering compassionate bedside medication and patient monitoring.</p>
+                </div>
+            </div>
+            </div>
+        </div>
 
             <!-- Quick Clinical Assistance Frame -->
             <div style="margin-top:2.5rem; background:linear-gradient(135deg, #fdf5f3 0%, #faece9 100%); border:1.5px solid rgba(128,0,0,0.15); border-radius:var(--radius-md); padding:1.5rem 1.8rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
@@ -313,8 +343,8 @@
                 <div class="detail-explore-header">
                     <h3>Explore Other Clinical Departments</h3>
                     <div class="explore-nav-arrows">
-                        <button class="carousel-btn left-btn" onclick="scrollCarousel('other-dept-carousel', -1)" aria-label="Previous">◀</button>
-                        <button class="carousel-btn right-btn" onclick="scrollCarousel('other-dept-carousel', 1)" aria-label="Next">▶</button>
+                        <button class="carousel-btn left-btn" onclick="scrollCarousel('other-dept-carousel', -1)" aria-label="Previous"><i data-lucide="chevron-left" style="width:20px; height:20px;"></i></button>
+                        <button class="carousel-btn right-btn" onclick="scrollCarousel('other-dept-carousel', 1)" aria-label="Next"><i data-lucide="chevron-right" style="width:20px; height:20px;"></i></button>
                     </div>
                 </div>
                 <div class="carousel-track" id="other-dept-carousel">
@@ -382,7 +412,7 @@
             <a href="department-nephrology.html" style="text-decoration:none; color:inherit; display:block;">
                 <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
                     <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
-                        <img src="dept_nephrology.jpg" alt="Nephrology (Kidney Care)" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                        <img src="hospital_nursing_station.jpg" alt="Nephrology (Kidney Care)" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
                         <div class="service-photo-overlay"></div>
                     </div>
                     <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
@@ -394,7 +424,7 @@
             <a href="department-urology.html" style="text-decoration:none; color:inherit; display:block;">
                 <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
                     <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
-                        <img src="dept_urology.jpg" alt="Urology & Stone Care" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                        <img src="hospital_septic_ot.jpg" alt="Urology & Stone Care" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
                         <div class="service-photo-overlay"></div>
                     </div>
                     <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
@@ -406,7 +436,7 @@
             <a href="department-ophthalmology.html" style="text-decoration:none; color:inherit; display:block;">
                 <div class="dept-card-photo" style="display:flex; flex-direction:column; padding:0; background:var(--bg-surface); min-width:240px; height:185px; text-align:center; position:relative; overflow:hidden; border-radius:var(--radius-lg); border:1.5px solid var(--border-warm);">
                     <div style="width:100%; height:120px; overflow:hidden; position:relative; background:#fdf5f3;">
-                        <img src="dept_ophthalmology.jpg" alt="Ophthalmology (Eye Care)" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
+                        <img src="hospital_gynec_chamber.jpg" alt="Ophthalmology (Eye Care)" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;" loading="lazy">
                         <div class="service-photo-overlay"></div>
                     </div>
                     <div class="dept-info" style="border:none; padding:0.65rem 0.5rem; background:var(--bg-surface); display:flex; align-items:center; justify-content:center; gap:6px;">
