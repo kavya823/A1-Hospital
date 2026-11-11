@@ -5085,7 +5085,7 @@ p {
 .service-photo-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.44) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.16) 100%);
     pointer-events: none;
 }
 
@@ -5774,14 +5774,14 @@ p {
 .facility-photo-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
-    opacity: 0.6;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,0.18) 100%);
+    opacity: 0.28;
     transition: opacity 0.4s ease;
     z-index: 1;
 }
 
 .facility-photo-card:hover .facility-photo-overlay {
-    opacity: 0.35;
+    opacity: 0.12;
 }
 
 .facility-photo-badge {
@@ -5888,3 +5888,28 @@ p {
 }
 
 
+
+
+/* ==========================================================================
+   BRIGHTNESS, CONTRAST & CLARITY ENHANCEMENTS FOR MEDICAL FACILITY PHOTOS
+   ========================================================================== */
+.service-card-photo,
+.service-showcase-img,
+.facility-photo-img,
+.dept-showcase-header-box img,
+.dept-card-photo img,
+.detail-arch-frame img {
+    filter: brightness(1.05) contrast(1.04) saturate(1.04);
+    image-rendering: -webkit-optimize-contrast;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.45s ease;
+}
+
+.service-card:hover .service-card-photo,
+.service-showcase-card:hover .service-showcase-img,
+.facility-photo-card:hover .facility-photo-img,
+.dept-showcase-card:hover .dept-showcase-header-box img,
+.dept-card-photo:hover img,
+.detail-arch-frame:hover img {
+    transform: scale(1.06);
+    filter: brightness(1.10) contrast(1.07) saturate(1.08);
+}

@@ -328,7 +328,7 @@ def build_all_pages():
         <a href="{d['file']}" class="dept-showcase-card animate-up" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; overflow:hidden; border-radius:var(--radius-lg); background:var(--bg-surface); border:1.5px solid var(--border-warm); box-shadow:var(--shadow-sm); transition:var(--transition-bounce);">
             <div class="dept-showcase-header-box" style="height:190px; position:relative; overflow:hidden; background:#fff5f2;">
                 <img src="{img_src}" alt="{d['title']}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;">
-                <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.45) 100%);"></div>
+                <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,0.18) 100%);"></div>
                 <div style="position:absolute; top:12px; left:12px; width:40px; height:40px; border-radius:12px; background:rgba(255,255,255,0.92); backdrop-filter:blur(6px); color:var(--primary-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
                     <i data-lucide="{d['icon']}" style="width:20px; height:20px;"></i>
                 </div>
@@ -473,7 +473,7 @@ def build_all_pages():
                 <div class="detail-hero-visual">
                     <div class="detail-arch-frame" style="height:380px; border-radius:var(--radius-lg); overflow:hidden; position:relative; box-shadow:0 14px 36px rgba(128,0,0,0.12); border:2px solid var(--border-warm); background:#fff5f2;">
                         <img src="{s['image']}" alt="{s['title']}" style="width:100%; height:100%; object-fit:cover; object-position:center 32%; display:block;">
-                        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.48) 100%);"></div>
+                        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,0.2) 100%);"></div>
                         <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; background:rgba(255,255,255,0.96); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); padding:0.75rem 1.2rem; border-radius:14px; display:flex; align-items:center; gap:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
                             <div class="card-icon-badge" style="width:38px; height:38px; font-size:1rem; margin:0; flex-shrink:0;">
                                 <i data-lucide="{s['icon']}"></i>
@@ -695,7 +695,7 @@ def build_all_pages():
                 <div class="detail-hero-visual">
                     <div class="detail-arch-frame" style="height:380px; border-radius:var(--radius-lg); overflow:hidden; position:relative; box-shadow:0 14px 36px rgba(128,0,0,0.12); border:2px solid var(--border-warm); background:#fff5f2;">
                         <img src="{d.get('image', 'dept_pediatrics.jpg')}" alt="{d['title']}" style="width:100%; height:100%; object-fit:cover; display:block;">
-                        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.5) 100%);"></div>
+                        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,0.2) 100%);"></div>
                         <div class="detail-floating-badge" style="position:absolute; bottom:20px; left:20px; right:20px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); padding:0.75rem 1.2rem; border-radius:14px; display:flex; align-items:center; gap:10px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
                             <div class="card-icon-badge" style="width:38px; height:38px; font-size:1rem; margin:0; flex-shrink:0;">
                                 <i data-lucide="{d['icon']}"></i>
