@@ -98,8 +98,8 @@ BLOG_POSTS = [
     },
     {
         "id": "kidney-health-hydration-habits",
-        "category": "nephrology",
-        "category_name": "Nephrology & Renal Health",
+        "category": "generalmedicine",
+        "category_name": "General Health & Hydration",
         "title": "Protecting Your Kidneys: Hydration, Diet, & Kidney Stone Prevention",
         "read_time": "4 min read",
         "date": "Oct 2026",
@@ -859,7 +859,7 @@ def build_all_pages():
             <button class="blog-filter-pill" onclick="filterBlog('obstetrics', this)">Women's Health &amp; IVF</button>
             <button class="blog-filter-pill" onclick="filterBlog('orthopedics', this)">Orthopedics &amp; Joint Care</button>
             <button class="blog-filter-pill" onclick="filterBlog('emergency', this)">Emergency Care</button>
-            <button class="blog-filter-pill" onclick="filterBlog('nephrology', this)">Kidney Health</button>
+            
             <button class="blog-filter-pill" onclick="filterBlog('generalmedicine', this)">General Medicine</button>
         </div>
 
@@ -947,7 +947,6 @@ def build_all_pages():
             'orthopedics': 'department-orthopedics.html',
             'generalmedicine': 'department-generalmedicine.html',
             'generalsurgery': 'department-generalsurgery.html',
-            'nephrology': 'department-nephrology.html',
             'urology': 'department-urology.html',
             'ophthalmology': 'department-ophthalmology.html',
             'oncology': 'department-oncology.html'

@@ -371,38 +371,6 @@ DEPARTMENTS_DATA = {
             }
         ]
     },
-    "nephrology": {
-        "id": "nephrology",
-        "file": "department-nephrology.html",
-        "title": "Nephrology (Kidney Care)",
-        "tag": "Kidney Care",
-        "icon": "filter",
-        "image": "dept_nephrology.jpg",
-        "short_desc": "Specialized kidney health, chronic renal disease care, dialysis guidance, and fluid management.",
-        "meaning": "Specialized renal healthcare providing diagnosis and medical management for chronic kidney disease, diabetic nephropathy, and fluid electrolyte balance.",
-        "highlights": [
-            "Chronic Kidney Disease Management & Follow-up",
-            "Diabetic Kidney Disease Prevention & Care",
-            "Dialysis Guidance & Fluid Balance Optimization",
-            "Continuous Physician & Clinical Supervision"
-        ],
-        "gallery": [
-            {
-                "image": "dept_nephrology.jpg",
-                "title": "Nephrology & Renal Care Suite",
-                "tag": "Kidney Care",
-                "desc": "Specialized clinical consultations for kidney function, electrolyte monitoring, and dialysis guidance."
-            }
-        ],
-        "doctors": [
-            {
-                "name": "Dr. Korla Vidya Sagar",
-                "qual": "M.D., D.M. (Nephrology)",
-                "title": "Nephrologist",
-                "image": None
-            }
-        ]
-    },
     "urology": {
         "id": "urology",
         "file": "department-urology.html",
