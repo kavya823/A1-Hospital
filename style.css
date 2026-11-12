@@ -1553,35 +1553,78 @@ p {
     transform: none !important;
 }
 
-.animate-up, .animate-left, .animate-right {
+/* Creative Entering Type Motion (All Sections & Cards) */
+.animate-up, .animate-left, .animate-right, .animate-scale {
     opacity: 1;
     transform: none;
-    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity, filter;
+    transition: opacity 0.82s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.82s cubic-bezier(0.16, 1, 0.3, 1), 
+                filter 0.82s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-active .animate-up:not(.show) {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translate3d(0, 38px, 0) scale(0.975);
+    filter: blur(4px);
 }
 .reveal-active .animate-left:not(.show) {
     opacity: 0;
-    transform: translateX(-35px);
+    transform: translate3d(-38px, 0, 0) scale(0.975);
+    filter: blur(4px);
 }
 .reveal-active .animate-right:not(.show) {
     opacity: 0;
-    transform: translateX(35px);
+    transform: translate3d(38px, 0, 0) scale(0.975);
+    filter: blur(4px);
+}
+.reveal-active .animate-scale:not(.show) {
+    opacity: 0;
+    transform: scale(0.92);
+    filter: blur(5px);
 }
 
 .reveal-active .animate-up.show,
 .reveal-active .animate-left.show,
-.reveal-active .animate-right.show {
+.reveal-active .animate-right.show,
+.reveal-active .animate-scale.show {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0px);
 }
 
-.delay-1 { transition-delay: 0.15s; }
-.delay-2 { transition-delay: 0.3s; }
-.delay-3 { transition-delay: 0.45s; }
+/* Staggered Delay Cascade System */
+.delay-1 { transition-delay: 0.10s !important; }
+.delay-2 { transition-delay: 0.20s !important; }
+.delay-3 { transition-delay: 0.30s !important; }
+.delay-4 { transition-delay: 0.40s !important; }
+.delay-5 { transition-delay: 0.50s !important; }
+
+/* Synchronized Creative Entrance for Section Titles */
+.section-title.show .section-eyebrow {
+    animation: eyebrowEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.section-title.show h2 {
+    animation: titleEnter 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.08s backwards;
+}
+.section-title.show p {
+    animation: subtitleEnter 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
+}
+
+@keyframes eyebrowEnter {
+    from { opacity: 0; transform: translate3d(0, 14px, 0) scale(0.94); }
+    to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes titleEnter {
+    from { opacity: 0; transform: translate3d(0, 22px, 0); filter: blur(3px); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+}
+
+@keyframes subtitleEnter {
+    from { opacity: 0; transform: translate3d(0, 18px, 0); filter: blur(2px); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+}
 
 /* Pulse Animation */
 .pulse-anim {
@@ -4473,8 +4516,13 @@ p {
 }
 
 /* 5. Smooth Staggered Scroll Transitions */
-.reveal-active .animate-up {
-    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+.reveal-active .animate-up,
+.reveal-active .animate-left,
+.reveal-active .animate-right,
+.reveal-active .animate-scale {
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 .reveal-active .animate-up.delay-1 { transition-delay: 0.12s !important; }
 .reveal-active .animate-up.delay-2 { transition-delay: 0.24s !important; }

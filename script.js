@@ -94,13 +94,49 @@ function initHospitalApp() {
     initPageTransition();
     initCounterAnimation();
 
-    // Enable progressive scroll animations
+    // Enable progressive creative scroll entrance animations
     document.body.classList.add('reveal-active');
+
+    // Auto-detect and register all card grids across all pages for creative staggered cascade
+    const gridSelectors = [
+        '.services-grid',
+        '.dept-grid-home',
+        '.services-showcase-grid',
+        '.departments-showcase-grid',
+        '.doctors-grid',
+        '.insurance-frames-grid',
+        '.reviews-grid',
+        '.blog-grid',
+        '.detail-highlights-grid',
+        '.facility-showcase-grid',
+        '.quick-stats-grid',
+        '.smera-stats-grid'
+    ];
+
+    gridSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(grid => {
+            const children = Array.from(grid.children);
+            children.forEach((child, idx) => {
+                if (!child.classList.contains('animate-up') && !child.classList.contains('animate-left') && !child.classList.contains('animate-right')) {
+                    child.classList.add('animate-up');
+                }
+                const delay = Math.min((idx % 6) * 0.1, 0.5);
+                child.style.transitionDelay = `${delay}s`;
+            });
+        });
+    });
+
+    // Auto-register all major content sections and titles
+    document.querySelectorAll('.section-title, .detail-arch-frame, .detail-feature-card, .location-section, .appointment-form-wrapper, .lab-content, .lab-image, .hospital-building-card').forEach(el => {
+        if (!el.classList.contains('animate-up') && !el.classList.contains('animate-left') && !el.classList.contains('animate-right')) {
+            el.classList.add('animate-up');
+        }
+    });
 
     const observerOptions = {
         root: null,
-        rootMargin: '60px 0px',
-        threshold: 0.05
+        rootMargin: '40px 0px -40px 0px',
+        threshold: 0.06
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -111,8 +147,15 @@ function initHospitalApp() {
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.animate-up, .animate-left, .animate-right');
-    animatedElements.forEach(el => observer.observe(el));
+    const animatedElements = document.querySelectorAll('.animate-up, .animate-left, .animate-right, .animate-scale');
+    animatedElements.forEach(el => {
+        // If element is already in the initial viewport upon load, reveal immediately
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.classList.add('show');
+        }
+        observer.observe(el);
+    });
 
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
